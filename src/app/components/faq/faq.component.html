@@ -1,0 +1,19 @@
+<div class="container-md py-5">
+    <h1 class="text-title-lg">{{texts.title}}</h1>
+    <p class="text-body-md text-muted">{{texts.description}}</p>
+  
+    <div class="accordion mt-4" id="faqAccordion">
+      <div class="accordion-item" *ngFor="let faq of faqs; let i = index">
+        <h2 class="accordion-header" id="heading{{ i }}">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + i" aria-expanded="true" [attr.aria-controls]="'collapse' + i">
+            {{ faq.question }}
+          </button>
+        </h2>
+        <div [id]="'collapse' + i" class="accordion-collapse collapse" [class.show]="i === 0" [attr.aria-labelledby]="'heading' + i" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            {{ faq.answer }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

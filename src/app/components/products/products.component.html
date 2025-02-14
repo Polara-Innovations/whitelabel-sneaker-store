@@ -1,0 +1,8 @@
+<div class="container-lg">
+    <h1 class="text-title-lg text-center my-4">{{texts.title}}</h1>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let product of products">
+        <app-product-item [product]="product"></app-product-item>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,15 @@
+<div class="container-lg py-5">
+    <div class="row">
+      <div class="col-md-6">
+        <img [src]="product.image" alt="{{ product.name }}" class="img-fluid rounded shadow">
+      </div>
+  
+      <div class="col-md-6">
+        <app-product-info [product]="product" [texts]="texts"></app-product-info>
+      </div>
+    </div>
+  
+    <div class="mt-5">
+      <app-related-products [relatedProducts]="relatedProducts" [title]="texts.relatedProductsTitle"></app-related-products>
+    </div>
+  </div>

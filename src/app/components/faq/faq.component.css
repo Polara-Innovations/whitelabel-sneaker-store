@@ -1,0 +1,13 @@
+.accordion-button {
+    background-color: var(--background-secondary-color);
+    color: var(--text-color);
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: var(--primary-color);
+    color: var(--btn-primary-text);
+  }
+  
+  .accordion-body {
+    background-color: var(--background-color);
+  }

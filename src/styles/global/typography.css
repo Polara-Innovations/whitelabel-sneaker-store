@@ -1,0 +1,99 @@
+
+/* Tipografia */
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  margin: 0;
+  padding: 0;
+}
+
+/* Títulos */
+.text-title-xxxl {
+  font-size: var(--font-size-xxxl);
+  font-weight: 700;
+}
+
+.text-title-xxl {
+  font-size: var(--font-size-xxl);
+  font-weight: 700;
+}
+
+.text-title-xl {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+}
+
+.text-title-lg {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+.text-title-md {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+}
+
+.text-title-sm {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+}
+
+/* Subtítulos */
+.text-subtitle-lg {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+.text-subtitle-md {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+}
+
+.text-subtitle-sm {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+/* Corpo do texto */
+.text-body-lg {
+  font-size: var(--font-size-lg);
+}
+
+.text-body-md {
+  font-size: var(--font-size-md);
+}
+
+.text-body-sm {
+  font-size: var(--font-size-sm);
+}
+
+.text-body-xs {
+  font-size: var(--font-size-xs);
+}
+
+/* Variações de cores */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-danger {
+  color: var(--color-danger);
+}
+
+.text-warning {
+  color: var(--color-warning);
+}
+
+.text-success {
+  color: var(--color-success);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}

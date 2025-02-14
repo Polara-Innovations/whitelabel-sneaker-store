@@ -1,0 +1,9 @@
+.profile-info {
+    background-color: var(--background-secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .profile-options .list-group-item {
+    border: 1px solid var(--border-color);
+  }

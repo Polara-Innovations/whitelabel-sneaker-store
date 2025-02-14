@@ -1,0 +1,9 @@
+.related-products .card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .related-products .card:hover {
+    transform: scale(1.05);
+  }

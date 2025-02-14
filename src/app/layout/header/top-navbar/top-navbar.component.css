@@ -1,0 +1,36 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: var(--background-secondary-color);
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar-toggler {
+    border: none;
+    background: none;
+  }
+  
+  .navbar-toggler-icon {
+    color: var(--text-color);
+  }
+  
+  .nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .nav-link:hover {
+    color: var(--primary-color);
+  }

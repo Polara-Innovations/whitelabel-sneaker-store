@@ -1,0 +1,87 @@
+
+/* Variáveis de design */
+:root {
+  /* Cores primárias */
+  --color-primary: #3498db;
+  --color-primary-light: #5dade2;
+  --color-primary-lighter: #85c1e9;
+  --color-primary-dark: #2e86c1;
+  --color-primary-darker: #2874a6;
+
+  /* Cores secundárias */
+  --color-secondary: #2ecc71;
+  --color-secondary-light: #58d68d;
+  --color-secondary-lighter: #82e0aa;
+  --color-secondary-dark: #28b463;
+  --color-secondary-darker: #239b56;
+
+  /* Cores de alerta */
+  --color-danger: #e74c3c;
+  --color-danger-light: #f1948a;
+  --color-danger-dark: #c0392b;
+
+  --color-warning: #f1c40f;
+  --color-warning-light: #f7dc6f;
+  --color-warning-dark: #d4ac0d;
+
+  --color-success: #27ae60;
+  --color-success-light: #52be80;
+  --color-success-dark: #1e8449;
+
+  --color-info: #3498db;
+  --color-info-light: #5dade2;
+  --color-info-dark: #2e86c1;
+
+  /* Cores de fundo */
+  --color-bg-light: #ffffff;
+  --color-bg-muted: #f8f9fa;
+  --color-bg-dark: #2c3e50;
+  --color-bg-darker: #1a252f;
+
+  /* Cores de texto */
+  --color-text-light: #2c3e50;
+  --color-text-dark: #ecf0f1;
+  --color-text-muted: #7f8c8d;
+
+  /* Tipografia */
+  --font-family: 'Arial', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 2rem;
+  --font-size-xxxl: 2.5rem;
+
+  /* Espaçamentos */
+  --spacing-xxs: 2px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  /* Bordas */
+  --border-radius-sm: 2px;
+  --border-radius-md: 4px;
+  --border-radius-lg: 8px;
+  --border-radius-xl: 16px;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Tema escuro */
+[data-theme="dark"] {
+  --color-bg: var(--color-bg-dark);
+  --color-text: var(--color-text-dark);
+}
+
+/* Tema claro */
+[data-theme="light"] {
+  --color-bg: var(--color-bg-light);
+  --color-text: var(--color-text-light);
+}

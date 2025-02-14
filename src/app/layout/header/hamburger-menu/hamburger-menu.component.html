@@ -1,0 +1,29 @@
+<div class="hamburger-header" [ngStyle]="{'background-color': customBackground}">
+  <!-- Brand (Logo ou Nome da Marca) -->
+  <div class="brand d-flex align-items-center">
+    <img *ngIf="logoUrl" [src]="logoUrl" alt="Logo" class="logo me-2">
+    <span *ngIf="!logoUrl">{{ brandName }}</span>
+  </div>
+
+  <!-- Botão de Toggle -->
+  <button class="hamburger-toggle" (click)="toggleMenu()">
+    <i [ngClass]="isMenuOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
+  </button>
+</div>
+
+<div class="hamburger-menu" [ngClass]="{'open': isMenuOpen}">
+  <div class="menu-content">
+    <ul class="menu-list">
+      <li *ngFor="let tab of tabs" class="menu-item">
+        <a *ngIf="tab.route" routerLink="{{ tab.route }}">
+          <i *ngIf="tab.icon" class="{{ tab.icon }}" [ngClass]="{'me-2': tab.display !== 'icon'}"></i>
+          <span *ngIf="tab.display !== 'icon'">{{ tab.name }}</span>
+        </a>
+        <a *ngIf="!tab.route" (click)="tab.action === 'toggleTheme' ? toggleTheme() : null">
+          <i *ngIf="tab.icon" class="{{ tab.icon }}" [ngClass]="{'me-2': tab.display !== 'icon'}"></i>
+          <span *ngIf="tab.display !== 'icon'">{{ tab.name }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

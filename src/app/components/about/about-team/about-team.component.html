@@ -1,0 +1,10 @@
+<div class="about-team py-5">
+    <h2 class="text-title-md text-center">{{texts.title}}</h2>
+    <div class="row mt-4">
+      <div class="col-md-4 text-center" *ngFor="let member of teamMembers">
+        <img [src]="member.image" class="rounded-circle mb-3" alt="{{ member.name }}" width="120" height="120">
+        <h5 class="text-title-sm">{{ member.name }}</h5>
+        <p class="text-body-sm text-muted">{{ member.role }}</p>
+      </div>
+    </div>
+  </div>
