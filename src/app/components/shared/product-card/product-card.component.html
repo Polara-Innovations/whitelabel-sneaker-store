@@ -1,0 +1,23 @@
+<div class="product-card-container">
+  <div class="image-container">
+    <img [src]="imageUrl" [alt]="title" />
+  </div>
+
+  <div class="product-card">
+    <div class="product-title-container">
+      <div class="tags" *ngIf="showTags">
+        <span class="tag" *ngFor="let tag of tags">{{ tag }}</span>
+      </div>
+      <h3 class="product-title" title="{{ title }}">{{ title }}</h3>
+      <div class="tooltip">{{ title }}</div>
+    </div>
+    <p class="product-description">{{ description }}</p>
+    
+    <div class="price-container">
+      <span *ngIf="oldPrice" class="product-price-old">R$ {{ oldPrice | number:'1.2-2' }}</span>
+      <span class="product-price">R$ {{ price | number:'1.2-2' }}</span>
+    </div>
+
+    <button *ngIf="hasAction" class="action-button" (click)="onActionClick()">{{ actionLabel }}</button>
+  </div>
+</div>

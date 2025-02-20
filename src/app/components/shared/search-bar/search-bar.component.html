@@ -1,0 +1,29 @@
+<div class="search-container">
+    <div class="search-wrapper" [class.active]="isFocused">
+      <input
+        type="text"
+        [formControl]="searchControl"
+        (focus)="onFocus()"
+        (blur)="onBlur()"
+        [placeholder]="isFocused ? '' : 'Pesquisar Produtos...'"
+        aria-label="Pesquisar Produtosng"
+        autocomplete="off"
+      />
+      <button
+        class="clear-button"
+        (click)="clearSearch()"
+        aria-label="Clear search"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+      <i class="fas fa-search search-icon-inner"></i>
+    </div>
+    <div class="suggestions-container" *ngIf="showSuggestions && suggestions.length > 0">
+      <ul class="suggestions-list">
+        <li *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)">
+          <span class="suggestion-text">{{ suggestion.name }}</span>
+          <span class="suggestion-category">in {{ suggestion.category }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>

@@ -1,0 +1,62 @@
+.brand-card {
+    position: relative;
+    width: 150px; /* Largura fixa do card */
+    height: 150px; /* Altura fixa do card */
+    border-radius: var(--border-radius-lg);
+    overflow: hidden; /* Garante que nada ultrapasse as bordas */
+    transition: transform 0.3s;
+    cursor: pointer;
+  
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+  }
+  
+  .image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    aspect-ratio: 1; /* Garante que a imagem seja quadrada */
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cobre o espaço disponível sem distorcer */
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo ao passar o mouse */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Cor do texto */
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.3s; /* Transição suave */
+  }
+  
+  .brand-card:hover .overlay {
+    opacity: 1; /* Mostra a sobreposição ao passar o mouse */
+  }
+  
+  .brand-name {
+    font-size: 1.2em; /* Tamanho do nome da marca */
+    text-align: center;
+  }
+  
+  .action-text {
+    margin-top: 8px; /* Espaçamento entre o nome da marca e a ação */
+    cursor: pointer; /* Cursor em forma de ponteiro */
+    text-decoration: underline; /* Sublinha a ação */
+    user-select: none;
+  }

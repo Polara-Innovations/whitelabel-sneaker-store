@@ -1,4 +1,59 @@
 .banner {
-    background-color: var(--background-secondary);
-    border-radius: 8px;
-  }
+  background-color: var(--color-bg-muted);
+  margin-top: 9.5vh;
+  margin-bottom: 2rem;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-images {
+  width: 100%;
+  height: 100%;
+}
+
+.banner-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.banner-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mantém a imagem proporcional */
+}
+
+.bullets {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+}
+
+.bullet {
+  background-color: var(--color-bg-light); /* Cor de fundo padrão */
+  border: none;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.bullet.active {
+  background-color: var(--color-bg-muted); /* Cor do bullet ativo */
+}
+
+.bullet:hover {
+  background-color: rgba(200, 200, 200, 0.8); /* Efeito hover para os bullets */
+}

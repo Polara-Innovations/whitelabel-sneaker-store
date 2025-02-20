@@ -12,6 +12,7 @@ export class TopNavbarComponent {
   @Input() tabs: any[] = [];
   @Input() logoUrl: string | null = null;
   @Input() isDarkMode: boolean = false;
+  @Input() customBackground: string = 'var(--color-bg-muted)';
   isNavbarOpen = false;
   texts: any;
 

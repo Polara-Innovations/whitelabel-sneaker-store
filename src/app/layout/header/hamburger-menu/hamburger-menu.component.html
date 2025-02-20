@@ -5,7 +5,10 @@
     <span *ngIf="!logoUrl">{{ brandName }}</span>
   </div>
 
-  <!-- Botão de Toggle -->
+  <div class="search-container">
+    <app-search-bar></app-search-bar>
+  </div>
+
   <button class="hamburger-toggle" (click)="toggleMenu()">
     <i [ngClass]="isMenuOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
   </button>

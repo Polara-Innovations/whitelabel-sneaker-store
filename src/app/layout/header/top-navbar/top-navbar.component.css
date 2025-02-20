@@ -1,36 +1,66 @@
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    background-color: var(--background-secondary-color);
-    width: fit-content;
-    padding: 10px 20px;
-    border-radius: 8px;
+.hamburger-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001;
+  padding: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-bg-muted);
+}
+
+.hamburger-header .brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-header .brand .logo {
+  height: 40px;
+  width: auto;
+}
+
+.navbar-toggler {
+  border: none;
+  background: none;
+}
+
+.navbar-toggler-icon {
+  color: var(--text-color);
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 8px 12px; /* Adicionando padding para melhorar a área clicável */
+  border-radius: 4px; /* ordas arredondadas para links */
+  width: max-content;
+  transition: background-color 0.2s ease; /* Transição suave para o hover */
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+  background-color: rgba(74, 144, 226, 0.1); /* Efeito de fundo ao passar o mouse */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%; /* Torna o navbar responsivo */
   }
-  
-  .navbar-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .navbar-toggler {
-    border: none;
-    background: none;
-  }
-  
-  .navbar-toggler-icon {
-    color: var(--text-color);
-  }
-  
-  .nav-link {
-    color: var(--text-color);
-    text-decoration: none;
-    margin: 0 10px;
-  }
-  
-  .nav-link:hover {
-    color: var(--primary-color);
-  }
+}

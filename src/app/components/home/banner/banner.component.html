@@ -1,5 +1,16 @@
-<div class="banner text-center py-5">
-  <h1 class="text-title-lg">{{ texts.title }}</h1>
-  <p class="text-body-md text-muted">{{ texts.subtitle }}</p>
-  <button class="btn btn-primary mt-3">{{ texts.button }}</button>
+<div class="banner">
+  <div class="banner-images">
+    <ng-container *ngFor="let banner of banners; let i = index">
+      <div *ngIf="currentIndex === i" class="banner-item" (click)="navigate(banner.route)">
+        <img [src]="banner.imageUrl" alt="Banner" />
+      </div>
+    </ng-container>
+  </div>
+  <div class="bullets">
+    <button *ngFor="let banner of banners; let i = index"
+            class="bullet"
+            [class.active]="currentIndex === i"
+            (click)="selectSlide(i)">
+    </button>
+  </div>
 </div>

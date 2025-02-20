@@ -5,11 +5,11 @@
   left: 0;
   width: 100%;
   z-index: 1001;
-  padding: 10px 20px;
+  padding: var(--spacing-sm) var(--spacing-lg);
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: var(--background-secondary-color);
+  justify-content: space-between;
+  background-color: var(--color-bg-muted);
 }
 
 .hamburger-header .brand {
@@ -35,11 +35,12 @@
 /* Menu Hambúrguer */
 .hamburger-menu {
   position: fixed;
-  top: 50px;
+  top: 0;
   right: 0; 
-  width: 60vw;
-  height: calc(100% - 50px);
-  background-color: var(--background-secondary-color);
+  width: 20vw;
+  height: 100%;
+  padding-top: 5rem;
+  background-color: var(--color-bg-muted);
   transition: transform 0.3s ease;
   transform: translateX(100%);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); 
@@ -63,6 +64,7 @@
 }
 
 .menu-item {
+  cursor: pointer;
   margin-bottom: 15px;
 }
 
@@ -72,3 +74,17 @@
   font-size: 1.2rem;
   text-align: left;
 }
+
+.search-container {
+  margin-left: auto;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo dentro da barra de pesquisa */
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    width: 100vw;
+  }
+}
+

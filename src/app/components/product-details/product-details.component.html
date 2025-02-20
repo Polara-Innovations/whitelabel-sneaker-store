@@ -1,15 +1,14 @@
-<div class="container-lg py-5">
-    <div class="row">
-      <div class="col-md-6">
-        <img [src]="product.image" alt="{{ product.name }}" class="img-fluid rounded shadow">
-      </div>
-  
-      <div class="col-md-6">
-        <app-product-info [product]="product" [texts]="texts"></app-product-info>
-      </div>
-    </div>
-  
-    <div class="mt-5">
-      <app-related-products [relatedProducts]="relatedProducts" [title]="texts.relatedProductsTitle"></app-related-products>
-    </div>
+<div class="product-detail">
+  <div class="image-container">
+    <img [src]="product.imageUrl" [alt]="product.title" />
   </div>
+  <h3 class="product-title">{{ product.title }}</h3>
+  <p class="product-description">{{ product.description }}</p>
+  
+  <div class="price-container">
+    <span *ngIf="product.oldPrice" class="product-price-old">R$ {{ product.oldPrice | number:'1.2-2' }}</span>
+    <span class="product-price">R$ {{ product.price | number:'1.2-2' }}</span>
+  </div>
+
+  <button class="action-button" (click)="onActionClick()">Adicionar ao Carrinho</button>
+</div>

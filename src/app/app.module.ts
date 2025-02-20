@@ -6,27 +6,32 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
-import { FeaturedProductsComponent } from './components/home/featured-products/featured-products.component';
 import { BannerComponent } from './components/home/banner/banner.component';
 import { ProductsComponent } from './components/products/products.component';
 import { AboutComponent } from './components/about/about.component';
 import { AboutIntroComponent } from './components/about/about-intro/about-intro.component';
 import { AboutMissionComponent } from './components/about/about-mission/about-mission.component';
 import { AboutTeamComponent } from './components/about/about-team/about-team.component';
-import { ProductItemComponent } from './components/products/product-item/product-item.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
 import { ContactInfoComponent } from './components/contact/contact-info/contact-info.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NavItemComponent } from './layout/header/nav-item/nav-item.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
-import { RelatedProductsComponent } from './components/product-details/related-products/related-products.component';
-import { ProductInfoComponent } from './components/product-details/product-info/product-info.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { TopNavbarComponent } from './layout/header/top-navbar/top-navbar.component';
 import { HamburgerMenuComponent } from './layout/header/hamburger-menu/hamburger-menu.component';
+import { ProductFilterComponent } from './components/products/product-filter/product-filter.component';
+import { ProductCardComponent } from './components/shared/product-card/product-card.component';
+import { ProductCarouselComponent } from './components/shared/product-carrousel/product-carrousel.component';
+import { TitleComponent } from './components/shared/title/title.component';
+import { SearchBarComponent } from './components/shared/search-bar/search-bar.component';
+import { BrandCardComponent } from './components/shared/brand-card/brand-card.component';
+import { BrandListComponent } from './components/shared/brand-list/brand-list.component';
+import { CategoryCardComponent } from './components/shared/category-card/category-card.component';
+import { CategoryListComponent } from './components/shared/category-list/category-list.component';
 
 @NgModule({
   declarations: [
@@ -34,10 +39,8 @@ import { HamburgerMenuComponent } from './layout/header/hamburger-menu/hamburger
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    FeaturedProductsComponent,
     BannerComponent,
     ProductsComponent,
-    ProductItemComponent,
     AboutComponent,
     AboutIntroComponent,
     AboutMissionComponent,
@@ -47,19 +50,27 @@ import { HamburgerMenuComponent } from './layout/header/hamburger-menu/hamburger
     ContactInfoComponent,
     ProductDetailsComponent,
     NavItemComponent,
-    ProductInfoComponent,
-    RelatedProductsComponent,
     ProfileComponent,
     FaqComponent,
     TopNavbarComponent,
-    HamburgerMenuComponent
+    HamburgerMenuComponent,
+    ProductFilterComponent,
+    ProductCardComponent,
+    ProductCarouselComponent,
+    TitleComponent,
+    SearchBarComponent,
+    BrandCardComponent,
+    BrandListComponent,
+    CategoryCardComponent,
+    CategoryListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     CommonModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

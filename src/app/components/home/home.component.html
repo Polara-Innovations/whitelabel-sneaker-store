@@ -1,5 +1,7 @@
-<div class="container-lg">
-    <app-banner></app-banner>
-    <app-featured-products></app-featured-products>
-    <app-about-us></app-about-us>
-  </div>
+<app-banner [banners]="banners"></app-banner>
+<app-title text="Novidades" size="large"></app-title>
+<app-product-carrousel [products]="featuredProducts"></app-product-carrousel>
+<app-title text="Marcas" size="large"></app-title>
+<app-brand-list [brands]="brands"></app-brand-list>
+<app-title text="Categorias" size="large"></app-title>
+<app-category-list [categories]="categories"></app-category-list>

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { SettingsService } from '../../services/settings/settings.service';
 import { ThemeService } from '../../services/theme/theme.service';
 
+type MenuType = 'hamburger' | 'tabs';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

@@ -1,5 +1,5 @@
 .accordion-button {
-    background-color: var(--background-secondary-color);
+    background-color: var(--color-bg-muted);
     color: var(--text-color);
   }
   

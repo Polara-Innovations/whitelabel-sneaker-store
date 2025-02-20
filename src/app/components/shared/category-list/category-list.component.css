@@ -1,0 +1,25 @@
+.category-list {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .brand-list-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .brand-list-track {
+    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha */
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    gap: var(--spacing-md);
+    width: 85%;
+    justify-content: center;
+    position: relative;
+    overflow-x: hidden;
+    padding: var(--spacing-md) 0;
+  }

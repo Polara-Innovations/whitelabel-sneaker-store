@@ -1,0 +1,12 @@
+<div class="brand-list">
+  <div class="brand-list-container">
+    <div class="brand-list-track">
+      <app-brand-card
+      *ngFor="let brand of brands"
+      [name]="brand.name"
+      [imageUrl]="brand.imageUrl"
+      actionLabel="Ver mais"
+    ></app-brand-card>
+  </div>
+  </div>
+</div>

@@ -11,7 +11,7 @@ export class HamburgerMenuComponent {
   @Input() tabs: any[] = [];
   @Input() logoUrl: string | null = null;
   @Input() brandName: string = 'Sneaker Store';
-  @Input() customBackground: string = 'var(--background-secondary-color)';
+  @Input() customBackground: string = 'var(--color-bg-muted)';
   isMenuOpen = false;
 
   constructor(private themeService: ThemeService) {}

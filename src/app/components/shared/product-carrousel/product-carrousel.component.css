@@ -1,0 +1,100 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg) 0;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  gap: var(--spacing-md);
+  width: 85%;
+  justify-content: center;
+  position: relative; /* Necessário para o pseudo-elemento */
+  overflow-x: hidden;
+  padding: var(--spacing-md) 0;
+}
+
+/* Adicionando o efeito de fade */
+.carousel-track::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px; /* Largura do fade */
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none; /* Faz com que o pseudo-elemento não interfira nos cliques */
+}
+
+.carousel-track::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px; /* Largura do fade */
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none; /* Faz com que o pseudo-elemento não interfira nos cliques */
+}
+
+.card {
+  height: 300px; 
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-bg-light);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: var(--shadow-sm);
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
+  }
+}
+
+.nav-button.prev {
+  left: 3rem;
+}
+
+.nav-button.next {
+  right: 3rem;
+}
+
+@media (max-width: 768px) {
+
+  .card {
+    flex: 0 0 100%;
+    max-width: 100%; 
+  }
+
+  .nav-button.next {
+    right: 0;
+  }
+
+  .nav-button.prev {
+    left: 0;
+  }
+}

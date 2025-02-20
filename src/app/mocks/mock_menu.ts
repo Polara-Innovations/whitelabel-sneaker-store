@@ -8,7 +8,7 @@ export const MOCK_MENU = {
           { name: 'Contato', route: '/contact', icon: 'fas fa-envelope', display: 'both' },
           { name: 'Perfil', route: '/profile', icon: 'fas fa-user', display: 'both' }, 
           { name: 'Carrinho', route: '/cart', icon: 'fas fa-shopping-cart', display: 'both' } ,
-          { name: 'Trocar Tema', route: null, icon: 'fas fa-adjust', display: 'icon', action: 'toggleTheme' } 
+          { name: 'Trocar Tema', route: null, icon: 'fas fa-adjust', display: 'both', action: 'toggleTheme' } 
         ]
     }
 };

@@ -1,46 +1,16 @@
-import { Component } from '@angular/core';
-import { SettingsService } from '../../services/settings/settings.service';
+import { Component, Input } from '@angular/core';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.css'],
-  standalone: false
+  styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent {
-  product: any;
-  texts: any;
-  relatedProducts: any[];
+  @Input() product!: Product; // Recebe um produto
 
-  constructor(private settingsService: SettingsService) {
-    this.texts = this.settingsService.getTexts().productDetails;
-    this.product = {
-      name: 'Tênis Esportivo',
-      description: 'Tênis confortável e estiloso, ideal para o dia a dia.',
-      price: 'R$ 199,90',
-      image: 'https://picsum.photos/400/300?random=1'
-    };
-    this.relatedProducts = [
-      {
-        name: 'Tênis Casual',
-        price: 'R$ 249,90',
-        image: 'https://picsum.photos/400/300?random=2'
-      },
-      {
-        name: 'Tênis de Corrida',
-        price: 'R$ 299,90',
-        image: 'https://picsum.photos/400/300?random=3'
-      },
-      {
-        name: 'Tênis Infantil',
-        price: 'R$ 149,90',
-        image: 'https://picsum.photos/400/300?random=4'
-      },
-      {
-        name: 'Tênis Esportivo Pro',
-        price: 'R$ 399,90',
-        image: 'https://picsum.photos/400/300?random=5'
-      }
-    ];
+  onActionClick() {
+    // Implemente a ação ao clicar no botão
+    console.log('Clicou no botão!');
   }
 }

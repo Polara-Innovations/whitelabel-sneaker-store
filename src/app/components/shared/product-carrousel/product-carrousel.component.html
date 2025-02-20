@@ -1,0 +1,20 @@
+<div class="carousel-container">
+  <button class="nav-button prev" *ngIf="navigationEnabled" (click)="prevSlide()">&#10094;</button>
+
+  <div class="carousel-wrapper">
+    <div class="carousel-track" #carouselTrack>
+      <app-product-card
+        *ngFor="let product of displayedProducts"
+        [title]="product.title"
+        [description]="product.description"
+        [oldPrice]="product.oldPrice"
+        [price]="product.price"
+        [imageUrl]="product.imageUrl"
+        [hasAction]="false"
+        (actionClick)="onProductActionClick(product)"
+      ></app-product-card>
+    </div>
+  </div>
+
+  <button class="nav-button next" *ngIf="navigationEnabled" (click)="nextSlide()">&#10095;</button>
+</div>
