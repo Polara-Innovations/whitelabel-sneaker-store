@@ -5,13 +5,8 @@
     <div class="carousel-track" #carouselTrack>
       <app-product-card
         *ngFor="let product of displayedProducts"
-        [title]="product.title"
-        [description]="product.description"
-        [oldPrice]="product.oldPrice"
-        [price]="product.price"
-        [imageUrl]="product.imageUrl"
-        [hasAction]="false"
-        (actionClick)="onProductActionClick(product)"
+        [product]="product"
+        [showAction]="false"
       ></app-product-card>
     </div>
   </div>

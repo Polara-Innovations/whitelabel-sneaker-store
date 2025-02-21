@@ -1,4 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router'; // Importar Router para navegação
+import { Product } from '../../../models/product.model';
 
 @Component({
   selector: 'app-product-card',
@@ -6,18 +8,14 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent {
-  @Input() title!: string;
-  @Input() description!: string;
-  @Input() price!: number;
-  @Input() imageUrl!: string;
-  @Input() oldPrice?: number; 
-  @Input() hasAction = true;
-  @Input() actionLabel = 'Ver Detalhes';
+  @Input() actionLabel: string = 'Ver Detalhes'; 
   @Input() showTags = false;
-  @Input() tags: string[] = []; 
-  @Output() actionClick = new EventEmitter<void>();
+  @Input() showAction = false;
+  @Input() product?: Product
 
-  onActionClick(): void {
-    this.actionClick.emit();
+  constructor(private router: Router) {}
+
+  onCardClick(): void {
+    this.router.navigate(['/product-details', this.product?.id]);
   }
 }

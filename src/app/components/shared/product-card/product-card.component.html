@@ -1,23 +1,23 @@
-<div class="product-card-container">
+<div class="product-card-container" (click)="onCardClick()">
   <div class="image-container">
-    <img [src]="imageUrl" [alt]="title" />
+    <img [src]="product?.images?.[0]" [alt]="product?.title" />
   </div>
 
   <div class="product-card">
     <div class="product-title-container">
       <div class="tags" *ngIf="showTags">
-        <span class="tag" *ngFor="let tag of tags">{{ tag }}</span>
+        <span class="tag" *ngFor="let tag of product?.tags">{{ tag }}</span>
       </div>
-      <h3 class="product-title" title="{{ title }}">{{ title }}</h3>
-      <div class="tooltip">{{ title }}</div>
+      <h3 class="product-title" title="{{ product?.title }}">{{ product?.title }}</h3>
+      <div class="tooltip">{{ product?.title }}</div>
     </div>
-    <p class="product-description">{{ description }}</p>
+    <p class="product-description">{{ product?.description }}</p>
     
     <div class="price-container">
-      <span *ngIf="oldPrice" class="product-price-old">R$ {{ oldPrice | number:'1.2-2' }}</span>
-      <span class="product-price">R$ {{ price | number:'1.2-2' }}</span>
+      <span *ngIf="product?.oldPrice" class="product-price-old">R$ {{ product?.oldPrice | number:'1.2-2' }}</span>
+      <span class="product-price">R$ {{ product?.price | number:'1.2-2' }}</span>
     </div>
 
-    <button *ngIf="hasAction" class="action-button" (click)="onActionClick()">{{ actionLabel }}</button>
+    <button *ngIf="showAction" class="action-button" (click)="onCardClick">{{ actionLabel }}</button>
   </div>
 </div>

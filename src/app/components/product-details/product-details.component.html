@@ -1,14 +1,55 @@
-<div class="product-detail">
-  <div class="image-container">
-    <img [src]="product.imageUrl" [alt]="product.title" />
-  </div>
-  <h3 class="product-title">{{ product.title }}</h3>
-  <p class="product-description">{{ product.description }}</p>
-  
-  <div class="price-container">
-    <span *ngIf="product.oldPrice" class="product-price-old">R$ {{ product.oldPrice | number:'1.2-2' }}</span>
-    <span class="product-price">R$ {{ product.price | number:'1.2-2' }}</span>
+<div class="product-container">
+  <div class="product-gallery">
+    <div class="main-image">
+      <img [src]="product.images[0]" [alt]="product.title" />
+    </div>
+    <div class="thumbnails">
+      <img *ngFor="let img of product.images" [src]="img" [alt]="product.title" (click)="selectImage(img)" />
+    </div>
   </div>
 
-  <button class="action-button" (click)="onActionClick()">Adicionar ao Carrinho</button>
+  <div class="product-info">
+    <div class="tags">
+      <span *ngFor="let tag of product.tags" class="tag">{{ tag }}</span>
+    </div>
+    <h1>{{ product.title }}</h1>
+    <div class="price">
+      <span *ngIf="product.oldPrice">De: {{ product.oldPrice | currency: 'BRL' }}</span>
+      <span>{{ product.price | currency: 'BRL' }}</span>
+    </div>
+    <div class="stock" [class.in-stock]="product.inStock">
+      {{ product.inStock ? 'Em Estoque' : 'Fora de Estoque' }}
+    </div>
+
+    <div class="color-selector">
+      <h3>Cor</h3>
+      <div class="color-swatches">
+        <button *ngFor="let color of product.colors" [style.background-color]="color" (click)="selectColor(color)"></button>
+      </div>
+    </div>
+
+    <div class="size-selector">
+      <h3>Tamanho</h3>
+      <div class="size-grid">
+        <button *ngFor="let size of product.sizes" (click)="selectSize(size)">{{ size }}</button>
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <button class="add-to-cart" (click)="addToCart()" [disabled]="!product.inStock">
+        Adicionar ao Carrinho
+      </button>
+      <button class="add-to-wishlist" (click)="toggleWishlist()">
+        <i class="heart-icon"></i>
+      </button>
+    </div>
+  </div>
 </div>
+
+<app-title text="Descrição" size="large" position="center"></app-title>
+
+<div class="product-description">
+  <p>{{ product.description }}</p>
+</div>
+
+<app-product-carrousel [products]="relatedProducts"></app-product-carrousel>

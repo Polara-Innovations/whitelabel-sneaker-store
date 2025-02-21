@@ -87,8 +87,4 @@ export class ProductCarouselComponent implements AfterViewInit {
     const track = this.carouselTrack.nativeElement as HTMLElement;
     track.style.transform = `translateX(-${this.currentIndex * this.cardWidth}px)`;
   }
-
-  onProductActionClick(product: Product): void {
-    console.log(`Produto "${product.title}" adicionado ao carrinho!`);
-  }
 }
