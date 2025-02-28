@@ -8,7 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ToggleComponent {
   @Input() isChecked: boolean = false;
-  @Output() toggleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() toggleChange = new EventEmitter<boolean>();
 
   toggle() {
     this.isChecked = !this.isChecked;

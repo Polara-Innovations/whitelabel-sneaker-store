@@ -1,0 +1,64 @@
+.contact-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+  
+  .contact-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .contact-title {
+    color: var(--contact-form-title);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .contact-description {
+    color: var(--contact-form-label);
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .contact-content {
+    display: flex;
+    gap: var(--spacing-xl);
+    align-items: stretch; /* Garante que ambos os containers se estendam para ter a mesma altura */
+  }
+  
+  .contact-form-container,
+  .contact-info-container {
+    flex: 1; /* Ambos têm o mesmo peso de flex para garantir larguras iguais */
+    min-height: 600px; /* Define uma altura mínima para ambos os containers */
+    display: flex; /* Permite que os filhos se estendam para preencher o container */
+  }
+  
+  /* Faz com que os componentes filhos preencham todo o espaço disponível */
+  .contact-form-container > app-contact-form,
+  .contact-info-container > app-contact-info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media (max-width: 992px) {
+    .contact-content {
+      flex-direction: column;
+    }
+    
+    .contact-form-container,
+    .contact-info-container {
+      width: 100%;
+      min-height: auto; /* Remove a altura mínima no modo responsivo */
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .contact-info-container {
+      margin-bottom: 0;
+    }
+  }

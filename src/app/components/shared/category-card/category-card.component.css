@@ -1,92 +1,98 @@
+:host {
+  display: block;
+}
+
 .category-card-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    z-index: 500;
-  
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-    }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  z-index: 500;
+  box-shadow: var(--card-shadow);
+}
+
+.category-card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.category-card {
+  border-bottom-left-radius: var(--border-radius-lg);
+  border-bottom-right-radius: var(--border-radius-lg);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: var(--spacing-md);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-top-left-radius: var(--border-radius-lg);
+  border-top-right-radius: var(--border-radius-lg);
+}
+
+.image-container img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  max-width: none;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.category-title-container {
+  position: relative; 
+}
+
+.category-title {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--card-title);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 150px;
+  background-color: var(--card-tooltip-bg);
+  color: var(--card-tooltip-text);
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 10;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.category-title-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .category-title {
+    font-size: 0.8em; 
   }
   
   .category-card {
-    border-bottom-left-radius: var(--border-radius-lg);
-    border-bottom-right-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-md);
-    background: var(--color-bg-light);
-    padding: var(--spacing-md);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    padding: var(--spacing-sm);
   }
-  
-  .image-container {
-    position: relative;
-    width: 100%; /* Mantém a largura total do card */
-    height: 100%; /* A altura será 100% do card */
-    aspect-ratio: 1; /* Garante que a altura e a largura sejam iguais (quadrado) */
-    overflow: hidden;
-    border-top-left-radius: var(--border-radius-lg);
-    border-top-right-radius: var(--border-radius-lg);
-  }
-  
-  .image-container img {
-    position: absolute;
-    top: 50%; /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    width: auto; /* Mantém a largura automática para respeitar a proporção */
-    height: 100%; /* A imagem preencherá toda a altura do contêiner */
-    max-width: none; /* Remove qualquer limite de largura */
-    transform: translate(-50%, -50%); /* Move a imagem para centralizá-la */
-    object-fit: cover; /* Cobre o espaço disponível sem distorcer */
-  }
-  
-  .category-title-container {
-    position: relative; 
-  }
-  
-  .category-title {
-    font-size: 0.9em;
-    font-weight: 600;
-    color: var(--color-text-light);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  
-  .tooltip {
-    visibility: hidden;
-    width: 150px;
-    background-color: rgba(0, 0, 0, 0.75);
-    color: #fff;
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px;
-    position: absolute;
-    z-index: 10;
-    bottom: 100%; /* Posiciona acima do título */
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0; /* Começa invisível */
-    transition: opacity 0.3s;
-  }
-  
-  .category-title-container:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-  }
-  
-  @media (max-width: 768px) {
-    .category-card-container {
-      height: auto;
-    }
-  
-    .category-title {
-      font-size: 0.8em; 
-    }
-  }
+}

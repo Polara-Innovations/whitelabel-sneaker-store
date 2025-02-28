@@ -1,5 +1,10 @@
-<div class="top-navbar" *ngIf="isMenuOpen">
-  <div class="tabs-container d-flex flex-wrap">
-    <app-nav-item-list [tabs]="tabs" direction="column" [isVisible]="isMenuOpen"></app-nav-item-list>
+<div class="top-navbar" *ngIf="(!isMobile) || (isMobile && isMenuOpen)" [@slideInOut]>
+  <div class="tabs-container">
+    <app-nav-item-list 
+    [tabs]="tabs" 
+    direction="column" 
+    position="center"
+    [isVisible]="true">
+  </app-nav-item-list>
   </div>
 </div>

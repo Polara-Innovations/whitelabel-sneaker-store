@@ -1,5 +1,80 @@
-<footer class="bg-light text-center text-lg-start mt-4">
-    <div class="text-center p-3">
-      {{ texts.copyright }}
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <div class="footer-section">
+          <h4>Sobre nós</h4>
+          <ul>
+            <li><a routerLink="/about">Nossa História</a></li>
+            <li><a routerLink="/team">Equipe</a></li>
+            <li><a routerLink="/careers">Trabalhe Conosco</a></li>
+            <li><a routerLink="/blog">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="footer-section">
+          <h4>Ajuda</h4>
+          <ul>
+            <li><a routerLink="/faq">Perguntas Frequentes</a></li>
+            <li><a routerLink="/shipping">Entregas</a></li>
+            <li><a routerLink="/returns">Trocas e Devoluções</a></li>
+            <li><a routerLink="/contact">Fale Conosco</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="footer-section">
+          <h4>Categorias</h4>
+          <ul>
+            <li><a routerLink="/products/sneakers">Tênis</a></li>
+            <li><a routerLink="/products/clothing">Roupas</a></li>
+            <li><a routerLink="/products/accessories">Acessórios</a></li>
+            <li><a routerLink="/products/sale">Promoções</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <div class="footer-section">
+          <h4>Siga-nos</h4>
+          <div class="social-icons">
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+          
+          <h4 class="mt-4">Newsletter</h4>
+          <form class="newsletter-form">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Seu e-mail" aria-label="Seu e-mail">
+              <button class="btn btn-primary" type="submit">Assinar</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-  </footer>
+
+    <div class="copyright">
+      <p>&copy; {{ currentYear }} Sneaker Store. Todos os direitos reservados.</p>
+      <div class="footer-links">
+        <a routerLink="/terms">Termos de Uso</a>
+        <span class="separator">|</span>
+        <a routerLink="/privacy">Política de Privacidade</a>
+        <span class="separator">|</span>
+        <a routerLink="/cookies">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>

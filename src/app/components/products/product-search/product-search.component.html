@@ -1,0 +1,18 @@
+<div class="search-container">
+    <div class="search-input-wrapper">
+      <i class="fas fa-search search-icon"></i>
+      <input 
+        type="text" 
+        class="search-input" 
+        placeholder="Pesquisar produtos..." 
+        [(ngModel)]="searchTerm"
+        (input)="updateSearchTerm(searchTerm)"
+        (keyup.enter)="onSearch()" />
+      <button 
+        *ngIf="searchTerm" 
+        class="search-clear-btn" 
+        (click)="clearSearch()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>

@@ -1,6 +1,152 @@
 footer {
-    background-color: #f8f9fa;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-    color: #6c757d;
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 3rem 0 1.5rem;
+  border-top: 1px solid var(--footer-border);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col-md-3 {
+  width: 25%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.footer-section {
+  margin-bottom: 2rem;
+}
+
+h4 {
+  color: var(--footer-text);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--footer-link);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--footer-link-hover);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: var(--color-primary);
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.newsletter-form {
+  margin-top: 0.75rem;
+}
+
+.input-group {
+  display: flex;
+}
+
+.input-group .form-control::placeholder {
+  color: var(--footer-text);
+}
+
+.form-control {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--footer-border);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--footer-text);
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.btn-primary {
+  padding: 0.5rem 0.75rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark, var(--color-primary));
+}
+
+.copyright {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  margin-top: 0.75rem;
+}
+
+.separator {
+  margin: 0 0.5rem;
+  opacity: 0.5;
+}
+
+@media (max-width: 992px) {
+  .container {
+    padding: 1rem var(--spacing-md);
   }
+
+  .col-md-3 {
+    width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-md-3 {
+    width: 100%;
+  }
+  
+  .footer-section {
+    margin-bottom: 1.5rem;
+  }
+}

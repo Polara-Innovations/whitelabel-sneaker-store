@@ -1,16 +1,34 @@
-<div class="settings-container" *ngIf="isSettingsOpen">
-    <div class="settings-menu">
-      <h3 class="settings-title ">Configurações</h3>
-      <hr />
+<div class="settings-container" *ngIf="isSettingsOpen" [@fadeInOut]>
+  <div class="settings-menu">
+    <div class="settings-header">
+      <h3 class="settings-title">Configurações</h3>
+      <button class="close-button" (click)="close()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <hr />
+    
+    <div class="settings-section">
+      <h4>Aparência</h4>
       <div class="toggles">
         <label>
-          <app-toggle [isChecked]="isDarkMode" (toggleChange)="toggleDarkMode($event.valueOf())"></app-toggle>
-          Modo Escuro
+          <app-toggle [isChecked]="isDarkMode" (toggleChange)="toggleDarkMode($event)"></app-toggle>
+          <span>Modo Escuro</span>
         </label>
         <label>
-          <app-toggle [isChecked]="isHighContrast" (toggleChange)="toggleHighContrast($event.valueOf())"></app-toggle>
-          Alto Contraste
+          <app-toggle [isChecked]="isHighContrast" (toggleChange)="toggleHighContrast($event)"></app-toggle>
+          <span>Alto Contraste</span>
         </label>
+      </div>
     </div>
+    
+    <div class="settings-section" *ngIf="availableBrands.length > 1">
+      <h4>Marca</h4>
+      <div class="brand-selector">
+        <select [value]="selectedBrandId" (change)="changeBrand($event)">
+          <option *ngFor="let brand of availableBrands" [value]="brand.id">{{ brand.name }}</option>
+        </select>
+      </div>
     </div>
   </div>
+</div>

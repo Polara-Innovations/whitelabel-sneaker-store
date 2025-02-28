@@ -28,7 +28,9 @@ export class HomeComponent {
       inStock: true,
       stockQuantity: 10,
       colors: ['red', 'blue'],
-      sizes: ['38', '39', '40']
+      sizes: ['38', '39', '40'],
+      categories: ['footwear'],
+      createdAt: new Date(),
     },
     {
       id: 2,
@@ -48,9 +50,11 @@ export class HomeComponent {
         ]
       },
       inStock: true,
-      stockQuantity: 10,
+      sizes: ['40', '41', '42'],
+      categories: ['footwear'],
+      createdAt: new Date(),
+      stockQuantity: 15,
       colors: ['black', 'white'],
-      sizes: ['40', '41', '42']
     },
     {
       id: 3,
@@ -68,12 +72,13 @@ export class HomeComponent {
           'https://picsum.photos/400/300?random=12'
         ]
       },
+      sizes: ['39', '40', '41'],
+      categories: ['footwear'],
+      createdAt: new Date(),
       inStock: true,
       stockQuantity: 10,
       colors: ['green', 'yellow'],
-      sizes: ['39', '40', '41']
     }
-    // Add other products similarly
   ];
 
   promotionalProducts = [

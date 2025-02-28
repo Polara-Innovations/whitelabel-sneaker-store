@@ -1,7 +1,10 @@
-<ul class="navbar-nav" *ngIf="isVisible" [ngStyle]="{'flex-direction': direction === 'column' ? 'column' : 'row'}">
-    <app-nav-item *ngFor="let tab of tabs" 
+<ul class="navbar-nav" [ngClass]="{'column-direction': direction === 'column', 'row-direction': direction === 'row'}">
+  <app-nav-item 
+    *ngFor="let tab of tabs" 
     [tab]="tab" 
     [direction]="direction"
-    [isActive]="tab.route === currentRoute">
-</app-nav-item>
+    [position]="position"
+    [isActive]="tab.route === currentRoute"
+    (click)="onNavItemClick()">
+  </app-nav-item>
 </ul>

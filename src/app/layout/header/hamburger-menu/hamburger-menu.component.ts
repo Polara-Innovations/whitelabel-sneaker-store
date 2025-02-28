@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ThemeService } from '../../../services/theme/theme.service';
 
 @Component({
@@ -11,6 +11,11 @@ export class HamburgerMenuComponent {
   @Input() tabs: any[] = [];
   @Input() logoUrl: string | null = null;
   @Input() isMenuOpen = false;
+  @Output() menuClosed = new EventEmitter<void>();
 
   constructor(private themeService: ThemeService) {}
+  
+  closeMenu() {
+    this.menuClosed.emit();
+  }
 }

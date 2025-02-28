@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   standalone: false,
@@ -10,22 +11,23 @@ import { Router } from '@angular/router';
 export class NavItemListComponent {
   @Input() tabs: any[] = [];
   @Input() direction: 'row' | 'column' = 'row'; 
-  @Input() isVisible: boolean = false;
+  @Input() isVisible: boolean = true;
+  @Input() position: 'left' | 'center' | 'right' = 'left';
+  @Output() navItemClicked = new EventEmitter<void>();
+  
   currentRoute: string;
 
   constructor(private router: Router) {
     this.currentRoute = this.router.url; 
-  }
-
-  ngOnInit() {
-    this.router.events.subscribe(() => {
-      this.currentRoute = this.router.url;
+    
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: any) => {
+      this.currentRoute = event.url;
     });
   }
 
-  handleAction(action: string | null) {
-    if (action && typeof (this as any)[action] === 'function') {
-      (this as any)[action]();
-    }
+  onNavItemClick() {
+    this.navItemClicked.emit();
   }
 }

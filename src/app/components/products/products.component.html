@@ -1,20 +1,82 @@
-<div class="container-lg">
-  <!-- Título -->
-  <polara-section-title [title]="texts.title" size="large"></polara-section-title>
+<div class="main-container">
+  <div class="products-container">
+    <!-- Cabeçalho da página de produtos -->
+    <div class="products-header">
+      <div class="header-left">
+        <h1 class="products-title">Nossos Produtos</h1>
+        <p class="products-count">{{ totalItems }} produtos encontrados</p>
+      </div>
 
-  <div class="row mt-4">
-    <!-- Filtro (Coluna Esquerda) -->
-    <div class="col-md-3">
-      <app-product-filter></app-product-filter>
-    </div>
+      <div class="header-right">
+        <app-product-search [initialValue]="filter.search" (search)="onSearch($event)">
+        </app-product-search>
 
-    <!-- Lista de Produtos (Coluna Direita) -->
-    <div class="col-md-9">
-      <div class="row">
-        <div class="col-md-4 mb-4" *ngFor="let product of products">
-          <app-product-item [product]="product"></app-product-item>
+        <div class="mobile-controls">
+          <app-product-sort 
+            [options]="sortOptions" 
+            [selected]="filter.sort"
+            (sortChange)="onSortChange($event)">
+          </app-product-sort>
+          
+          <button class="filter-toggle-btn" (click)="toggleFilters()" aria-label="Toggle Filters">
+            <i class="fas fa-filter"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="products-content">
+        <!-- Área de filtros lateral -->
+        <div class="filters-sidebar" [class.active]="showFilters">
+          <div class="filters-header">
+            <h3>Filtros</h3>
+            <button class="clear-filters-btn" (click)="clearFilters()">Limpar Filtros</button>
+          </div>
+
+          <app-product-filters [filterGroups]="filterGroups" [priceRange]="filter.priceRange" [products]="products"
+            (filterChange)="onFilterChange($event)" (priceRangeChange)="filter.priceRange = $event; applyFilters()">
+          </app-product-filters>
+        </div>
+
+        <!-- Grade de produtos -->
+        <div class="products-grid">
+          <div *ngIf="loading" class="products-loading">
+            <div class="spinner"></div>
+            <p>Carregando produtos...</p>
+          </div>
+
+          <div *ngIf="!loading && paginatedProducts.length === 0" class="no-products">
+            <i class="fas fa-search"></i>
+            <p>Nenhum produto encontrado com os filtros selecionados.</p>
+            <button class="clear-filters-btn" (click)="clearFilters()">Limpar Filtros</button>
+          </div>
+
+          <div *ngIf="!loading && paginatedProducts.length > 0" class="products-grid-items">
+            <app-product-card *ngFor="let product of paginatedProducts" [product]="product" [showTags]="false"
+              [showAction]="false" actionLabel="Ver Detalhes">
+            </app-product-card>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paginação -->
+      <div class="pagination-container" *ngIf="totalPages > 1">
+        <div class="pagination">
+          <button class="pagination-btn" [disabled]="filter.page === 1" (click)="onPageChange(filter.page - 1)">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <div class="pagination-pages">
+            <button *ngFor="let page of [].constructor(totalPages); let i = index" class="pagination-page"
+              [class.active]="filter.page === i + 1" (click)="onPageChange(i + 1)">
+              {{ i + 1 }}
+            </button>
+          </div>
+
+          <button class="pagination-btn" [disabled]="filter.page === totalPages"
+            (click)="onPageChange(filter.page + 1)">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
       </div>
     </div>
   </div>
-</div>

@@ -1,0 +1,56 @@
+<div class="filters-container">
+  <!-- Filtro de preço -->
+  <div class="filter-group">
+    <div class="filter-header">
+      <h4>Faixa de Preço</h4>
+    </div>
+    <div class="price-range-filter">
+      <div class="price-inputs">
+        <div class="price-input-group">
+          <label for="min-price">Mínimo</label>
+          <div class="price-input-wrapper">
+            <span class="price-currency">R$</span>
+            <input 
+              type="number" 
+              id="min-price" 
+              [(ngModel)]="minPrice" 
+              min="0"
+              [max]="maxPrice"
+              (change)="onPriceRangeChange()" />
+          </div>
+        </div>
+        <div class="price-input-group">
+          <label for="max-price">Máximo</label>
+          <div class="price-input-wrapper">
+            <span class="price-currency">R$</span>
+            <input 
+              type="number" 
+              id="max-price" 
+              [(ngModel)]="maxPrice" 
+              [min]="minPrice"
+              [max]="maxPossiblePrice"
+              (change)="onPriceRangeChange()" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grupos de filtros dinâmicos -->
+  <div *ngFor="let group of filterGroups" class="filter-group">
+    <div class="filter-header" (click)="toggleGroup(group)">
+      <h4>{{ group.name }}</h4>
+      <i class="fas" [ngClass]="group.expanded ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+    </div>
+    <div class="filter-options" [class.expanded]="group.expanded">
+      <div *ngFor="let option of group.options" class="filter-option">
+        <input type="checkbox" [id]="option.id" [checked]="option.selected"
+          (change)="onFilterChange(group.id, option.id, $event)" />
+        <label [for]="option.id">
+          {{ option.label }}
+          <span class="option-count" *ngIf="option.count !== undefined">({{ option.count }})</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

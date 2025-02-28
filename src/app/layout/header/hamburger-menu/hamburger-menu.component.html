@@ -1,12 +1,18 @@
 <div class="hamburger-menu" [ngClass]="{'open': isMenuOpen}">
+  <div class="menu-header">
+    <div class="brand" *ngIf="logoUrl">
+      <img [src]="logoUrl" alt="Logo" class="hamburger-logo">
+    </div>
+    <button class="close-button" (click)="closeMenu()">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
   <div class="menu-content">
-    <ul class="menu-list">
-      <li *ngFor="let tab of tabs" class="menu-item">
-        <a *ngIf="tab.route" routerLink="{{ tab.route }}">
-          <i *ngIf="tab.icon" class="{{ tab.icon }}" [ngClass]="{'me-2': tab.display !== 'icon'}"></i>
-          <span *ngIf="tab.display !== 'icon'">{{ tab.name }}</span>
-        </a>
-      </li>
-    </ul>
+    <app-nav-item-list 
+      [tabs]="tabs" 
+      direction="column" 
+      [isVisible]="true"
+      (navItemClicked)="closeMenu()">
+    </app-nav-item-list>
   </div>
 </div>

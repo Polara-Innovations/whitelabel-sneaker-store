@@ -6,6 +6,8 @@ export interface Product {
   price: number;
   imagesByColor: { [colorCode: string]: string[] };
   tags: string[];
+  categories: string[];
+  createdAt: Date;
   inStock: boolean;
   stockQuantity: number;
   colors: string[];

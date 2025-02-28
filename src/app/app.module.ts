@@ -23,7 +23,6 @@ import { FaqComponent } from './components/faq/faq.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { TabsMenuComponent } from './layout/header/tabs-menu/tabs-menu.component';
 import { HamburgerMenuComponent } from './layout/header/hamburger-menu/hamburger-menu.component';
-import { ProductFilterComponent } from './components/products/product-filter/product-filter.component';
 import { ProductCardComponent } from './components/shared/product-card/product-card.component';
 import { ProductCarouselComponent } from './components/shared/product-carrousel/product-carrousel.component';
 import { TitleComponent } from './components/shared/title/title.component';
@@ -36,6 +35,11 @@ import { NavItemListComponent } from './layout/header/nav-item-list/nav-item-lis
 import { SettingsModalComponent } from './layout/header/settings-modal/settings-modal.component';
 import { ToggleComponent } from './components/shared/toggle/toggle.component';
 import { CartModalComponent } from './layout/header/cart-modal/cart-modal.component';
+import { SafePipe } from './pipes/safe/safe.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductSearchComponent } from './components/products/product-search/product-search.component';
+import { ProductFiltersComponent } from './components/products/product-filters/product-filters.component';
+import { ProductSortComponent } from './components/products/product-sort/product-sort.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,9 @@ import { CartModalComponent } from './layout/header/cart-modal/cart-modal.compon
     HomeComponent,
     BannerComponent,
     ProductsComponent,
+    ProductSearchComponent,
+    ProductFiltersComponent,
+    ProductSortComponent,
     AboutComponent,
     AboutIntroComponent,
     AboutMissionComponent,
@@ -58,7 +65,6 @@ import { CartModalComponent } from './layout/header/cart-modal/cart-modal.compon
     FaqComponent,
     TabsMenuComponent,
     HamburgerMenuComponent,
-    ProductFilterComponent,
     ProductCardComponent,
     ProductCarouselComponent,
     TitleComponent,
@@ -70,7 +76,8 @@ import { CartModalComponent } from './layout/header/cart-modal/cart-modal.compon
     NavItemListComponent,
     SettingsModalComponent,
     ToggleComponent,
-    CartModalComponent
+    CartModalComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,
@@ -78,7 +85,8 @@ import { CartModalComponent } from './layout/header/cart-modal/cart-modal.compon
     CommonModule,
     AppRoutingModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,12 +1,13 @@
 <div class="category-list">
-    <div class="brand-list-container">
-      <div class="brand-list-track">
-        <app-category-card
-          *ngFor="let category of categories"
-          [title]="category.name"
-          [imageUrl]="category.imageUrl"
-          [route]="category.route"
-        ></app-category-card>
-      </div>
+  <div class="category-list-container">
+    <div class="category-list-track">
+      <app-category-card
+        *ngFor="let category of categories"
+        [title]="category.name"
+        [imageUrl]="category.imageUrl"
+        [route]="category.route"
+        [ngStyle]="{'width.px': cardWidth}"
+      ></app-category-card>
     </div>
   </div>
+</div>

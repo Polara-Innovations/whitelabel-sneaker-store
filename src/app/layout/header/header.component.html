@@ -1,39 +1,71 @@
 <div class="navbar" [ngClass]="{'dark-mode': isDarkMode}">
   <div class="brand d-flex align-items-center">
     <img *ngIf="logoUrl" [src]="logoUrl" alt="Logo" class="logo me-2">
-    <span *ngIf="!logoUrl">{{ brandName }}</span>
+    <span *ngIf="!logoUrl" class="brand-name">{{ brandName }}</span>
   </div>
 
-  <div class="nav-items" style="flex: 1;">
-    <app-nav-item-list [tabs]="tabs" direction="row" [isVisible]="!isMobile || isHamburgerMenu"></app-nav-item-list>
+  <!-- Desktop Navigation - Tabs in row direction -->
+  <div class="nav-items desktop-nav" *ngIf="!isMobile && !isHamburgerMenu">
+    <app-nav-item-list 
+      [tabs]="tabs" 
+      direction="row" 
+      position="center"
+      [isVisible]="true">
+    </app-nav-item-list>
   </div>
 
   <div class="toggles">
-    <button class="settings-toggle" (click)="isSettingsOpen = !isSettingsOpen">
+    <button class="settings-toggle" (click)="toggleSettings()" [class.active]="isSettingsOpen" aria-label="Settings">
       <i class="fas fa-cog"></i>
     </button>
-    <button class="profile-toggle" (click)="isProfileOpen = !isProfileOpen">
+    <button class="profile-toggle" (click)="toggleProfile()" [class.active]="isProfileOpen" aria-label="Profile">
       <i class="fas fa-user"></i>
     </button>
-    <button class="cart-toggle" (click)="isCartOpen = !isCartOpen"> 
+    <button class="cart-toggle" (click)="toggleCart()" [class.active]="isCartOpen" aria-label="Cart">
       <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count" *ngIf="cartItemCount > 0">{{ cartItemCount }}</span>
+    </button>
+    <button class="menu-toggle" *ngIf="isMobile" (click)="toggleMenu()" [class.active]="isMenuOpen" aria-label="Menu">
+      <i [ngClass]="isMenuOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
     </button>
   </div>
-
-  <button class="navbar-toggle" (click)="toggleMenu()" *ngIf="isMobile && !isHamburgerMenu">
-    <i [ngClass]="isMenuOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
-  </button>
 </div>
 
-<app-settings [isSettingsOpen]="isSettingsOpen"></app-settings>
+<!-- Backdrop para fechar menus quando clicado -->
+<div class="menu-backdrop" *ngIf="isMenuOpen || isSettingsOpen || isCartOpen || isProfileOpen" (click)="closeAllMenus()"></div>
 
-<app-cart-modal [isCartOpen]="isCartOpen"></app-cart-modal>
+<!-- Menu Tabs - Usando o componente TabsMenu -->
+<app-tabs-menu 
+  *ngIf="!isHamburgerMenu && isMenuOpen" 
+  [tabs]="tabs" 
+  [logoUrl]="logoUrl" 
+  [isDarkMode]="isDarkMode" 
+  [isMenuOpen]="isMenuOpen">
+</app-tabs-menu>
 
-<!-- Menu hamburguer -->
-<app-hamburger-menu *ngIf="isHamburgerMenu" [tabs]="tabs" [logoUrl]="logoUrl" [isMenuOpen]="isMenuOpen"
-  (toggleMenu)="toggleMenu()"></app-hamburger-menu>
+<!-- Componentes de menu -->
+<app-settings [isSettingsOpen]="isSettingsOpen" (closeSettings)="isSettingsOpen = false"></app-settings>
 
-<!-- Navbar com tabs quando não é hamburguer -->
-<div class="tabs-container" *ngIf="!isHamburgerMenu">
-  <app-tabs-menu [tabs]="tabs" [logoUrl]="logoUrl" [isDarkMode]="isDarkMode" [isMenuOpen]="isMenuOpen"></app-tabs-menu>
+<app-cart-modal [isCartOpen]="isCartOpen" (closeCart)="isCartOpen = false"></app-cart-modal>
+
+<!-- Perfil dropdown -->
+<div class="profile-dropdown" *ngIf="isProfileOpen">
+  <div class="profile-menu">
+    <h3>Minha Conta</h3>
+    <ul>
+      <li><a routerLink="/profile"><i class="fas fa-user-circle"></i> Perfil</a></li>
+      <li><a routerLink="/orders"><i class="fas fa-box"></i> Pedidos</a></li>
+      <li><a routerLink="/wishlist"><i class="fas fa-heart"></i> Lista de Desejos</a></li>
+      <li><a routerLink="/logout"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+    </ul>
+  </div>
 </div>
+
+<!-- Menu hamburguer (quando configurado para este tipo) -->
+<app-hamburger-menu 
+  *ngIf="isHamburgerMenu" 
+  [tabs]="tabs" 
+  [logoUrl]="logoUrl" 
+  [isMenuOpen]="isMenuOpen"
+  (menuClosed)="isMenuOpen = false">
+</app-hamburger-menu>

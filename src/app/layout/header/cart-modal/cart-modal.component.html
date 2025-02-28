@@ -1,55 +1,77 @@
+<div class="cart-modal-backdrop" *ngIf="isCartOpen" (click)="close()"></div>
 <div class="cart-modal-container" *ngIf="isCartOpen" [@modalAnimation]>
   <div class="cart-modal-menu">
-    <div>
-    <h3 class="cart-modal-title">Carrinho</h3>
-    <a href="#" class="cart-modal-close" (click)="closeCart()">
-      <i class="fas fa-times"></i>
-    </a>
+    <div class="cart-modal-header">
+      <h3 class="cart-modal-title">Carrinho</h3>
+      <button class="cart-modal-close" (click)="close()" aria-label="Fechar carrinho">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
     <hr />
     
-    <div class="cart-modal-items" *ngIf="cartItems.length > 0; else emptyCart">
-      <div *ngFor="let item of cartItems" class="cart-modal-item">
-        <div class="cart-modal-item-image">
-          <a [href]="'/produto/' + item.id">
-            <img [src]="item.imageUrl" alt="{{ item.name }}" class="cart-modal-item-thumbnail">
-          </a>
-        </div>
+    <div class="cart-modal-content">
+      <div class="cart-modal-items" *ngIf="cartItems.length > 0; else emptyCart">
+        <div *ngFor="let item of cartItems" class="cart-modal-item">
+          <div class="cart-modal-item-image">
+            <a [routerLink]="['/produto', item.productId]" (click)="close()">
+              <img [src]="item.imageUrl" [alt]="item.name" class="cart-modal-item-thumbnail">
+            </a>
+          </div>
 
-        <div class="cart-modal-item-name" data-title="Produto">
-          <a [href]="'/produto/' + item.id">{{ item.name }}</a>
-        </div>
+          <div class="cart-modal-item-details">
+            <div class="cart-modal-item-name">
+              <a [routerLink]="['/produto', item.productId]" (click)="close()">{{ item.name }}</a>
+            </div>
 
-        <div class="cart-modal-item-price" data-title="Preço">
-          <span class="quantity">
-            <span class="product-quantity">{{ item.quantity }} ×</span>
-            <span class="price-amount"><bdi><span class="currency-symbol">R$</span>&nbsp;{{ item.price | currency:'BRL':'symbol':'1.2-2' }}</bdi></span>
-          </span>
-        </div>
+            <div class="cart-modal-item-quantity">
+              <button class="quantity-btn" (click)="updateQuantity(item.id, -1)" [disabled]="item.quantity <= 1">-</button>
+              <span class="quantity-value">{{ item.quantity }}</span>
+              <button class="quantity-btn" (click)="updateQuantity(item.id, 1)">+</button>
+            </div>
 
-        <div class="cart-modal-item-remove">
-          <a href="#" (click)="removeItem(item.id)" aria-label="Remover este item">Remover</a>
+            <div class="cart-modal-item-price">
+              <span class="price-amount">{{ formatCurrency(item.price * item.quantity) }}</span>
+            </div>
+          </div>
+
+          <button class="cart-modal-item-remove" (click)="removeItem(item.id, $event)" aria-label="Remover este item">
+            <i class="fas fa-trash-alt"></i>
+          </button>
         </div>
       </div>
+
+      <ng-template #emptyCart>
+        <div class="empty-cart">
+          <div class="empty-cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <p>Seu carrinho está vazio</p>
+          <button class="continue-shopping" routerLink="/produtos" (click)="close()">Continuar comprando</button>
+        </div>
+      </ng-template>
     </div>
 
-    <ng-template #emptyCart>
-      <div class="empty-cart">
-        <img src="https://images.unsplash.com/photo-1585673097487-9d2462c776ff" alt="Empty cart" class="empty-cart-image">
-        <p>Your cart is empty</p>
+    <div class="cart-modal-footer" *ngIf="cartItems.length > 0">
+      <div class="cart-modal-subtotal">
+        <span>Subtotal:</span>
+        <span class="price-amount">{{ formatCurrency(subtotal) }}</span>
       </div>
-    </ng-template>
 
-    <div class="cart-modal-subtotal" *ngIf="cartItems.length > 0">
-      <strong>Subtotal:</strong>
-      <span class="price-amount"><bdi><span class="currency-symbol">R$</span>&nbsp;{{ subtotal | currency:'BRL':'symbol':'1.2-2' }}</bdi></span>
-    </div>
+      <div class="cart-modal-actions">
+        <button class="clear-cart-button" (click)="clearCart()">
+          <i class="fas fa-trash"></i> Limpar carrinho
+        </button>
+      </div>
 
-    <div class="cart-modal-footer-buttons" *ngIf="cartItems.length > 0">
-      <a href="/cart" class="button view-cart-modal-button">
-        <span class="button-text">Ver carrinho</span>
-      </a>
-      <a href="/checkout" class="button checkout-button">
-        <span class="button-text">Finalização de compra</span>
-      </a>
+      <div class="cart-modal-footer-buttons">
+        <a routerLink="/carrinho" class="button view-cart-button" (click)="close()">
+          Ver carrinho
+        </a>
+        <a routerLink="/checkout" class="button checkout-button" (click)="close()">
+          Finalizar compra
+        </a>
+      </div>
     </div>
   </div>
+</div>

@@ -1,6 +1,18 @@
-<div class="container-lg">
-    <h1 class="text-title-lg text-center my-4">{{ texts.title }}</h1>
-    <p class="text-body-md text-center text-muted">{{ texts.description }}</p>
-    <app-contact-form></app-contact-form>
-    <app-contact-info></app-contact-info>
+<main>
+<div class="contact-container">
+  <div class="contact-header">
+    <h1 class="contact-title">{{ texts.title }}</h1>
+    <p class="contact-description">{{ texts.description }}</p>
   </div>
+  
+  <div class="contact-content">
+    <div class="contact-form-container">
+      <app-contact-form></app-contact-form>
+    </div>
+    
+    <div class="contact-info-container">
+      <app-contact-info></app-contact-info>
+    </div>
+  </div>
+</div>
+</main>

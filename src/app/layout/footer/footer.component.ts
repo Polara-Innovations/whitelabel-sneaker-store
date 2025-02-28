@@ -1,18 +1,17 @@
-import { Component } from '@angular/core';
-import { SettingsService } from '../../services/settings/settings.service';
+import { Component, OnInit } from '@angular/core';
+import { ThemeService } from '../../services/theme/theme.service';
 
 @Component({
-  standalone: false,  
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css'
+  styleUrls: ['./footer.component.css'],
+  standalone: false
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
+  currentYear: number = new Date().getFullYear();
+  
+  constructor(private themeService: ThemeService) {}
 
-  texts: any
-
-  constructor(private settingsService: SettingsService) {
-    this.texts = this.settingsService.getTexts().footer;
+  ngOnInit(): void {
   }
-
 }

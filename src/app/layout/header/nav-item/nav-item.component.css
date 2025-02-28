@@ -1,26 +1,94 @@
 .nav-item {
-  position: relative; /* Para posicionar a linha corretamente */
+  position: relative;
+  transition: all 0.3s ease;
+  width: fit-content;
 }
 
 .nav-link {
   display: flex;
   align-items: center;
-  color: var(--text-color); /* Cor padrão do texto */
-  text-decoration: none; /* Remove o sublinhado padrão */
-  padding: 10px; /* Padding para área clicável */
-  transition: background-color 0.3s, color 0.3s; /* Transição suave */
+  color: var(--header-text);
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
 .nav-link:hover {
-  background-color: rgba(74, 144, 226, 0.1); /* Cor de fundo ao passar o mouse */
-  color: var(--primary-color); /* Cor do texto ao passar o mouse */
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--header-active);
+}
+
+.nav-item.active .nav-link {
+  color: var(--header-active);
+  font-weight: 500;
+}
+
+.nav-item.active .nav-link:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--header-active);
+}
+
+/* Indicador à esquerda (padrão para vertical) */
+.nav-item.indicator-left .title-line {
+  width: 4px;
+  height: 70%;
+  top: 15%;
+  left: 0;
+  right: auto;
+  bottom: auto;
+}
+
+/* Indicador abaixo (para horizontal) */
+.nav-item.indicator-bottom .title-line {
+  height: 2px;
+  width: 80%;
+  left: 10%;
+  right: 10%;
+  bottom: 0;
+  top: auto;
+}
+
+.nav-item.vertical.indicator-bottom .nav-link {
+  justify-content: center;
 }
 
 .title-line {
-  height: 2px; /* Altura da linha */
-  background-color: var(--color-primary-dark); /* Cor da linha */
+  background-color: var(--header-active);
   position: absolute;
-  bottom: 0; /* Alinha a linha na parte inferior do item */
-  left: 0;
-  right: 0; /* A linha ocupa toda a largura do nav-item */
+  transition: all 0.3s ease;
+}
+
+.nav-item.vertical {
+  width: 100%;
+}
+
+.nav-item.vertical .nav-link {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+  .nav-item {
+    width: 100%;
+  }
+  
+  .nav-link {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 12px 15px;
+    width: 100%;
+  }
+  
+  /* Sempre usar indicador à esquerda no mobile */
+  .nav-item .title-line {
+    left: 0;
+    right: auto;
+    width: 4px;
+    height: 70%;
+    top: 15%;
+    bottom: auto;
+  }
 }

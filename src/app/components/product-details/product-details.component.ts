@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, HostListener } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, HostListener } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Product } from "../../models/product.model";
+import { CartService } from "../../services/cart/cart.service";
 
 interface ZoomPosition {
   x: number;
@@ -14,7 +15,6 @@ interface ZoomPosition {
   styleUrls: ["./product-details.component.css"],
 })
 export class ProductDetailsComponent implements OnInit, AfterViewInit {
-  @Output() addToCartEvent = new EventEmitter<{productId: number, color: string, size: string}>();
   @ViewChild('mainImage') mainImageElement!: ElementRef;
   @ViewChild('mainImageContainer') mainImageContainer!: ElementRef;
   @ViewChild('thumbnailsContainer') thumbnailsContainer!: ElementRef;
@@ -23,6 +23,7 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
   filteredSizes: string[] = [];
   selectedColor: string = '';
   selectedSize: string = '';
+  selectedQuantity: number = 1;
   isInWishlist: boolean = false;
   currentImage: string = '';
   currentColorImages: string[] = [];
@@ -30,6 +31,7 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
   // Zoom properties
   isZooming: boolean = false;
   zoomPosition: ZoomPosition = { x: 0, y: 0 };
+  zoomScale: number = 2.5;
   
   // Thumbnails scrolling
   thumbnailScrollPosition: number = 0;
@@ -52,7 +54,11 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
 
   relatedProducts: Product[] = [];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private cartService: CartService
+  ) {}
 
   @HostListener('window:resize')
   onResize() {
@@ -75,10 +81,10 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
     // Simulando dados de produto
     this.product = {
       id: id,
-      title: 'Product Title',
-      description: 'This is a detailed description of the product. It highlights features and benefits.',
-      oldPrice: 100,
-      price: 80,
+      title: 'Nike Air Max 270',
+      description: 'O Nike Air Max 270 apresenta a primeira unidade Air projetada especificamente para Nike Sportswear. A impressionante unidade Air de 270 graus oferece amortecimento incrível sob os pés, enquanto o cabedal de malha elástica e o design sem costura criam um visual moderno e aerodinâmico.',
+      oldPrice: 1200,
+      price: 999.90,
       imagesByColor: {
         '#ff0000': [
           'https://picsum.photos/800/600?random=1',
@@ -98,11 +104,13 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
           'https://picsum.photos/800/600?random=11',
         ]
       },
-      tags: ['tag1', 'tag2', 'tag3'],
+      tags: ['Tênis', 'Nike', 'Running'],
       inStock: true,
       stockQuantity: 10,
       colors: ['#ff0000', '#00ff00', '#0000ff'],
-      sizes: ['S', 'M', 'L', 'XL']
+      sizes: ['38', '39', '40', '41', '42', '43'],
+      categories: ['Running', 'Esporte'],
+      createdAt: new Date('2023-01-01')
     };
     
     // Inicializa com a primeira cor e imagem
@@ -115,33 +123,37 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
     this.relatedProducts = [
       {
         id: 2,
-        title: 'Related Product 1',
-        description: 'Description for related product 1.',
-        oldPrice: 120,
-        price: 90,
+        title: 'Nike Air Force 1',
+        description: 'O clássico tênis de basquete que revolucionou o jogo agora é um ícone da moda.',
+        oldPrice: 899.90,
+        price: 799.90,
         imagesByColor: {
           '#ff0000': ['https://picsum.photos/800/600?random=11']
         },
-        tags: ['tag1', 'tag4'],
+        tags: ['Tênis', 'Nike', 'Casual'],
         inStock: true,
         stockQuantity: 5,
         colors: ['#ff0000'],
-        sizes: ['M', 'L']
+        sizes: ['39', '40', '41'],
+        categories: ['Basquete', 'Moda'],
+        createdAt: new Date('2023-01-01')
       },
       {
         id: 3,
-        title: 'Related Product 2',
-        description: 'Description for related product 2.',
-        oldPrice: 150,
-        price: 110,
+        title: 'Nike Air Jordan 1',
+        description: 'O lendário tênis que definiu uma era continua a inspirar novas gerações.',
+        oldPrice: 1599.90,
+        price: 1299.90,
         imagesByColor: {
-          '#0000ff': ['https://picsum.photos/400/300?random=13']
+          '#0000ff': ['https://picsum.photos/800/600?random=13']
         },
-        tags: ['tag2', 'tag5'],
+        tags: ['Tênis', 'Nike', 'Basketball'],
         inStock: true,
         stockQuantity: 8,
         colors: ['#0000ff'],
-        sizes: ['S', 'XL']
+        sizes: ['40', '42', '43'],
+        categories: ['Basquete', 'Esporte'],
+        createdAt: new Date('2023-02-01')
       }
     ];
   }
@@ -186,14 +198,34 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
     ) || [];
   }
 
-  addToCart(): void {
-    if (this.selectedSize && this.selectedColor) {
-      this.addToCartEvent.emit({
-        productId: this.product.id,
-        color: this.selectedColor,
-        size: this.selectedSize
-      });
+  updateQuantity(change: number): void {
+    const newQuantity = this.selectedQuantity + change;
+    if (newQuantity >= 1 && newQuantity <= this.product.stockQuantity) {
+      this.selectedQuantity = newQuantity;
     }
+  }
+
+  addToCart(): void {
+    if (!this.selectedSize || !this.selectedColor) {
+      alert('Por favor, selecione uma cor e um tamanho antes de adicionar ao carrinho.');
+      return;
+    }
+
+    // Obter a primeira imagem da cor selecionada
+    const imageUrl = this.product.imagesByColor[this.selectedColor][0];
+
+    this.cartService.addItem({
+      productId: this.product.id,
+      name: `${this.product.title} - ${this.getColorName(this.selectedColor)} - ${this.selectedSize}`,
+      imageUrl: imageUrl,
+      price: this.product.price,
+      quantity: this.selectedQuantity,
+      color: this.selectedColor,
+      size: this.selectedSize
+    });
+
+    // Feedback para o usuário
+    alert('Produto adicionado ao carrinho!');
   }
 
   toggleWishlist(): void {
@@ -212,17 +244,31 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
     const img = this.mainImageElement.nativeElement;
     const rect = img.getBoundingClientRect();
     
-    // Calculate position for the lens
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
+    // Calcular a posição do mouse relativa à imagem
+    const mouseX = event.clientX - rect.left;
+    const mouseY = event.clientY - rect.top;
     
-    // Ajuste para centralizar a lente no cursor
-    const lensSize = 100; // Tamanho da lente
+    // Calcular posição da lente (centralizada no cursor)
+    const lensSize = 100;
+    const x = Math.max(0, Math.min(mouseX - lensSize/2, rect.width - lensSize));
+    const y = Math.max(0, Math.min(mouseY - lensSize/2, rect.height - lensSize));
     
-    this.zoomPosition = {
-      x: Math.max(0, Math.min(x - lensSize/2, rect.width - lensSize)),
-      y: Math.max(0, Math.min(y - lensSize/2, rect.height - lensSize))
-    };
+    this.zoomPosition = { x, y };
+    
+    // Atualizar o estilo da lente para usar a imagem como background
+    if (this.mainImageContainer && this.mainImageContainer.nativeElement) {
+      const lens = this.mainImageContainer.nativeElement.querySelector('.zoom-lens');
+      if (lens) {
+        // Configurar o background da lente para mostrar a parte ampliada da imagem
+        const ratio = this.zoomScale;
+        const backgroundPosX = -(mouseX * ratio - lensSize/2);
+        const backgroundPosY = -(mouseY * ratio - lensSize/2);
+        
+        lens.style.backgroundImage = `url('${this.currentImage}')`;
+        lens.style.backgroundSize = `${rect.width * ratio}px ${rect.height * ratio}px`;
+        lens.style.backgroundPosition = `${backgroundPosX}px ${backgroundPosY}px`;
+      }
+    }
   }
 
   hideZoom(): void {

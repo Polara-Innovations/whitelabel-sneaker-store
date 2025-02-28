@@ -1,6 +1,6 @@
 export const MOCK_MENU = {
     header: {
-        type: 'hamburger', 
+        type: 'tabs', 
         items: [
           { name: 'Home', route: '/', icon: 'fas fa-home', display: 'title' }, 
           { name: 'Produtos', route: '/products', icon: 'fas fa-box', display: 'title' },

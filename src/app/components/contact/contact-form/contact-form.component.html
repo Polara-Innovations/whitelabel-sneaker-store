@@ -1,15 +1,89 @@
-<form (ngSubmit)="onSubmit()" class="contact-form">
-    <div class="mb-3">
-      <label for="name" class="form-label">{{ texts.name }}</label>
-      <input type="text" id="name" class="form-control" placeholder="Digite seu nome" required>
+<div class="form-container">
+  <h2 class="form-title">{{ texts.title }}</h2>
+  
+  <div *ngIf="submitSuccess" class="form-alert success">
+    {{ texts.successMessage }}
+  </div>
+  
+  <div *ngIf="submitError" class="form-alert error">
+    {{ texts.errorMessage }}
+  </div>
+  
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+    <div class="form-group">
+      <label for="name">{{ texts.name }}</label>
+      <input 
+        type="text" 
+        id="name" 
+        formControlName="name" 
+        [class.invalid]="isInvalid('name')"
+        placeholder="{{ texts.namePlaceholder }}"
+      >
+      <div *ngIf="hasError('name', 'required')" class="error-message">
+        {{ texts.nameRequired }}
+      </div>
+      <div *ngIf="hasError('name', 'minlength')" class="error-message">
+        {{ texts.nameMinLength }}
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="email" class="form-label">{{ texts.email }}</label>
-      <input type="email" id="email" class="form-control" placeholder="Digite seu e-mail" required>
+    
+    <div class="form-group">
+      <label for="email">{{ texts.email }}</label>
+      <input 
+        type="email" 
+        id="email" 
+        formControlName="email" 
+        [class.invalid]="isInvalid('email')"
+        placeholder="{{ texts.emailPlaceholder }}"
+      >
+      <div *ngIf="hasError('email', 'required')" class="error-message">
+        {{ texts.emailRequired }}
+      </div>
+      <div *ngIf="hasError('email', 'email')" class="error-message">
+        {{ texts.emailInvalid }}
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="message" class="form-label">{{ texts.message }}</label>
-      <textarea id="message" class="form-control" rows="5" placeholder="Digite sua mensagem" required></textarea>
+    
+    <div class="form-group">
+      <label for="subject">{{ texts.subject }}</label>
+      <input 
+        type="text" 
+        id="subject" 
+        formControlName="subject" 
+        [class.invalid]="isInvalid('subject')"
+        placeholder="{{ texts.subjectPlaceholder }}"
+      >
+      <div *ngIf="hasError('subject', 'required')" class="error-message">
+        {{ texts.subjectRequired }}
+      </div>
     </div>
-    <button type="submit" class="btn btn-primary">{{ texts.button }}</button>
+    
+    <div class="form-group">
+      <label for="message">{{ texts.message }}</label>
+      <textarea 
+        id="message" 
+        formControlName="message" 
+        [class.invalid]="isInvalid('message')"
+        rows="5" 
+        placeholder="{{ texts.messagePlaceholder }}"
+      ></textarea>
+      <div *ngIf="hasError('message', 'required')" class="error-message">
+        {{ texts.messageRequired }}
+      </div>
+      <div *ngIf="hasError('message', 'minlength')" class="error-message">
+        {{ texts.messageMinLength }}
+      </div>
+    </div>
+    
+    <div class="form-actions">
+      <button 
+        type="submit" 
+        class="submit-button" 
+        [disabled]="isSubmitting"
+      >
+        <span *ngIf="!isSubmitting">{{ texts.button }}</span>
+        <span *ngIf="isSubmitting" class="spinner"></span>
+      </button>
+    </div>
   </form>
+</div>

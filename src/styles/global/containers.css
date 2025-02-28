@@ -1,48 +1,59 @@
+.container-padding {
+    padding: 2rem;
+    margin: 0 auto;
+  }
+  
+  .container-padding-tb {
+    padding: 2rem 0;
+    margin: 0 auto;
+  }
+
+    .container-padding-lr {
+        padding: 0 2rem;
+        margin: 0 auto;
+    }
+
 /* Container for footer */
 .footer-container {
-    padding: 24px;
-    background-color: #f8f9fa;
-    border-top: 1px solid #e9ecef;
+    padding: 2rem !important;
 }
 
 /* Container for main content */
+  .main-container-tb {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    padding: 2rem 0;
+  }
+  
+  .main-container {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    padding: 2rem;
+  }
+
+  .main-container-tb,
 .main-container {
-    display: flex;
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden; /* Contain any overflow within these containers */
 }
 
 /* Container for sidebar */
 .sidebar-container {
-    padding: 16px;
-    background-color: #f1f3f5;
-    border-radius: 8px;
+    padding: 1rem !important;;
 }
 
 /* Container for navigation */
 .nav-container {
-    padding: 16px;
-    background-color: #fff;
-    border-bottom: 1px solid #e9ecef;
+    padding: 2rem !important;
 }
 
 /* Container for forms */
 .form-container {
-    padding: 24px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem !important
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .footer-container,
-    .main-container,
-    .sidebar-container,
-    .nav-container,
-    .form-container {
-        padding: 16px;
-        margin: 8px 0;
-    }
+
 }

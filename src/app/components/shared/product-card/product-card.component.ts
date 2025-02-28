@@ -12,6 +12,7 @@ export class ProductCardComponent {
   @Input() showTags = false;
   @Input() showAction = false;
   @Input() product?: Product
+  @Input() showDescription = false;
 
   constructor(private router: Router) {}
 

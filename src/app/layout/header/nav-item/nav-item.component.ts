@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Tab } from '../../../models/tab.model';
 
 @Component({
@@ -9,5 +9,12 @@ import { Tab } from '../../../models/tab.model';
 })
 export class NavItemComponent {
   @Input() tab: Tab = { name: '', route: '', icon: '', display: '' };
-  @Input() isActive: boolean = false; 
+  @Input() isActive: boolean = false;
+  @Input() direction: 'row' | 'column' = 'row';
+  @Input() position: 'left' | 'center' | 'right' = 'left';
+  @Output() navClick = new EventEmitter<void>();
+  
+  onClick() {
+    this.navClick.emit();
+  }
 }

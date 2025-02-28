@@ -1,7 +1,11 @@
-<li class="nav-item">
-  <a *ngIf="tab.route" class="nav-link" [routerLink]="tab.route">
+<li class="nav-item" 
+    [class.active]="isActive" 
+    [class.vertical]="direction === 'column'"
+    [class.indicator-left]="position === 'left'"
+    [class.indicator-bottom]="position === 'center'">
+  <a class="nav-link" [routerLink]="tab.route" (click)="onClick()">
     <i *ngIf="tab.icon && tab.display != 'title'" class="{{ tab.icon }}" [ngClass]="{'me-2': tab.display !== 'icon'}"></i>
     <span *ngIf="tab.display !== 'icon'">{{ tab.name }}</span>
   </a>
-  <div class="title-line" *ngIf="tab.display === 'title' && isActive"></div>
+  <div class="title-line" *ngIf="isActive"></div>
 </li>
