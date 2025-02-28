@@ -4,10 +4,10 @@ export interface Product {
   description: string;
   oldPrice?: number;
   price: number;
-  images: string[];
+  imagesByColor: { [colorCode: string]: string[] };
   tags: string[];
-  inStock: boolean; // Informações sobre estoque
-  stockQuantity: number; // Quantidade em estoque
-  colors?: string[]; // Opcional: adicionando cores
-  sizes?: string[]; // Opcional: adicionando tamanhos
+  inStock: boolean;
+  stockQuantity: number;
+  colors: string[];
+  sizes: string[];
 }

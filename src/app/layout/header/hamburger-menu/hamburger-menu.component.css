@@ -1,37 +1,3 @@
-/* Header do Menu Hambúrguer */
-.hamburger-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1001;
-  padding: var(--spacing-sm) var(--spacing-lg);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--color-bg-muted);
-}
-
-.hamburger-header .brand {
-  font-weight: bold;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-}
-
-.hamburger-header .brand .logo {
-  height: 40px;
-  width: auto;
-}
-
-.hamburger-toggle {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--text-color);
-}
-
 /* Menu Hambúrguer */
 .hamburger-menu {
   position: fixed;

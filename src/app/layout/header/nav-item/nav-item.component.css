@@ -1,0 +1,26 @@
+.nav-item {
+  position: relative; /* Para posicionar a linha corretamente */
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: var(--text-color); /* Cor padrão do texto */
+  text-decoration: none; /* Remove o sublinhado padrão */
+  padding: 10px; /* Padding para área clicável */
+  transition: background-color 0.3s, color 0.3s; /* Transição suave */
+}
+
+.nav-link:hover {
+  background-color: rgba(74, 144, 226, 0.1); /* Cor de fundo ao passar o mouse */
+  color: var(--primary-color); /* Cor do texto ao passar o mouse */
+}
+
+.title-line {
+  height: 2px; /* Altura da linha */
+  background-color: var(--color-primary-dark); /* Cor da linha */
+  position: absolute;
+  bottom: 0; /* Alinha a linha na parte inferior do item */
+  left: 0;
+  right: 0; /* A linha ocupa toda a largura do nav-item */
+}

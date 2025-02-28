@@ -1,0 +1,48 @@
+/* Container for footer */
+.footer-container {
+    padding: 24px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Container for main content */
+.main-container {
+    display: flex;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+/* Container for sidebar */
+.sidebar-container {
+    padding: 16px;
+    background-color: #f1f3f5;
+    border-radius: 8px;
+}
+
+/* Container for navigation */
+.nav-container {
+    padding: 16px;
+    background-color: #fff;
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* Container for forms */
+.form-container {
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-container,
+    .main-container,
+    .sidebar-container,
+    .nav-container,
+    .form-container {
+        padding: 16px;
+        margin: 8px 0;
+    }
+}

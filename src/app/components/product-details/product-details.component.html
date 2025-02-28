@@ -1,55 +1,83 @@
 <div class="product-container">
   <div class="product-gallery">
-    <div class="main-image">
-      <img [src]="product.images[0]" [alt]="product.title" />
+    <div class="main-image-container" #mainImageContainer>
+      <img #mainImage [src]="currentImage" [alt]="product.title" (mousemove)="handleZoom($event)"
+        (mouseenter)="showZoom()" (mouseleave)="hideZoom()" class="main-image" />
+      <div class="zoom-lens" *ngIf="isZooming" [style.top.px]="zoomPosition.y" [style.left.px]="zoomPosition.x">
+      </div>
     </div>
-    <div class="thumbnails">
-      <img *ngFor="let img of product.images" [src]="img" [alt]="product.title" (click)="selectImage(img)" />
+    <div class="thumbnails-container">
+      <button class="nav-button prev" (click)="scrollThumbnails('prev')"
+        *ngIf="currentColorImages.length > 4 && thumbnailScrollPosition > 0">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="thumbnails" #thumbnailsContainer [style.transform]="'translateX(-' + thumbnailScrollPosition + 'px)'">
+        <img *ngFor="let img of currentColorImages; let i = index" [src]="img" [alt]="product.title"
+          [class.active]="img === currentImage" (click)="selectImage(img)" />
+      </div>
+      <button class="nav-button next" (click)="scrollThumbnails('next')"
+        *ngIf="currentColorImages.length > 4 && thumbnailScrollPosition < maxScrollPosition">
+        <i class="fas fa-chevron-right"></i>
+      </button>
     </div>
   </div>
 
   <div class="product-info">
     <div class="tags">
+      <span class="stock-tag" [class.in-stock]="product.inStock" [class.out-of-stock]="!product.inStock">
+        {{ product.inStock ? 'Em Estoque' : 'Fora de Estoque' }}
+      </span>
       <span *ngFor="let tag of product.tags" class="tag">{{ tag }}</span>
     </div>
     <h1>{{ product.title }}</h1>
-    <div class="price">
-      <span *ngIf="product.oldPrice">De: {{ product.oldPrice | currency: 'BRL' }}</span>
-      <span>{{ product.price | currency: 'BRL' }}</span>
-    </div>
-    <div class="stock" [class.in-stock]="product.inStock">
-      {{ product.inStock ? 'Em Estoque' : 'Fora de Estoque' }}
+    <div class="price-container">
+      <span class="product-price">R$ {{ product.price | number:'1.2-2' }}</span>
+      <span *ngIf="product?.oldPrice" class="product-price-old">R$ {{ product.oldPrice | number:'1.2-2' }}</span>
     </div>
 
     <div class="color-selector">
-      <h3>Cor</h3>
+      <h3>Cores</h3>
       <div class="color-swatches">
-        <button *ngFor="let color of product.colors" [style.background-color]="color" (click)="selectColor(color)"></button>
+        <button *ngFor="let color of product.colors" [style.background-color]="color"
+          [class.active]="color === selectedColor" (click)="selectColor(color)">
+        </button>
       </div>
+      <span class="selected-color-name" *ngIf="selectedColor">{{ getColorName(selectedColor) }}</span>
     </div>
 
     <div class="size-selector">
-      <h3>Tamanho</h3>
-      <div class="size-grid">
-        <button *ngFor="let size of product.sizes" (click)="selectSize(size)">{{ size }}</button>
+      <h3>Tamanhos</h3>
+      <div *ngIf="(product.sizes?.length || 0) > 8; else sizeGrid">
+        <input type="text" placeholder="Pesquisar tamanhos..." (input)="onFilterSizes($event)" />
+        <select (change)="onSizeSelect($event)">
+          <option value="" disabled selected>Selecione um tamanho</option>
+          <option *ngFor="let size of filteredSizes" [value]="size">{{ size }}</option>
+        </select>
       </div>
+      <ng-template #sizeGrid>
+        <div class="size-grid">
+          <button *ngFor="let size of product.sizes" [class.active]="size === selectedSize" (click)="selectSize(size)">
+            {{ size }}
+          </button>
+        </div>
+      </ng-template>
     </div>
 
     <div class="action-buttons">
       <button class="add-to-cart" (click)="addToCart()" [disabled]="!product.inStock">
         Adicionar ao Carrinho
       </button>
-      <button class="add-to-wishlist" (click)="toggleWishlist()">
-        <i class="heart-icon"></i>
+      <button class="add-to-wishlist" (click)="toggleWishlist()" title="Adicionar à Lista de Desejos">
+        <i class="heart-icon fas fa-heart"></i>
       </button>
     </div>
   </div>
 </div>
 
-<app-title text="Descrição" size="large" position="center"></app-title>
-
 <div class="product-description">
+  <app-title text="Descrição" size="medium" position="left"></app-title>
   <p>{{ product.description }}</p>
 </div>
 
+<app-title text="Produtos Relacionados" size="large" fontWeight="bold" position="center"></app-title>
 <app-product-carrousel [products]="relatedProducts"></app-product-carrousel>

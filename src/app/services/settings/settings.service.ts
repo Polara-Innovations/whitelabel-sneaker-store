@@ -29,4 +29,8 @@ export class SettingsService {
   getMenuConfig() {
     return MOCK_MENU;
   }
+
+  getLogoUrl() {
+    return 'https://triibo.com.br/wp-content/uploads/2023/02/Imagem-Nike-Logo-PNG-1024x1024-1.png'
+  }
 }

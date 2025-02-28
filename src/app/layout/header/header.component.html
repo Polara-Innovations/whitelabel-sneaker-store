@@ -1,2 +1,39 @@
-<app-top-navbar *ngIf="!isHamburgerMenu" [tabs]="tabs" [logoUrl]="logoUrl" [isDarkMode]="isDarkMode"></app-top-navbar>
-<app-hamburger-menu *ngIf="isHamburgerMenu" [tabs]="tabs" [isDarkMode]="isDarkMode"></app-hamburger-menu>
+<div class="navbar" [ngClass]="{'dark-mode': isDarkMode}">
+  <div class="brand d-flex align-items-center">
+    <img *ngIf="logoUrl" [src]="logoUrl" alt="Logo" class="logo me-2">
+    <span *ngIf="!logoUrl">{{ brandName }}</span>
+  </div>
+
+  <div class="nav-items" style="flex: 1;">
+    <app-nav-item-list [tabs]="tabs" direction="row" [isVisible]="!isMobile || isHamburgerMenu"></app-nav-item-list>
+  </div>
+
+  <div class="toggles">
+    <button class="settings-toggle" (click)="isSettingsOpen = !isSettingsOpen">
+      <i class="fas fa-cog"></i>
+    </button>
+    <button class="profile-toggle" (click)="isProfileOpen = !isProfileOpen">
+      <i class="fas fa-user"></i>
+    </button>
+    <button class="cart-toggle" (click)="isCartOpen = !isCartOpen"> 
+      <i class="fas fa-shopping-cart"></i>
+    </button>
+  </div>
+
+  <button class="navbar-toggle" (click)="toggleMenu()" *ngIf="isMobile && !isHamburgerMenu">
+    <i [ngClass]="isMenuOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
+  </button>
+</div>
+
+<app-settings [isSettingsOpen]="isSettingsOpen"></app-settings>
+
+<app-cart-modal [isCartOpen]="isCartOpen"></app-cart-modal>
+
+<!-- Menu hamburguer -->
+<app-hamburger-menu *ngIf="isHamburgerMenu" [tabs]="tabs" [logoUrl]="logoUrl" [isMenuOpen]="isMenuOpen"
+  (toggleMenu)="toggleMenu()"></app-hamburger-menu>
+
+<!-- Navbar com tabs quando não é hamburguer -->
+<div class="tabs-container" *ngIf="!isHamburgerMenu">
+  <app-tabs-menu [tabs]="tabs" [logoUrl]="logoUrl" [isDarkMode]="isDarkMode" [isMenuOpen]="isMenuOpen"></app-tabs-menu>
+</div>

@@ -10,21 +10,7 @@ import { ThemeService } from '../../../services/theme/theme.service';
 export class HamburgerMenuComponent {
   @Input() tabs: any[] = [];
   @Input() logoUrl: string | null = null;
-  @Input() brandName: string = 'Sneaker Store';
-  @Input() customBackground: string = 'var(--color-bg-muted)';
-  isMenuOpen = false;
+  @Input() isMenuOpen = false;
 
   constructor(private themeService: ThemeService) {}
-
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
-
-  toggleTheme() {
-    this.themeService.toggleTheme();
-  }
-
-  getIsDarkMode(): boolean {
-    return this.themeService.getIsDarkMode();
-  }
 }

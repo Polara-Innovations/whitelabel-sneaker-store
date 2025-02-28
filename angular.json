@@ -32,6 +32,7 @@
               "src/styles/global/utilities.css",
               "src/styles/global/variables.css",
               "src/styles/global/components.css",
+              "src/styles/global/containers.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],

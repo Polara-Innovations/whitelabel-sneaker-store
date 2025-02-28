@@ -21,7 +21,7 @@ import { NavItemComponent } from './layout/header/nav-item/nav-item.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { TopNavbarComponent } from './layout/header/top-navbar/top-navbar.component';
+import { TabsMenuComponent } from './layout/header/tabs-menu/tabs-menu.component';
 import { HamburgerMenuComponent } from './layout/header/hamburger-menu/hamburger-menu.component';
 import { ProductFilterComponent } from './components/products/product-filter/product-filter.component';
 import { ProductCardComponent } from './components/shared/product-card/product-card.component';
@@ -32,6 +32,10 @@ import { BrandCardComponent } from './components/shared/brand-card/brand-card.co
 import { BrandListComponent } from './components/shared/brand-list/brand-list.component';
 import { CategoryCardComponent } from './components/shared/category-card/category-card.component';
 import { CategoryListComponent } from './components/shared/category-list/category-list.component';
+import { NavItemListComponent } from './layout/header/nav-item-list/nav-item-list.component';
+import { SettingsModalComponent } from './layout/header/settings-modal/settings-modal.component';
+import { ToggleComponent } from './components/shared/toggle/toggle.component';
+import { CartModalComponent } from './layout/header/cart-modal/cart-modal.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,7 @@ import { CategoryListComponent } from './components/shared/category-list/categor
     NavItemComponent,
     ProfileComponent,
     FaqComponent,
-    TopNavbarComponent,
+    TabsMenuComponent,
     HamburgerMenuComponent,
     ProductFilterComponent,
     ProductCardComponent,
@@ -62,7 +66,11 @@ import { CategoryListComponent } from './components/shared/category-list/categor
     BrandCardComponent,
     BrandListComponent,
     CategoryCardComponent,
-    CategoryListComponent
+    CategoryListComponent,
+    NavItemListComponent,
+    SettingsModalComponent,
+    ToggleComponent,
+    CartModalComponent
   ],
   imports: [
     BrowserModule,

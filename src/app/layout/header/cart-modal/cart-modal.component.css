@@ -1,0 +1,98 @@
+.cart-modal-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5000;
+  display: flex;
+  justify-content: flex-end; /* Alinha o modal à direita */
+}
+
+.cart-modal-menu {
+  width: 400px; /* Define uma largura fixa para o modal */
+  height: 100%;
+  background-color: var(--color-bg-muted);
+  border-left: 1px solid #ccc; /* Borda à esquerda */
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-modal-title {
+  font-size: 1.2rem; /* Tamanho do título */
+  padding: var(--spacing-sm);
+  margin: 0; /* Remove margem padrão */
+}
+
+.cart-modal-items {
+  margin: 0;
+  padding: var(--spacing-md);
+  list-style-type: none;
+  flex: 1; /* Faz a lista ocupar o espaço restante */
+  overflow-y: auto; /* Adiciona rolagem se necessário */
+}
+
+.cart-modal-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart-modal-item-image {
+  margin-right: 10px; /* Espaçamento à direita da imagem */
+}
+
+.cart-modal-item-thumbnail {
+  width: 50px; /* Largura da imagem */
+  height: auto; /* Mantém a proporção */
+}
+
+.cart-modal-item-name {
+  flex-grow: 1; /* O nome do produto ocupa o espaço restante */
+  padding: 0 10px; /* Espaçamento lateral */
+}
+
+.cart-modal-item-price {
+  margin-left: 10px; /* Espaçamento à esquerda do preço */
+}
+
+.cart-modal-item-remove {
+  margin-left: 10px; /* Espaçamento à esquerda do botão remover */
+}
+
+.cart-modal-subtotal {
+  margin-top: 10px; /* Espaçamento acima do subtotal */
+}
+
+.cart-modal-footer-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* Espaçamento acima dos botões */
+}
+
+.button {
+  background-color: var(--primary-color); /* Cor de fundo do botão */
+  color: white; /* Cor do texto do botão */
+  padding: 10px 15px; /* Padding do botão */
+  border: none; /* Remove a borda padrão */
+  cursor: pointer; /* Muda o cursor ao passar o mouse */
+  transition: background-color 0.3s; /* Transição suave na cor de fundo */
+}
+
+.button:hover {
+  background-color: var(--primary-color-dark); /* Cor do botão ao passar o mouse */
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 2rem;
+}
+
+.empty-cart-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}

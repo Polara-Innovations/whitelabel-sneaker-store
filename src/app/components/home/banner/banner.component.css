@@ -1,6 +1,5 @@
 .banner {
   background-color: var(--color-bg-muted);
-  margin-top: 9.5vh;
   margin-bottom: 2rem;
   height: 500px;
   display: flex;

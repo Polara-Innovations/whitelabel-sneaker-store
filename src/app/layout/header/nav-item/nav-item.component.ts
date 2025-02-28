@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Tab } from '../../../models/tab.model';
 
 @Component({
   selector: 'app-nav-item',
@@ -7,6 +8,6 @@ import { Component, Input } from '@angular/core';
   standalone: false
 })
 export class NavItemComponent {
-  @Input() name!: string;
-  @Input() route!: string;
+  @Input() tab: Tab = { name: '', route: '', icon: '', display: '' };
+  @Input() isActive: boolean = false; 
 }

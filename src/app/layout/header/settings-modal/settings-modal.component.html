@@ -1,0 +1,16 @@
+<div class="settings-container" *ngIf="isSettingsOpen">
+    <div class="settings-menu">
+      <h3 class="settings-title ">Configurações</h3>
+      <hr />
+      <div class="toggles">
+        <label>
+          <app-toggle [isChecked]="isDarkMode" (toggleChange)="toggleDarkMode($event.valueOf())"></app-toggle>
+          Modo Escuro
+        </label>
+        <label>
+          <app-toggle [isChecked]="isHighContrast" (toggleChange)="toggleHighContrast($event.valueOf())"></app-toggle>
+          Alto Contraste
+        </label>
+    </div>
+    </div>
+  </div>

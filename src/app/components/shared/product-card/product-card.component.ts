@@ -18,4 +18,8 @@ export class ProductCardComponent {
   onCardClick(): void {
     this.router.navigate(['/product-details', this.product?.id]);
   }
+
+  getFirstImageUrl(): string {
+    return this.product?.imagesByColor[Object.keys(this.product.imagesByColor)[0]][0] || '';
+  }
 }

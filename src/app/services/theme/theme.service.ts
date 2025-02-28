@@ -1,39 +1,31 @@
 import { Injectable } from '@angular/core';
 import { MOCK_COLORS } from '../../mocks/mock-colors';
 
+type Theme = 'light' | 'dark' | 'high-contrast';
+
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
-  private isDarkMode: boolean = false;
+  private theme: Theme;
 
   constructor() {
-    this.isDarkMode = localStorage.getItem('theme') === 'dark';
+    this.theme = localStorage.getItem('theme') as Theme;
     this.applyTheme();
   }
 
-  toggleTheme(): void {
-    this.isDarkMode = !this.isDarkMode;
-    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
+  toggleTheme(theme: Theme): void {
+    localStorage.setItem('theme', theme);
     this.applyTheme();
   }
 
   getIsDarkMode(): boolean {
-    return this.isDarkMode;
+    return this.theme === 'dark';
   }
 
-  private applyTheme(): void {
-    const theme = this.isDarkMode ? 'dark' : 'light';
-    const colors = MOCK_COLORS[theme];
-
-    Object.keys(colors).forEach((key) => {
-      document.documentElement.style.setProperty(`--${key}-color`, colors[key as keyof typeof colors]);
-    });
-
-    if (this.isDarkMode) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
+  getIsHighContrast(): boolean {
+    return this.theme === 'high-contrast';
   }
+
+  private applyTheme(): void { }
 }

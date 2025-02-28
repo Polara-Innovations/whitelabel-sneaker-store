@@ -1,0 +1,24 @@
+.toggle-container {
+    width: 45px; /* Largura do toggle */
+    height: 20px; /* Altura do toggle */
+    background-color: var(--color-bg-dark);
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle-switch {
+    width: 20px; /* Largura do botão do toggle */
+    height: 20px; /* Altura do botão do toggle */
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .toggle-switch.checked {
+    transform: translateX(25px); /* Mova o botão para a direita quando ativo */
+  }

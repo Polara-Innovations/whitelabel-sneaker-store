@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-home',
@@ -7,107 +8,72 @@ import { Component } from '@angular/core';
   standalone: false
 })
 export class HomeComponent {
-  featuredProducts = [
-{
-  id: 1,
-  title: 'Tênis Nike Air Max',
-  description: 'Confortável e estiloso',
-  price: 399.99,
-  imageUrl: 'https://picsum.photos/400/300?random=1',
-  tags: ['calçado', 'esporte', 'nike']
-},
-{
-  id: 2,
-  title: 'Tênis Adidas Ultraboost',
-  description: 'Alta performance para corrida e treino',
-  oldPrice: 599.99,
-  price: 499.99,
-  imageUrl: 'https://picsum.photos/400/300?random=2',
-  tags: ['calçado', 'esporte', 'adidas']
-},
-{
-  id: 3,
-  title: 'Tênis Puma Ignite',
-  description: 'Leve e confortável',
-  price: 349.99,
-  imageUrl: 'https://picsum.photos/400/300?random=3',
-  tags: ['calçado', 'esporte', 'puma']
-},
-{
-  id: 4,
-  title: 'Tênis Asics Gel-Kayano',
-  description: 'Estabilidade e suporte',
-  price: 599.99,
-  imageUrl: 'https://picsum.photos/400/300?random=4',
-  tags: ['calçado', 'esporte', 'asics']
-},
-{
-  id: 5,
-  title: 'Tênis Mizuno Wave',
-  description: 'Amortecimento e durabilidade',
-  oldPrice: 549.99,
-  price: 449.99,
-  imageUrl: 'https://picsum.photos/400/300?random=5',
-  tags: ['calçado', 'esporte', 'mizuno']
-},
-{
-  id: 6,
-  title: 'Tênis Reebok Nano',
-  description: 'Desempenho para crossfit',
-  price: 399.99,
-  imageUrl: 'https://picsum.photos/400/300?random=6',
-  tags: ['calçado', 'esporte', 'reebok']
-},
-{
-  id: 7,
-  title: 'Tênis New Balance 1080',
-  description: 'Conforto e estilo',
-  price: 499.99,
-  imageUrl: 'https://picsum.photos/400/300?random=7',
-  tags: ['calçado', 'esporte', 'new balance']
-},
-{
-  id: 8,
-  title: 'Tênis Under Armour HOVR',
-  description: 'Tecnologia de amortecimento',
-  oldPrice: 649.99,
-  price: 549.99,
-  imageUrl: 'https://picsum.photos/400/300?random=8',
-  tags: ['calçado', 'esporte', 'under armour']
-},
-{
-  id: 9,
-  title: 'Tênis Fila Disruptor',
-  description: 'Design robusto',
-  price: 299.99,
-  imageUrl: 'https://picsum.photos/400/300?random=9',
-  tags: ['calçado', 'esporte', 'fila']
-},
-{
-  id: 10,
-  title: 'Tênis Converse All Star',
-  description: 'Clássico e versátil',
-  price: 199.99,
-  imageUrl: 'https://picsum.photos/400/300?random=10',
-  tags: ['calçado', 'casual', 'converse']
-},
-{
-  id: 11,
-  title: 'Tênis Vans Old Skool',
-  description: 'Estilo skatista',
-  oldPrice: 349.99,
-  price: 249.99,
-  imageUrl: 'https://picsum.photos/400/300?random=11',
-  tags: ['calçado', 'casual', 'vans']
-},
-{
-  id: 12,
-  title: 'Tênis Skechers Go Walk',
-  description: 'Conforto para caminhada',
-  price: 279.99,
-  imageUrl: 'https://picsum.photos/400/300?random=12',
-  tags: ['calçado', 'casual', 'skechers']
-}
+  featuredProducts: Product[] = [
+    {
+      id: 1,
+      title: 'Tênis Nike Air Max',
+      description: 'Confortável e estiloso',
+      price: 399.99,
+      tags: ['calçado', 'esporte', 'nike'],
+      imagesByColor: {
+        'red': [
+          'https://picsum.photos/400/300?random=1',
+          'https://picsum.photos/400/300?random=2'
+        ],
+        'blue': [
+          'https://picsum.photos/400/300?random=3',
+          'https://picsum.photos/400/300?random=4'
+        ]
+      },
+      inStock: true,
+      stockQuantity: 10,
+      colors: ['red', 'blue'],
+      sizes: ['38', '39', '40']
+    },
+    {
+      id: 2,
+      title: 'Tênis Adidas Ultraboost',
+      description: 'Alta performance para corrida e treino',
+      oldPrice: 599.99,
+      price: 499.99,
+      tags: ['calçado', 'esporte', 'adidas'],
+      imagesByColor: {
+        'black': [
+          'https://picsum.photos/400/300?random=5',
+          'https://picsum.photos/400/300?random=6'
+        ],
+        'white': [
+          'https://picsum.photos/400/300?random=7',
+          'https://picsum.photos/400/300?random=8'
+        ]
+      },
+      inStock: true,
+      stockQuantity: 10,
+      colors: ['black', 'white'],
+      sizes: ['40', '41', '42']
+    },
+    {
+      id: 3,
+      title: 'Tênis Puma Ignite',
+      description: 'Leve e confortável',
+      price: 349.99,
+      tags: ['calçado', 'esporte', 'puma'],
+      imagesByColor: {
+        'green': [
+          'https://picsum.photos/400/300?random=9',
+          'https://picsum.photos/400/300?random=10'
+        ],
+        'yellow': [
+          'https://picsum.photos/400/300?random=11',
+          'https://picsum.photos/400/300?random=12'
+        ]
+      },
+      inStock: true,
+      stockQuantity: 10,
+      colors: ['green', 'yellow'],
+      sizes: ['39', '40', '41']
+    }
+    // Add other products similarly
   ];
 
   promotionalProducts = [
@@ -164,7 +130,7 @@ export class HomeComponent {
       name: 'Google',
       imageUrl: 'https://picsum.photos/400/300?random=19'
     }
-  ]
+  ];
 
   categories = [
     { name: 'Roupas', imageUrl: 'https://picsum.photos/400/300?random=19', route: '/roupas' },
@@ -178,5 +144,4 @@ export class HomeComponent {
     { imageUrl: 'https://picsum.photos/400/300?random=22', route: '/route2' },
     { imageUrl: 'https://picsum.photos/400/300?random=22', route: '/route3' }
   ];
-
- }
+}

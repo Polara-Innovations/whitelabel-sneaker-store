@@ -1,0 +1,36 @@
+.settings-container {
+  position: relative;
+  justify-content: center;
+  text-align: center;
+}
+
+.settings-title {
+  font-size: 100%;
+  padding: var(--spacing-sm);
+}
+
+.settings-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: fit-content;
+  background-color: var(--color-bg-muted);
+  z-index: 3000;
+}
+
+hr {
+  margin: 0;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.toggles {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}

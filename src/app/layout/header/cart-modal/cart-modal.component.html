@@ -1,0 +1,55 @@
+<div class="cart-modal-container" *ngIf="isCartOpen" [@modalAnimation]>
+  <div class="cart-modal-menu">
+    <div>
+    <h3 class="cart-modal-title">Carrinho</h3>
+    <a href="#" class="cart-modal-close" (click)="closeCart()">
+      <i class="fas fa-times"></i>
+    </a>
+    <hr />
+    
+    <div class="cart-modal-items" *ngIf="cartItems.length > 0; else emptyCart">
+      <div *ngFor="let item of cartItems" class="cart-modal-item">
+        <div class="cart-modal-item-image">
+          <a [href]="'/produto/' + item.id">
+            <img [src]="item.imageUrl" alt="{{ item.name }}" class="cart-modal-item-thumbnail">
+          </a>
+        </div>
+
+        <div class="cart-modal-item-name" data-title="Produto">
+          <a [href]="'/produto/' + item.id">{{ item.name }}</a>
+        </div>
+
+        <div class="cart-modal-item-price" data-title="Preço">
+          <span class="quantity">
+            <span class="product-quantity">{{ item.quantity }} ×</span>
+            <span class="price-amount"><bdi><span class="currency-symbol">R$</span>&nbsp;{{ item.price | currency:'BRL':'symbol':'1.2-2' }}</bdi></span>
+          </span>
+        </div>
+
+        <div class="cart-modal-item-remove">
+          <a href="#" (click)="removeItem(item.id)" aria-label="Remover este item">Remover</a>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #emptyCart>
+      <div class="empty-cart">
+        <img src="https://images.unsplash.com/photo-1585673097487-9d2462c776ff" alt="Empty cart" class="empty-cart-image">
+        <p>Your cart is empty</p>
+      </div>
+    </ng-template>
+
+    <div class="cart-modal-subtotal" *ngIf="cartItems.length > 0">
+      <strong>Subtotal:</strong>
+      <span class="price-amount"><bdi><span class="currency-symbol">R$</span>&nbsp;{{ subtotal | currency:'BRL':'symbol':'1.2-2' }}</bdi></span>
+    </div>
+
+    <div class="cart-modal-footer-buttons" *ngIf="cartItems.length > 0">
+      <a href="/cart" class="button view-cart-modal-button">
+        <span class="button-text">Ver carrinho</span>
+      </a>
+      <a href="/checkout" class="button checkout-button">
+        <span class="button-text">Finalização de compra</span>
+      </a>
+    </div>
+  </div>
