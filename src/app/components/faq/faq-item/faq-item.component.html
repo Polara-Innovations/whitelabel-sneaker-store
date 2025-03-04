@@ -1,0 +1,11 @@
+<div class="faq-item" [class.expanded]="item.isExpanded">
+    <div class="faq-question" (click)="toggle()">
+      <span class="question-text">{{ item.question }}</span>
+      <span class="toggle-icon">
+        <i class="fas" [ngClass]="item.isExpanded ? 'fa-minus' : 'fa-plus'"></i>
+      </span>
+    </div>
+    <div class="faq-answer" [@expandCollapse]="item.isExpanded ? 'expanded' : 'collapsed'">
+      <div class="answer-content" [innerHTML]="item.answer"></div>
+    </div>
+  </div>

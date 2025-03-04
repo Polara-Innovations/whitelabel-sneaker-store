@@ -536,7 +536,7 @@
   }
 
   .action-buttons {
-    flex-direction: column;
+    width: 100%;
   }
 
   .add-to-wishlist {

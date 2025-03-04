@@ -7,21 +7,21 @@
   --color-warning: #f39c12;
   --color-error: #e74c3c;
   --color-info: #3498db;
-  
+
   --color-bg: #f8f9fa;
   --color-text: #333333;
   --color-link: #4b88c9;
   --color-link-hover: #3a77b8;
   --color-border: #e0e0e0;
   --color-section-bg: #ffffff;
-  
+
   /* Espaçamentos padrão */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
-  
+
   /* Fontes */
   --font-family: 'Roboto', sans-serif;
   --font-size-base: 16px;
@@ -29,40 +29,52 @@
   --font-size-md: 1rem;
   --font-size-lg: 1.25rem;
   --font-size-xl: 1.5rem;
-  
+
   /* Bordas */
   --border-radius-sm: 4px;
   --border-radius-md: 8px;
   --border-radius-lg: 12px;
   --border-radius-xl: 16px;
-  
+
   /* Sombras */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
-html, body {
-    scroll-behavior: smooth !important;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: var(--color-bg);
-    font-family: var(--font-family);
-    overflow: hidden; 
-  }
-  
-  app-root {
-    display: flex;
-    flex-direction: column;
-    height: 100vh; /* Altura total da tela */
-    overflow-y: auto; /* Adiciona barra de rolagem vertical */
-  }
+html,
+body {
+  scroll-behavior: smooth !important;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--color-bg);
+  font-family: var(--font-family);
+  overflow: hidden;
+}
 
-  * {
-    box-sizing: border-box;
-  }  
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
+}
 
-  p {
-    margin-bottom: 0 !important;
-  }
+app-products {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+app-home{
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin-bottom: 0 !important;
+}

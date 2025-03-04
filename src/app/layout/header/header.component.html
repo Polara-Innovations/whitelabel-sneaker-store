@@ -7,11 +7,15 @@
   <!-- Desktop Navigation - Tabs in row direction -->
   <div class="nav-items desktop-nav" *ngIf="!isMobile && !isHamburgerMenu">
     <app-nav-item-list 
-      [tabs]="tabs" 
-      direction="row" 
-      position="center"
-      [isVisible]="true">
-    </app-nav-item-list>
+    [tabs]="tabs" 
+    direction="row" 
+    position="center"
+    [tags]="tags"
+    [categories]="categories"
+    [isVisible]="true"
+    (dropdownToggled)="onDropdownToggled($event)"
+    (navItemClicked)="closeAllMenus()">
+  </app-nav-item-list>
   </div>
 
   <div class="toggles">
@@ -25,18 +29,20 @@
       <i class="fas fa-shopping-cart"></i>
       <span class="cart-count" *ngIf="cartItemCount > 0">{{ cartItemCount }}</span>
     </button>
-    <button class="menu-toggle" *ngIf="isMobile" (click)="toggleMenu()" [class.active]="isMenuOpen" aria-label="Menu">
+    <button class="menu-toggle" *ngIf="isMobile || isHamburgerMenu" (click)="toggleMenu()" [class.active]="isMenuOpen" aria-label="Menu">
       <i [ngClass]="isMenuOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
     </button>
   </div>
 </div>
 
 <!-- Backdrop para fechar menus quando clicado -->
-<div class="menu-backdrop" *ngIf="isMenuOpen || isSettingsOpen || isCartOpen || isProfileOpen" (click)="closeAllMenus()"></div>
+<div #menuBackdrop class="menu-backdrop" *ngIf="isMenuOpen || isSettingsOpen || isCartOpen || isProfileOpen || isDropdownOpen" (click)="closeAllMenus()"></div>
 
 <!-- Menu Tabs - Usando o componente TabsMenu -->
 <app-tabs-menu 
   *ngIf="!isHamburgerMenu && isMenuOpen" 
+  [tags]="tags"
+  [categories]="categories"
   [tabs]="tabs" 
   [logoUrl]="logoUrl" 
   [isDarkMode]="isDarkMode" 
@@ -64,6 +70,8 @@
 <!-- Menu hamburguer (quando configurado para este tipo) -->
 <app-hamburger-menu 
   *ngIf="isHamburgerMenu" 
+  [tags]="tags"
+  [categories]="categories"
   [tabs]="tabs" 
   [logoUrl]="logoUrl" 
   [isMenuOpen]="isMenuOpen"

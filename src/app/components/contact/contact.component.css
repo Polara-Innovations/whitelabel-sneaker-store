@@ -1,11 +1,4 @@
-.contact-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--spacing-lg) var(--spacing-md);
-  }
-  
-  .contact-header {
+.contact-header {
     text-align: center;
     margin-bottom: var(--spacing-xl);
   }

@@ -1,10 +1,12 @@
 <!-- brand-card.component.html -->
+ <a class="brand-link" (click)="onCardClick()">
 <div class="brand-card">
   <div class="image-container">
-    <img [src]="imageUrl" [alt]="name" />
+    <img [src]="brand.imageUrl" [alt]="brand.name" />
     <div class="overlay">
-      <span class="brand-name">{{ name }}</span>
+      <span class="brand-name">{{ brand.name }}</span>
       <span class="action-text">{{ actionLabel }}</span>
     </div>
   </div>
 </div>
+</a>

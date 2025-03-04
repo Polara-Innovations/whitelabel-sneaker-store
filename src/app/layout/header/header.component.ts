@@ -1,8 +1,10 @@
-import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { SettingsService } from '../../services/settings/settings.service';
 import { ThemeService } from '../../services/theme/theme.service';
 import { CartService } from '../../services/cart/cart.service';
+import { NavService } from '../../services/api/nav/nav.service';
 import { Subscription } from 'rxjs';
+import { NavCategory } from '../../models/nav-category.model';
 
 @Component({
   selector: 'app-header',
@@ -22,14 +24,24 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isCartOpen = false;
   isProfileOpen = false;
   cartItemCount = 0;
-  
+  categories: NavCategory[] = [];
+  tags: NavCategory[] = [];
+  isDropdownOpen = false;
+
+  @ViewChild('menuBackdrop', { static: false }) menuBackdrop: ElementRef | null = null;
+  private dropdownElements: HTMLElement[] = [];
+
+  private categoriesSubscription?: Subscription;
+  private tagsSubscription?: Subscription;
   private cartCountSubscription?: Subscription;
   private themeSubscription?: Subscription;
 
   constructor(
     private settingsService: SettingsService,
     private themeService: ThemeService,
-    private cartService: CartService
+    private cartService: CartService,
+    private navService: NavService,
+    private renderer: Renderer2
   ) {
     const menuConfig = this.settingsService.getMenuConfig().header;
     this.isHamburgerMenu = menuConfig.type === 'hamburger';
@@ -39,66 +51,105 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.checkIfMobile();
-    
-    // Inscrever-se para receber atualizações do tema
     this.themeSubscription = this.themeService.currentThemeMode.subscribe(mode => {
       this.isDarkMode = mode === 'dark';
     });
-    
-    // Inscrever-se para receber atualizações da contagem de itens no carrinho
     this.cartCountSubscription = this.cartService.cartCount$.subscribe(count => {
       this.cartItemCount = count;
     });
+    this.loadNavData();
   }
 
   ngOnDestroy() {
-    // Limpar inscrições
-    if (this.cartCountSubscription) {
-      this.cartCountSubscription.unsubscribe();
-    }
-    
-    if (this.themeSubscription) {
-      this.themeSubscription.unsubscribe();
-    }
+    this.cartCountSubscription?.unsubscribe();
+    this.themeSubscription?.unsubscribe();
+    this.categoriesSubscription?.unsubscribe();
+    this.tagsSubscription?.unsubscribe();
   }
 
   @HostListener('window:resize')
-  checkIfMobile() {
+  onWindowResize() {
+    this.checkIfMobile();
+    this.adjustBackdropAndDropdowns();
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (!target.closest('.navbar') &&
+        !target.closest('.settings-container') &&
+        !target.closest('.cart-modal-container') &&
+        !target.closest('.hamburger-menu') &&
+        !target.closest('.mobile-menu-dropdown')) {
+      this.closeAllMenus();
+    }
+  }
+
+  private checkIfMobile() {
     const prevMobile = this.isMobile;
     this.isMobile = window.innerWidth <= 768;
-    
-    // Se mudou de desktop para mobile, feche menus abertos
     if (!prevMobile && this.isMobile) {
       this.closeAllMenus();
     }
   }
 
+  private getScrollbarWidth(): number {
+    return window.innerWidth - document.documentElement.clientWidth;
+  }
+
+  private adjustBackdropAndDropdowns(): void {
+    const scrollbarWidth = this.getScrollbarWidth();
+    if (this.menuBackdrop?.nativeElement) {
+      this.renderer.setStyle(this.menuBackdrop.nativeElement, 'width', `${document.documentElement.clientWidth}px`);
+    }
+    setTimeout(() => {
+      this.dropdownElements = Array.from(document.querySelectorAll('.dropdown-menu.show')) as HTMLElement[];
+      this.dropdownElements.forEach(dropdown => {
+        this.renderer.setStyle(dropdown, 'width', `${document.documentElement.clientWidth}px`);
+      });
+    }, 0);
+  }
+
+  private loadNavData() {
+    this.categoriesSubscription = this.navService.getCategories().subscribe(categories => {
+      this.categories = categories;
+    });
+    this.tagsSubscription = this.navService.getTags().subscribe(tags => {
+      this.tags = tags;
+    });
+  }
+
+  getItemsForDropdown(tabName: string): NavCategory[] {
+    if (tabName.toLowerCase() === 'categorias') {
+      return this.categories;
+    } else if (tabName.toLowerCase() === 'marcas') {
+      return this.tags;
+    }
+    return [];
+  }
+
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
-    
-    // Fechar outros menus quando abrir o menu principal
     if (this.isMenuOpen) {
       this.isSettingsOpen = false;
       this.isCartOpen = false;
       this.isProfileOpen = false;
     }
+    this.adjustBackdropAndDropdowns();
   }
 
   toggleSettings() {
     this.isSettingsOpen = !this.isSettingsOpen;
-    
-    // Fechar outros menus quando abrir configurações
     if (this.isSettingsOpen) {
       this.isCartOpen = false;
       this.isProfileOpen = false;
       this.isMenuOpen = false;
     }
+    this.adjustBackdropAndDropdowns();
   }
 
   toggleCart() {
     this.isCartOpen = !this.isCartOpen;
-    
-    // Fechar outros menus quando abrir carrinho
     if (this.isCartOpen) {
       this.isSettingsOpen = false;
       this.isProfileOpen = false;
@@ -108,8 +159,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   toggleProfile() {
     this.isProfileOpen = !this.isProfileOpen;
-    
-    // Fechar outros menus quando abrir perfil
     if (this.isProfileOpen) {
       this.isSettingsOpen = false;
       this.isCartOpen = false;
@@ -117,25 +166,28 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
   }
 
-  closeAllMenus() {
+  closeAllMenus(): void {
     this.isMenuOpen = false;
     this.isSettingsOpen = false;
     this.isCartOpen = false;
     this.isProfileOpen = false;
+    this.isDropdownOpen = false;
+    this.dropdownElements.forEach(dropdown => {
+      this.renderer.removeClass(dropdown, 'show');
+    });
+    this.adjustBackdropAndDropdowns();
   }
 
-  // Fechar menus quando clicar fora deles
-  @HostListener('document:click', ['$event'])
-  onDocumentClick(event: MouseEvent) {
-    const target = event.target as HTMLElement;
+  onDropdownToggled(isOpen: boolean): void {
+    this.isDropdownOpen = isOpen;
     
-    // Verifica se o clique foi fora dos menus
-    if (!target.closest('.navbar') && 
-        !target.closest('.settings-container') && 
-        !target.closest('.cart-modal-container') &&
-        !target.closest('.hamburger-menu') &&
-        !target.closest('.mobile-menu-dropdown')) {
-      this.closeAllMenus();
+    // Se abrir um dropdown, fechar outros menus
+    if (isOpen) {
+      this.isSettingsOpen = false;
+      this.isCartOpen = false;
+      this.isProfileOpen = false;
     }
+
+    this.adjustBackdropAndDropdowns();
   }
 }

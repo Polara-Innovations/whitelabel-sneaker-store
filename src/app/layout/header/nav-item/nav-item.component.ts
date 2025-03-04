@@ -10,8 +10,6 @@ import { Tab } from '../../../models/tab.model';
 export class NavItemComponent {
   @Input() tab: Tab = { name: '', route: '', icon: '', display: '' };
   @Input() isActive: boolean = false;
-  @Input() direction: 'row' | 'column' = 'row';
-  @Input() position: 'left' | 'center' | 'right' = 'left';
   @Output() navClick = new EventEmitter<void>();
   
   onClick() {

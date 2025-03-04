@@ -221,6 +221,30 @@ export class ThemeService {
     root.style.setProperty('--contact-form-social-bg', theme.components.contactForm.socialIconBackground);
     root.style.setProperty('--contact-form-social-color', theme.components.contactForm.socialIconColor);
     root.style.setProperty('--contact-form-social-hover', theme.components.contactForm.socialIconHoverBackground);
+
+    root.style.setProperty('--faq-bg', theme.components.faq.background);
+    root.style.setProperty('--faq-title', theme.components.faq.titleText);
+    root.style.setProperty('--faq-question', theme.components.faq.questionText);
+    root.style.setProperty('--faq-answer', theme.components.faq.answerText);
+    root.style.setProperty('--faq-question-bg', theme.components.faq.questionBackground);
+    root.style.setProperty('--faq-answer-bg', theme.components.faq.answerBackground);
+    root.style.setProperty('--faq-border', theme.components.faq.border);
+    root.style.setProperty('--faq-icon', theme.components.faq.iconColor);
+    root.style.setProperty('--faq-icon-active', theme.components.faq.iconActiveColor);
+    root.style.setProperty('--faq-hover-bg', theme.components.faq.hoverBackground);
+    root.style.setProperty('--faq-active-bg', theme.components.faq.activeBackground);
+
+    root.style.setProperty('--carousel-bg', theme.components.carousel.background);
+    root.style.setProperty('--carousel-nav-btn-bg', theme.components.carousel.navigationButtonBackground);
+    root.style.setProperty('--carousel-nav-btn-text', theme.components.carousel.navigationButtonText);
+    root.style.setProperty('--carousel-nav-btn-hover-bg', theme.components.carousel.navigationButtonHoverBackground);
+    root.style.setProperty('--carousel-nav-btn-hover-text', theme.components.carousel.navigationButtonHoverText);
+    root.style.setProperty('--carousel-bullet-bg', theme.components.carousel.bulletBackground);
+    root.style.setProperty('--carousel-bullet-active-bg', theme.components.carousel.bulletActiveBackground);
+    root.style.setProperty('--carousel-item-bg', theme.components.carousel.itemBackground);
+    root.style.setProperty('--carousel-fade-start', theme.components.carousel.fadeGradientStart);
+    root.style.setProperty('--carousel-fade-end', theme.components.carousel.fadeGradientEnd);
+    
   }
 
   /**

@@ -40,6 +40,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductSearchComponent } from './components/products/product-search/product-search.component';
 import { ProductFiltersComponent } from './components/products/product-filters/product-filters.component';
 import { ProductSortComponent } from './components/products/product-sort/product-sort.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { faqItemComponent } from './components/faq/faq-item/faq-item.component';
+import { NavItemDropdownComponent } from './layout/header/nav-item-dropdown/nav-item-dropdown.component';
+import { NavDropdownComponent } from './layout/header/nav-dropdown/nav-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +82,9 @@ import { ProductSortComponent } from './components/products/product-sort/product
     ToggleComponent,
     CartModalComponent,
     SafePipe,
+    faqItemComponent,
+    NavItemDropdownComponent,
+    NavDropdownComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,7 +93,8 @@ import { ProductSortComponent } from './components/products/product-sort/product
     AppRoutingModule,
     RouterModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

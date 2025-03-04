@@ -1,0 +1,599 @@
+@import '../nav-item/nav-item.component.css';
+
+/* Estilos base para o item dropdown */
+.dropdown-nav-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Alinhamento baseado na posição */
+.dropdown-nav-item.align-start {
+  align-items: flex-start;
+}
+
+.dropdown-nav-item.align-center {
+  align-items: center;
+}
+
+.dropdown-nav-item.align-end {
+  align-items: flex-end;
+}
+
+/* Ajuste para o link dentro do dropdown */
+.dropdown-nav-item.align-start .nav-link {
+  justify-content: flex-start;
+  width: auto;
+}
+
+.dropdown-nav-item.align-center .nav-link {
+  justify-content: center;
+  width: auto;
+}
+
+.dropdown-nav-item.align-end .nav-link {
+  justify-content: flex-end;
+  width: auto;
+}
+
+/* Garantir que o toggle tenha espaço para o ícone */
+.dropdown-toggle {
+  justify-content: space-between;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: var(--header-text);
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: auto;
+}
+
+.nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--header-active);
+}
+
+.nav-item.active .nav-link {
+  color: var(--header-active);
+  font-weight: 500;
+}
+
+.title-line {
+  background-color: var(--header-active);
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+/* Estilos para o menu dropdown (desktop) */
+.dropdown-menu {
+  display: none;
+  position: fixed;
+  top: 62.5px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--modal-bg);
+  color: var(--modal-text);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1990;
+  border-bottom: 1px solid var(--header-border);
+  animation: slideDown 0.3s ease;
+  overflow-x: hidden;
+  padding: 20px 0;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu .dropdown-inner {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg, 20px);
+}
+
+/* Ajuste para o dropdown menu no modo coluna */
+.dropdown-nav-item.align-center .dropdown-menu.mobile-dropdown {
+  width: 100%;
+  align-self: center;
+}
+
+.dropdown-nav-item.align-end .dropdown-menu.mobile-dropdown {
+  width: 100%;
+  align-self: flex-end;
+}
+
+/* Lista de itens principais (categorias) */
+.main-items-list {
+  width: 25%;
+  min-width: 200px;
+  background-color: var(--modal-bg);
+  border-right: 1px solid var(--modal-border);
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.main-items-list .main-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--modal-text);
+  border-radius: 4px;
+}
+
+.main-items-list .main-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.main-items-list .main-item.active {
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--header-text);
+  font-weight: 500;
+}
+
+.main-items-list .main-item i {
+  font-size: 0.75rem;
+}
+
+/* Painel de subitens (detalhes da categoria) */
+.sub-items-panel {
+  flex: 1;
+  padding: 0 20px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sub-items-panel .sub-items-header {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--modal-border);
+  color: var(--modal-text);
+}
+
+.sub-items-panel .sub-items-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.sub-items-panel .sub-items-list .sub-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--modal-text);
+  border-radius: 4px;
+}
+
+.sub-items-panel .sub-items-list .sub-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-link-hover);
+}
+
+/* Botão de pesquisa para categorias sem subcategorias */
+.search-category-btn {
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  background-color: var(--color-primary-light, rgba(75, 136, 201, 0.1));
+  color: var(--header-text);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+}
+
+.search-category-btn i {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.search-category-btn:hover {
+  background-color: var(--color-primary-light-hover, rgba(75, 136, 201, 0.2));
+}
+
+/* Mensagem quando nenhuma categoria está selecionada */
+.no-selection-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  color: var(--modal-text-secondary, #6c757d);
+  text-align: center;
+}
+
+.no-selection-message i {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--color-primary-light, rgba(75, 136, 201, 0.5));
+}
+
+.no-selection-message p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Estilos para o acordeão (modo mobile/vertical) - MELHORADO */
+.sub-items-accordion {
+  width: 100%;
+  background-color: var(--modal-bg);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.sub-items-accordion .accordion-item {
+  border-bottom: 1px solid var(--modal-border);
+  background-color: var(--modal-bg);
+}
+
+.sub-items-accordion .accordion-item:last-child {
+  border-bottom: none;
+}
+
+.sub-items-accordion .accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 15px;
+  font-weight: 450;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--header-text);
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.accordion-header span {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.sub-items-accordion .accordion-header:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sub-items-accordion .accordion-header i {
+  font-size: 0.75rem;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  color: var(--header-text);
+  background-color: rgba(75, 136, 201, 0.1);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.sub-items-accordion .accordion-content {
+  background-color: var(--modal-bg);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  padding: 0 15px;
+}
+
+.sub-items-accordion .accordion-content.expanded {
+  max-height: 500px;
+  padding: 8px 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo dos subitens no acordeão */
+.sub-items-accordion .accordion-content .accordion-sub-item {
+  padding: 8px 15px;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.sub-items-accordion .accordion-content .accordion-sub-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--header-active);
+  transform: translateX(3px);
+}
+
+.sub-items-accordion .accordion-content .accordion-search-btn {
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  background-color: var(--color-primary-light, rgba(75, 136, 201, 0.1));
+  color: var(--header-text);
+  margin: 10px 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sub-items-accordion .accordion-content .accordion-search-btn i {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.sub-items-accordion .accordion-content .accordion-search-btn:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--header-active);
+}
+
+.sub-items-accordion .accordion-item.active .accordion-header {
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--header-text);
+}
+
+.sub-items-accordion .accordion-item.active .accordion-header i {
+  transform: rotate(45deg);
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--header-text);
+}
+
+.sub-items-accordion .accordion-item.active .accordion-content {
+  max-height: 500px;
+}
+
+.mobile-dropdown {
+  position: static;
+  width: 100%;
+  box-shadow: none;
+  padding: 0 !important;
+  padding-bottom: 1rem;
+  border: none;
+  animation: none;
+  order: 1;
+}
+
+.mobile-dropdown .dropdown-inner {
+  max-width: none;
+  padding: 0;
+  width: 100%;
+  flex-direction: column;
+}
+
+/* Animação de deslizamento para baixo */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .dropdown-menu .dropdown-inner {
+    flex-direction: column;
+  }
+
+  .main-items-list {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--modal-border);
+    max-height: 300px;
+  }
+
+  .sub-items-panel {
+    padding: 15px;
+  }
+
+  .sub-items-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Garantir que o item do dropdown respeite a posição */
+  .dropdown-nav-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Estilos para o link de navegação */
+  .nav-link {
+    width: auto;
+  }
+
+  /* Dropdown no mobile */
+  .dropdown-menu {
+    position: static;
+    width: 100% !important;
+    box-shadow: none;
+    border-radius: 0;
+    animation: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid var(--modal-border);
+  }
+
+  .dropdown-menu .dropdown-inner {
+    flex-direction: column;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .dropdown-menu .main-items-list {
+    width: 100%;
+    border-right: none;
+    max-height: none;
+  }
+
+  .dropdown-menu .sub-items-panel {
+    padding: 10px;
+  }
+
+  .dropdown-menu .sub-items-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Estilo melhorado do acordeão no mobile */
+  .mobile-dropdown {
+    width: 100%;
+    margin-top: 5px;
+    padding: 0 10px;
+  }
+
+  .mobile-dropdown .dropdown-inner {
+    padding: 0;
+  }
+
+  .sub-items-accordion {
+    width: 100%;
+    border: 1px solid var(--modal-border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .sub-items-accordion .accordion-item {
+    margin: 0;
+  }
+
+  /* Estilo melhorado para os cabeçalhos do acordeão */
+  .sub-items-accordion .accordion-header {
+    padding: 8px 15px;
+    font-weight: 450;
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+
+  /* Estilo melhorado para os subitens do acordeão */
+  .sub-items-accordion .accordion-content .accordion-sub-item {
+    margin: 5px 0;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.02);
+    border: none;
+    padding: 8px 15px;
+  }
+
+  .sub-items-accordion .accordion-content .accordion-sub-item:last-child {
+    border-bottom: none;
+  }
+
+  .sub-items-accordion .accordion-content .accordion-sub-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateX(3px);
+  }
+
+  /* Estilo melhorado para o botão de pesquisa no acordeão */
+  .sub-items-accordion .accordion-content .accordion-search-btn {
+    margin: 10px 0;
+    padding: 8px 15px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+  }
+
+  .sub-items-accordion .accordion-content .accordion-search-btn i {
+    margin-right: 10px;
+    font-size: 1rem;
+  }
+
+  /* Animações e transições para melhor experiência do usuário */
+  .sub-items-accordion .accordion-item {
+    transition: background-color 0.3s ease;
+  }
+
+  .sub-items-accordion .accordion-header {
+    transition: all 0.3s ease;
+  }
+
+  .sub-items-accordion .accordion-content {
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out, opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  .sub-items-accordion .accordion-content.expanded {
+    opacity: 1;
+  }
+
+  /* Estilo de foco para acessibilidade */
+  .nav-link:focus,
+  .accordion-header:focus,
+  .accordion-sub-item:focus,
+  .accordion-search-btn:focus {
+    outline: 2px solid var(--color-primary-light, rgba(75, 136, 201, 0.3));
+    outline-offset: 2px;
+  }
+
+  /* Melhorias para dispositivos touch */
+  @media (hover: none) {
+    .sub-items-accordion .accordion-header {
+      padding: 15px 20px;
+    }
+
+    .sub-items-accordion .accordion-content .accordion-sub-item {
+      padding: 15px 20px;
+    }
+
+    .sub-items-accordion .accordion-content .accordion-search-btn {
+      padding: 15px 20px;
+    }
+  }
+
+  /* Melhorias para telas muito pequenas */
+  @media (max-width: 360px) {
+    .dropdown-nav-item .nav-link {
+      padding: 12px 10px;
+    }
+
+    .sub-items-accordion .accordion-header {
+      padding: 12px;
+    }
+
+    .sub-items-accordion .accordion-content .accordion-sub-item {
+      padding: 10px 12px;
+    }
+
+    .sub-items-accordion .accordion-content .accordion-search-btn {
+      padding: 10px 12px;
+    }
+
+    .sub-items-accordion .accordion-header i,
+    .dropdown-nav-item .nav-link i {
+      font-size: 0.7rem;
+    }
+  }
+
+  /* Suporte para tema escuro (se aplicável) */
+  @media (prefers-color-scheme: dark) {
+    .sub-items-accordion .accordion-header {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .sub-items-accordion .accordion-content .accordion-sub-item {
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    .sub-items-accordion .accordion-content .accordion-sub-item:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .sub-items-accordion .accordion-item.active .accordion-header {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+}

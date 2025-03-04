@@ -1,10 +1,28 @@
-<ul class="navbar-nav" [ngClass]="{'column-direction': direction === 'column', 'row-direction': direction === 'row'}">
-  <app-nav-item 
-    *ngFor="let tab of tabs" 
-    [tab]="tab" 
-    [direction]="direction"
-    [position]="position"
-    [isActive]="tab.route === currentRoute"
-    (click)="onNavItemClick()">
-  </app-nav-item>
+<ul class="navbar-nav" [ngClass]="{
+  'row-direction': direction === 'row',
+  'column-direction': direction === 'column',
+  'nav-start': position === 'left',
+  'nav-center': position === 'center',
+  'nav-end': position === 'right',
+  'nav-space-between': position === 'space-between'
+}">
+  <ng-container *ngFor="let tab of tabs">
+    <!-- Item de navegação normal -->
+    <app-nav-item *ngIf="!isDropdownTab(tab)" [tab]="tab" [isActive]="tab.route === currentRoute"
+      [class.vertical]="direction === 'column'" [class.align-start]="position === 'left'"
+      [class.align-center]="position === 'center'" [class.align-end]="position === 'right'"
+      [class.indicator-side]="position === 'left'"
+      [class.indicator-bottom]="(position === 'center' || position === 'right')"
+      (navClick)="onNavItemClick()">
+    </app-nav-item>
+
+    <!-- Item de navegação dropdown -->
+    <app-nav-item-dropdown *ngIf="isDropdownTab(tab)" [tab]="tab" [isActive]="false" [layoutMode]="direction"
+      [items]="getItemsForDropdown(tab.name)" [class.vertical]="direction === 'column'"
+      [class.align-start]="position === 'left'" [class.align-center]="position === 'center'"
+      [class.align-end]="position === 'right'" [class.indicator-side]="direction === 'column' || position === 'left'"
+      [class.indicator-bottom]="direction === 'row' && (position === 'center' || position === 'right')"
+      (navClick)="onNavItemClick()" (dropdownToggled)="onDropdownToggled($event)">
+    </app-nav-item-dropdown>
+  </ng-container>
 </ul>

@@ -1,12 +1,12 @@
-<div class="category-card-container">
+<div class="category-card-container" (click)="onCardClick()">
     <div class="image-container">
-      <img [src]="imageUrl" [alt]="title" />
+      <img [src]="category.imageUrl" [alt]="category.name" />
     </div>
   
     <div class="category-card">
       <div class="category-title-container">
-        <h3 class="category-title" title="{{ title }}">{{ title }}</h3>
-        <div class="tooltip">{{ title }}</div>
+        <h3 class="category-title" title="{{ category.name }}">{{ category.name }}</h3>
+        <div class="tooltip">{{ category.name }}</div>
       </div>
     </div>
   </div>

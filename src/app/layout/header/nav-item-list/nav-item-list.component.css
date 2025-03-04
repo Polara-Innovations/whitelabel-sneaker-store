@@ -6,24 +6,170 @@
   gap: var(--spacing-md);
   width: 100%;
   flex-wrap: wrap;
-  justify-content: center; /* Garantir centralização */
 }
 
-.row-direction {
-  flex-direction: row;
-  align-items: center;
-  justify-content: center; /* Centralizar na horizontal */
+/* Regras específicas por direção para app-nav-item e app-nav-item-dropdown */
+.row-direction app-nav-item,
+.row-direction app-nav-item-dropdown {
+  width: auto; /* Mantém o tamanho natural no modo linha */
 }
 
-.column-direction {
-  flex-direction: column;
-  align-items: flex-start;
+.column-direction app-nav-item,
+.column-direction app-nav-item-dropdown {
+  width: 100%; /* Ocupa 100% da largura no modo coluna */
+  display: flex;
+  justify-content: inherit; /* Herda o alinhamento do pai */
 }
 
-.column-direction app-nav-item {
+/* Ajustes para posicionamento no modo coluna */
+.column-direction.nav-start app-nav-item,
+.column-direction.nav-start app-nav-item-dropdown {
+  align-self: flex-start;
   width: 100%;
 }
 
+.column-direction.nav-center app-nav-item,
+.column-direction.nav-center app-nav-item-dropdown {
+  align-self: center;
+  width: 100%;
+}
+
+.column-direction.nav-end app-nav-item,
+.column-direction.nav-end app-nav-item-dropdown {
+  align-self: flex-end;
+  width: 100%;
+}
+
+/* Garantir que os itens de navegação respeitem o alinhamento no modo coluna */
+.column-direction .nav-item.align-start .nav-link,
+.column-direction .dropdown-nav-item.align-start .nav-link {
+  justify-content: flex-start;
+}
+
+.column-direction .nav-item.align-center .nav-link,
+.column-direction .dropdown-nav-item.align-center .nav-link {
+  justify-content: center;
+}
+
+.column-direction .nav-item.align-end .nav-link,
+.column-direction .dropdown-nav-item.align-end .nav-link {
+  justify-content: flex-end;
+}
+
+/* Estilos para direção em linha (horizontal) */
+.row-direction {
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Estilos para direção em coluna (vertical) */
+.column-direction {
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+}
+
+/* Posicionamento dos itens na direção em linha */
+.row-direction.nav-start {
+  justify-content: flex-start;
+}
+
+.row-direction.nav-center {
+  justify-content: center;
+}
+
+.row-direction.nav-end {
+  justify-content: flex-end;
+}
+
+.row-direction.nav-space-between {
+  justify-content: space-between;
+}
+
+/* Posicionamento dos itens na direção em coluna */
+.column-direction.nav-start {
+  align-items: flex-start;
+}
+
+.column-direction.nav-center {
+  align-items: center;
+}
+
+.column-direction.nav-end {
+  align-items: flex-end;
+}
+
+/* Configurações para os itens de navegação */
+.row-direction .nav-item {
+  width: auto;
+}
+
+.column-direction .nav-item {
+  width: 100%;
+}
+
+/* Alinhamento do conteúdo dentro dos links */
+.row-direction .nav-item .nav-link {
+  width: auto;
+}
+
+.column-direction .nav-item .nav-link {
+  width: auto; /* Alterado de 100% para auto */
+}
+
+/* Alinhamento do texto dentro dos links */
+.nav-item.align-start .nav-link {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.nav-item.align-center .nav-link {
+  justify-content: center;
+  text-align: center;
+}
+
+.nav-item.align-end .nav-link {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+/* Estilos para os indicadores de item ativo */
+.nav-item.indicator-side .title-line {
+  width: 4px;
+  height: 70%;
+  top: 15%;
+  left: 0;
+  right: auto;
+  bottom: auto;
+}
+
+.nav-item.indicator-bottom .title-line {
+  height: 2px;
+  width: 80%;
+  left: 10%;
+  right: 10%;
+  bottom: 0;
+  top: auto;
+}
+
+/* Configurações específicas para dropdowns */
+.row-direction .dropdown-menu.desktop-dropdown {
+  display: block;
+}
+
+.row-direction .dropdown-menu.mobile-dropdown {
+  display: none;
+}
+
+.column-direction .dropdown-menu.desktop-dropdown {
+  display: none;
+}
+
+.column-direction .dropdown-menu.mobile-dropdown {
+  display: block;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
   .navbar-nav {
     gap: var(--spacing-sm);
@@ -32,4 +178,21 @@
   .column-direction {
     padding: 0 15px;
   }
+  
+  /* Usar indicador lateral em telas pequenas */
+  .nav-item .title-line {
+    width: 4px;
+    height: 70%;
+    top: 15%;
+    left: 0;
+    right: auto;
+    bottom: auto;
+  }
+  
+  /* Ajustes para mobile em modo coluna */
+  .column-direction app-nav-item,
+  .column-direction app-nav-item-dropdown {
+    align-self: stretch;
+  }
+  
 }

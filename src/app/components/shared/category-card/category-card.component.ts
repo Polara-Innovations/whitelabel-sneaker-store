@@ -1,6 +1,7 @@
 // category-card.component.ts
 import { Component, Input, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
+import { Category } from '../../../models/category.model';
 
 @Component({
   standalone: false,
@@ -9,9 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./category-card.component.scss']
 })
 export class CategoryCardComponent {
-  @Input() title!: string;
-  @Input() imageUrl!: string;
-  @Input() route!: string;
+  @Input() category!: Category;
   
   // Permitir ajuste de largura externamente
   @HostBinding('style.width') width = '250px';
@@ -26,7 +25,7 @@ export class CategoryCardComponent {
     }
   }
 
-  handleClick() {
-    this.router.navigate([this.route]);
+  onCardClick(): void {
+    this.router.navigate(['/products'], { queryParams: { category: this.category.name } });
   }
 }

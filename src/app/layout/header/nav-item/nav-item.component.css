@@ -1,7 +1,7 @@
 .nav-item {
   position: relative;
   transition: all 0.3s ease;
-  width: fit-content;
+  width: 100%;
 }
 
 .nav-link {
@@ -30,43 +30,53 @@
   color: var(--header-active);
 }
 
-/* Indicador à esquerda (padrão para vertical) */
-.nav-item.indicator-left .title-line {
-  width: 4px;
-  height: 70%;
-  top: 15%;
-  left: 0;
-  right: auto;
-  bottom: auto;
-}
-
-/* Indicador abaixo (para horizontal) */
-.nav-item.indicator-bottom .title-line {
-  height: 2px;
-  width: 80%;
-  left: 10%;
-  right: 10%;
-  bottom: 0;
-  top: auto;
-}
-
-.nav-item.vertical.indicator-bottom .nav-link {
-  justify-content: center;
-}
-
 .title-line {
   background-color: var(--header-active);
   position: absolute;
   transition: all 0.3s ease;
 }
 
+/* Modificado para suportar alinhamentos no modo vertical */
 .nav-item.vertical {
   width: 100%;
+  display: flex;
 }
 
-.nav-item.vertical .nav-link {
-  width: 100%;
+/* Alinhamento dos links baseado na posição */
+.nav-item.align-start,
+.nav-item.vertical.align-start {
   justify-content: flex-start;
+}
+
+.nav-item.align-center,
+.nav-item.vertical.align-center {
+  justify-content: center;
+}
+
+.nav-item.align-end,
+.nav-item.vertical.align-end {
+  justify-content: flex-end;
+}
+
+/* Ajuste para os links dentro dos itens de navegação */
+.nav-item.align-start .nav-link {
+  justify-content: flex-start;
+  width: auto;
+}
+
+.nav-item.align-center .nav-link {
+  justify-content: center;
+  width: auto;
+}
+
+.nav-item.align-end .nav-link {
+  justify-content: flex-end;
+  width: auto;
+}
+
+/* Ajustes específicos para modo vertical */
+.nav-item.vertical .nav-link {
+  width: auto;
 }
 
 @media (max-width: 768px) {
@@ -76,10 +86,14 @@
   
   .nav-link {
     display: flex;
-    justify-content: left;
     align-items: center;
     padding: 12px 15px;
-    width: 100%;
+    width: auto;
+  }
+  
+  /* Forçar alinhamento à esquerda em telas pequenas */
+  .nav-item .nav-link {
+    justify-content: flex-start;
   }
   
   /* Sempre usar indicador à esquerda no mobile */

@@ -104,6 +104,33 @@
     socialIconHoverBackground: string;
   }
 
+  export interface faqColors {
+    background: string;
+    titleText: string;
+    questionText: string;
+    answerText: string;
+    questionBackground: string;
+    answerBackground: string;
+    border: string;
+    iconColor: string;
+    iconActiveColor: string;
+    hoverBackground: string;
+    activeBackground: string;
+  }
+
+  export interface CarouselColors {
+    background: string;
+    navigationButtonBackground: string;
+    navigationButtonText: string;
+    navigationButtonHoverBackground: string;
+    navigationButtonHoverText: string;
+    bulletBackground: string;
+    bulletActiveBackground: string;
+    itemBackground: string;
+    fadeGradientStart: string;
+    fadeGradientEnd: string;
+  }
+
   export interface ThemeConfig {
     name: string;
     id: string;
@@ -125,6 +152,8 @@
       input: ComponentColors;
       modal: ComponentColors;
       contactForm: ContactFormColors;
+      faq: faqColors;
+      carousel: CarouselColors;
     };
   }
 

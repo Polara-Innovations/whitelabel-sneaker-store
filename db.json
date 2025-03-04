@@ -1,0 +1,900 @@
+{
+    "brands": [
+        {
+            "id": 1,
+            "name": "Nike",
+            "imageUrl": "https://picsum.photos/400/300?random=13"
+        },
+        {
+            "id": 2,
+            "name": "Adidas",
+            "imageUrl": "https://picsum.photos/400/300?random=14"
+        },
+        {
+            "id": 3,
+            "name": "Puma",
+            "imageUrl": "https://picsum.photos/400/300?random=15"
+        },
+        {
+            "id": 4,
+            "name": "Reebok",
+            "imageUrl": "https://picsum.photos/400/300?random=16"
+        },
+        {
+            "id": 5,
+            "name": "New Balance",
+            "imageUrl": "https://picsum.photos/400/300?random=17"
+        },
+        {
+            "id": 6,
+            "name": "Asics",
+            "imageUrl": "https://picsum.photos/400/300?random=18"
+        },
+        {
+            "id": 7,
+            "name": "Converse",
+            "imageUrl": "https://picsum.photos/400/300?random=19"
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Basquete",
+            "imageUrl": "https://picsum.photos/400/300?random=19"
+        },
+        {
+            "id": 2,
+            "name": "Moda",
+            "imageUrl": "https://picsum.photos/400/300?random=20"
+        },
+        {
+            "id": 3,
+            "name": "Esporte",
+            "imageUrl": "https://picsum.photos/400/300?random=21"
+        },
+        {
+            "id": 4,
+            "name": "Corrida",
+            "imageUrl": "https://picsum.photos/400/300?random=22"
+        },
+        {
+            "id": 5,
+            "name": "Casual",
+            "imageUrl": "https://picsum.photos/400/300?random=23"
+        },
+        {
+            "id": 6,
+            "name": "Skate",
+            "imageUrl": "https://picsum.photos/400/300?random=24"
+        },
+        {
+            "id": 7,
+            "name": "Trilha",
+            "imageUrl": "https://picsum.photos/400/300?random=25"
+        }
+    ],
+    "banners": [
+        {
+            "id": 1,
+            "imageUrl": "https://picsum.photos/1200/400?random=22",
+            "route": "/route1"
+        },
+        {
+            "id": 2,
+            "imageUrl": "https://picsum.photos/1200/400?random=23",
+            "route": "/route2"
+        },
+        {
+            "id": 3,
+            "imageUrl": "https://picsum.photos/1200/400?random=24",
+            "route": "/route3"
+        }
+    ],
+    "faq": {
+        "title": "Perguntas Frequentes",
+        "sections": [
+            {
+                "id": "pedidos",
+                "title": "Pedidos e Compras",
+                "items": [
+                    {
+                        "id": "pedido-1",
+                        "question": "Como faço para rastrear meu pedido?",
+                        "answer": "Você pode rastrear seu pedido através da página 'Meus Pedidos' na sua conta. Alternativamente, você pode usar o código de rastreamento enviado no e-mail de confirmação do pedido. Se você tiver alguma dúvida adicional, entre em contato com nosso suporte ao cliente."
+                    },
+                    {
+                        "id": "pedido-2",
+                        "question": "Quanto tempo leva para processar meu pedido?",
+                        "answer": "Normalmente, processamos os pedidos em até 24 horas nos dias úteis. Após o processamento, o tempo de entrega depende do método de envio escolhido durante a finalização da compra. Entregas padrão geralmente levam de 3 a 7 dias úteis, enquanto entregas expressas podem chegar em 1-2 dias úteis."
+                    },
+                    {
+                        "id": "pedido-3",
+                        "question": "Posso alterar ou cancelar meu pedido após a compra?",
+                        "answer": "Você pode alterar ou cancelar seu pedido dentro de 1 hora após a finalização da compra. Para isso, acesse 'Meus Pedidos' na sua conta e selecione a opção desejada. Após este período, entre em contato com nosso suporte ao cliente para verificar se ainda é possível fazer alterações."
+                    },
+                    {
+                        "id": "pedido-4",
+                        "question": "Quais formas de pagamento são aceitas?",
+                        "answer": "Aceitamos diversas formas de pagamento, incluindo:<br><ul><li>Cartões de crédito (Visa, MasterCard, American Express)</li><li>Cartões de débito</li><li>PayPal</li><li>Pix</li><li>Boleto bancário (com prazo de compensação de até 3 dias úteis)</li></ul>"
+                    }
+                ]
+            },
+            {
+                "id": "produtos",
+                "title": "Produtos e Tamanhos",
+                "items": [
+                    {
+                        "id": "produto-1",
+                        "question": "Como escolher o tamanho correto de tênis?",
+                        "answer": "Para escolher o tamanho correto, recomendamos medir seu pé no final do dia (quando ele está um pouco maior) e consultar nossa <a href='/size-guide'>tabela de tamanhos</a>. Cada modelo pode ter pequenas variações, por isso também disponibilizamos informações específicas na página de cada produto."
+                    },
+                    {
+                        "id": "produto-2",
+                        "question": "Os tênis são originais?",
+                        "answer": "Sim, todos os produtos vendidos em nossa loja são 100% originais e autênticos. Trabalhamos diretamente com fabricantes e distribuidores oficiais para garantir a autenticidade de todos os itens."
+                    },
+                    {
+                        "id": "produto-3",
+                        "question": "Como cuidar dos meus tênis?",
+                        "answer": "Recomendamos seguir as instruções específicas do fabricante para cada modelo. Em geral:<br><ul><li>Evite lavar na máquina</li><li>Use produtos de limpeza apropriados para o material do tênis</li><li>Deixe secar naturalmente, longe de fontes diretas de calor</li><li>Guarde em local seco e arejado</li></ul>"
+                    },
+                    {
+                        "id": "produto-4",
+                        "question": "Vocês vendem meias também?",
+                        "answer": "Sim! Temos uma seleção de meias esportivas e casuais que combinam perfeitamente com nossos tênis. Você pode encontrá-las na seção <a href='/accessories'>Acessórios</a> do nosso site."
+                    }
+                ]
+            },
+            {
+                "id": "entregas",
+                "title": "Entregas e Devoluções",
+                "items": [
+                    {
+                        "id": "entrega-1",
+                        "question": "Qual o prazo de entrega?",
+                        "answer": "O prazo de entrega varia de acordo com sua localização e o método de envio escolhido. Entregas padrão geralmente levam de 3 a 7 dias úteis, enquanto entregas expressas podem chegar em 1-2 dias úteis. Durante o checkout, você poderá ver o prazo estimado para seu CEP."
+                    },
+                    {
+                        "id": "entrega-2",
+                        "question": "Vocês entregam em todo o Brasil?",
+                        "answer": "Sim, realizamos entregas para todos os estados e principais cidades do Brasil. Para algumas localidades remotas, pode haver um prazo adicional de entrega."
+                    },
+                    {
+                        "id": "devolucao-1",
+                        "question": "Como funciona a política de devolução?",
+                        "answer": "Você tem até 30 dias após o recebimento para solicitar a devolução de um produto. Os itens devem estar em perfeito estado, sem sinais de uso, com todas as etiquetas originais e na embalagem original. Para iniciar uma devolução, acesse 'Meus Pedidos' na sua conta."
+                    },
+                    {
+                        "id": "devolucao-2",
+                        "question": "Quem paga pelo frete da devolução?",
+                        "answer": "Se a devolução for por motivo de arrependimento ou troca de tamanho, o cliente é responsável pelo custo do frete de retorno. Em casos de produtos com defeito ou enviados incorretamente, nós cobrimos os custos de envio."
+                    }
+                ]
+            },
+            {
+                "id": "conta",
+                "title": "Conta e Privacidade",
+                "items": [
+                    {
+                        "id": "conta-1",
+                        "question": "Como criar uma conta?",
+                        "answer": "Para criar uma conta, clique em 'Entrar' no canto superior direito do site e selecione 'Criar conta'. Preencha os dados solicitados e siga as instruções. Você também pode criar uma conta durante o processo de checkout."
+                    },
+                    {
+                        "id": "conta-2",
+                        "question": "Esqueci minha senha, o que fazer?",
+                        "answer": "Se você esqueceu sua senha, clique em 'Entrar', depois em 'Esqueci minha senha'. Informe o e-mail cadastrado e você receberá instruções para criar uma nova senha."
+                    },
+                    {
+                        "id": "privacidade-1",
+                        "question": "Como vocês protegem meus dados pessoais?",
+                        "answer": "Levamos a proteção de dados muito a sério. Utilizamos criptografia SSL para todas as transações e seguimos rigorosamente as diretrizes da LGPD (Lei Geral de Proteção de Dados). Para mais informações, consulte nossa <a href='/privacy-policy'>Política de Privacidade</a>."
+                    }
+                ]
+            }
+        ]
+    },
+    "products": [
+        {
+            "id": 1,
+            "title": "Nike Air Force 1",
+            "description": "O clássico tênis de basquete que revolucionou o jogo agora é um ícone da moda.",
+            "oldPrice": 899.90,
+            "price": 799.90,
+            "imagesByColor": {
+                "#ff0000": [
+                    "https://picsum.photos/800/600?random=11"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Nike",
+                "Casual"
+            ],
+            "inStock": true,
+            "stockQuantity": 5,
+            "colors": [
+                "#ff0000"
+            ],
+            "sizes": [
+                "39",
+                "40",
+                "41"
+            ],
+            "categories": [
+                "Basquete",
+                "Moda"
+            ],
+            "createdAt": "2023-01-01T00:00:00.000Z"
+        },
+        {
+            "id": 2,
+            "title": "Nike Air Jordan 1",
+            "description": "O lendário tênis que definiu uma era continua a inspirar novas gerações.",
+            "oldPrice": 1599.90,
+            "price": 1299.90,
+            "imagesByColor": {
+                "#0000ff": [
+                    "https://picsum.photos/800/600?random=13"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Nike",
+                "Basketball"
+            ],
+            "inStock": true,
+            "stockQuantity": 8,
+            "colors": [
+                "#0000ff"
+            ],
+            "sizes": [
+                "40",
+                "42",
+                "43"
+            ],
+            "categories": [
+                "Basquete",
+                "Esporte"
+            ],
+            "createdAt": "2023-02-01T00:00:00.000Z"
+        },
+        {
+            "id": 3,
+            "title": "Adidas Ultraboost",
+            "description": "Conforto incomparável e retorno de energia para suas corridas.",
+            "oldPrice": 999.90,
+            "price": 899.90,
+            "imagesByColor": {
+                "#00ff00": [
+                    "https://picsum.photos/800/600?random=14"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Adidas",
+                "Running"
+            ],
+            "inStock": true,
+            "stockQuantity": 12,
+            "colors": [
+                "#00ff00"
+            ],
+            "sizes": [
+                "38",
+                "39",
+                "40",
+                "41",
+                "42"
+            ],
+            "categories": [
+                "Corrida",
+                "Esporte"
+            ],
+            "createdAt": "2023-03-01T00:00:00.000Z"
+        },
+        {
+            "id": 4,
+            "title": "Puma Suede Classic",
+            "description": "Um ícone do street style desde os anos 60.",
+            "oldPrice": 499.90,
+            "price": 399.90,
+            "imagesByColor": {
+                "#ffff00": [
+                    "https://picsum.photos/800/600?random=15"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Puma",
+                "Casual"
+            ],
+            "inStock": true,
+            "stockQuantity": 15,
+            "colors": [
+                "#ffff00"
+            ],
+            "sizes": [
+                "37",
+                "38",
+                "39",
+                "40",
+                "41"
+            ],
+            "categories": [
+                "Casual",
+                "Moda"
+            ],
+            "createdAt": "2023-04-01T00:00:00.000Z"
+        },
+        {
+            "id": 5,
+            "title": "New Balance 574",
+            "description": "O clássico atemporal da New Balance com conforto e estilo.",
+            "oldPrice": 699.90,
+            "price": 599.90,
+            "imagesByColor": {
+                "#ff00ff": [
+                    "https://picsum.photos/800/600?random=16"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "New Balance",
+                "Casual"
+            ],
+            "inStock": true,
+            "stockQuantity": 10,
+            "colors": [
+                "#ff00ff"
+            ],
+            "sizes": [
+                "39",
+                "40",
+                "41",
+                "42"
+            ],
+            "categories": [
+                "Casual",
+                "Moda"
+            ],
+            "createdAt": "2023-05-01T00:00:00.000Z"
+        },
+        {
+            "id": 6,
+            "title": "Asics Gel-Kayano",
+            "description": "Estabilidade e conforto para suas corridas de longa distância.",
+            "oldPrice": 899.90,
+            "price": 799.90,
+            "imagesByColor": {
+                "#000000": [
+                    "https://picsum.photos/800/600?random=17"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Asics",
+                "Running"
+            ],
+            "inStock": true,
+            "stockQuantity": 7,
+            "colors": [
+                "#000000"
+            ],
+            "sizes": [
+                "40",
+                "41",
+                "42",
+                "43"
+            ],
+            "categories": [
+                "Corrida",
+                "Esporte"
+            ],
+            "createdAt": "2023-06-01T00:00:00.000Z"
+        },
+        {
+            "id": 7,
+            "title": "Reebok Classic Leather",
+            "description": "O estilo retrô com o conforto moderno.",
+            "oldPrice": 599.90,
+            "price": 499.90,
+            "imagesByColor": {
+                "#ffffff": [
+                    "https://picsum.photos/800/600?random=18"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Reebok",
+                "Casual"
+            ],
+            "inStock": true,
+            "stockQuantity": 20,
+            "colors": [
+                "#ffffff"
+            ],
+            "sizes": [
+                "38",
+                "39",
+                "40",
+                "41",
+                "42"
+            ],
+            "categories": [
+                "Casual",
+                "Moda"
+            ],
+            "createdAt": "2023-07-01T00:00:00.000Z"
+        },
+        {
+            "id": 8,
+            "title": "Converse Chuck Taylor",
+            "description": "O clássico tênis de lona que nunca sai de moda.",
+            "oldPrice": 299.90,
+            "price": 249.90,
+            "imagesByColor": {
+                "#000000": [
+                    "https://picsum.photos/800/600?random=19"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Converse",
+                "Casual"
+            ],
+            "inStock": true,
+            "stockQuantity": 25,
+            "colors": [
+                "#000000"
+            ],
+            "sizes": [
+                "36",
+                "37",
+                "38",
+                "39",
+                "40"
+            ],
+            "categories": [
+                "Casual",
+                "Moda"
+            ],
+            "createdAt": "2023-08-01T00:00:00.000Z"
+        },
+        {
+            "id": 9,
+            "title": "Vans Old Skool",
+            "description": "O tênis de skate clássico com a icônica faixa lateral.",
+            "oldPrice": 399.90,
+            "price": 349.90,
+            "imagesByColor": {
+                "#000000": [
+                    "https://picsum.photos/800/600?random=20"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Vans",
+                "Skate"
+            ],
+            "inStock": true,
+            "stockQuantity": 18,
+            "colors": [
+                "#000000"
+            ],
+            "sizes": [
+                "38",
+                "39",
+                "40",
+                "41",
+                "42"
+            ],
+            "categories": [
+                "Skate",
+                "Moda"
+            ],
+            "createdAt": "2023-09-01T00:00:00.000Z"
+        },
+        {
+            "id": 10,
+            "title": "Fila Disruptor",
+            "description": "O tênis chunky que virou tendência mundial.",
+            "oldPrice": 499.90,
+            "price": 449.90,
+            "imagesByColor": {
+                "#ffffff": [
+                    "https://picsum.photos/800/600?random=21"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Fila",
+                "Casual"
+            ],
+            "inStock": true,
+            "stockQuantity": 22,
+            "colors": [
+                "#ffffff"
+            ],
+            "sizes": [
+                "36",
+                "37",
+                "38",
+                "39",
+                "40"
+            ],
+            "categories": [
+                "Casual",
+                "Moda"
+            ],
+            "createdAt": "2023-10-01T00:00:00.000Z"
+        },
+        {
+            "id": 11,
+            "title": "Mizuno Wave Prophecy",
+            "description": "Tecnologia de ponta para máxima performance nas corridas.",
+            "oldPrice": 1299.90,
+            "price": 1199.90,
+            "imagesByColor": {
+                "#0000ff": [
+                    "https://picsum.photos/800/600?random=22"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Mizuno",
+                "Running"
+            ],
+            "inStock": true,
+            "stockQuantity": 10,
+            "colors": [
+                "#0000ff"
+            ],
+            "sizes": [
+                "40",
+                "41",
+                "42",
+                "43"
+            ],
+            "categories": [
+                "Corrida",
+                "Esporte"
+            ],
+            "createdAt": "2023-11-01T00:00:00.000Z"
+        },
+        {
+            "id": 12,
+            "title": "Under Armour HOVR",
+            "description": "Amortecimento e retorno de energia para suas atividades diárias.",
+            "oldPrice": 799.90,
+            "price": 699.90,
+            "imagesByColor": {
+                "#ff0000": [
+                    "https://picsum.photos/800/600?random=23"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Under Armour",
+                "Running"
+            ],
+            "inStock": true,
+            "stockQuantity": 14,
+            "colors": [
+                "#ff0000"
+            ],
+            "sizes": [
+                "39",
+                "40",
+                "41",
+                "42"
+            ],
+            "categories": [
+                "Corrida",
+                "Esporte"
+            ],
+            "createdAt": "2023-12-01T00:00:00.000Z"
+        },
+        {
+            "id": 13,
+            "title": "Saucony Jazz Original",
+            "description": "O clássico retrô com conforto moderno.",
+            "oldPrice": 499.90,
+            "price": 449.90,
+            "imagesByColor": {
+                "#00ff00": [
+                    "https://picsum.photos/800/600?random=24"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Saucony",
+                "Casual"
+            ],
+            "inStock": true,
+            "stockQuantity": 16,
+            "colors": [
+                "#00ff00"
+            ],
+            "sizes": [
+                "38",
+                "39",
+                "40",
+                "41"
+            ],
+            "categories": [
+                "Casual",
+                "Moda"
+            ],
+            "createdAt": "2023-12-15T00:00:00.000Z"
+        },
+        {
+            "id": 14,
+            "title": "Brooks Ghost",
+            "description": "Conforto e suporte para suas corridas diárias.",
+            "oldPrice": 899.90,
+            "price": 799.90,
+            "imagesByColor": {
+                "#0000ff": [
+                    "https://picsum.photos/800/600?random=25"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Brooks",
+                "Running"
+            ],
+            "inStock": true,
+            "stockQuantity": 12,
+            "colors": [
+                "#0000ff"
+            ],
+            "sizes": [
+                "40",
+                "41",
+                "42",
+                "43"
+            ],
+            "categories": [
+                "Corrida",
+                "Esporte"
+            ],
+            "createdAt": "2024-01-01T00:00:00.000Z"
+        },
+        {
+            "id": 15,
+            "title": "Hoka One One Clifton",
+            "description": "Amortecimento e leveza para suas corridas.",
+            "oldPrice": 999.90,
+            "price": 899.90,
+            "imagesByColor": {
+                "#ff00ff": [
+                    "https://picsum.photos/800/600?random=26"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Hoka One One",
+                "Running"
+            ],
+            "inStock": true,
+            "stockQuantity": 10,
+            "colors": [
+                "#ff00ff"
+            ],
+            "sizes": [
+                "39",
+                "40",
+                "41",
+                "42"
+            ],
+            "categories": [
+                "Corrida",
+                "Esporte"
+            ],
+            "createdAt": "2024-02-01T00:00:00.000Z"
+        },
+        {
+            "id": 16,
+            "title": "Salomon Speedcross",
+            "description": "Aderência e estabilidade para trilhas e terrenos acidentados.",
+            "oldPrice": 799.90,
+            "price": 699.90,
+            "imagesByColor": {
+                "#00ff00": [
+                    "https://picsum.photos/800/600?random=27"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Salomon",
+                "Trail"
+            ],
+            "inStock": true,
+            "stockQuantity": 8,
+            "colors": [
+                "#00ff00"
+            ],
+            "sizes": [
+                "40",
+                "41",
+                "42",
+                "43"
+            ],
+            "categories": [
+                "Trilha",
+                "Esporte"
+            ],
+            "createdAt": "2024-03-01T00:00:00.000Z"
+        },
+        {
+            "id": 17,
+            "title": "Merrell Moab 2",
+            "description": "Conforto e durabilidade para suas aventuras ao ar livre.",
+            "oldPrice": 699.90,
+            "price": 599.90,
+            "imagesByColor": {
+                "#000000": [
+                    "https://picsum.photos/800/600?random=28"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Merrell",
+                "Trail"
+            ],
+            "inStock": true,
+            "stockQuantity": 9,
+            "colors": [
+                "#000000"
+            ],
+            "sizes": [
+                "39",
+                "40",
+                "41",
+                "42"
+            ],
+            "categories": [
+                "Trilha",
+                "Esporte"
+            ],
+            "createdAt": "2024-04-01T00:00:00.000Z"
+        },
+        {
+            "id": 18,
+            "title": "La Sportiva Bushido",
+            "description": "Desempenho e proteção para trilhas técnicas.",
+            "oldPrice": 899.90,
+            "price": 799.90,
+            "imagesByColor": {
+                "#ff0000": [
+                    "https://picsum.photos/800/600?random=29"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "La Sportiva",
+                "Trail"
+            ],
+            "inStock": true,
+            "stockQuantity": 7,
+            "colors": [
+                "#ff0000"
+            ],
+            "sizes": [
+                "40",
+                "41",
+                "42",
+                "43"
+            ],
+            "categories": [
+                "Trilha",
+                "Esporte"
+            ],
+            "createdAt": "2024-05-01T00:00:00.000Z"
+        },
+        {
+            "id": 19,
+            "title": "Scarpa Spin Ultra",
+            "description": "Leveza e agilidade para corridas em trilhas.",
+            "oldPrice": 999.90,
+            "price": 899.90,
+            "imagesByColor": {
+                "#0000ff": [
+                    "https://picsum.photos/800/600?random=30"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Scarpa",
+                "Trail"
+            ],
+            "inStock": true,
+            "stockQuantity": 6,
+            "colors": [
+                "#0000ff"
+            ],
+            "sizes": [
+                "40",
+                "41",
+                "42",
+                "43"
+            ],
+            "categories": [
+                "Trilha",
+                "Esporte"
+            ],
+            "createdAt": "2024-06-01T00:00:00.000Z"
+        },
+        {
+            "id": 20,
+            "title": "Altra Lone Peak",
+            "description": "Amortecimento e proteção para trilhas longas.",
+            "oldPrice": 799.90,
+            "price": 699.90,
+            "imagesByColor": {
+                "#00ff00": [
+                    "https://picsum.photos/800/600?random=31"
+                ]
+            },
+            "tags": [
+                "Tênis",
+                "Altra",
+                "Trail"
+            ],
+            "inStock": true,
+            "stockQuantity": 11,
+            "colors": [
+                "#00ff00"
+            ],
+            "sizes": [
+                "40",
+                "41",
+                "42",
+                "43"
+            ],
+            "categories": [
+                "Trilha",
+                "Esporte"
+            ],
+            "createdAt": "2024-07-01T00:00:00.000Z"
+        }
+    ],
+    "nav-tags": [
+        {
+            "id": "brands",
+            "name": "Marcas",
+            "subcategories": [
+                { "id": "nike", "name": "Nike", "route": "/products?tag=Nike" },
+                { "id": "adidas", "name": "Adidas", "route": "/products?tag=Adidas" },
+                { "id": "puma", "name": "Puma", "route": "/products?tag=Puma" },
+                { "id": "reebok", "name": "Reebok", "route": "/products?tag=Reebok" },
+                { "id": "newbalance", "name": "New Balance", "route": "/products?tag=NewBalance" },
+                { "id": "asics", "name": "Asics", "route": "/products?tag=Asics" },
+                { "id": "converse", "name": "Converse", "route": "/products?tag=Converse" }
+            ]
+        },
+        {
+            "id": "styles",
+            "name": "Estilos",
+            "subcategories": [
+                { "id": "casual", "name": "Casual", "route": "/products?tag=Casual" },
+                { "id": "running", "name": "Corrida", "route": "/products?tag=Running" },
+                { "id": "basketball", "name": "Basquete", "route": "/products?tag=Basketball" },
+                { "id": "trail", "name": "Trilha", "route": "/products?tag=Trail" }
+            ]
+        }
+    ],
+    "nav-categories": [
+        {
+            "id": "categories",
+            "name": "Esportes",
+            "subcategories": [
+                { "id": "basquete", "name": "Basquete", "route": "/products?category=Basquete" },
+                { "id": "corrida", "name": "Corrida", "route": "/products?category=Corrida" },
+                { "id": "skate", "name": "Skate", "route": "/products?category=Skate" },
+                { "id": "trilha", "name": "Trilha", "route": "/products?category=Trilha" }
+            ]
+        }
+    ]
+}

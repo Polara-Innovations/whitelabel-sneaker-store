@@ -2,99 +2,149 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  gap: var(--spacing-md);
-  padding: var(--spacing-lg) 0;
 }
 
 .carousel-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  width: 100%;
+  padding: 2rem 0;
 }
 
 .carousel-track {
+  width: 100%; /* Mantém 100% de largura */
   display: flex;
-  transition: transform 0.3s ease-in-out;
-  gap: var(--spacing-md);
-  width: 85%;
-  justify-content: center;
-  position: relative; /* Necessário para o pseudo-elemento */
-  overflow-x: hidden;
-  padding: var(--spacing-md) 0;
+  gap: 20px;
+  transition: transform 0.3s ease;
 }
 
-/* Adicionando o efeito de fade */
-.carousel-track::before {
-  content: "";
+.carousel-item-wrapper {
+  flex: 0 0 auto;
+  width: 250px;
+}
+
+.carousel-nav {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50px; /* Largura do fade */
-  height: 100%;
-  background: linear-gradient(to right, var(--color-bg) 0%, rgba(255, 255, 255, 0) 100%);
-  pointer-events: none; /* Faz com que o pseudo-elemento não interfira nos cliques */
-}
-
-.carousel-track::after {
-  content: "";
-  position: absolute;
-  top: 0;
   right: 0;
-  width: 50px; /* Largura do fade */
-  height: 100%;
-  background: linear-gradient(to left, var(--color-bg) 0%, rgba(255, 255, 255, 0) 100%);
-  pointer-events: none; /* Faz com que o pseudo-elemento não interfira nos cliques */
-}
-
-.card {
-  height: 300px; 
-  max-height: 300px;
+  bottom: 0;
+  pointer-events: none;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
-.nav-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--color-bg-light);
-  border: none;
-  border-radius: 50%;
+.carousel-nav-btn {
   width: 40px;
   height: 40px;
+  border-radius: 50%;
+  background-color: transparent; /* Fundo transparente */
+  color: #333;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Borda sutil */
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 2;
-  box-shadow: var(--shadow-sm);
-
-  &:hover {
-    background-color: var(--color-primary);
-    color: var(--color-text-dark);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  pointer-events: auto;
+  
+  &:hover:not(.disabled) {
+    background-color: rgba(75, 136, 201, 0.8); /* Semi-transparente ao passar o mouse */
+    color: white;
+    transform: scale(1.05);
+  }
+  
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 }
 
-.nav-button.prev {
-  left: 3rem;
+.carousel-bullets {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1rem;
 }
 
-.nav-button.next {
-  right: 3rem;
+.carousel-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &.active {
+    background-color: #4b88c9;
+    transform: scale(1.2);
+  }
 }
 
-@media (max-width: 768px) {
+.carousel-empty {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
 
-  .card {
-    flex: 0 0 100%;
-    max-width: 100%; 
+@media (max-width: 767px) {
+  .carousel-wrapper {
+    padding: 1rem 0;
   }
-
-  .nav-button.next {
-    right: 0;
+  
+  .carousel-item-wrapper {
+    width: 80%;
   }
-
-  .nav-button.prev {
+  
+  .carousel-track {
+    gap: 10px;
+  }
+  
+  .carousel-wrapper::before,
+  .carousel-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 15%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+  }
+  
+  .carousel-wrapper::before {
     left: 0;
+    background: linear-gradient(to right, var(--carousel-bg, transparent) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+  
+  .carousel-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--carousel-bg, transparent) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+  
+  .carousel-bullet {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .carousel-nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-wrapper::before,
+  .carousel-wrapper::after {
+    width: 10%;
+  }
+  
+  .carousel-bullet {
+    width: 6px;
+    height: 6px;
   }
 }

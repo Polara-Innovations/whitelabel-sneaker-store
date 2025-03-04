@@ -1,0 +1,45 @@
+<div class="nav-dropdown-container">
+    <!-- Botão/Tab do menu -->
+    <div 
+      class="nav-dropdown-tab" 
+      [class.active]="isOpen"
+      (click)="toggleMenu()" 
+      (mouseenter)="openMenu()">
+      <span>{{ title }}</span>
+      <i class="fas" [ngClass]="isOpen ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+    </div>
+    
+    <!-- Dropdown do menu -->
+    <div 
+      class="nav-dropdown-content" 
+      [class.open]="isOpen"
+      (mouseleave)="closeMenu()">
+      <div class="dropdown-inner">
+        <!-- Lista de itens principais -->
+        <div class="main-items-list">
+          <div 
+            *ngFor="let item of items" 
+            class="main-item"
+            [class.active]="activeItem === item"
+            (mouseenter)="setActiveItem(item)"
+            (click)="navigate(item)">
+            <span>{{ item.name }}</span>
+            <i *ngIf="item.subcategories?.length" class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+        
+        <!-- Subitems do item ativo -->
+        <div class="sub-items-panel" *ngIf="activeItem?.subcategories?.length">
+          <h4 class="sub-items-header">{{ activeItem?.name }}</h4>
+          <div class="sub-items-list">
+            <div 
+              *ngFor="let subItem of activeItem?.subcategories" 
+              class="sub-item"
+              (click)="navigate(subItem)">
+              {{ subItem.name }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

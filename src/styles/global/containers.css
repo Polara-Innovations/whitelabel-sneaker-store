@@ -1,59 +1,59 @@
 .container-padding {
-    padding: 2rem;
-    margin: 0 auto;
-  }
-  
-  .container-padding-tb {
-    padding: 2rem 0;
-    margin: 0 auto;
-  }
+  padding: 2rem;
+  margin: 0 auto;
+}
 
-    .container-padding-lr {
-        padding: 0 2rem;
-        margin: 0 auto;
-    }
+.container-padding-tb {
+  padding: 2rem 0;
+  margin: 0 auto;
+}
+
+.container-padding-lr {
+  padding: 0 2rem;
+  margin: 0 auto;
+}
 
 /* Container for footer */
 .footer-container {
-    padding: 2rem !important;
+  padding: 2rem !important;
 }
 
 /* Container for main content */
-  .main-container-tb {
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    padding: 2rem 0;
-  }
-  
-  .main-container {
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    padding: 2rem;
-  }
+.main-container-tb {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: 2rem 0;
+}
 
-  .main-container-tb,
+.main-container {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: 2rem;
+}
+
+.main-container-tb,
 .main-container {
   width: 100%;
   box-sizing: border-box;
-  overflow: hidden; /* Contain any overflow within these containers */
+  overflow: hidden;
+  /* Contain any overflow within these containers */
 }
 
 /* Container for sidebar */
 .sidebar-container {
-    padding: 1rem !important;;
+  padding: 1rem !important;
+  ;
 }
 
 /* Container for navigation */
 .nav-container {
-    padding: 2rem !important;
+  padding: 2rem !important;
 }
 
 /* Container for forms */
 .form-container {
-    padding: 1rem !important
+  padding: 1rem !important
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-
-}
+@media (max-width: 768px) {}

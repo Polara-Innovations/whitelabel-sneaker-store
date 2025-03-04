@@ -134,7 +134,32 @@ export const BRAND_THEMES: BrandTheme[] = [
           socialIconBackground: '#4b88c9',
           socialIconColor: '#ffffff',
           socialIconHoverBackground: '#3a77b8'
-        }
+        },
+        faq: {
+          background: '#ffffff',
+          titleText: '#2c3e50',
+          questionText: '#333333',
+          answerText: '#666666',
+          questionBackground: '#f8f9fa',
+          answerBackground: '#ffffff',
+          border: '#e0e0e0',
+          iconColor: '#4b88c9',
+          iconActiveColor: '#3a77b8',
+          hoverBackground: '#f8f9fa',
+          activeBackground: '#edf2f7'
+        },
+        carousel: {
+          background: 'transparent',
+          navigationButtonBackground: '#ffffff',
+          navigationButtonText: '#333333',
+          navigationButtonHoverBackground: '#4b88c9',
+          navigationButtonHoverText: '#ffffff',
+          bulletBackground: '#cccccc',
+          bulletActiveBackground: '#4b88c9',
+          itemBackground: '#ffffff',
+          fadeGradientStart: 'rgba(248, 249, 250, 1)',
+          fadeGradientEnd: 'rgba(248, 249, 250, 0)'
+        },
       }
     },
     darkTheme: {
@@ -267,7 +292,32 @@ export const BRAND_THEMES: BrandTheme[] = [
           socialIconBackground: '#4b88c9',
           socialIconColor: '#ffffff',
           socialIconHoverBackground: '#64b5f6'
-        }
+        },
+        faq: {
+          background: '#1e1e1e',
+          titleText: '#bbdefb',
+          questionText: '#e0e0e0',
+          answerText: '#bbbbbb',
+          questionBackground: '#262626',
+          answerBackground: '#1e1e1e',
+          border: '#333333',
+          iconColor: '#64b5f6',
+          iconActiveColor: '#90caf9',
+          hoverBackground: '#262626',
+          activeBackground: '#333333'
+        },
+        carousel: {
+          background: 'transparent',
+          navigationButtonBackground: '#262626',
+          navigationButtonText: '#e0e0e0',
+          navigationButtonHoverBackground: '#4b88c9',
+          navigationButtonHoverText: '#ffffff',
+          bulletBackground: '#555555',
+          bulletActiveBackground: '#64b5f6',
+          itemBackground: '#1e1e1e',
+          fadeGradientStart: 'rgba(18, 18, 18, 1)',
+          fadeGradientEnd: 'rgba(18, 18, 18, 0)'
+        },
       }
     },
     highContrastTheme: {
@@ -400,7 +450,32 @@ export const BRAND_THEMES: BrandTheme[] = [
           socialIconBackground: '#ffff00',
           socialIconColor: '#000000',
           socialIconHoverBackground: '#00ffff'
-        }
+        },
+        faq: {
+          background: '#000000',
+          titleText: '#ffff00',
+          questionText: '#ffffff',
+          answerText: '#ffffff',
+          questionBackground: '#000000',
+          answerBackground: '#000000',
+          border: '#ffffff',
+          iconColor: '#ffff00',
+          iconActiveColor: '#00ffff',
+          hoverBackground: '#333333',
+          activeBackground: '#444444'
+        },
+        carousel: {
+          background: 'transparent',
+          navigationButtonBackground: '#000000',
+          navigationButtonText: '#ffff00',
+          navigationButtonHoverBackground: '#ffff00',
+          navigationButtonHoverText: '#000000',
+          bulletBackground: '#555555',
+          bulletActiveBackground: '#ffff00',
+          itemBackground: '#000000',
+          fadeGradientStart: 'rgba(0, 0, 0, 1)',
+          fadeGradientEnd: 'rgba(0, 0, 0, 0)'
+        },
       }
     }
   }

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, HostListener }
 import { ActivatedRoute, Router } from "@angular/router";
 import { Product } from "../../models/product.model";
 import { CartService } from "../../services/cart/cart.service";
+import { ProductsService } from "../../services/api/products/products.service";
 
 interface ZoomPosition {
   x: number;
@@ -57,6 +58,7 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    private productService: ProductsService,
     private cartService: CartService
   ) {}
 
@@ -79,43 +81,13 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
 
   fetchProduct(id: number): void {
     // Simulando dados de produto
-    this.product = {
-      id: id,
-      title: 'Nike Air Max 270',
-      description: 'O Nike Air Max 270 apresenta a primeira unidade Air projetada especificamente para Nike Sportswear. A impressionante unidade Air de 270 graus oferece amortecimento incrível sob os pés, enquanto o cabedal de malha elástica e o design sem costura criam um visual moderno e aerodinâmico.',
-      oldPrice: 1200,
-      price: 999.90,
-      imagesByColor: {
-        '#ff0000': [
-          'https://picsum.photos/800/600?random=1',
-          'https://picsum.photos/800/600?random=2',
-          'https://picsum.photos/800/600?random=3',
-          'https://picsum.photos/800/600?random=4',
-          'https://picsum.photos/800/600?random=5',
-        ],
-        '#00ff00': [
-          'https://picsum.photos/800/600?random=6',
-          'https://picsum.photos/800/600?random=7',
-          'https://picsum.photos/800/600?random=8',
-        ],
-        '#0000ff': [
-          'https://picsum.photos/800/600?random=9',
-          'https://picsum.photos/800/600?random=10',
-          'https://picsum.photos/800/600?random=11',
-        ]
-      },
-      tags: ['Tênis', 'Nike', 'Running'],
-      inStock: true,
-      stockQuantity: 10,
-      colors: ['#ff0000', '#00ff00', '#0000ff'],
-      sizes: ['38', '39', '40', '41', '42', '43'],
-      categories: ['Running', 'Esporte'],
-      createdAt: new Date('2023-01-01')
-    };
-    
-    // Inicializa com a primeira cor e imagem
-    this.selectColor(this.product.colors[0]);
-    this.filteredSizes = this.product.sizes || [];
+    this.productService.getProductById(id).subscribe((product: Product) => {
+      this.product = product;
+      
+      // Inicializa com a primeira cor e imagem
+      this.selectColor(this.product.colors[0]);
+      this.filteredSizes = this.product.sizes || [];
+    });
   }
 
   fetchRelatedProducts(): void {

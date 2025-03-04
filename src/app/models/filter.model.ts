@@ -27,6 +27,7 @@ export interface FilterOption {
       min: number;
       max: number;
     };
+    searchBy: string; 
     sort: string;
     page: number;
     limit: number;

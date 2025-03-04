@@ -1,8 +1,8 @@
   <div class="main-container-tb">
-    <div class="product-container container-padding">
+    <div class="product-container container-padding-lr">
       <div class="product-gallery product-section">
         <div class="main-image-container" #mainImageContainer>
-          <img #mainImage [src]="currentImage" [alt]="product.title" (mousemove)="handleZoom($event)"
+          <img #mainImage [src]="currentImage" [alt]="product.description" (mousemove)="handleZoom($event)"
             (mouseenter)="showZoom()" (mouseleave)="hideZoom()" class="main-image" />
           <div class="zoom-lens" *ngIf="isZooming" [style.top.px]="zoomPosition.y" [style.left.px]="zoomPosition.x">
           </div>
@@ -26,15 +26,17 @@
       <div class="product-info product-section">
         <div class="product-header">
           <div class="tags">
-            <span class="stock-tag" [class.in-stock]="product.inStock" [class.out-of-stock]="!product.inStock">
+            <span *ngIf="product.inStock != null" class="stock-tag" [class.in-stock]="product.inStock" [class.out-of-stock]="!product.inStock">
               {{ product.inStock ? 'Em Estoque' : 'Fora de Estoque' }}
             </span>
-            <span *ngFor="let tag of product.tags" class="tag">{{ tag }}</span>
+            <ng-container *ngIf="product.tags">
+              <span *ngFor="let tag of product.tags" class="tag">{{ tag }}</span>
+            </ng-container>
           </div>
           <h1 class="product-title">{{ product.title }}</h1>
           <div class="price-container">
             <span class="product-price">R$ {{ product.price | number:'1.2-2' }}</span>
-            <span *ngIf="product?.oldPrice" class="product-price-old">R$ {{ product.oldPrice | number:'1.2-2' }}</span>
+            <span *ngIf="product.oldPrice" class="product-price-old">R$ {{ product.oldPrice | number:'1.2-2' }}</span>
           </div>
         </div>
 
@@ -76,7 +78,7 @@
                 <i class="fas fa-minus"></i>
               </button>
               <span class="quantity-value">{{ selectedQuantity }}</span>
-              <button class="quantity-btn" (click)="updateQuantity(1)" [disabled]="selectedQuantity >= product.stockQuantity">
+              <button class="quantity-btn" (click)="updateQuantity(1)" [disabled]="!product || selectedQuantity >= product.stockQuantity">
                 <i class="fas fa-plus"></i>
               </button>
             </div>
