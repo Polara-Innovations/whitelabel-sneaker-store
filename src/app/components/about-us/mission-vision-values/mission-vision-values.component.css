@@ -1,0 +1,104 @@
+.mvv-container {
+    width: 100%;
+}
+
+.mvv-main-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.mvv-section {
+    padding: 25px;
+    border-radius: 8px;
+    background-color: var(--aboutUs-mvvCardBackground);
+    box-shadow: var(--aboutUs-mvvCardShadow);
+    border: 1px solid var(--aboutUs-mvvCardBorder);
+}
+
+.mvv-title {
+    font-size: 1.5rem;
+    color: var(--aboutUs-mvvTitleText);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.mvv-text {
+    font-size: 1rem;
+    color: var(--aboutUs-mvvBodyText);
+    line-height: 1.6;
+}
+
+.values-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.value-card {
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: var(--aboutUs-mvvCardBackground);
+    border: 1px solid var(--aboutUs-mvvCardBorder);
+    box-shadow: var(--aboutUs-mvvCardShadow);
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--aboutUs-mvvIconBackground);
+    color: var(--aboutUs-mvvIconColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+    font-size: 1.5rem;
+}
+
+.value-title {
+    font-size: 1.1rem;
+    color: var(--aboutUs-mvvTitleText);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.value-description {
+    font-size: 0.9rem;
+    color: var(--aboutUs-mvvBodyText);
+    line-height: 1.5;
+}
+
+.value-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 280px;
+}
+
+.value-card:last-child:nth-child(odd) {
+    max-width: 220px;
+    /* Para value-card */
+}
+
+@media (max-width: 768px) {
+    .mvv-main-sections {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}

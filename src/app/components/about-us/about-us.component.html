@@ -1,0 +1,33 @@
+<div class="about-us-container container-padding">
+    <div class="about-us-header">
+      <h1 class="page-title">{{ aboutUsData?.pageTitle }}</h1>
+      <p class="page-subtitle">{{ aboutUsData?.pageSubtitle }}</p>
+    </div>
+  
+    <!-- Seção de Team Members -->
+    <section class="about-section">
+      <div class="section-header">
+        <h2 class="section-title">{{ aboutUsData?.teamSection?.title }}</h2>
+        <p class="section-subtitle">{{ aboutUsData?.teamSection?.subtitle }}</p>
+      </div>
+      <app-team-section [members]="aboutUsData?.teamSection?.members || []"></app-team-section>
+    </section>
+  
+    <!-- Seção de Missão, Visão e Valores -->
+    <section class="about-section mvv-section">
+      <div class="section-header">
+        <h2 class="section-title">{{ aboutUsData?.missionVisionValuesSection?.title }}</h2>
+        <p class="section-subtitle">{{ aboutUsData?.missionVisionValuesSection?.subtitle }}</p>
+      </div>
+      <app-mission-vision-values [data]="aboutUsData?.missionVisionValuesSection?.data || null"></app-mission-vision-values>
+    </section>
+  
+    <!-- Seções de Conteúdo -->
+    <section class="about-section">
+      <div class="section-header">
+        <h2 class="section-title">{{ aboutUsData?.contentSections?.title }}</h2>
+        <p class="section-subtitle">{{ aboutUsData?.contentSections?.subtitle }}</p>
+      </div>
+      <app-content-sections [sections]="aboutUsData?.contentSections?.sections || []"></app-content-sections>
+    </section>
+  </div>

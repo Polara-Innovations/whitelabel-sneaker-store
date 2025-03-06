@@ -22,7 +22,72 @@ export const BRAND_THEMES: BrandTheme[] = [
         linkColor: '#4b88c9',
         linkHoverColor: '#3a77b8',
         borderColor: '#e0e0e0',
-        sectionBackground: '#ffffff'
+        sectionBackground: '#ffffff',
+        scrollbar: {
+          track: '#f1f1f1',
+          thumb: '#c1c1c1',
+          thumbHover: '#a1a1a1',
+          width: '8px'
+        },
+        modal: {
+          background: '#ffffff',
+          text: '#333333',
+          border: '#e0e0e0',
+          headerBackground: '#f8f9fa',
+          headerText: '#333333',
+          bodyBackground: '#ffffff',
+          bodyText: '#333333',
+          footerBackground: '#f8f9fa',
+          shadow: '0 5px 15px rgba(0, 0, 0, 0.1)',
+          closeButtonColor: '#666666',
+          closeButtonHoverColor: '#333333',
+          overlay: 'rgba(0, 0, 0, 0.5)',
+          
+          info: {
+            headerBackground: 'rgba(52, 152, 219, 0.1)',
+            iconColor: '#3498db',
+            borderColor: '#3498db'
+          },
+          success: {
+            headerBackground: 'rgba(46, 204, 113, 0.1)',
+            iconColor: '#2ecc71',
+            borderColor: '#2ecc71'
+          },
+          warning: {
+            headerBackground: 'rgba(243, 156, 18, 0.1)',
+            iconColor: '#f39c12',
+            borderColor: '#f39c12'
+          },
+          error: {
+            headerBackground: 'rgba(231, 76, 60, 0.1)',
+            iconColor: '#e74c3c',
+            borderColor: '#e74c3c'
+          },
+          confirm: {
+            headerBackground: 'rgba(75, 136, 201, 0.1)',
+            iconColor: '#4b88c9',
+            borderColor: '#4b88c9'
+          },
+          
+          primaryButton: {
+            background: '#4b88c9',
+            text: '#ffffff',
+            border: 'transparent',
+            hoverBackground: '#3a77b8',
+            hoverText: '#ffffff',
+            disabledBackground: '#cccccc',
+            disabledText: '#666666'
+          },
+          secondaryButton: {
+            background: '#f8f9fa',
+            text: '#333333',
+            border: '#e0e0e0',
+            hoverBackground: '#e9ecef',
+            hoverText: '#333333',
+            disabledBackground: '#f8f9fa',
+            disabledText: '#cccccc'
+          }
+        },        
       },
       components: {
         header: {
@@ -160,6 +225,40 @@ export const BRAND_THEMES: BrandTheme[] = [
           fadeGradientStart: 'rgba(248, 249, 250, 1)',
           fadeGradientEnd: 'rgba(248, 249, 250, 0)'
         },
+        aboutUs: {
+          background: '#f8f9fa',
+          sectionBackground: '#ffffff',
+          titleText: '#2c3e50',
+          subtitleText: '#4b88c9',
+          bodyText: '#666666',
+          
+          // Seção de equipe
+          teamCardBackground: '#ffffff',
+          teamCardBorder: '#e0e0e0',
+          teamCardShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+          teamMemberName: '#2c3e50',
+          teamMemberPosition: '#4b88c9',
+          teamMemberDescription: '#666666',
+          teamSocialIconBackground: '#f0f0f0',
+          teamSocialIconColor: '#4b88c9',
+          teamSocialIconHoverBackground: '#e0e0e0',
+          
+          // Seção de missão, visão e valores
+          mvvBackground: '#f0f7ff',
+          mvvTitleText: '#2c3e50',
+          mvvBodyText: '#666666',
+          mvvCardBackground: '#ffffff',
+          mvvCardBorder: '#e0e0e0',
+          mvvCardShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+          mvvIconBackground: '#4b88c9',
+          mvvIconColor: '#ffffff',
+          
+          // Seção de conteúdo
+          contentBackground: '#ffffff',
+          contentTitleText: '#2c3e50',
+          contentBodyText: '#666666',
+          contentDivider: '#e0e0e0'
+        },
       }
     },
     darkTheme: {
@@ -180,7 +279,72 @@ export const BRAND_THEMES: BrandTheme[] = [
         linkColor: '#64b5f6',
         linkHoverColor: '#90caf9',
         borderColor: '#333333',
-        sectionBackground: '#1e1e1e'
+        sectionBackground: '#1e1e1e',
+        scrollbar: {
+          track: '#2d2d2d',
+          thumb: '#555555',
+          thumbHover: '#777777',
+          width: '8px'
+        },
+        modal: {
+          background: '#1e1e1e',
+          text: '#e0e0e0',
+          border: '#333333',
+          headerBackground: '#262626',
+          headerText: '#e0e0e0',
+          bodyBackground: '#1e1e1e',
+          bodyText: '#e0e0e0',
+          footerBackground: '#262626',
+          shadow: '0 5px 15px rgba(0, 0, 0, 0.3)',
+          closeButtonColor: '#bbbbbb',
+          closeButtonHoverColor: '#ffffff',
+          overlay: 'rgba(0, 0, 0, 0.7)',
+          
+          info: {
+            headerBackground: 'rgba(52, 152, 219, 0.2)',
+            iconColor: '#3498db',
+            borderColor: '#3498db'
+          },
+          success: {
+            headerBackground: 'rgba(46, 204, 113, 0.2)',
+            iconColor: '#2ecc71',
+            borderColor: '#2ecc71'
+          },
+          warning: {
+            headerBackground: 'rgba(243, 156, 18, 0.2)',
+            iconColor: '#f39c12',
+            borderColor: '#f39c12'
+          },
+          error: {
+            headerBackground: 'rgba(231, 76, 60, 0.2)',
+            iconColor: '#e74c3c',
+            borderColor: '#e74c3c'
+          },
+          confirm: {
+            headerBackground: 'rgba(75, 136, 201, 0.2)',
+            iconColor: '#64b5f6',
+            borderColor: '#64b5f6'
+          },
+          
+          primaryButton: {
+            background: '#4b88c9',
+            text: '#ffffff',
+            border: 'transparent',
+            hoverBackground: '#64b5f6',
+            hoverText: '#ffffff',
+            disabledBackground: '#424242',
+            disabledText: '#757575'
+          },
+          secondaryButton: {
+            background: '#333333',
+            text: '#e0e0e0',
+            border: '#555555',
+            hoverBackground: '#444444',
+            hoverText: '#ffffff',
+            disabledBackground: '#333333',
+            disabledText: '#757575'
+          }
+        },
       },
       components: {
         header: {
@@ -318,6 +482,40 @@ export const BRAND_THEMES: BrandTheme[] = [
           fadeGradientStart: 'rgba(18, 18, 18, 1)',
           fadeGradientEnd: 'rgba(18, 18, 18, 0)'
         },
+        aboutUs: {
+          background: '#121212',
+          sectionBackground: '#1e1e1e',
+          titleText: '#bbdefb',
+          subtitleText: '#64b5f6',
+          bodyText: '#bbbbbb',
+          
+          // Seção de equipe
+          teamCardBackground: '#262626',
+          teamCardBorder: '#333333',
+          teamCardShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
+          teamMemberName: '#bbdefb',
+          teamMemberPosition: '#64b5f6',
+          teamMemberDescription: '#bbbbbb',
+          teamSocialIconBackground: '#333333',
+          teamSocialIconColor: '#64b5f6',
+          teamSocialIconHoverBackground: '#444444',
+          
+          // Seção de missão, visão e valores
+          mvvBackground: '#1a2635',
+          mvvTitleText: '#bbdefb',
+          mvvBodyText: '#bbbbbb',
+          mvvCardBackground: '#262626',
+          mvvCardBorder: '#333333',
+          mvvCardShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
+          mvvIconBackground: '#4b88c9',
+          mvvIconColor: '#ffffff',
+          
+          // Seção de conteúdo
+          contentBackground: '#1e1e1e',
+          contentTitleText: '#bbdefb',
+          contentBodyText: '#bbbbbb',
+          contentDivider: '#333333'
+        },
       }
     },
     highContrastTheme: {
@@ -338,7 +536,72 @@ export const BRAND_THEMES: BrandTheme[] = [
         linkColor: '#ffff00',
         linkHoverColor: '#00ffff',
         borderColor: '#ffffff',
-        sectionBackground: '#000000'
+        sectionBackground: '#000000',
+        scrollbar: {
+          track: '#000000',
+          thumb: '#ffff00',
+          thumbHover: '#00ffff',
+          width: '10px'
+        },
+        modal: {
+          background: '#000000',
+          text: '#ffffff',
+          border: '#ffffff',
+          headerBackground: '#000000',
+          headerText: '#ffff00',
+          bodyBackground: '#000000',
+          bodyText: '#ffffff',
+          footerBackground: '#000000',
+          shadow: '0 0 0 2px #ffffff',
+          closeButtonColor: '#ffffff',
+          closeButtonHoverColor: '#ffff00',
+          overlay: 'rgba(0, 0, 0, 0.9)',
+          
+          info: {
+            headerBackground: '#000000',
+            iconColor: '#00ffff',
+            borderColor: '#00ffff'
+          },
+          success: {
+            headerBackground: '#000000',
+            iconColor: '#00ff00',
+            borderColor: '#00ff00'
+          },
+          warning: {
+            headerBackground: '#000000',
+            iconColor: '#ffff00',
+            borderColor: '#ffff00'
+          },
+          error: {
+            headerBackground: '#000000',
+            iconColor: '#ff0000',
+            borderColor: '#ff0000'
+          },
+          confirm: {
+            headerBackground: '#000000',
+            iconColor: '#ffff00',
+            borderColor: '#ffff00'
+          },
+          
+          primaryButton: {
+            background: '#000000',
+            text: '#ffff00',
+            border: '#ffff00',
+            hoverBackground: '#ffff00',
+            hoverText: '#000000',
+            disabledBackground: '#333333',
+            disabledText: '#999999'
+          },
+          secondaryButton: {
+            background: '#000000',
+            text: '#ffffff',
+            border: '#ffffff',
+            hoverBackground: '#ffffff',
+            hoverText: '#000000',
+            disabledBackground: '#333333',
+            disabledText: '#999999'
+          }
+        },
       },
       components: {
         header: {
@@ -475,6 +738,40 @@ export const BRAND_THEMES: BrandTheme[] = [
           itemBackground: '#000000',
           fadeGradientStart: 'rgba(0, 0, 0, 1)',
           fadeGradientEnd: 'rgba(0, 0, 0, 0)'
+        },
+        aboutUs: {
+          background: '#000000',
+          sectionBackground: '#000000',
+          titleText: '#ffff00',
+          subtitleText: '#00ffff',
+          bodyText: '#ffffff',
+          
+          // Seção de equipe
+          teamCardBackground: '#000000',
+          teamCardBorder: '#ffffff',
+          teamCardShadow: '0 0 0 2px #ffffff',
+          teamMemberName: '#ffff00',
+          teamMemberPosition: '#00ffff',
+          teamMemberDescription: '#ffffff',
+          teamSocialIconBackground: '#000000',
+          teamSocialIconColor: '#ffff00',
+          teamSocialIconHoverBackground: '#ffff00',
+          
+          // Seção de missão, visão e valores
+          mvvBackground: '#000000',
+          mvvTitleText: '#ffff00',
+          mvvBodyText: '#ffffff',
+          mvvCardBackground: '#000000',
+          mvvCardBorder: '#ffffff',
+          mvvCardShadow: '0 0 0 2px #ffffff',
+          mvvIconBackground: '#ffff00',
+          mvvIconColor: '#000000',
+          
+          // Seção de conteúdo
+          contentBackground: '#000000',
+          contentTitleText: '#ffff00',
+          contentBodyText: '#ffffff',
+          contentDivider: '#ffffff'
         },
       }
     }

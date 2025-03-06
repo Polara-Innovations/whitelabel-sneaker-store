@@ -35,8 +35,5 @@ export class BannerComponent implements OnInit {
   }
 
   navigate(route: string) {
-    // Navega para a rota especificada ao clicar na imagem
-    // (Você pode implementar o Router se estiver usando Angular Router)
-    console.log(`Navegando para: ${route}`);
   }
 }

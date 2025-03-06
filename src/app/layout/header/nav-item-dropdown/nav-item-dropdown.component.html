@@ -1,25 +1,25 @@
-<li class="nav-item dropdown-nav-item" 
-    [class.active]="isActive" 
-    [class.open]="isOpen">
-    
+<li class="nav-item dropdown-nav-item" [class.active]="isActive" [class.open]="isOpen">
+  <!-- Link principal do dropdown -->
   <a class="nav-link dropdown-toggle" href="#" (click)="toggleDropdown($event)">
-    <i *ngIf="tab.icon && tab.display != 'title'" class="{{ tab.icon }}" [ngClass]="{'me-2': tab.display !== 'icon'}"></i>
+    <i *ngIf="tab.icon && tab.display != 'title'" class="{{ tab.icon }}" 
+       [ngClass]="{'me-2': tab.display !== 'icon'}"></i>
     <span *ngIf="tab.display !== 'icon'">{{ tab.name }}</span>
-    <i class="fas" [ngClass]="isOpen ? 'fa-chevron-up' : 'fa-chevron-down'" style="margin-left: 5px; font-size: 0.75rem;"></i>
+    <i class="fas" [ngClass]="isOpen ? 'fa-chevron-up' : 'fa-chevron-down'" 
+       style="margin-left: 5px; font-size: 0.75rem;"></i>
   </a>
   
+  <!-- Indicador de item ativo -->
   <div class="title-line" *ngIf="isActive"></div>
   
-  <!-- Dropdown Menu para Desktop -->
+  <!-- Dropdown Menu para Desktop - Removido o container adicional -->
   <div class="dropdown-menu" [class.show]="isOpen" *ngIf="layoutMode === 'row'">
     <div class="dropdown-inner">
       <!-- Lista de categorias à esquerda -->
       <div class="main-items-list">
-        <div 
-          *ngFor="let item of items" 
-          class="main-item"
-          [class.active]="activeItem === item"
-          (click)="setActiveItem(item)">
+        <div *ngFor="let item of items" 
+             class="main-item"
+             [class.active]="activeItem === item"
+             (click)="setActiveItem(item)">
           <span>{{ item.name }}</span>
           <i *ngIf="item.subcategories?.length" class="fas fa-chevron-right"></i>
         </div>
@@ -32,16 +32,16 @@
           
           <!-- Se tiver subcategorias, mostrar a lista -->
           <div class="sub-items-list" *ngIf="activeItem.subcategories?.length">
-            <div 
-              *ngFor="let subItem of activeItem.subcategories" 
-              class="sub-item"
-              (click)="navigate(subItem)">
+            <div *ngFor="let subItem of activeItem.subcategories" 
+                 class="sub-item"
+                 (click)="navigate(subItem)">
               {{ subItem.name }}
             </div>
           </div>
           
           <!-- Se não tiver subcategorias, mostrar botão de pesquisa -->
-          <div class="search-category-btn" *ngIf="!activeItem.subcategories?.length" (click)="navigate(activeItem)">
+          <div class="search-category-btn" *ngIf="!activeItem.subcategories?.length" 
+               (click)="navigate(activeItem)">
             <i class="fas fa-search"></i>
             <span>Pesquisar produtos na categoria "{{ activeItem.name }}"</span>
           </div>
@@ -56,36 +56,36 @@
     </div>
   </div>
   
-<!-- Dropdown Menu para Mobile (estilo acordeão) -->
-<div class="dropdown-menu mobile-dropdown" [class.show]="isOpen" *ngIf="layoutMode === 'column'">
-  <div class="dropdown-inner">
-    <div class="sub-items-accordion">
-      <ng-container *ngFor="let item of items">
-        <div class="accordion-item" [class.active]="activeItem === item">
-          <div class="accordion-header" (click)="toggleAccordionItem(item, $event)">
-            <span>{{ item.name }}</span>
-            <i class="fas" [ngClass]="activeItem === item ? 'fa-minus' : 'fa-plus'"></i>
-          </div>
-          <div class="accordion-content" [class.expanded]="activeItem === item">
-            <!-- Se tiver subcategorias, mostrar a lista -->
-            <ng-container *ngIf="item.subcategories?.length">
-              <div 
-                *ngFor="let subItem of item.subcategories" 
-                class="accordion-sub-item"
-                (click)="navigate(subItem); $event.stopPropagation();">
-                {{ subItem.name }}
+  <!-- Dropdown Menu para Mobile (estilo acordeão) -->
+  <div class="dropdown-menu mobile-dropdown" [class.show]="isOpen" *ngIf="layoutMode === 'column'">
+    <div class="dropdown-inner">
+      <div class="sub-items-accordion">
+        <ng-container *ngFor="let item of items">
+          <div class="accordion-item" [class.active]="activeItem === item">
+            <div class="accordion-header" (click)="toggleAccordionItem(item, $event)">
+              <span>{{ item.name }}</span>
+              <i class="fas" [ngClass]="activeItem === item ? 'fa-minus' : 'fa-plus'"></i>
+            </div>
+            <div class="accordion-content" [class.expanded]="activeItem === item">
+              <!-- Se tiver subcategorias, mostrar a lista -->
+              <ng-container *ngIf="item.subcategories?.length">
+                <div *ngFor="let subItem of item.subcategories" 
+                     class="accordion-sub-item"
+                     (click)="navigate(subItem); $event.stopPropagation();">
+                  {{ subItem.name }}
+                </div>
+              </ng-container>
+              
+              <!-- Se não tiver subcategorias, mostrar botão de pesquisa -->
+              <div class="accordion-search-btn" *ngIf="!item.subcategories?.length" 
+                   (click)="navigate(item); $event.stopPropagation();">
+                <i class="fas fa-search"></i>
+                <span>Pesquisar produtos na categoria "{{ item.name }}"</span>
               </div>
-            </ng-container>
-            
-            <!-- Se não tiver subcategorias, mostrar botão de pesquisa -->
-            <div class="accordion-search-btn" *ngIf="!item.subcategories?.length" (click)="navigate(item); $event.stopPropagation();">
-              <i class="fas fa-search"></i>
-              <span>Pesquisar produtos na categoria "{{ item.name }}"</span>
             </div>
           </div>
-        </div>
-      </ng-container>
+        </ng-container>
+      </div>
     </div>
   </div>
-</div>
 </li>

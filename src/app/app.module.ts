@@ -8,10 +8,6 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { BannerComponent } from './components/home/banner/banner.component';
 import { ProductsComponent } from './components/products/products.component';
-import { AboutComponent } from './components/about/about.component';
-import { AboutIntroComponent } from './components/about/about-intro/about-intro.component';
-import { AboutMissionComponent } from './components/about/about-mission/about-mission.component';
-import { AboutTeamComponent } from './components/about/about-team/about-team.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
 import { ContactInfoComponent } from './components/contact/contact-info/contact-info.component';
@@ -44,6 +40,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { faqItemComponent } from './components/faq/faq-item/faq-item.component';
 import { NavItemDropdownComponent } from './layout/header/nav-item-dropdown/nav-item-dropdown.component';
 import { NavDropdownComponent } from './layout/header/nav-dropdown/nav-dropdown.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { TeamSectionComponent } from './components/about-us/team-section/team-section.component';
+import { MissionVisionValuesComponent } from './components/about-us/mission-vision-values/mission-vision-values.component';
+import { ContentSectionsComponent } from './components/about-us/content-sections/content-sections.component';
 
 @NgModule({
   declarations: [
@@ -56,10 +56,10 @@ import { NavDropdownComponent } from './layout/header/nav-dropdown/nav-dropdown.
     ProductSearchComponent,
     ProductFiltersComponent,
     ProductSortComponent,
-    AboutComponent,
-    AboutIntroComponent,
-    AboutMissionComponent,
-    AboutTeamComponent,
+    AboutUsComponent,
+    TeamSectionComponent,
+    MissionVisionValuesComponent,
+    ContentSectionsComponent,
     ContactComponent,
     ContactFormComponent,
     ContactInfoComponent,
@@ -85,6 +85,7 @@ import { NavDropdownComponent } from './layout/header/nav-dropdown/nav-dropdown.
     faqItemComponent,
     NavItemDropdownComponent,
     NavDropdownComponent,
+    TeamSectionComponent  
   ],
   imports: [
     BrowserModule,

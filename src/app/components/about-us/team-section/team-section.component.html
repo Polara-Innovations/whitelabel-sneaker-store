@@ -1,0 +1,27 @@
+<div class="team-grid">
+    <div class="team-member-card" *ngFor="let member of members">
+      <div class="member-photo-container">
+        <img [src]="member.photoUrl" [alt]="member.name" class="member-photo">
+      </div>
+      <div class="member-info">
+        <h3 class="member-name">{{ member.name }}</h3>
+        <p class="member-position">{{ member.position }}</p>
+        <p class="member-description">{{ member.description }}</p>
+        
+        <div class="social-links" *ngIf="member.socialLinks">
+          <a *ngIf="member.socialLinks.linkedin" [href]="member.socialLinks.linkedin" target="_blank" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a *ngIf="member.socialLinks.twitter" [href]="member.socialLinks.twitter" target="_blank" class="social-icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a *ngIf="member.socialLinks.github" [href]="member.socialLinks.github" target="_blank" class="social-icon">
+            <i class="fab fa-github"></i>
+          </a>
+          <a *ngIf="member.socialLinks.instagram" [href]="member.socialLinks.instagram" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>

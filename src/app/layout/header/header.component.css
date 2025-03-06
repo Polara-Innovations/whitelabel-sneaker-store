@@ -12,6 +12,7 @@
   box-sizing: border-box;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid var(--header-border);
+  overflow: visible; /* Importante para que o dropdown não seja cortado */
 }
 
 .brand {
@@ -38,11 +39,14 @@
   display: flex;
   justify-content: center;
   transition: all 0.3s ease;
+  position: static; /* Garante que os filhos possam usar position: relative */
 }
 
 .desktop-nav {
   display: flex;
   justify-content: center;
+  position: relative; /* Contexto de posicionamento para o dropdown */
+  width: 100%;
 }
 
 .toggles {

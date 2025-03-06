@@ -1,0 +1,16 @@
+<div class="content-sections-container">
+    <div *ngFor="let section of sections; let i = index" 
+         class="content-section" 
+         [ngClass]="{'even': i % 2 === 0, 'odd': i % 2 !== 0}">
+      
+      <div class="section-content" [ngClass]="{'order-first': section.alignment === 'right', 'order-last': section.alignment === 'left'}">
+        <h3 class="section-title">{{ section.title }}</h3>
+        <div class="section-description">{{ section.description }}</div>
+      </div>
+      
+      <div class="section-image-container" *ngIf="section.imageUrl" 
+           [ngClass]="{'order-last': section.alignment === 'right', 'order-first': section.alignment === 'left'}">
+        <img [src]="section.imageUrl" [alt]="section.title" class="section-image">
+      </div>
+    </div>
+  </div>

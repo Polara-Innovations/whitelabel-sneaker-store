@@ -70,17 +70,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
   @HostListener('window:resize')
   onWindowResize() {
     this.checkIfMobile();
-    this.adjustBackdropAndDropdowns();
   }
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
     const target = event.target as HTMLElement;
     if (!target.closest('.navbar') &&
-        !target.closest('.settings-container') &&
-        !target.closest('.cart-modal-container') &&
-        !target.closest('.hamburger-menu') &&
-        !target.closest('.mobile-menu-dropdown')) {
+      !target.closest('.settings-container') &&
+      !target.closest('.cart-modal-container') &&
+      !target.closest('.hamburger-menu') &&
+      !target.closest('.mobile-menu-dropdown')) {
       this.closeAllMenus();
     }
   }
@@ -91,23 +90,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     if (!prevMobile && this.isMobile) {
       this.closeAllMenus();
     }
-  }
-
-  private getScrollbarWidth(): number {
-    return window.innerWidth - document.documentElement.clientWidth;
-  }
-
-  private adjustBackdropAndDropdowns(): void {
-    const scrollbarWidth = this.getScrollbarWidth();
-    if (this.menuBackdrop?.nativeElement) {
-      this.renderer.setStyle(this.menuBackdrop.nativeElement, 'width', `${document.documentElement.clientWidth}px`);
-    }
-    setTimeout(() => {
-      this.dropdownElements = Array.from(document.querySelectorAll('.dropdown-menu.show')) as HTMLElement[];
-      this.dropdownElements.forEach(dropdown => {
-        this.renderer.setStyle(dropdown, 'width', `${document.documentElement.clientWidth}px`);
-      });
-    }, 0);
   }
 
   private loadNavData() {
@@ -135,7 +117,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.isCartOpen = false;
       this.isProfileOpen = false;
     }
-    this.adjustBackdropAndDropdowns();
   }
 
   toggleSettings() {
@@ -145,7 +126,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.isProfileOpen = false;
       this.isMenuOpen = false;
     }
-    this.adjustBackdropAndDropdowns();
   }
 
   toggleCart() {
@@ -175,12 +155,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.dropdownElements.forEach(dropdown => {
       this.renderer.removeClass(dropdown, 'show');
     });
-    this.adjustBackdropAndDropdowns();
   }
 
   onDropdownToggled(isOpen: boolean): void {
     this.isDropdownOpen = isOpen;
-    
+
     // Se abrir um dropdown, fechar outros menus
     if (isOpen) {
       this.isSettingsOpen = false;
@@ -188,6 +167,5 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.isProfileOpen = false;
     }
 
-    this.adjustBackdropAndDropdowns();
   }
 }

@@ -20,7 +20,7 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
   @ViewChild('mainImageContainer') mainImageContainer!: ElementRef;
   @ViewChild('thumbnailsContainer') thumbnailsContainer!: ElementRef;
 
-  product!: Product;
+  product: Product = {} as Product;
   filteredSizes: string[] = [];
   selectedColor: string = '';
   selectedSize: string = '';
