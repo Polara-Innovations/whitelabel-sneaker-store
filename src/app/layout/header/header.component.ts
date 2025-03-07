@@ -51,8 +51,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.checkIfMobile();
-    this.themeSubscription = this.themeService.currentThemeMode.subscribe(mode => {
-      this.isDarkMode = mode === 'dark';
+    this.themeSubscription = this.themeService.currentThemeType.subscribe(type => {
+      this.isDarkMode = type === 'dark';
     });
     this.cartCountSubscription = this.cartService.cartCount$.subscribe(count => {
       this.cartItemCount = count;

@@ -1,3 +1,7 @@
-<div class="toggle-switch" [class.active]="isChecked" (click)="toggle()">
+<div class="toggle-switch form-check form-switch p-0" 
+     [class.active]="isChecked" 
+     (click)="toggle()" 
+     role="switch" 
+     [attr.aria-checked]="isChecked">
   <div class="toggle-slider"></div>
 </div>

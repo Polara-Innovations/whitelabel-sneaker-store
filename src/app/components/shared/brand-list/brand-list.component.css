@@ -8,17 +8,32 @@
 .brand-list-track {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-md);
+  gap: var(--spacing-medium);
   width: 100%;
   max-width: 1200px;
   justify-content: center;
   position: relative;
-  padding: var(--spacing-md) 0;
+}
+
+.brand-card-item {
+  transition: transform var(--animation-duration-short) var(--animation-easing-easeInOut);
+}
+
+@media (max-width: 992px) {
+  .brand-list-track {
+    gap: var(--spacing-small);
+  }
 }
 
 @media (max-width: 768px) {
   .brand-list-track {
-    width: 90%;
-    gap: var(--spacing-sm);
+    width: 100%;
+    gap: var(--spacing-xsmall);
+  }
+}
+
+@media (max-width: 576px) {
+  .brand-list-track {
+    justify-content: space-between;
   }
 }

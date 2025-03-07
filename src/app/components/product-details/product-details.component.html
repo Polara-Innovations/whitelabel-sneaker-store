@@ -1,116 +1,178 @@
-  <div class="main-container-tb">
-    <div class="product-container container-padding-lr">
-      <div class="product-gallery product-section">
-        <div class="main-image-container" #mainImageContainer>
-          <img #mainImage [src]="currentImage" [alt]="product.description" (mousemove)="handleZoom($event)"
-            (mouseenter)="showZoom()" (mouseleave)="hideZoom()" class="main-image" />
-          <div class="zoom-lens" *ngIf="isZooming" [style.top.px]="zoomPosition.y" [style.left.px]="zoomPosition.x">
+<div class="product-detail">
+  <div class="container-xLarge">
+    <div class="row">
+      <!-- Galeria de Imagens -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="product-gallery">
+          <div class="main-image-container position-relative rounded overflow-hidden mb-3" #mainImageContainer>
+            <img #mainImage [src]="currentImage" [alt]="product.description" 
+                 (mousemove)="handleZoom($event)"
+                 (mouseenter)="showZoom()" 
+                 (mouseleave)="hideZoom()" 
+                 class="main-image w-100 h-100 object-fit-cover" />
+            <div class="zoom-lens position-absolute rounded-circle" 
+                 *ngIf="isZooming" 
+                 [style.top.px]="zoomPosition.y" 
+                 [style.left.px]="zoomPosition.x">
+            </div>
           </div>
-        </div>
-        <div class="thumbnails-container">
-          <button class="nav-button prev" (click)="scrollThumbnails('prev')"
-            *ngIf="currentColorImages.length > 4 && thumbnailScrollPosition > 0">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <div class="thumbnails" #thumbnailsContainer [style.transform]="'translateX(-' + thumbnailScrollPosition + 'px)'">
-            <img *ngFor="let img of currentColorImages; let i = index" [src]="img" [alt]="product.title"
-              [class.active]="img === currentImage" (click)="selectImage(img)" />
+          
+          <div class="thumbnails-container position-relative d-flex align-items-center">
+            <button class="nav-button prev btn btn-sm rounded-circle shadow-sm" 
+                    (click)="scrollThumbnails('prev')"
+                    *ngIf="currentColorImages.length > 4 && thumbnailScrollPosition > 0">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="thumbnails d-flex flex-nowrap" 
+                 #thumbnailsContainer 
+                 [style.transform]="'translateX(-' + thumbnailScrollPosition + 'px)'">
+              <img *ngFor="let img of currentColorImages; let i = index" 
+                   [src]="img" 
+                   [alt]="product.title"
+                   [class.active]="img === currentImage" 
+                   (click)="selectImage(img)" 
+                   class="thumbnail-img" />
+            </div>
+            
+            <button class="nav-button next btn btn-sm rounded-circle shadow-sm" 
+                    (click)="scrollThumbnails('next')"
+                    *ngIf="currentColorImages.length > 4 && thumbnailScrollPosition < maxScrollPosition">
+              <i class="fas fa-chevron-right"></i>
+            </button>
           </div>
-          <button class="nav-button next" (click)="scrollThumbnails('next')"
-            *ngIf="currentColorImages.length > 4 && thumbnailScrollPosition < maxScrollPosition">
-            <i class="fas fa-chevron-right"></i>
-          </button>
         </div>
       </div>
-
-      <div class="product-info product-section">
-        <div class="product-header">
-          <div class="tags">
-            <span *ngIf="product.inStock != null" class="stock-tag" [class.in-stock]="product.inStock" [class.out-of-stock]="!product.inStock">
-              {{ product.inStock ? 'Em Estoque' : 'Fora de Estoque' }}
-            </span>
-            <ng-container *ngIf="product.tags">
-              <span *ngFor="let tag of product.tags" class="tag">{{ tag }}</span>
-            </ng-container>
-          </div>
-          <h1 class="product-title">{{ product.title }}</h1>
-          <div class="price-container">
-            <span class="product-price">R$ {{ product.price | number:'1.2-2' }}</span>
-            <span *ngIf="product.oldPrice" class="product-price-old">R$ {{ product.oldPrice | number:'1.2-2' }}</span>
-          </div>
-        </div>
-
-        <div class="product-options">
-          <div class="color-selector option-group">
-            <h3 class="option-title">Cores</h3>
-            <div class="color-swatches">
-              <button *ngFor="let color of product.colors" [style.background-color]="color"
-                [class.active]="color === selectedColor" (click)="selectColor(color)">
-              </button>
+      
+      <!-- Informações do Produto -->
+      <div class="col-lg-6">
+        <div class="product-info">
+          <!-- Cabeçalho do Produto -->
+          <div class="product-header mb-4">
+            <div class="tags d-flex flex-wrap mb-2">
+              <span *ngIf="product.inStock != null" 
+                    class="stock-tag badge me-2" 
+                    [class.bg-success]="product.inStock" 
+                    [class.bg-secondary]="!product.inStock">
+                {{ product.inStock ? 'Em Estoque' : 'Fora de Estoque' }}
+              </span>
+              <ng-container *ngIf="product.tags">
+                <span *ngFor="let tag of product.tags" 
+                      class="tag badge">
+                  {{ tag }}
+                </span>
+              </ng-container>
             </div>
-            <span class="selected-color-name" *ngIf="selectedColor">{{ getColorName(selectedColor) }}</span>
-          </div>
-
-          <div class="size-selector option-group">
-            <h3 class="option-title">Tamanhos</h3>
-            <div *ngIf="(product.sizes?.length || 0) > 8; else sizeGrid">
-              <input type="text" placeholder="Pesquisar tamanhos..." (input)="onFilterSizes($event)" />
-              <select (change)="onSizeSelect($event)">
-                <option value="" disabled selected>Selecione um tamanho</option>
-                <option *ngFor="let size of filteredSizes" [value]="size">{{ size }}</option>
-              </select>
+            
+            <h1 class="product-title fs-2 fw-bold mb-2">{{ product.title }}</h1>
+            
+            <div class="price-container d-flex align-items-center">
+              <span class="product-price fs-1 fw-bold me-2">R$ {{ product.price | number:'1.2-2' }}</span>
+              <span *ngIf="product.oldPrice" 
+                    class="product-price-old fs-6 text-decoration-line-through">
+                R$ {{ product.oldPrice | number:'1.2-2' }}
+              </span>
             </div>
-            <ng-template #sizeGrid>
-              <div class="size-grid">
-                <button *ngFor="let size of product.sizes" 
-                      [class.active]="size === selectedSize" 
-                      (click)="selectSize(size)">
-                  {{ size }}
+          </div>
+          
+          <!-- Opções do Produto -->
+          <div class="product-options mb-4">
+            <!-- Seletor de Cores -->
+            <div class="color-selector mb-4">
+              <h3 class="option-title fw-bold mb-3">Cores</h3>
+              <div class="color-swatches d-flex flex-wrap mb-2">
+                <button *ngFor="let color of product.colors" 
+                        [style.background-color]="color"
+                        [class.active]="color === selectedColor" 
+                        (click)="selectColor(color)"
+                        class="color-btn">
                 </button>
               </div>
-            </ng-template>
-          </div>
-
-          <div class="quantity-selector option-group">
-            <h3 class="option-title">Quantidade</h3>
-            <div class="quantity-controls">
-              <button class="quantity-btn" (click)="updateQuantity(-1)" [disabled]="selectedQuantity <= 1">
-                <i class="fas fa-minus"></i>
-              </button>
-              <span class="quantity-value">{{ selectedQuantity }}</span>
-              <button class="quantity-btn" (click)="updateQuantity(1)" [disabled]="!product || selectedQuantity >= product.stockQuantity">
-                <i class="fas fa-plus"></i>
-              </button>
+              <span class="selected-color-name small" *ngIf="selectedColor">
+                {{ getColorName(selectedColor) }}
+              </span>
+            </div>
+            
+            <!-- Seletor de Tamanhos -->
+            <div class="size-selector mb-4">
+              <h3 class="option-title fw-bold mb-3">Tamanhos</h3>
+              <div *ngIf="(product.sizes?.length || 0) > 8; else sizeGrid">
+                <input type="text" 
+                       class="form-control mb-2" 
+                       placeholder="Pesquisar tamanhos..." 
+                       (input)="onFilterSizes($event)" />
+                <select class="form-select" (change)="onSizeSelect($event)">
+                  <option value="" disabled selected>Selecione um tamanho</option>
+                  <option *ngFor="let size of filteredSizes" [value]="size">{{ size }}</option>
+                </select>
+              </div>
+              <ng-template #sizeGrid>
+                <div class="size-grid">
+                  <button *ngFor="let size of product.sizes" 
+                          [class.active]="size === selectedSize" 
+                          (click)="selectSize(size)"
+                          class="size-btn">
+                    {{ size }}
+                  </button>
+                </div>
+              </ng-template>
+            </div>
+            
+            <!-- Seletor de Quantidade -->
+            <div class="quantity-selector mb-4">
+              <h3 class="option-title fw-bold mb-3">Quantidade</h3>
+              <div class="quantity-controls d-flex align-items-center">
+                <button class="quantity-btn btn btn-outline-secondary rounded-circle" 
+                        (click)="updateQuantity(-1)" 
+                        [disabled]="selectedQuantity <= 1">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <span class="quantity-value px-3 fw-bold">{{ selectedQuantity }}</span>
+                <button class="quantity-btn btn btn-outline-secondary rounded-circle" 
+                        (click)="updateQuantity(1)" 
+                        [disabled]="!product || selectedQuantity >= product.stockQuantity">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="product-actions">
-          <div class="action-buttons">
-            <button class="add-to-cart" (click)="addToCart()" [disabled]="!product.inStock || !selectedSize || !selectedColor">
-              Adicionar ao Carrinho
-            </button>
-            <button class="add-to-wishlist" (click)="toggleWishlist()" [class.active]="isInWishlist" title="Adicionar à Lista de Desejos">
-              <i class="heart-icon fas fa-heart"></i>
-            </button>
+          
+          <!-- Ações do Produto -->
+          <div class="product-actions">
+            <div class="action-buttons d-flex">
+              <button class="add-to-cart btn btn-lg flex-grow-1 me-2" 
+                      (click)="addToCart()" 
+                      [disabled]="!product.inStock || !selectedSize || !selectedColor">
+                Adicionar ao Carrinho
+              </button>
+              <button class="add-to-wishlist btn btn-lg" 
+                      (click)="toggleWishlist()" 
+                      [class.active]="isInWishlist" 
+                      title="Adicionar à Lista de Desejos">
+                <i class="heart-icon fas fa-heart"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-    <div class="product-description-container container-padding-lr">
-      <div class="product-description-section container-padding-tb">
-        <app-title text="Descrição" size="medium" position="left"></app-title>
-        <p class="product-description-text">{{ product.description }}</p>
-      </div>
+  
+  <!-- Descrição do Produto -->
+  <div class="product-description-section container-large-vertical mt-5">
+    <div class="container-xLarge">
+      <app-title text="Descrição" size="medium" position="left"></app-title>
+      <p class="product-description-text mt-3">{{ product.description }}</p>
     </div>
-
-  <div class="main-container">
-    <div class="related-products-container container-padding">
+  </div>
+  
+  <!-- Produtos Relacionados -->
+  <div class="related-products-section container-xLarge-vertical">
+    <div class="container-xLarge">
       <app-title text="Produtos Relacionados" size="large" fontWeight="bold" position="center"></app-title>
-      <div class="related-products-section">
+      <div class="mt-4">
         <app-product-carrousel [products]="relatedProducts"></app-product-carrousel>
       </div>
     </div>
   </div>
+</div>

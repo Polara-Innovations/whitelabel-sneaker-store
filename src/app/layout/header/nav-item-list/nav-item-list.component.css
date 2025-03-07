@@ -3,7 +3,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: var(--spacing-md);
+  gap: var(--spacing-medium);
   width: 100%;
   flex-wrap: wrap;
 }
@@ -66,7 +66,6 @@
 .column-direction {
   flex-direction: column;
   width: 100%;
-  padding: 0;
 }
 
 /* Posicionamento dos itens na direção em linha */
@@ -114,7 +113,7 @@
 }
 
 .column-direction .nav-item .nav-link {
-  width: auto; /* Alterado de 100% para auto */
+  width: auto;
 }
 
 /* Alinhamento do texto dentro dos links */
@@ -172,11 +171,7 @@
 /* Responsividade */
 @media (max-width: 768px) {
   .navbar-nav {
-    gap: var(--spacing-sm);
-  }
-  
-  .column-direction {
-    padding: 0 15px;
+    gap: var(--spacing-small);
   }
   
   /* Usar indicador lateral em telas pequenas */
@@ -194,5 +189,4 @@
   .column-direction app-nav-item-dropdown {
     align-self: stretch;
   }
-  
 }

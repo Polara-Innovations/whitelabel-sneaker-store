@@ -1,119 +1,107 @@
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
-  }  
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-large);
+  margin-top: var(--spacing-large);
+}
 
 .team-member-card {
-    background-color: var(--aboutUs-teamCardBackground);
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--aboutUs-teamCardBorder);
-    box-shadow: var(--aboutUs-teamCardShadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--aboutUs-background);
+  border-radius: var(--border-radius-small);
+  overflow: hidden;
+  border: 1px solid var(--aboutUs-border);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform var(--animation-duration-medium) var(--animation-easing-easeInOut), 
+              box-shadow var(--animation-duration-medium) var(--animation-easing-easeInOut);
 }
 
 .team-member-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .member-photo-container {
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
 }
 
 .member-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 
 .team-member-card:hover .member-photo {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .member-info {
-    padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .member-name {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin: 0 0 5px 0;
-    color: var(--aboutUs-teamMemberName);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-bold);
+  margin: 0 0 var(--spacing-small) 0;
+  color: var(--aboutUs-title);
 }
 
 .member-position {
-    font-size: 1rem;
-    color: var(--aboutUs-teamMemberPosition);
-    margin: 0 0 15px 0;
-    font-weight: 500;
+  font-size: var(--font-size-medium);
+  color: var(--aboutUs-subtitle);
+  margin: 0 0 var(--spacing-small) 0;
+  font-weight: var(--font-weight-regular);
 }
 
 .member-description {
-    font-size: 0.95rem;
-    color: var(--aboutUs-teamMemberDescription);
-    line-height: 1.6;
-    margin-bottom: 20px;
+  font-size: var(--font-size-small);
+  color: var(--aboutUs-text);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-medium);
+  flex-grow: 1;
 }
 
 .social-links {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: var(--spacing-small);
+  margin-top: auto;
 }
 
 .social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: var(--aboutUs-teamSocialIconBackground);
-    color: var(--aboutUs-teamSocialIconColor);
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--aboutUs-buttonBackground);
+  color: var(--aboutUs-buttonText);
+  transition: all var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 
 .social-icon:hover {
-    background-color: var(--aboutUs-teamSocialIconHoverBackground);
-    transform: translateY(-2px);
+  background-color: var(--aboutUs-buttonactiveBackground);
+  color: var(--aboutUs-buttonactiveText);
+  transform: translateY(-2px);
 }
 
-
-/* Nova solução para centralizar o último item quando sozinho */
-@supports (grid-template-rows: masonry) {
-    .team-grid {
-      grid-template-rows: masonry;
-      justify-content: center;
-    }
-  }
-  
-  /* Solução alternativa para navegadores que não suportam masonry */
-  @supports not (grid-template-rows: masonry) {
-    .team-grid {
-      position: relative;
-    }
-    
-    /* Esta classe será adicionada via JavaScript */
-    .team-member-card.last-row-centered {
-      justify-self: center;
-      grid-column-start: 1;
-      grid-column-end: -1;
-      max-width: 355px;
-    }
-  }
-
 @media (max-width: 768px) {
-    .team-grid {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: 20px;
-    }
+  .team-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--spacing-medium);
+  }
 
-    .member-photo-container {
-        height: 200px;
-    }
+  .member-photo-container {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
 }

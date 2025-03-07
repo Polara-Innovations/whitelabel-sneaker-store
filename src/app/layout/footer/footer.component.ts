@@ -5,7 +5,6 @@ import { ThemeService } from '../../services/theme/theme.service';
 import { FooterConfig, FooterSection } from '../../models/footer.model';
 import { Subscription } from 'rxjs';
 import { FooterService } from '../../services/api/footer/footer.service';
-import { ModalService } from '../../services/modal/modal.service';
 
 @Component({
   selector: 'app-footer',
@@ -22,7 +21,6 @@ export class FooterComponent implements OnInit, OnDestroy {
   constructor(
     private footerService: FooterService,
     private themeService: ThemeService,
-    private modalService: ModalService,
     private fb: FormBuilder
   ) {
     this.newsletterForm = this.fb.group({
@@ -81,55 +79,55 @@ export class FooterComponent implements OnInit, OnDestroy {
    * Manipula o envio do formulário de newsletter
    */
   onNewsletterSubmit(): void {
-    if (this.newsletterForm.valid) {
-      const email = this.newsletterForm.value.email;
+    // if (this.newsletterForm.valid) {
+    //   const email = this.newsletterForm.value.email;
       
-      // Mostrar modal de carregamento
-      const loadingModal = this.modalService.showLoading('Enviando inscrição...');
+    //   // Mostrar modal de carregamento
+    //   const loadingModal = this.modalService.showLoading('Enviando inscrição...');
       
-      // Simular chamada de API (substituir por chamada real)
-      setTimeout(() => {
-        // Fechar modal de carregamento
-        loadingModal.close();
+    //   // Simular chamada de API (substituir por chamada real)
+    //   setTimeout(() => {
+    //     // Fechar modal de carregamento
+    //     loadingModal.close();
         
-        // Mostrar modal de sucesso
-        this.modalService.openSuccess({
-          title: 'Inscrição Realizada',
-          message: `O email ${email} foi inscrito com sucesso em nossa newsletter!`,
-          size: 'md'
-        });
+    //     // Mostrar modal de sucesso
+    //     this.modalService.openSuccess({
+    //       title: 'Inscrição Realizada',
+    //       message: `O email ${email} foi inscrito com sucesso em nossa newsletter!`,
+    //       size: 'md'
+    //     });
         
-        // Resetar o formulário após o envio
-        this.newsletterForm.reset();
-      }, 1500);
-    } else {
-      // Mostrar modal de erro para formulário inválido
-      this.modalService.openError({
-        title: 'Erro na Inscrição',
-        message: 'Por favor, informe um endereço de email válido.',
-        size: 'md'
-      });
-    }
+    //     // Resetar o formulário após o envio
+    //     this.newsletterForm.reset();
+    //   }, 1500);
+    // } else {
+    //   // Mostrar modal de erro para formulário inválido
+    //   this.modalService.openError({
+    //     title: 'Erro na Inscrição',
+    //     message: 'Por favor, informe um endereço de email válido.',
+    //     size: 'md'
+    //   });
+    // }
   }
   
   /**
    * Abre o modal de termos de uso
    */
   openTermsModal(): void {
-    this.modalService.openTerms().result.subscribe(accepted => {
-      if (accepted) {
-        console.log('Termos aceitos pelo usuário');
-      } else {
-        console.log('Termos recusados pelo usuário');
-      }
-    });
+    // this.modalService.openTerms().result.subscribe(accepted => {
+    //   if (accepted) {
+    //     console.log('Termos aceitos pelo usuário');
+    //   } else {
+    //     console.log('Termos recusados pelo usuário');
+    //   }
+    // });
   }
   
   /**
    * Abre o modal de política de privacidade
    */
   openPrivacyModal(): void {
-    this.modalService.openPrivacy();
+    // this.modalService.openPrivacy();
   }
   
   /**
@@ -151,29 +149,29 @@ export class FooterComponent implements OnInit, OnDestroy {
    * Abre o modal de confirmação para contato
    */
   openContactConfirmation(): void {
-    this.modalService.openConfirm({
-      title: 'Contato',
-      message: 'Deseja entrar em contato com nossa equipe agora?',
-      confirmText: 'Sim, entrar em contato',
-      cancelText: 'Não, mais tarde'
-    }).result.subscribe(result => {
-      if (result) {
-        // Redirecionar para a página de contato
-        window.location.href = '/contact';
-      }
-    });
+    // this.modalService.openConfirm({
+    //   title: 'Contato',
+    //   message: 'Deseja entrar em contato com nossa equipe agora?',
+    //   confirmText: 'Sim, entrar em contato',
+    //   cancelText: 'Não, mais tarde'
+    // }).result.subscribe(result => {
+    //   if (result) {
+    //     // Redirecionar para a página de contato
+    //     window.location.href = '/contact';
+    //   }
+    // });
   }
 
   /**
    * Abre o modal de cookies
    */
   openCookiesModal(): void {
-    this.modalService.openCookies().result.subscribe(accepted => {
-      if (accepted) {
-        console.log('Cookies aceitos pelo usuário');
-      } else {
-        console.log('Cookies recusados pelo usuário');
-      }
-    });
+  //   this.modalService.openCookies().result.subscribe(accepted => {
+  //     if (accepted) {
+  //       console.log('Cookies aceitos pelo usuário');
+  //     } else {
+  //       console.log('Cookies recusados pelo usuário');
+  //     }
+  //   });
   }
 }

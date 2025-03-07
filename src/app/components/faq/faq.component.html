@@ -1,59 +1,61 @@
-<div class="main-container">
-  <div class="faq-container container-padding">
+<div [ngClass]="['main-container', 'container-xLarge']">
+  <div class="faq-container">
     
-    <div class="faq-header">
+    <div class="faq-header container-medium-vertical">
       <h1 class="faq-title">{{ title }}</h1>
       <div class="faq-controls">
-        <button class="faq-control-btn" (click)="expandAll()">
+        <button class="faq-control-btn" (click)="expandAll()" aria-label="Expandir todas as perguntas">
           <i class="fas fa-plus-square"></i> Expandir Todos
         </button>
-        <button class="faq-control-btn" (click)="collapseAll()">
+        <button class="faq-control-btn" (click)="collapseAll()" aria-label="Recolher todas as perguntas">
           <i class="fas fa-minus-square"></i> Recolher Todos
         </button>
       </div>
     </div>
       
-      <div class="faq-search">
-        <div class="search-input-wrapper">
-          <i class="fas fa-search search-icon"></i>
-          <input 
-            type="text" 
-            class="search-input" 
-            placeholder="Pesquisar perguntas..." 
-            [(ngModel)]="searchTerm"
-            (keyup.enter)="search()" />
-          <button 
-            *ngIf="searchTerm" 
-            class="search-clear-btn" 
-            (click)="clearSearch()">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <button class="search-btn" (click)="search()">Pesquisar</button>
+    <div class="faq-search container-medium-vertical">
+      <div class="search-input-wrapper">
+        <i class="fas fa-search search-icon"></i>
+        <input 
+          type="text" 
+          class="search-input" 
+          placeholder="Pesquisar perguntas..." 
+          [(ngModel)]="searchTerm"
+          (keyup.enter)="search()"
+          aria-label="Pesquisar nas perguntas frequentes" />
+        <button 
+          *ngIf="searchTerm" 
+          class="search-clear-btn" 
+          (click)="clearSearch()"
+          aria-label="Limpar pesquisa">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
+      <button class="search-btn" (click)="search()">Pesquisar</button>
+    </div>
 
     <!-- Loading State -->
-    <div *ngIf="loading" class="faq-loading">
-      <div class="spinner"></div>
+    <div *ngIf="loading" class="faq-loading container-large-vertical">
+      <div class="spinner" aria-hidden="true"></div>
       <p>Carregando perguntas frequentes...</p>
     </div>
 
     <!-- Error State -->
-    <div *ngIf="error && !loading" class="faq-error">
-      <i class="fas fa-exclamation-circle"></i>
+    <div *ngIf="error && !loading" class="faq-error container-large-vertical">
+      <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
       <p>{{ error }}</p>
       <button class="retry-btn" (click)="loadfaq()">Tentar Novamente</button>
     </div>
 
     <!-- Empty Search Results -->
-    <div *ngIf="!loading && !error && sections.length === 0" class="faq-empty">
-      <i class="fas fa-search"></i>
+    <div *ngIf="!loading && !error && sections.length === 0" class="faq-empty container-large-vertical">
+      <i class="fas fa-search" aria-hidden="true"></i>
       <p>Nenhum resultado encontrado para "{{ searchTerm }}"</p>
       <button class="clear-search-btn" (click)="clearSearch()">Limpar Pesquisa</button>
     </div>
 
-    <!-- faq Content -->
-    <div *ngIf="!loading && !error && sections.length > 0" class="faq-sections">
+    <!-- FAQ Content -->
+    <div *ngIf="!loading && !error && sections.length > 0" class="faq-sections container-medium-vertical">
       <div *ngFor="let section of sections; let sectionIndex = index" class="faq-section">
         <h2 class="section-title" *ngIf="section.title">{{ section.title }}</h2>
         <div class="section-items">

@@ -1,13 +1,13 @@
 <div class="hamburger-menu" [ngClass]="{'open': isMenuOpen}">
-  <div class="menu-header">
+  <div class="menu-header container-medium">
     <div class="brand" *ngIf="logoUrl">
       <img [src]="logoUrl" alt="Logo" class="hamburger-logo">
     </div>
-    <button class="close-button" (click)="closeMenu()">
+    <button class="close-button btn-icon" (click)="closeMenu()">
       <i class="fas fa-times"></i>
     </button>
   </div>
-  <div class="menu-content">
+  <div class="menu-content container-medium-vertical">
     <app-nav-item-list 
       [tabs]="tabs" 
       [tags]="tags"

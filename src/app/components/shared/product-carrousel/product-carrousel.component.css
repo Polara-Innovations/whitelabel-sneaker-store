@@ -7,14 +7,14 @@
 .carousel-wrapper {
   position: relative;
   width: 100%;
-  padding: 2rem 0;
+  padding: var(--padding-large) 0;
 }
 
 .carousel-track {
-  width: 100%; /* Mantém 100% de largura */
+  width: 100%;
   display: flex;
-  gap: 20px;
-  transition: transform 0.3s ease;
+  gap: var(--spacing-medium);
+  transition: transform var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 
 .carousel-item-wrapper {
@@ -32,69 +32,75 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 var(--spacing-medium);
 }
 
 .carousel-nav-btn {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: transparent; /* Fundo transparente */
-  color: #333;
-  border: 1px solid rgba(0, 0, 0, 0.1); /* Borda sutil */
+  background-color: var(--carousel-alternativeBackground);
+  color: var(--carousel-text);
+  border: 1px solid var(--carousel-border);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease;
+  transition: all var(--animation-duration-short) var(--animation-easing-easeInOut);
   pointer-events: auto;
-  
-  &:hover:not(.disabled) {
-    background-color: rgba(75, 136, 201, 0.8); /* Semi-transparente ao passar o mouse */
-    color: white;
-    transform: scale(1.05);
-  }
-  
-  &.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
+}
+
+.carousel-nav-btn:hover:not(.disabled) {
+  background-color: var(--carousel-buttonBackground);
+  color: var(--carousel-buttonText);
+  transform: scale(1.05);
+}
+
+.carousel-nav-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .carousel-bullets {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin-top: 1rem;
+  gap: var(--spacing-small);
+  margin-top: var(--spacing-medium);
 }
 
 .carousel-bullet {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #ccc;
+  background-color: var(--carousel-border);
   border: none;
   padding: 0;
   cursor: pointer;
-  transition: all 0.2s ease;
-  
-  &.active {
-    background-color: #4b88c9;
-    transform: scale(1.2);
-  }
+  transition: all var(--animation-duration-short) var(--animation-easing-easeInOut);
+}
+
+.carousel-bullet.active {
+  background-color: var(--carousel-buttonBackground);
+  transform: scale(1.2);
 }
 
 .carousel-empty {
-  padding: 2rem;
+  padding: var(--padding-large);
   text-align: center;
-  color: #666;
+  color: var(--carousel-subtitle);
   font-style: italic;
+}
+
+@media (max-width: 992px) {
+  .carousel-item-wrapper {
+    width: 220px;
+  }
 }
 
 @media (max-width: 767px) {
   .carousel-wrapper {
-    padding: 1rem 0;
+    padding: var(--padding-medium) 0;
   }
   
   .carousel-item-wrapper {
@@ -102,7 +108,7 @@
   }
   
   .carousel-track {
-    gap: 10px;
+    gap: var(--spacing-small);
   }
   
   .carousel-wrapper::before,
@@ -118,12 +124,12 @@
   
   .carousel-wrapper::before {
     left: 0;
-    background: linear-gradient(to right, var(--carousel-bg, transparent) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, var(--carousel-background) 0%, rgba(255, 255, 255, 0) 100%);
   }
   
   .carousel-wrapper::after {
     right: 0;
-    background: linear-gradient(to left, var(--carousel-bg, transparent) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to left, var(--carousel-background) 0%, rgba(255, 255, 255, 0) 100%);
   }
   
   .carousel-bullet {
@@ -146,5 +152,11 @@
   .carousel-bullet {
     width: 6px;
     height: 6px;
+  }
+  
+  .carousel-nav-btn {
+    width: 32px;
+    height: 32px;
+    font-size: var(--font-size-small);
   }
 }

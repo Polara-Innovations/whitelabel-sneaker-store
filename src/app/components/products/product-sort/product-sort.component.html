@@ -1,14 +1,15 @@
 <div class="sort-container">
-    <label for="sort-select" class="sort-label">Ordenar por:</label>
-    <select 
-      id="sort-select" 
-      class="sort-select" 
-      [value]="selected" 
-      (change)="onChange($event)">
-      <option 
-        *ngFor="let option of options" 
-        [value]="option.id">
-        {{ option.label }}
-      </option>
-    </select>
-  </div>
+  <label for="sort-select" class="sort-label">Ordenar por:</label>
+  <select 
+    id="sort-select" 
+    class="sort-select" 
+    [value]="selected" 
+    (change)="onChange($event)"
+    aria-label="Ordenar produtos">
+    <option 
+      *ngFor="let option of options" 
+      [value]="option.id">
+      {{ option.label }}
+    </option>
+  </select>
+</div>

@@ -1,11 +1,12 @@
-<div class="faq-item" [class.expanded]="item.isExpanded">
-    <div class="faq-question" (click)="toggle()">
-      <span class="question-text">{{ item.question }}</span>
-      <span class="toggle-icon">
-        <i class="fas" [ngClass]="item.isExpanded ? 'fa-minus' : 'fa-plus'"></i>
-      </span>
-    </div>
-    <div class="faq-answer" [@expandCollapse]="item.isExpanded ? 'expanded' : 'collapsed'">
-      <div class="answer-content" [innerHTML]="item.answer"></div>
-    </div>
+<div class="faq-item" [ngClass]="['container-small', item.isExpanded ? 'expanded' : '']">
+  <div class="faq-question" (click)="toggle()" [attr.aria-expanded]="item.isExpanded" [attr.aria-controls]="'faq-answer-' + item.id">
+    <span class="question-text">{{ item.question }}</span>
+    <span class="toggle-icon" aria-hidden="true">
+      <i class="fas" [ngClass]="item.isExpanded ? 'fa-minus' : 'fa-plus'"></i>
+    </span>
   </div>
+  <div id="faq-answer-{{item.id}}" class="faq-answer" [@expandCollapse]="item.isExpanded ? 'expanded' : 'collapsed'" 
+       [attr.aria-hidden]="!item.isExpanded">
+    <div class="answer-content container-medium" [innerHTML]="item.answer"></div>
+  </div>
+</div>

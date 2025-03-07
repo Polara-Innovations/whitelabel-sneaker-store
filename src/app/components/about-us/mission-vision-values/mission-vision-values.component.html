@@ -1,26 +1,26 @@
-<div class="mvv-container">
-    <div class="mvv-main-sections">
-      <div class="mvv-section mission-section">
-        <h3 class="mvv-title">Missão</h3>
-        <p class="mvv-text">{{ data?.mission }}</p>
-      </div>
-      
-      <div class="mvv-section vision-section">
-        <h3 class="mvv-title">Visão</h3>
-        <p class="mvv-text">{{ data?.vision }}</p>
-      </div>
+<div class="mvv-container container-large">
+  <div class="mvv-main-sections">
+    <div class="mvv-section mission-section container-medium">
+      <h3 class="mvv-title">Missão</h3>
+      <p class="mvv-text">{{ data?.mission }}</p>
     </div>
     
-    <div class="values-container">
-      <h3 class="mvv-title values-title">Valores</h3>
-      <div class="values-grid">
-        <div class="value-card" *ngFor="let value of data?.values">
-          <div class="value-icon">
-            <i [class]="value.icon"></i>
-          </div>
-          <h4 class="value-title">{{ value.title }}</h4>
-          <p class="value-description">{{ value.description }}</p>
+    <div class="mvv-section vision-section container-medium">
+      <h3 class="mvv-title">Visão</h3>
+      <p class="mvv-text">{{ data?.vision }}</p>
+    </div>
+  </div>
+  
+  <div class="values-container">
+    <h3 class="mvv-title values-title">Valores</h3>
+    <div class="values-grid">
+      <div class="value-card container-small" *ngFor="let value of data?.values">
+        <div class="value-icon">
+          <i [class]="value.icon"></i>
         </div>
+        <h4 class="value-title">{{ value.title }}</h4>
+        <p class="value-description">{{ value.description }}</p>
       </div>
     </div>
   </div>
+</div>

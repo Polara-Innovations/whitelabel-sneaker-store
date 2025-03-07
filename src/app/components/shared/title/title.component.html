@@ -1,5 +1,5 @@
-<div class="title-container" [ngClass]="position">
-  <i *ngIf="icon" class="title-icon" [class]="icon"></i>
+<div class="title-container container-small" [ngClass]="position">
+  <i *ngIf="icon" class="title-icon" [class]="icon" aria-hidden="true"></i>
   <ng-container [ngSwitch]="size">
     <h1 *ngSwitchCase="'extra-large'" [ngClass]="fontWeight" class="title extra-large">{{ text }}</h1>
     <h2 *ngSwitchCase="'large'" [ngClass]="fontWeight" class="title large">{{ text }}</h2>

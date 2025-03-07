@@ -1,7 +1,6 @@
 .search-container {
-  flex: 1;  /* Mantém o flex: 1 para ocupar todo o espaço disponível */
-  width: 100%; /* Ocupa 100% da largura disponível */
-  max-width: none; /* Remove a largura máxima limitada */
+  flex: 1;
+  width: 100%;
 }
 
 .search-input-wrapper {
@@ -11,50 +10,66 @@
 
 .search-icon {
   position: absolute;
-  left: 12px;
+  left: var(--spacing-small);
   top: 50%;
   transform: translateY(-50%);
-  color: var(--input-text);
+  color: var(--products-text);
   opacity: 0.5;
 }
 
 .search-input {
   width: 100%;
-  padding: 0.75rem 2.5rem;
-  border: 1px solid var(--input-border);
-  border-radius: var(--border-radius-sm);
-  background-color: var(--input-bg);
-  color: var(--input-text);
-  font-size: 1rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  padding: var(--padding-small) var(--spacing-large);
+  border: 1px solid var(--products-border);
+  border-radius: var(--border-radius-small);
+  background-color: var(--products-alternativeBackground);
+  color: var(--products-text);
+  font-size: var(--font-size-medium);
+  transition: border-color var(--animation-duration-short) var(--animation-easing-easeInOut), 
+              box-shadow var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 
 .search-input:focus {
   outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px rgba(75, 136, 201, 0.2);
+  border-color: var(--products-buttonBackground);
+  box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
 }
 
 .search-clear-btn {
   position: absolute;
-  right: 12px;
+  right: var(--spacing-small);
   top: 50%;
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: var(--input-text);
+  color: var(--products-text);
   opacity: 0.5;
   cursor: pointer;
   padding: 0;
-  font-size: 1rem;
+  font-size: var(--font-size-medium);
+  transition: opacity var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 
 .search-clear-btn:hover {
   opacity: 0.8;
 }
 
+@media (max-width: 768px) {
+  .search-input {
+    font-size: var(--font-size-small);
+  }
+}
+
 @media (max-width: 576px) {
   .search-container {
     width: 100%;
+  }
+  
+  .search-input {
+    padding: var(--padding-xsmall) var(--spacing-medium);
+  }
+  
+  .search-icon, .search-clear-btn {
+    font-size: var(--font-size-small);
   }
 }

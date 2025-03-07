@@ -1,46 +1,50 @@
 .sort-container {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small);
+}
+
+.sort-label {
+  color: var(--products-text);
+  font-size: var(--font-size-small);
+  white-space: nowrap;
+}
+
+.sort-select {
+  padding: var(--padding-small) var(--spacing-medium);
+  border: 1px solid var(--products-border);
+  border-radius: var(--border-radius-small);
+  background-color: var(--products-alternativeBackground);
+  color: var(--products-text);
+  font-size: var(--font-size-small);
+  cursor: pointer;
+  transition: border-color var(--animation-duration-short) var(--animation-easing-easeInOut),
+              box-shadow var(--animation-duration-short) var(--animation-easing-easeInOut);
+  min-width: 180px;
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: var(--products-buttonBackground);
+  box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 767px) {
   .sort-label {
-    color: var(--color-text);
-    font-size: 0.9rem;
-    white-space: nowrap;
+    display: none; /* Ocultar o label em dispositivos móveis */
   }
   
   .sort-select {
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--input-border);
-    border-radius: var(--border-radius-sm);
-    background-color: var(--input-bg);
-    color: var(--input-text);
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: border-color 0.3s;
-    min-width: 180px;
+    width: 100%;
+    min-width: 0;
   }
-  
-  .sort-select:focus {
-    outline: none;
-    border-color: var(--color-primary);
+}
+
+@media (max-width: 576px) {
+  .sort-select {
+    min-width: 0;
+    font-size: var(--font-size-xsmall);
+    padding: var(--padding-xsmall) var(--spacing-small);
   }
-  
-  /* Estilos para dispositivos móveis */
-  @media (max-width: 767px) {
-    .sort-label {
-      display: none; /* Ocultar o label em dispositivos móveis */
-    }
-    
-    .sort-select {
-      width: 100%;
-      min-width: 0;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .sort-select {
-      min-width: 0;
-    }
-  }
+}

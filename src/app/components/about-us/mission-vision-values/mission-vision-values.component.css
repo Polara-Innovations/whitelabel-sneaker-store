@@ -1,104 +1,120 @@
 .mvv-container {
     width: 100%;
-}
-
-.mvv-main-sections {
+  }
+  
+  .mvv-main-sections {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.mvv-section {
-    padding: 25px;
-    border-radius: 8px;
-    background-color: var(--aboutUs-mvvCardBackground);
-    box-shadow: var(--aboutUs-mvvCardShadow);
-    border: 1px solid var(--aboutUs-mvvCardBorder);
-}
-
-.mvv-title {
-    font-size: 1.5rem;
-    color: var(--aboutUs-mvvTitleText);
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.mvv-text {
-    font-size: 1rem;
-    color: var(--aboutUs-mvvBodyText);
+    gap: var(--spacing-large);
+    margin-bottom: var(--spacing-xlarge);
+  }
+  
+  .mvv-section {
+    border-radius: var(--border-radius-medium);
+    background-color: var(--aboutUs-background);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--aboutUs-border);
+    gap: var(--spacing-large);
+  }
+  
+  .mvv-title {
+    font-size: var(--font-size-xlarge);
+    color: var(--aboutUs-title);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  .mvv-text {
+    font-size: var(--font-size-medium);
+    color: var(--aboutUs-text);
     line-height: 1.6;
-}
-
-.values-title {
+  }
+  
+  .values-title {
     text-align: center;
-    margin-bottom: 25px;
-}
-
-.values-grid {
+    margin-bottom: var(--spacing-large);
+  }
+  
+  .values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.value-card {
-    padding: 20px;
+    gap: var(--spacing-medium);
+  }
+  
+  .value-card {
     text-align: center;
-    border-radius: 8px;
-    background-color: var(--aboutUs-mvvCardBackground);
-    border: 1px solid var(--aboutUs-mvvCardBorder);
-    box-shadow: var(--aboutUs-mvvCardShadow);
-    transition: transform 0.3s ease;
-}
-
-.value-card:hover {
+    border-radius: var(--border-radius-medium);
+    background-color: var(--aboutUs-alternativeBackground);
+    border: 1px solid var(--aboutUs-border);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform var(--animation-duration-medium) var(--animation-easing-easeInOut);
+  }
+  
+  .value-card:hover {
     transform: translateY(-5px);
-}
-
-.value-icon {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .value-icon {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: var(--aboutUs-mvvIconBackground);
-    color: var(--aboutUs-mvvIconColor);
+    background-color: var(--aboutUs-buttonBackground);
+    color: var(--aboutUs-buttonText);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 15px auto;
-    font-size: 1.5rem;
-}
-
-.value-title {
-    font-size: 1.1rem;
-    color: var(--aboutUs-mvvTitleText);
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.value-description {
-    font-size: 0.9rem;
-    color: var(--aboutUs-mvvBodyText);
+    margin: 0 auto var(--spacing-medium) auto;
+    font-size: var(--font-size-xlarge);
+  }
+  
+  .value-title {
+    font-size: var(--font-size-large);
+    color: var(--aboutUs-title);
+    margin-bottom: var(--spacing-small);
+    font-weight: var(--font-weight-medium);
+  }
+  
+  .value-description {
+    font-size: var(--font-size-small);
+    color: var(--aboutUs-text);
     line-height: 1.5;
-}
-
-.value-card:last-child:nth-child(odd) {
+  }
+  
+  .value-card:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     justify-self: center;
     max-width: 280px;
-}
-
-.value-card:last-child:nth-child(odd) {
-    max-width: 220px;
-    /* Para value-card */
-}
-
-@media (max-width: 768px) {
-    .mvv-main-sections {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
+  }
+  
+  @media (max-width: 992px) {
     .values-grid {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
-}
+  }
+  
+  @media (max-width: 768px) {
+    .mvv-main-sections {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-medium);
+    }
+  
+    .values-grid {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .mvv-title {
+      font-size: var(--font-size-large);
+    }
+    
+    .value-icon {
+      width: 50px;
+      height: 50px;
+      font-size: var(--font-size-large);
+    }
+    
+    .value-title {
+      font-size: var(--font-size-medium);
+    }
+  }

@@ -1,9 +1,10 @@
-  <div class="category-list-container container-padding">
-    <div class="category-list-track">
-      <app-category-card
-        *ngFor="let category of categories"
-        [category]="category"
-        [ngStyle]="{'width.px': cardWidth}"
-      ></app-category-card>
-    </div>
+<div [ngClass]="['category-list-container', 'container-large']">
+  <div class="category-list-track container-medium-vertical">
+    <app-category-card
+      *ngFor="let category of categories"
+      [category]="category"
+      [ngStyle]="{'width.px': cardWidth}"
+      class="category-card-item"
+    ></app-category-card>
   </div>
+</div>

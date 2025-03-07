@@ -4,15 +4,15 @@
   right: 0; 
   width: 280px;
   height: 100vh;
-  background-color: var(--header-bg);
-  color: var(--header-text);
-  transition: transform 0.3s ease;
+  background-color: var(--menu-background);
+  color: var(--menu-text);
+  transition: transform var(--animation-duration-medium) var(--animation-easing-easeInOut);
   transform: translateX(100%);
   z-index: 3000;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  border-left: 1px solid var(--header-border);
+  border-left: 1px solid var(--menu-border);
 }
 
 .hamburger-menu.open {
@@ -23,29 +23,46 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  border-bottom: 1px solid var(--menu-border);
 }
 
 .hamburger-logo {
   height: 30px;
   width: auto;
+  object-fit: contain;
 }
 
 .close-button {
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: var(--font-size-large);
   cursor: pointer;
   width: 30px;
   height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--header-icon);
+  color: var(--menu-text);
+  border-radius: var(--border-radius-small);
+  transition: background-color var(--animation-duration-short) var(--animation-easing-easeInOut);
+}
+
+.close-button:hover {
+  background-color: var(--menu-backgroundActive);
+  color: var(--menu-textActive);
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 
 .menu-content {
-  padding: 15px 0;
   flex: 1;
 }
 

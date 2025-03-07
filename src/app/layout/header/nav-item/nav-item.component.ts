@@ -10,9 +10,15 @@ import { Tab } from '../../../models/tab.model';
 export class NavItemComponent {
   @Input() tab: Tab = { name: '', route: '', icon: '', display: '' };
   @Input() isActive: boolean = false;
+  @Input() vertical: boolean = false; // Nova propriedade adicionada
   @Output() navClick = new EventEmitter<void>();
   
-  onClick() {
+  onClick(event?: Event) {
+    if (event) {
+      if (this.tab.route === '#' || !this.tab.route) {
+        event.preventDefault();
+      }
+    }
     this.navClick.emit();
   }
 }

@@ -1,16 +1,15 @@
 <footer>
-  <div class="container-padding">
+  <div>
     <div class="row">
-      <!-- Dynamic sections -->
       <ng-container *ngFor="let section of getSections()">
-        <div class="col-md-3 col-sm-6" *ngIf="section.enabled">
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4" *ngIf="section.enabled">
           <div class="footer-section">
-            <h4>{{ section.title }}</h4>
+            <h4 class="mb-3">{{ section.title }}</h4>
             
-            <!-- Links section -->
-            <ul *ngIf="section.type === 'links' && section.content?.links">
-              <li *ngFor="let link of section.content.links">
-                <a [routerLink]="!link.external ? link.url : null" 
+            <ul class="list-unstyled" *ngIf="section.type === 'links' && section.content?.links">
+              <li class="mb-2" *ngFor="let link of section.content.links">
+                <a class="footer-link" 
+                   [routerLink]="!link.external ? link.url : null" 
                    [href]="link.external ? link.url : null"
                    [target]="link.external ? '_blank' : '_self'">
                   {{ link.label }}
@@ -18,39 +17,39 @@
               </li>
             </ul>
             
-            <!-- Social section -->
-            <div *ngIf="section.type === 'social'" class="social-icons">
-              <a *ngFor="let social of section.content?.links" 
+            <div *ngIf="section.type === 'social'" class="social-icons d-flex flex-wrap">
+              <a class="social-icon me-2 mb-2" 
+                 *ngFor="let social of section.content?.links" 
                  [href]="social.url" 
                  [target]="social.external ? '_blank' : '_self'"
                  [attr.aria-label]="social.label">
                 <i [class]="social.icon"></i>
-                <span *ngIf="section.content?.showLabels">{{ social.label }}</span>
+                <span class="ms-1" *ngIf="section.content?.showLabels">{{ social.label }}</span>
               </a>
             </div>
             
-            <!-- Contact section -->
             <div *ngIf="section.type === 'contact'" class="contact-info">
-              <p *ngIf="section.content?.address">
-                <i *ngIf="section.content?.showIcons" class="fas fa-map-marker-alt"></i>
+              <p class="mb-2" *ngIf="section.content?.address">
+                <i *ngIf="section.content?.showIcons" class="fas fa-map-marker-alt me-2"></i>
                 {{ section.content.address }}
               </p>
-              <p *ngIf="section.content?.phone">
-                <i *ngIf="section.content?.showIcons" class="fas fa-phone"></i>
+              <p class="mb-2" *ngIf="section.content?.phone">
+                <i *ngIf="section.content?.showIcons" class="fas fa-phone me-2"></i>
                 {{ section.content.phone }}
               </p>
-              <p *ngIf="section.content?.email">
-                <i *ngIf="section.content?.showIcons" class="fas fa-envelope"></i>
+              <p class="mb-2" *ngIf="section.content?.email">
+                <i *ngIf="section.content?.showIcons" class="fas fa-envelope me-2"></i>
                 {{ section.content.email }}
               </p>
-              <a *ngIf="section.content?.contactFormLink" [routerLink]="section.content.contactFormLink" class="contact-link">
+              <a *ngIf="section.content?.contactFormLink" 
+                 [routerLink]="section.content.contactFormLink" 
+                 class="contact-link btn btn-sm mt-2">
                 Fale Conosco
               </a>
             </div>
             
-            <!-- Newsletter section -->
             <div *ngIf="section.type === 'newsletter'">
-              <p *ngIf="section.content?.description" class="newsletter-desc">
+              <p *ngIf="section.content?.description" class="newsletter-desc mb-2">
                 {{ section.content.description }}
               </p>
               <form [formGroup]="newsletterForm" (ngSubmit)="onNewsletterSubmit()" class="newsletter-form">
@@ -59,42 +58,38 @@
                          [placeholder]="section.content?.placeholder || 'Seu e-mail'"
                          formControlName="email" 
                          aria-label="Seu e-mail">
-                  <button class="btn btn-primary" type="submit" [disabled]="!newsletterForm.valid">
+                  <button class="btn newsletter-btn" type="submit" [disabled]="!newsletterForm.valid">
                     {{ section.content?.buttonText || 'Assinar' }}
                   </button>
                 </div>
-                <small *ngIf="section.content?.termsText" class="terms-text">
+                <small *ngIf="section.content?.termsText" class="terms-text d-block mt-2">
                   {{ section.content.termsText }}
                 </small>
               </form>
             </div>
             
-            <!-- Payment methods section -->
-            <div *ngIf="section.type === 'payment'" class="payment-methods">
-              <div *ngFor="let method of section.content?.methods" class="payment-method">
+            <div *ngIf="section.type === 'payment'" class="payment-methods d-flex flex-wrap">
+              <div *ngFor="let method of section.content?.methods" class="payment-method me-2 mb-2 text-center">
                 <i [class]="method.icon"></i>
-                <span *ngIf="section.content?.showLabels">{{ method.name }}</span>
+                <span class="d-block mt-1" *ngIf="section.content?.showLabels">{{ method.name }}</span>
               </div>
             </div>
             
-            <!-- Text content section -->
             <div *ngIf="section.type === 'text'" [innerHTML]="section.content?.html"></div>
           </div>
         </div>
       </ng-container>
     </div>
 
-    <!-- Copyright section -->
-    <div class="copyright" *ngIf="footerConfig?.showCopyright">
-      <p>{{ getCopyrightText() }}</p>
+    <div class="copyright pt-4 mt-4 text-center" *ngIf="footerConfig?.showCopyright">
+      <p class="mb-2">{{ getCopyrightText() }}</p>
       
-      <!-- Bottom links -->
       <div class="footer-links">
-        <a href="javascript:void(0)" (click)="openTermsModal()">Termos de Uso</a>
+        <a href="javascript:void(0)" class="footer-link mx-2" (click)="openTermsModal()">Termos de Uso</a>
         <span class="separator">|</span>
-        <a href="javascript:void(0)" (click)="openPrivacyModal()">Política de Privacidade</a>
+        <a href="javascript:void(0)" class="footer-link mx-2" (click)="openPrivacyModal()">Política de Privacidade</a>
         <span class="separator">|</span>
-        <a href="javascript:void(0)" (click)="openCookiesModal()">Política de Cookies</a>
+        <a href="javascript:void(0)" class="footer-link mx-2" (click)="openCookiesModal()">Política de Cookies</a>
       </div>
     </div>
   </div>

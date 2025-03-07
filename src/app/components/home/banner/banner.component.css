@@ -1,11 +1,13 @@
+/* ----- Estilos do Banner ----- */
 .banner {
-  background-color: var(--color-bg-muted);
-  margin-bottom: 2rem;
+  background-color: var(--banner-background);
+  margin-bottom: var(--margin-xLarge);
+}
+
+.banner-carousel {
+  background-color: var(--banner-alternativeBackground);
+  box-shadow: var(--box-shadow-card);
   height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   position: relative;
   overflow: hidden;
 }
@@ -22,37 +24,65 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: opacity var(--animation-duration-medium) var(--animation-easing-easeInOut);
 }
 
 .banner-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Mantém a imagem proporcional */
+  object-fit: cover;
 }
 
 .bullets {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
-  gap: 5px;
+  gap: var(--spacing-xSmall);
+  padding: var(--padding-small);
+  z-index: 10;
 }
 
 .bullet {
-  background-color: var(--color-bg-light); /* Cor de fundo padrão */
+  background-color: var(--banner-buttonAlternativeBackground);
+  opacity: var(--opacity-medium);
   border: none;
   border-radius: 50%;
-  width: 10px;
-  height: 10px;
+  width: var(--spacing-medium);
+  height: var(--spacing-medium);
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color var(--animation-duration-short) var(--animation-easing-easeInOut),
+              opacity var(--animation-duration-short) var(--animation-easing-easeInOut);
+  padding: 0;
+  margin: 0 var(--spacing-xSmall);
 }
 
 .bullet.active {
-  background-color: var(--color-bg-muted); /* Cor do bullet ativo */
+  background-color: var(--banner-backgroundActive);
+  opacity: var(--opacity-high);
 }
 
 .bullet:hover {
-  background-color: rgba(200, 200, 200, 0.8); /* Efeito hover para os bullets */
+  opacity: var(--opacity-high);
+}
+
+/* ----- Responsividade ----- */
+@media (max-width: 992px) {
+  .banner-carousel {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-carousel {
+    height: 300px;
+  }
+  
+  .bullet {
+    width: var(--spacing-small);
+    height: var(--spacing-small);
+  }
+}
+
+@media (max-width: 576px) {
+  .banner-carousel {
+    height: 200px;
+  }
 }

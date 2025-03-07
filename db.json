@@ -865,23 +865,67 @@
             "id": "brands",
             "name": "Marcas",
             "subcategories": [
-                { "id": "nike", "name": "Nike", "route": "/products?tag=Nike" },
-                { "id": "adidas", "name": "Adidas", "route": "/products?tag=Adidas" },
-                { "id": "puma", "name": "Puma", "route": "/products?tag=Puma" },
-                { "id": "reebok", "name": "Reebok", "route": "/products?tag=Reebok" },
-                { "id": "newbalance", "name": "New Balance", "route": "/products?tag=NewBalance" },
-                { "id": "asics", "name": "Asics", "route": "/products?tag=Asics" },
-                { "id": "converse", "name": "Converse", "route": "/products?tag=Converse" }
+                {
+                    "id": "nike",
+                    "name": "Nike",
+                    "route": "/products?tag=Nike"
+                },
+                {
+                    "id": "adidas",
+                    "name": "Adidas",
+                    "route": "/products?tag=Adidas"
+                },
+                {
+                    "id": "puma",
+                    "name": "Puma",
+                    "route": "/products?tag=Puma"
+                },
+                {
+                    "id": "reebok",
+                    "name": "Reebok",
+                    "route": "/products?tag=Reebok"
+                },
+                {
+                    "id": "newbalance",
+                    "name": "New Balance",
+                    "route": "/products?tag=NewBalance"
+                },
+                {
+                    "id": "asics",
+                    "name": "Asics",
+                    "route": "/products?tag=Asics"
+                },
+                {
+                    "id": "converse",
+                    "name": "Converse",
+                    "route": "/products?tag=Converse"
+                }
             ]
         },
         {
             "id": "styles",
             "name": "Estilos",
             "subcategories": [
-                { "id": "casual", "name": "Casual", "route": "/products?tag=Casual" },
-                { "id": "running", "name": "Corrida", "route": "/products?tag=Running" },
-                { "id": "basketball", "name": "Basquete", "route": "/products?tag=Basketball" },
-                { "id": "trail", "name": "Trilha", "route": "/products?tag=Trail" }
+                {
+                    "id": "casual",
+                    "name": "Casual",
+                    "route": "/products?tag=Casual"
+                },
+                {
+                    "id": "running",
+                    "name": "Corrida",
+                    "route": "/products?tag=Running"
+                },
+                {
+                    "id": "basketball",
+                    "name": "Basquete",
+                    "route": "/products?tag=Basketball"
+                },
+                {
+                    "id": "trail",
+                    "name": "Trilha",
+                    "route": "/products?tag=Trail"
+                }
             ]
         }
     ],
@@ -890,18 +934,42 @@
             "id": "categories1",
             "name": "Esportes",
             "subcategories": [
-                { "id": "basquete", "name": "Basquete", "route": "/products?category=Basquete" },
-                { "id": "corrida", "name": "Corrida", "route": "/products?category=Corrida" },
-                { "id": "skate", "name": "Skate", "route": "/products?category=Skate" },
-                { "id": "trilha", "name": "Trilha", "route": "/products?category=Trilha" }
+                {
+                    "id": "basquete",
+                    "name": "Basquete",
+                    "route": "/products?category=Basquete"
+                },
+                {
+                    "id": "corrida",
+                    "name": "Corrida",
+                    "route": "/products?category=Corrida"
+                },
+                {
+                    "id": "skate",
+                    "name": "Skate",
+                    "route": "/products?category=Skate"
+                },
+                {
+                    "id": "trilha",
+                    "name": "Trilha",
+                    "route": "/products?category=Trilha"
+                }
             ]
         },
         {
             "id": "categories2",
             "name": "Moda",
             "subcategories": [
-                { "id": "casual", "name": "Casual", "route": "/products?category=Casual" },
-                { "id": "streetwear", "name": "Streetwear", "route": "/products?category=Streetwear" }
+                {
+                    "id": "casual",
+                    "name": "Casual",
+                    "route": "/products?category=Casual"
+                },
+                {
+                    "id": "streetwear",
+                    "name": "Streetwear",
+                    "route": "/products?category=Streetwear"
+                }
             ]
         },
         {
@@ -912,334 +980,1575 @@
             "id": "categories4",
             "name": "Academia",
             "subcategories": [
-                { "id": "musculacao", "name": "Musculação", "route": "/products?category=Musculacao" },
-                { "id": "crossfit", "name": "Crossfit", "route": "/products?category=Crossfit" }
+                {
+                    "id": "musculacao",
+                    "name": "Musculação",
+                    "route": "/products?category=Musculacao"
+                },
+                {
+                    "id": "crossfit",
+                    "name": "Crossfit",
+                    "route": "/products?category=Crossfit"
+                }
             ]
         },
         {
             "id": "categories5",
             "name": "Esportes Aquáticos",
             "subcategories": [
-                { "id": "natacao", "name": "Natação", "route": "/products?category=Natacao" },
-                { "id": "surf", "name": "Surf", "route": "/products?category=Surf" }
+                {
+                    "id": "natacao",
+                    "name": "Natação",
+                    "route": "/products?category=Natacao"
+                },
+                {
+                    "id": "surf",
+                    "name": "Surf",
+                    "route": "/products?category=Surf"
+                }
             ]
         },
         {
             "id": "categories6",
             "name": "Esportes de Raquete",
             "subcategories": [
-                { "id": "tenis", "name": "Tênis", "route": "/products?category=Tenis" },
-                { "id": "padel", "name": "Padel", "route": "/products?category=Padel" }
+                {
+                    "id": "tenis",
+                    "name": "Tênis",
+                    "route": "/products?category=Tenis"
+                },
+                {
+                    "id": "padel",
+                    "name": "Padel",
+                    "route": "/products?category=Padel"
+                }
             ]
         },
         {
             "id": "categories7",
             "name": "Esportes de Equipe",
             "subcategories": [
-                { "id": "futebol", "name": "Futebol", "route": "/products?category=Futebol" },
-                { "id": "volei", "name": "Vôlei", "route": "/products?category=Volei" }
+                {
+                    "id": "futebol",
+                    "name": "Futebol",
+                    "route": "/products?category=Futebol"
+                },
+                {
+                    "id": "volei",
+                    "name": "Vôlei",
+                    "route": "/products?category=Volei"
+                }
             ]
         },
         {
             "id": "categories8",
             "name": "Esportes de Combate",
             "subcategories": [
-                { "id": "boxe", "name": "Boxe", "route": "/products?category=Boxe" },
-                { "id": "mma", "name": "MMA", "route": "/products?category=MMA" }
+                {
+                    "id": "boxe",
+                    "name": "Boxe",
+                    "route": "/products?category=Boxe"
+                },
+                {
+                    "id": "mma",
+                    "name": "MMA",
+                    "route": "/products?category=MMA"
+                }
             ]
         },
         {
             "id": "categories9",
             "name": "Esportes de Inverno",
             "subcategories": [
-                { "id": "ski", "name": "Ski", "route": "/products?category=Ski" },
-                { "id": "snowboard", "name": "Snowboard", "route": "/products?category=Snowboard" }
+                {
+                    "id": "ski",
+                    "name": "Ski",
+                    "route": "/products?category=Ski"
+                },
+                {
+                    "id": "snowboard",
+                    "name": "Snowboard",
+                    "route": "/products?category=Snowboard"
+                }
             ]
         },
         {
             "id": "categories10",
             "name": "Esportes de Precisão",
             "subcategories": [
-                { "id": "golf", "name": "Golf", "route": "/products?category=Golf" },
-                { "id": "tiro", "name": "Tiro", "route": "/products?category=Tiro" }
+                {
+                    "id": "golf",
+                    "name": "Golf",
+                    "route": "/products?category=Golf"
+                },
+                {
+                    "id": "tiro",
+                    "name": "Tiro",
+                    "route": "/products?category=Tiro"
+                }
             ]
         }
     ],
     "about-us": {
-      "pageTitle": "Sobre Nós",
-      "pageSubtitle": "Conheça mais sobre a Sneaker Store e nossa equipe",
-      
-      "teamSection": {
-        "title": "Nossa Equipe",
-        "subtitle": "Conheça as pessoas por trás da Sneaker Store",
-        "members": [
-          {
-            "id": "1",
-            "name": "João Silva",
-            "position": "CEO & Fundador",
-            "photoUrl": "https://picsum.photos/800/600?random=1",
-            "description": "João fundou a Sneaker Store em 2015 com a visão de criar uma experiência única para os amantes de tênis. Com mais de 15 anos de experiência no mercado de calçados, ele lidera a empresa com paixão e inovação.",
-            "socialLinks": {
-              "linkedin": "https://linkedin.com/in/joaosilva",
-              "twitter": "https://twitter.com/joaosilva",
-              "instagram": "https://instagram.com/joaosilva"
+        "pageTitle": "Sobre Nós",
+        "pageSubtitle": "Conheça mais sobre a Sneaker Store e nossa equipe",
+        "teamSection": {
+            "title": "Nossa Equipe",
+            "subtitle": "Conheça as pessoas por trás da Sneaker Store",
+            "members": [
+                {
+                    "id": "1",
+                    "name": "João Silva",
+                    "position": "CEO & Fundador",
+                    "photoUrl": "https://picsum.photos/800/600?random=1",
+                    "description": "João fundou a Sneaker Store em 2015 com a visão de criar uma experiência única para os amantes de tênis. Com mais de 15 anos de experiência no mercado de calçados, ele lidera a empresa com paixão e inovação.",
+                    "socialLinks": {
+                        "linkedin": "https://linkedin.com/in/joaosilva",
+                        "twitter": "https://twitter.com/joaosilva",
+                        "instagram": "https://instagram.com/joaosilva"
+                    }
+                },
+                {
+                    "id": "2",
+                    "name": "Maria Oliveira",
+                    "position": "Diretora de Marketing",
+                    "photoUrl": "https://picsum.photos/800/600?random=2",
+                    "description": "Maria traz mais de 10 anos de experiência em marketing digital. Ela é responsável por todas as estratégias de marca e campanhas que tornaram a Sneaker Store reconhecida nacionalmente.",
+                    "socialLinks": {
+                        "linkedin": "https://linkedin.com/in/mariaoliveira",
+                        "instagram": "https://instagram.com/mariaoliveira"
+                    }
+                },
+                {
+                    "id": "3",
+                    "name": "Carlos Santos",
+                    "position": "Diretor de Produto",
+                    "photoUrl": "https://picsum.photos/800/600?random=3",
+                    "description": "Carlos é apaixonado por tênis desde a infância. Ele lidera nossa equipe de produto, garantindo que tenhamos sempre as melhores e mais exclusivas opções para nossos clientes.",
+                    "socialLinks": {
+                        "linkedin": "https://linkedin.com/in/carlossantos",
+                        "twitter": "https://twitter.com/carlossantos"
+                    }
+                },
+                {
+                    "id": "4",
+                    "name": "Ana Pereira",
+                    "position": "Gerente de Atendimento",
+                    "photoUrl": "https://picsum.photos/800/600?random=4",
+                    "description": "Ana acredita que um excelente atendimento ao cliente é a chave para o sucesso. Ela lidera nossa equipe de suporte, garantindo que cada cliente tenha uma experiência incrível.",
+                    "socialLinks": {
+                        "linkedin": "https://linkedin.com/in/anapereira"
+                    }
+                }
+            ]
+        },
+        "missionVisionValuesSection": {
+            "title": "Missão, Visão e Valores",
+            "subtitle": "O que nos guia e inspira todos os dias",
+            "data": {
+                "mission": "Nossa missão é conectar pessoas com sua paixão por tênis, oferecendo produtos de qualidade, atendimento excepcional e uma experiência de compra única.",
+                "vision": "Ser reconhecida como a melhor e mais inovadora loja de tênis do Brasil, criando tendências e inspirando pessoas a expressarem sua personalidade através do estilo.",
+                "values": [
+                    {
+                        "id": "v1",
+                        "title": "Qualidade",
+                        "description": "Compromisso com a excelência em tudo o que fazemos, desde a seleção de produtos até o atendimento ao cliente.",
+                        "icon": "fas fa-award"
+                    },
+                    {
+                        "id": "v2",
+                        "title": "Autenticidade",
+                        "description": "Valorizamos a originalidade e incentivamos cada um a expressar seu estilo único.",
+                        "icon": "fas fa-fingerprint"
+                    },
+                    {
+                        "id": "v3",
+                        "title": "Inovação",
+                        "description": "Buscamos constantemente novas ideias e soluções para melhorar a experiência de nossos clientes.",
+                        "icon": "fas fa-lightbulb"
+                    },
+                    {
+                        "id": "v4",
+                        "title": "Paixão",
+                        "description": "Somos apaixonados por tênis e essa paixão se reflete em tudo o que fazemos.",
+                        "icon": "fas fa-heart"
+                    },
+                    {
+                        "id": "v5",
+                        "title": "Comunidade",
+                        "description": "Acreditamos no poder de construir uma comunidade forte de amantes de tênis e cultura urbana.",
+                        "icon": "fas fa-users"
+                    }
+                ]
             }
-          },
-          {
-            "id": "2",
-            "name": "Maria Oliveira",
-            "position": "Diretora de Marketing",
-            "photoUrl": "https://picsum.photos/800/600?random=2",
-            "description": "Maria traz mais de 10 anos de experiência em marketing digital. Ela é responsável por todas as estratégias de marca e campanhas que tornaram a Sneaker Store reconhecida nacionalmente.",
-            "socialLinks": {
-              "linkedin": "https://linkedin.com/in/mariaoliveira",
-              "instagram": "https://instagram.com/mariaoliveira"
-            }
-          },
-          {
-            "id": "3",
-            "name": "Carlos Santos",
-            "position": "Diretor de Produto",
-            "photoUrl": "https://picsum.photos/800/600?random=3",
-            "description": "Carlos é apaixonado por tênis desde a infância. Ele lidera nossa equipe de produto, garantindo que tenhamos sempre as melhores e mais exclusivas opções para nossos clientes.",
-            "socialLinks": {
-              "linkedin": "https://linkedin.com/in/carlossantos",
-              "twitter": "https://twitter.com/carlossantos"
-            }
-          },
-          {
-            "id": "4",
-            "name": "Ana Pereira",
-            "position": "Gerente de Atendimento",
-            "photoUrl": "https://picsum.photos/800/600?random=4",
-            "description": "Ana acredita que um excelente atendimento ao cliente é a chave para o sucesso. Ela lidera nossa equipe de suporte, garantindo que cada cliente tenha uma experiência incrível.",
-            "socialLinks": {
-              "linkedin": "https://linkedin.com/in/anapereira"
-            }
-          }
-        ]
-      },
-      
-      "missionVisionValuesSection": {
-        "title": "Missão, Visão e Valores",
-        "subtitle": "O que nos guia e inspira todos os dias",
-        "data": {
-          "mission": "Nossa missão é conectar pessoas com sua paixão por tênis, oferecendo produtos de qualidade, atendimento excepcional e uma experiência de compra única.",
-          "vision": "Ser reconhecida como a melhor e mais inovadora loja de tênis do Brasil, criando tendências e inspirando pessoas a expressarem sua personalidade através do estilo.",
-          "values": [
-            {
-              "id": "v1",
-              "title": "Qualidade",
-              "description": "Compromisso com a excelência em tudo o que fazemos, desde a seleção de produtos até o atendimento ao cliente.",
-              "icon": "fas fa-award"
-            },
-            {
-              "id": "v2",
-              "title": "Autenticidade",
-              "description": "Valorizamos a originalidade e incentivamos cada um a expressar seu estilo único.",
-              "icon": "fas fa-fingerprint"
-            },
-            {
-              "id": "v3",
-              "title": "Inovação",
-              "description": "Buscamos constantemente novas ideias e soluções para melhorar a experiência de nossos clientes.",
-              "icon": "fas fa-lightbulb"
-            },
-            {
-              "id": "v4",
-              "title": "Paixão",
-              "description": "Somos apaixonados por tênis e essa paixão se reflete em tudo o que fazemos.",
-              "icon": "fas fa-heart"
-            },
-            {
-              "id": "v5",
-              "title": "Comunidade",
-              "description": "Acreditamos no poder de construir uma comunidade forte de amantes de tênis e cultura urbana.",
-              "icon": "fas fa-users"
-            }
-          ]
+        },
+        "contentSections": {
+            "title": "Nossa História",
+            "subtitle": "Como construímos a Sneaker Store ao longo dos anos",
+            "sections": [
+                {
+                    "id": "cs1",
+                    "title": "Como Tudo Começou",
+                    "description": "A Sneaker Store nasceu em 2015, em uma pequena loja no centro de São Paulo. O que começou como um sonho de João Silva, um colecionador apaixonado por tênis, rapidamente se transformou em um hub para entusiastas de sneakers. Nos primeiros meses, a loja funcionava apenas com João e dois amigos, mas a paixão e dedicação logo atraíram uma clientela fiel.",
+                    "imageUrl": "https://picsum.photos/800/600?random=5",
+                    "alignment": "right"
+                },
+                {
+                    "id": "cs2",
+                    "title": "Crescimento e Expansão",
+                    "description": "Em 2018, após três anos de sucesso crescente, abrimos nossa segunda loja e lançamos nossa plataforma de e-commerce. Este foi um passo crucial que nos permitiu atender clientes em todo o Brasil. Nossa equipe cresceu para mais de 30 colaboradores apaixonados, e começamos a realizar eventos e colaborações exclusivas com marcas e artistas locais.",
+                    "imageUrl": "https://picsum.photos/800/600?random=6",
+                    "alignment": "left"
+                },
+                {
+                    "id": "cs3",
+                    "title": "Onde Estamos Hoje",
+                    "description": "Atualmente, a Sneaker Store é reconhecida como uma das principais referências em tênis e cultura urbana no Brasil. Contamos com cinco lojas físicas, uma plataforma digital robusta e uma comunidade de mais de 500 mil seguidores nas redes sociais. Nosso compromisso com a qualidade, autenticidade e atendimento excepcional permanece o mesmo desde o primeiro dia.",
+                    "imageUrl": "https://picsum.photos/800/600?random=7",
+                    "alignment": "right"
+                }
+            ]
         }
-      },
-      
-      "contentSections": {
-        "title": "Nossa História",
-        "subtitle": "Como construímos a Sneaker Store ao longo dos anos",
-        "sections": [
-          {
-            "id": "cs1",
-            "title": "Como Tudo Começou",
-            "description": "A Sneaker Store nasceu em 2015, em uma pequena loja no centro de São Paulo. O que começou como um sonho de João Silva, um colecionador apaixonado por tênis, rapidamente se transformou em um hub para entusiastas de sneakers. Nos primeiros meses, a loja funcionava apenas com João e dois amigos, mas a paixão e dedicação logo atraíram uma clientela fiel.",
-            "imageUrl": "https://picsum.photos/800/600?random=5",
-            "alignment": "right"
-          },
-          {
-            "id": "cs2",
-            "title": "Crescimento e Expansão",
-            "description": "Em 2018, após três anos de sucesso crescente, abrimos nossa segunda loja e lançamos nossa plataforma de e-commerce. Este foi um passo crucial que nos permitiu atender clientes em todo o Brasil. Nossa equipe cresceu para mais de 30 colaboradores apaixonados, e começamos a realizar eventos e colaborações exclusivas com marcas e artistas locais.",
-            "imageUrl": "https://picsum.photos/800/600?random=6",
-            "alignment": "left"
-          },
-          {
-            "id": "cs3",
-            "title": "Onde Estamos Hoje",
-            "description": "Atualmente, a Sneaker Store é reconhecida como uma das principais referências em tênis e cultura urbana no Brasil. Contamos com cinco lojas físicas, uma plataforma digital robusta e uma comunidade de mais de 500 mil seguidores nas redes sociais. Nosso compromisso com a qualidade, autenticidade e atendimento excepcional permanece o mesmo desde o primeiro dia.",
-            "imageUrl": "https://picsum.photos/800/600?random=7",
-            "alignment": "right"
-          }
-        ]
-      }
     },
     "footer": {
         "id": "default",
         "companyName": "Sneaker Store",
         "showCopyright": true,
         "sections": [
-          {
-            "id": "about",
-            "title": "Sobre Nós",
-            "type": "links",
-            "enabled": true,
-            "order": 1,
-            "content": {
-              "links": [
-                { "id": "about1", "label": "Nossa História", "url": "/about-us" },
-                { "id": "about2", "label": "Equipe", "url": "/about-us" }
-              ]
+            {
+                "id": "about",
+                "title": "Sobre Nós",
+                "type": "links",
+                "enabled": true,
+                "order": 1,
+                "content": {
+                    "links": [
+                        {
+                            "id": "about1",
+                            "label": "Nossa História",
+                            "url": "/about-us"
+                        },
+                        {
+                            "id": "about2",
+                            "label": "Equipe",
+                            "url": "/about-us"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "contact",
+                "title": "Contato",
+                "type": "contact",
+                "enabled": true,
+                "order": 2,
+                "content": {
+                    "address": "Rua Exemplo, 123 - São Paulo, SP",
+                    "phone": "(11) 9999-9999",
+                    "email": "contato@sneakerstore.com",
+                    "showIcons": true,
+                    "contactFormLink": "/contact"
+                }
+            },
+            {
+                "id": "social",
+                "title": "Redes Sociais",
+                "type": "social",
+                "enabled": true,
+                "order": 3,
+                "content": {
+                    "showLabels": false,
+                    "links": [
+                        {
+                            "id": "social1",
+                            "label": "Instagram",
+                            "url": "https://instagram.com",
+                            "external": true,
+                            "platform": "instagram",
+                            "icon": "fab fa-instagram"
+                        },
+                        {
+                            "id": "social2",
+                            "label": "Facebook",
+                            "url": "https://facebook.com",
+                            "external": true,
+                            "platform": "facebook",
+                            "icon": "fab fa-facebook-f"
+                        },
+                        {
+                            "id": "social3",
+                            "label": "Twitter",
+                            "url": "https://twitter.com",
+                            "external": true,
+                            "platform": "twitter",
+                            "icon": "fab fa-twitter"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "newsletter",
+                "title": "Newsletter",
+                "type": "newsletter",
+                "enabled": true,
+                "order": 4,
+                "content": {
+                    "placeholder": "Seu e-mail",
+                    "buttonText": "Assinar",
+                    "description": "Receba novidades e promoções exclusivas",
+                    "termsText": "Ao assinar, você concorda com nossa Política de Privacidade"
+                }
+            },
+            {
+                "id": "payment",
+                "title": "Formas de Pagamento",
+                "type": "payment",
+                "enabled": true,
+                "order": 5,
+                "content": {
+                    "showLabels": false,
+                    "methods": [
+                        {
+                            "id": "pay1",
+                            "name": "Visa",
+                            "icon": "fab fa-cc-visa",
+                            "type": "card"
+                        },
+                        {
+                            "id": "pay2",
+                            "name": "Mastercard",
+                            "icon": "fab fa-cc-mastercard",
+                            "type": "card"
+                        },
+                        {
+                            "id": "pay3",
+                            "name": "PayPal",
+                            "icon": "fab fa-paypal",
+                            "type": "other"
+                        },
+                        {
+                            "id": "pay4",
+                            "name": "Pix",
+                            "icon": "fas fa-qrcode",
+                            "type": "pix"
+                        }
+                    ]
+                }
             }
-          },
-          {
-            "id": "contact",
-            "title": "Contato",
-            "type": "contact",
-            "enabled": true,
-            "order": 2,
-            "content": {
-              "address": "Rua Exemplo, 123 - São Paulo, SP",
-              "phone": "(11) 9999-9999",
-              "email": "contato@sneakerstore.com",
-              "showIcons": true,
-              "contactFormLink": "/contact"
-            }
-          },
-          {
-            "id": "social",
-            "title": "Redes Sociais",
-            "type": "social",
-            "enabled": true,
-            "order": 3,
-            "content": {
-              "showLabels": false,
-              "links": [
-                { "id": "social1", "label": "Instagram", "url": "https://instagram.com", "external": true, "platform": "instagram", "icon": "fab fa-instagram" },
-                { "id": "social2", "label": "Facebook", "url": "https://facebook.com", "external": true, "platform": "facebook", "icon": "fab fa-facebook-f" },
-                { "id": "social3", "label": "Twitter", "url": "https://twitter.com", "external": true, "platform": "twitter", "icon": "fab fa-twitter" }
-              ]
-            }
-          },
-          {
-            "id": "newsletter",
-            "title": "Newsletter",
-            "type": "newsletter",
-            "enabled": true,
-            "order": 4,
-            "content": {
-              "placeholder": "Seu e-mail",
-              "buttonText": "Assinar",
-              "description": "Receba novidades e promoções exclusivas",
-              "termsText": "Ao assinar, você concorda com nossa Política de Privacidade"
-            }
-          },
-          {
-            "id": "payment",
-            "title": "Formas de Pagamento",
-            "type": "payment",
-            "enabled": true,
-            "order": 5,
-            "content": {
-              "showLabels": false,
-              "methods": [
-                { "id": "pay1", "name": "Visa", "icon": "fab fa-cc-visa", "type": "card" },
-                { "id": "pay2", "name": "Mastercard", "icon": "fab fa-cc-mastercard", "type": "card" },
-                { "id": "pay3", "name": "PayPal", "icon": "fab fa-paypal", "type": "other" },
-                { "id": "pay4", "name": "Pix", "icon": "fas fa-qrcode", "type": "pix" }
-              ]
-            }
-          }
         ],
         "bottomLinks": [
-          { "id": "terms", "label": "Termos de Uso", "url": "/terms" },
-          { "id": "privacy", "label": "Política de Privacidade", "url": "/privacy" },
-          { "id": "cookies", "label": "Cookies", "url": "/cookies" }
+            {
+                "id": "terms",
+                "label": "Termos de Uso",
+                "url": "/terms"
+            },
+            {
+                "id": "privacy",
+                "label": "Política de Privacidade",
+                "url": "/privacy"
+            },
+            {
+                "id": "cookies",
+                "label": "Cookies",
+                "url": "/cookies"
+            }
         ]
     },
-    "layouts": [
+    "themes": [
         {
-          "id": "default",
-          "name": "Default Layout",
-          "spacing": {
-            "xSmall": "4px",
-            "small": "8px",
-            "medium": "16px",
-            "large": "24px",
-            "xLarge": "32px"
-          },
-          "font": {
-            "family": "'Roboto', sans-serif",
-            "size": {
-              "xSmall": "10px",
-              "small": "12px",
-              "medium": "14px",
-              "large": "16px",
-              "xLarge": "20px"
+            "id": 1,
+            "type": "light",
+            "global": {
+                "primary": "#007bff",
+                "secondary": "#6c757d",
+                "tertiary": "#28a745",
+                "quaternary": "#ffc107",
+                "quinary": "#dc3545",
+                "success": "#28a745",
+                "warning": "#ffc107",
+                "error": "#dc3545",
+                "info": "#17a2b8"
             },
-            "weight": {
-              "light": "300",
-              "regular": "400",
-              "bold": "700"
+            "components": {
+                "home": {
+                    "background": "#ffffff",
+                    "alternativeBackground": null,
+                    "text": "#212529",
+                    "textActive": null,
+                    "border": null,
+                    "backgroundActive": null,
+                    "title": null,
+                    "subtitle": null,
+                    "buttonBackground": null,
+                    "buttonText": null,
+                    "buttonactiveBackground": null,
+                    "buttonactiveText": null,
+                    "buttonBorder": null,
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "toggle": {
+                    "background": "#f8f9fa",
+                    "alternativeBackground": "#e9ecef",
+                    "text": "#212529",
+                    "textActive": null,
+                    "border": "#dee2e6",
+                    "backgroundActive": "#0d6efd",
+                    "title": null,
+                    "subtitle": null,
+                    "buttonBackground": "#ffffff",
+                    "buttonText": null,
+                    "buttonactiveBackground": "#ffffff",
+                    "buttonactiveText": null,
+                    "buttonBorder": null,
+                    "buttonAlternativeBackground": "#adb5bd",
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "banner": {
+                    "background": "#f8f9fa",
+                    "alternativeBackground": "#e9ecef",
+                    "text": "#212529",
+                    "textActive": "#000000",
+                    "border": "#dee2e6",
+                    "backgroundActive": "#ced4da",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": "#6c757d",
+                    "buttonAlternativeText": "#ffffff",
+                    "buttonAlternativeactiveBackground": "#5a6268",
+                    "buttonAlternativeactiveText": "#ffffff",
+                    "buttonAlternativeBorder": "#6c757d"
+                },
+                "productDetails": {
+                    "background": "#ffffff",
+                    "alternativeBackground": "#f8f9fa",
+                    "text": "#212529",
+                    "textActive": "#000000",
+                    "border": "#dee2e6",
+                    "backgroundActive": "#e9ecef",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": "#6c757d",
+                    "buttonAlternativeText": "#ffffff",
+                    "buttonAlternativeactiveBackground": "#5a6268",
+                    "buttonAlternativeactiveText": "#ffffff",
+                    "buttonAlternativeBorder": "#6c757d"
+                },
+                "tooltip": {
+                    "background": "#ffffff",
+                    "alternativeBackground": "#f8f9fa",
+                    "text": "#495057",
+                    "textActive": "#212529",
+                    "border": "#dee2e6",
+                    "backgroundActive": "#e9ecef",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "card": {
+                    "background": "#ffffff",
+                    "alternativeBackground": "#f8f9fa",
+                    "text": "#495057",
+                    "textActive": "#0d6efd",
+                    "border": "#dee2e6",
+                    "backgroundActive": "#343a40",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": "#28a745",
+                    "buttonAlternativeText": "#ffffff",
+                    "buttonAlternativeactiveBackground": "#218838",
+                    "buttonAlternativeactiveText": "#ffffff",
+                    "buttonAlternativeBorder": "#28a745"
+                },
+                "carousel": {
+                    "background": "#ffffff",
+                    "alternativeBackground": "#f8f9fa",
+                    "text": "#495057",
+                    "textActive": "#212529",
+                    "border": "#dee2e6",
+                    "backgroundActive": "#e9ecef",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "searchBar": {
+                    "background": "#ffffff",
+                    "alternativeBackground": "#f8f9fa",
+                    "text": "#495057",
+                    "textActive": "#212529",
+                    "border": "#dee2e6",
+                    "backgroundActive": "#f1f3f5",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "products": {
+                    "background": "#ffffff",
+                    "alternativeBackground": "#f8f9fa",
+                    "text": "#495057",
+                    "textActive": "#212529",
+                    "border": "#dee2e6",
+                    "backgroundActive": "#e9ecef",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": "#6c757d",
+                    "buttonAlternativeText": "#ffffff",
+                    "buttonAlternativeactiveBackground": "#5a6268",
+                    "buttonAlternativeactiveText": "#ffffff",
+                    "buttonAlternativeBorder": "#6c757d"
+                },
+                "faq": {
+                    "background": "#ffffff",
+                    "alternativeBackground": "#f8f9fa",
+                    "text": "#495057",
+                    "textActive": "#212529",
+                    "border": "#dee2e6",
+                    "backgroundActive": "#e9ecef",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": "#6c757d",
+                    "buttonAlternativeText": "#ffffff",
+                    "buttonAlternativeactiveBackground": "#5a6268",
+                    "buttonAlternativeactiveText": "#ffffff",
+                    "buttonAlternativeBorder": "#6c757d"
+                },
+                "contact": {
+                    "background": "#ffffff",
+                    "alternativeBackground": "#f8f9fa",
+                    "text": "#495057",
+                    "textActive": "#212529",
+                    "border": "#dee2e6",
+                    "backgroundActive": "#e9ecef",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": "#6c757d",
+                    "buttonAlternativeText": "#ffffff",
+                    "buttonAlternativeactiveBackground": "#5a6268",
+                    "buttonAlternativeactiveText": "#ffffff",
+                    "buttonAlternativeBorder": "#6c757d"
+                },
+                "navItem": {
+                    "background": "#ffffff",
+                    "alternativeBackground": "#f8f9fa",
+                    "text": "#495057",
+                    "textActive": "#0d6efd",
+                    "border": "#dee2e6",
+                    "backgroundActive": "#e9ecef",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": "#f8f9fa",
+                    "buttonAlternativeText": "#495057",
+                    "buttonAlternativeactiveBackground": "#e9ecef",
+                    "buttonAlternativeactiveText": "#212529",
+                    "buttonAlternativeBorder": "#dee2e6"
+                },
+                "menu": {
+                    "background": "#ffffff",
+                    "alternativeBackground": "#f8f9fa",
+                    "text": "#495057",
+                    "textActive": "#212529",
+                    "border": "#dee2e6",
+                    "backgroundActive": "#e9ecef",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "modal": {
+                    "background": "#ffffff",
+                    "alternativeBackground": "#f8f9fa",
+                    "text": "#495057",
+                    "textActive": "#212529",
+                    "border": "#dee2e6",
+                    "backgroundActive": "#e9ecef",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": "#dc3545",
+                    "buttonAlternativeText": "#ffffff",
+                    "buttonAlternativeactiveBackground": "#c82333",
+                    "buttonAlternativeactiveText": "#ffffff",
+                    "buttonAlternativeBorder": "#dc3545"
+                },
+                "navbar": {
+                    "background": "#ffffff",
+                    "alternativeBackground": "#f8f9fa",
+                    "text": "#495057",
+                    "textActive": "#212529",
+                    "border": "#dee2e6",
+                    "backgroundActive": "#e9ecef",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "footer": {
+                    "background": "#f8f9fa",
+                    "alternativeBackground": "#ffffff",
+                    "text": "#495057",
+                    "textActive": "#212529",
+                    "border": "#dee2e6",
+                    "backgroundActive": "#e9ecef",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "aboutUs": {
+                    "background": "#ffffff",
+                    "alternativeBackground": "#f8f9fa",
+                    "text": "#212529",
+                    "textActive": "#000000",
+                    "border": "#ced4da",
+                    "backgroundActive": "#f1f1f1",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "team": {
+                    "background": "#ffffff",
+                    "text": "#212529",
+                    "border": "#ced4da",
+                    "hoverBackground": "#f8f9fa",
+                    "hoverText": "#212529",
+                    "activeBackground": "#e2e6ea",
+                    "activeText": "#212529",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "textNormal": "#495057",
+                    "alternativeBackground": "#f8f9fa",
+                    "sectionBackground": "#e9ecef"
+                }
             }
-          },
-          "borderRadius": {
-            "xSmall": "2px",
-            "small": "4px",
-            "medium": "6px",
-            "large": "8px",
-            "xLarge": "10px"
-          },
-          "boxShadow": "0 2px 4px rgba(0, 0, 0, 0.1)"
         },
         {
-          "id": "alternative",
-          "name": "Alternative Layout",
-          "spacing": {
-            "xSmall": "6px",
-            "small": "10px",
-            "medium": "18px",
-            "large": "26px",
-            "xLarge": "34px"
-          },
-          "font": {
-            "family": "'Open Sans', sans-serif",
-            "size": {
-              "xSmall": "11px",
-              "small": "13px",
-              "medium": "15px",
-              "large": "17px",
-              "xLarge": "21px"
+            "id": 2,
+            "type": "dark",
+            "global": {
+                "primary": "#343a40",
+                "secondary": "#6c757d",
+                "tertiary": "#28a745",
+                "quaternary": "#ffc107",
+                "quinary": "#dc3545",
+                "success": "#28a745",
+                "warning": "#ffc107",
+                "error": "#dc3545",
+                "info": "#17a2b8"
             },
-            "weight": {
-              "light": "200",
-              "regular": "400",
-              "bold": "600"
+            "components": {
+                "home": {
+                    "background": "#212529",
+                    "alternativeBackground": "#343a40",
+                    "text": "#f8f9fa",
+                    "textActive": null,
+                    "border": null,
+                    "backgroundActive": null,
+                    "title": null,
+                    "subtitle": null,
+                    "buttonBackground": null,
+                    "buttonText": null,
+                    "buttonactiveBackground": null,
+                    "buttonactiveText": null,
+                    "buttonBorder": null,
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "toggle": {
+                    "background": "#212529",
+                    "alternativeBackground": "#343a40",
+                    "text": "#f8f9fa",
+                    "textActive": null,
+                    "border": "#495057",
+                    "backgroundActive": "#0d6efd",
+                    "title": null,
+                    "subtitle": null,
+                    "buttonBackground": "#ffffff",
+                    "buttonText": null,
+                    "buttonactiveBackground": "#ffffff",
+                    "buttonactiveText": null,
+                    "buttonBorder": null,
+                    "buttonAlternativeBackground": "#6c757d",
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "banner": {
+                    "background": "#212529",
+                    "alternativeBackground": "#343a40",
+                    "text": "#f8f9fa",
+                    "textActive": "#ffffff",
+                    "border": "#495057",
+                    "backgroundActive": "#6c757d",
+                    "title": "#f8f9fa",
+                    "subtitle": "#adb5bd",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": "#6c757d",
+                    "buttonAlternativeText": "#ffffff",
+                    "buttonAlternativeactiveBackground": "#5a6268",
+                    "buttonAlternativeactiveText": "#ffffff",
+                    "buttonAlternativeBorder": "#6c757d"
+                },
+                "productDetails": {
+                    "background": "#212529",
+                    "alternativeBackground": "#343a40",
+                    "text": "#f8f9fa",
+                    "textActive": "#ffffff",
+                    "border": "#495057",
+                    "backgroundActive": "#1a1d20",
+                    "title": "#f8f9fa",
+                    "subtitle": "#adb5bd",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": "#6c757d",
+                    "buttonAlternativeText": "#ffffff",
+                    "buttonAlternativeactiveBackground": "#5a6268",
+                    "buttonAlternativeactiveText": "#ffffff",
+                    "buttonAlternativeBorder": "#6c757d"
+                },
+                "tooltip": {
+                    "background": "#343a40",
+                    "alternativeBackground": "#495057",
+                    "text": "#e9ecef",
+                    "textActive": "#ffffff",
+                    "border": "#495057",
+                    "backgroundActive": "#212529",
+                    "title": "#ffffff",
+                    "subtitle": "#adb5bd",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "card": {
+                    "background": "#343a40",
+                    "alternativeBackground": "#212529",
+                    "text": "#e9ecef",
+                    "textActive": "#0d6efd",
+                    "border": "#495057",
+                    "backgroundActive": "#495057",
+                    "title": "#ffffff",
+                    "subtitle": "#adb5bd",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": "#28a745",
+                    "buttonAlternativeText": "#ffffff",
+                    "buttonAlternativeactiveBackground": "#218838",
+                    "buttonAlternativeactiveText": "#ffffff",
+                    "buttonAlternativeBorder": "#28a745"
+                },
+                "carousel": {
+                    "background": "#343a40",
+                    "alternativeBackground": "#495057",
+                    "text": "#e9ecef",
+                    "textActive": "#ffffff",
+                    "border": "#495057",
+                    "backgroundActive": "#212529",
+                    "title": "#ffffff",
+                    "subtitle": "#adb5bd",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "searchBar": {
+                    "background": "#343a40",
+                    "alternativeBackground": "#495057",
+                    "text": "#e9ecef",
+                    "textActive": "#ffffff",
+                    "border": "#495057",
+                    "backgroundActive": "#212529",
+                    "title": "#ffffff",
+                    "subtitle": "#adb5bd",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "products": {
+                    "background": "#343a40",
+                    "alternativeBackground": "#495057",
+                    "text": "#e9ecef",
+                    "textActive": "#ffffff",
+                    "border": "#495057",
+                    "backgroundActive": "#212529",
+                    "title": "#ffffff",
+                    "subtitle": "#adb5bd",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": "#6c757d",
+                    "buttonAlternativeText": "#ffffff",
+                    "buttonAlternativeactiveBackground": "#5a6268",
+                    "buttonAlternativeactiveText": "#ffffff",
+                    "buttonAlternativeBorder": "#6c757d"
+                },
+                "faq": {
+                    "background": "#343a40",
+                    "alternativeBackground": "#495057",
+                    "text": "#e9ecef",
+                    "textActive": "#ffffff",
+                    "border": "#495057",
+                    "backgroundActive": "#212529",
+                    "title": "#ffffff",
+                    "subtitle": "#adb5bd",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": "#6c757d",
+                    "buttonAlternativeText": "#ffffff",
+                    "buttonAlternativeactiveBackground": "#5a6268",
+                    "buttonAlternativeactiveText": "#ffffff",
+                    "buttonAlternativeBorder": "#6c757d"
+                },
+                "contact": {
+                    "background": "#343a40",
+                    "alternativeBackground": "#212529",
+                    "text": "#e9ecef",
+                    "textActive": "#ffffff",
+                    "border": "#495057",
+                    "backgroundActive": "#495057",
+                    "title": "#ffffff",
+                    "subtitle": "#adb5bd",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": "#6c757d",
+                    "buttonAlternativeText": "#ffffff",
+                    "buttonAlternativeactiveBackground": "#5a6268",
+                    "buttonAlternativeactiveText": "#ffffff",
+                    "buttonAlternativeBorder": "#6c757d"
+                },
+                "navItem": {
+                    "background": "#343a40",
+                    "alternativeBackground": "#495057",
+                    "text": "#e9ecef",
+                    "textActive": "#6ea8fe",
+                    "border": "#495057",
+                    "backgroundActive": "#212529",
+                    "title": "#ffffff",
+                    "subtitle": "#adb5bd",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": "#495057",
+                    "buttonAlternativeText": "#e9ecef",
+                    "buttonAlternativeactiveBackground": "#343a40",
+                    "buttonAlternativeactiveText": "#ffffff",
+                    "buttonAlternativeBorder": "#6c757d"
+                },
+                "menu": {
+                    "background": "#ffffff",
+                    "alternativeBackground": "#f8f9fa",
+                    "text": "#495057",
+                    "textActive": "#212529",
+                    "border": "#dee2e6",
+                    "backgroundActive": "#e9ecef",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "modal": {
+                    "background": "#343a40",
+                    "alternativeBackground": "#495057",
+                    "text": "#e9ecef",
+                    "textActive": "#ffffff",
+                    "border": "#6c757d",
+                    "backgroundActive": "#212529",
+                    "title": "#ffffff",
+                    "subtitle": "#adb5bd",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": "#dc3545",
+                    "buttonAlternativeText": "#ffffff",
+                    "buttonAlternativeactiveBackground": "#c82333",
+                    "buttonAlternativeactiveText": "#ffffff",
+                    "buttonAlternativeBorder": "#dc3545"
+                },
+                "navbar": {
+                    "background": "#212529",
+                    "alternativeBackground": "#343a40",
+                    "text": "#e9ecef",
+                    "textActive": "#ffffff",
+                    "border": "#495057",
+                    "backgroundActive": "#495057",
+                    "title": "#ffffff",
+                    "subtitle": "#adb5bd",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "footer": {
+                    "background": "#212529",
+                    "alternativeBackground": "#343a40",
+                    "text": "#e9ecef",
+                    "textActive": "#ffffff",
+                    "border": "#495057",
+                    "backgroundActive": "#495057",
+                    "title": "#ffffff",
+                    "subtitle": "#adb5bd",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "aboutUs": {
+                    "background": "#343a40",
+                    "alternativeBackground": "#495057",
+                    "text": "#ffffff",
+                    "textActive": "#cccccc",
+                    "border": "#495057",
+                    "backgroundActive": "#212529",
+                    "title": "#ffffff",
+                    "subtitle": "#f8f9fa",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "team": {
+                    "background": "#343a40",
+                    "text": "#ffffff",
+                    "border": "#495057",
+                    "hoverBackground": "#495057",
+                    "hoverText": "#ffffff",
+                    "activeBackground": "#212529",
+                    "activeText": "#ffffff",
+                    "title": "#ffffff",
+                    "subtitle": "#f8f9fa",
+                    "textNormal": "#adb5bd",
+                    "alternativeBackground": "#495057",
+                    "sectionBackground": "#6c757d"
+                }
             }
-          },
-          "borderRadius": {
-            "xSmall": "1px",
-            "small": "3px",
-            "medium": "5px",
-            "large": "7px",
-            "xLarge": "9px"
-          },
-          "boxShadow": "0 3px 6px rgba(0, 0, 0, 0.16)"
+        },
+        {
+            "id": 3,
+            "type": "high-contrast",
+            "global": {
+                "primary": "#000000",
+                "secondary": "#ffffff",
+                "tertiary": "#ffcc00",
+                "quaternary": "#ff3300",
+                "quinary": "#33ccff",
+                "success": "#00ff00",
+                "warning": "#ffcc00",
+                "error": "#ff3300",
+                "info": "#33ccff"
+            },
+            "components": {
+                "home": {
+                    "background": "#000000",
+                    "alternativeBackground": "#111111",
+                    "text": "#ffffff",
+                    "textActive": "#ffff00",
+                    "border": null,
+                    "backgroundActive": null,
+                    "title": null,
+                    "subtitle": null,
+                    "buttonBackground": null,
+                    "buttonText": null,
+                    "buttonactiveBackground": null,
+                    "buttonactiveText": null,
+                    "buttonBorder": null,
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "toggle": {
+                    "background": "#000000",
+                    "alternativeBackground": "#111111",
+                    "text": "#ffffff",
+                    "textActive": null,
+                    "border": "#ffffff",
+                    "backgroundActive": "#ffff00",
+                    "title": null,
+                    "subtitle": null,
+                    "buttonBackground": "#ffffff",
+                    "buttonText": null,
+                    "buttonactiveBackground": "#ffffff",
+                    "buttonactiveText": null,
+                    "buttonBorder": null,
+                    "buttonAlternativeBackground": "#777777",
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "banner": {
+                    "background": "#000000",
+                    "alternativeBackground": "#111111",
+                    "text": "#ffffff",
+                    "textActive": "#ffff00",
+                    "border": "#ffffff",
+                    "backgroundActive": "#ffff00",
+                    "title": "#ffffff",
+                    "subtitle": "#ffffff",
+                    "buttonBackground": "#ffff00",
+                    "buttonText": "#000000",
+                    "buttonactiveBackground": "#ffff99",
+                    "buttonactiveText": "#000000",
+                    "buttonBorder": "#ffff00",
+                    "buttonAlternativeBackground": "#ffffff",
+                    "buttonAlternativeText": "#000000",
+                    "buttonAlternativeactiveBackground": "#cccccc",
+                    "buttonAlternativeactiveText": "#000000",
+                    "buttonAlternativeBorder": "#ffffff"
+                },
+                "productDetails": {
+                    "background": "#000000",
+                    "alternativeBackground": "#111111",
+                    "text": "#ffffff",
+                    "textActive": "#ffff00",
+                    "border": "#ffffff",
+                    "backgroundActive": "#333333",
+                    "title": "#ffffff",
+                    "subtitle": "#ffffff",
+                    "buttonBackground": "#ffff00",
+                    "buttonText": "#000000",
+                    "buttonactiveBackground": "#ffff99",
+                    "buttonactiveText": "#000000",
+                    "buttonBorder": "#ffff00",
+                    "buttonAlternativeBackground": "#ffffff",
+                    "buttonAlternativeText": "#000000",
+                    "buttonAlternativeactiveBackground": "#cccccc",
+                    "buttonAlternativeactiveText": "#000000",
+                    "buttonAlternativeBorder": "#ffffff"
+                },
+                "tooltip": {
+                    "background": "#000000",
+                    "alternativeBackground": "#111111",
+                    "text": "#ffffff",
+                    "textActive": "#ffff00",
+                    "border": "#ffffff",
+                    "backgroundActive": "#333333",
+                    "title": "#ffff00",
+                    "subtitle": "#ffffff",
+                    "buttonBackground": "#ffff00",
+                    "buttonText": "#000000",
+                    "buttonactiveBackground": "#ffffff",
+                    "buttonactiveText": "#000000",
+                    "buttonBorder": "#ffff00",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "card": {
+                    "background": "#000000",
+                    "alternativeBackground": "#111111",
+                    "text": "#ffffff",
+                    "textActive": "#ffff00",
+                    "border": "#ffffff",
+                    "backgroundActive": "#333333",
+                    "title": "#ffff00",
+                    "subtitle": "#ffffff",
+                    "buttonBackground": "#ffff00",
+                    "buttonText": "#000000",
+                    "buttonactiveBackground": "#ffffff",
+                    "buttonactiveText": "#000000",
+                    "buttonBorder": "#ffff00",
+                    "buttonAlternativeBackground": "#00ff00",
+                    "buttonAlternativeText": "#000000",
+                    "buttonAlternativeactiveBackground": "#00cc00",
+                    "buttonAlternativeactiveText": "#000000",
+                    "buttonAlternativeBorder": "#00ff00"
+                },
+                "carousel": {
+                    "background": "#000000",
+                    "alternativeBackground": "#111111",
+                    "text": "#ffffff",
+                    "textActive": "#ffff00",
+                    "border": "#ffffff",
+                    "backgroundActive": "#333333",
+                    "title": "#ffff00",
+                    "subtitle": "#ffffff",
+                    "buttonBackground": "#ffff00",
+                    "buttonText": "#000000",
+                    "buttonactiveBackground": "#ffffff",
+                    "buttonactiveText": "#000000",
+                    "buttonBorder": "#ffff00",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "searchBar": {
+                    "background": "#000000",
+                    "alternativeBackground": "#111111",
+                    "text": "#ffffff",
+                    "textActive": "#ffff00",
+                    "border": "#ffffff",
+                    "backgroundActive": "#333333",
+                    "title": "#ffff00",
+                    "subtitle": "#ffffff",
+                    "buttonBackground": "#ffff00",
+                    "buttonText": "#000000",
+                    "buttonactiveBackground": "#ffffff",
+                    "buttonactiveText": "#000000",
+                    "buttonBorder": "#ffff00",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "products": {
+                    "background": "#000000",
+                    "alternativeBackground": "#111111",
+                    "text": "#ffffff",
+                    "textActive": "#ffff00",
+                    "border": "#ffffff",
+                    "backgroundActive": "#333333",
+                    "title": "#ffff00",
+                    "subtitle": "#ffffff",
+                    "buttonBackground": "#ffff00",
+                    "buttonText": "#000000",
+                    "buttonactiveBackground": "#ffffff",
+                    "buttonactiveText": "#000000",
+                    "buttonBorder": "#ffff00",
+                    "buttonAlternativeBackground": "#cccccc",
+                    "buttonAlternativeText": "#000000",
+                    "buttonAlternativeactiveBackground": "#999999",
+                    "buttonAlternativeactiveText": "#000000",
+                    "buttonAlternativeBorder": "#cccccc"
+                },
+                "faq": {
+                    "background": "#000000",
+                    "alternativeBackground": "#111111",
+                    "text": "#ffffff",
+                    "textActive": "#ffff00",
+                    "border": "#ffffff",
+                    "backgroundActive": "#333333",
+                    "title": "#ffff00",
+                    "subtitle": "#ffffff",
+                    "buttonBackground": "#ffff00",
+                    "buttonText": "#000000",
+                    "buttonactiveBackground": "#ffffff",
+                    "buttonactiveText": "#000000",
+                    "buttonBorder": "#ffff00",
+                    "buttonAlternativeBackground": "#cccccc",
+                    "buttonAlternativeText": "#000000",
+                    "buttonAlternativeactiveBackground": "#999999",
+                    "buttonAlternativeactiveText": "#000000",
+                    "buttonAlternativeBorder": "#cccccc"
+                },
+                "contact": {
+                    "background": "#000000",
+                    "alternativeBackground": "#111111",
+                    "text": "#ffffff",
+                    "textActive": "#ffff00",
+                    "border": "#ffffff",
+                    "backgroundActive": "#333333",
+                    "title": "#ffff00",
+                    "subtitle": "#ffffff",
+                    "buttonBackground": "#ffff00",
+                    "buttonText": "#000000",
+                    "buttonactiveBackground": "#ffffff",
+                    "buttonactiveText": "#000000",
+                    "buttonBorder": "#ffff00",
+                    "buttonAlternativeBackground": "#cccccc",
+                    "buttonAlternativeText": "#000000",
+                    "buttonAlternativeactiveBackground": "#999999",
+                    "buttonAlternativeactiveText": "#000000",
+                    "buttonAlternativeBorder": "#cccccc"
+                },
+                "navItem": {
+                    "background": "#000000",
+                    "alternativeBackground": "#111111",
+                    "text": "#ffffff",
+                    "textActive": "#ffff00",
+                    "border": "#ffffff",
+                    "backgroundActive": "#333333",
+                    "title": "#ffff00",
+                    "subtitle": "#ffffff",
+                    "buttonBackground": "#ffff00",
+                    "buttonText": "#000000",
+                    "buttonactiveBackground": "#ffffff",
+                    "buttonactiveText": "#000000",
+                    "buttonBorder": "#ffff00",
+                    "buttonAlternativeBackground": "#333333",
+                    "buttonAlternativeText": "#ffffff",
+                    "buttonAlternativeactiveBackground": "#444444",
+                    "buttonAlternativeactiveText": "#ffff00",
+                    "buttonAlternativeBorder": "#ffffff"
+                },
+                "menu": {
+                    "background": "#ffffff",
+                    "alternativeBackground": "#f8f9fa",
+                    "text": "#495057",
+                    "textActive": "#212529",
+                    "border": "#dee2e6",
+                    "backgroundActive": "#e9ecef",
+                    "title": "#212529",
+                    "subtitle": "#6c757d",
+                    "buttonBackground": "#0d6efd",
+                    "buttonText": "#ffffff",
+                    "buttonactiveBackground": "#0b5ed7",
+                    "buttonactiveText": "#ffffff",
+                    "buttonBorder": "#0d6efd",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "modal": {
+                    "background": "#000000",
+                    "alternativeBackground": "#111111",
+                    "text": "#ffffff",
+                    "textActive": "#ffff00",
+                    "border": "#ffffff",
+                    "backgroundActive": "#333333",
+                    "title": "#ffff00",
+                    "subtitle": "#ffffff",
+                    "buttonBackground": "#ffff00",
+                    "buttonText": "#000000",
+                    "buttonactiveBackground": "#ffffff",
+                    "buttonactiveText": "#000000",
+                    "buttonBorder": "#ffff00",
+                    "buttonAlternativeBackground": "#ff0000",
+                    "buttonAlternativeText": "#ffffff",
+                    "buttonAlternativeactiveBackground": "#cc0000",
+                    "buttonAlternativeactiveText": "#ffffff",
+                    "buttonAlternativeBorder": "#ff0000"
+                },
+                "navbar": {
+                    "background": "#000000",
+                    "alternativeBackground": "#111111",
+                    "text": "#ffffff",
+                    "textActive": "#ffff00",
+                    "border": "#ffffff",
+                    "backgroundActive": "#333333",
+                    "title": "#ffff00",
+                    "subtitle": "#ffffff",
+                    "buttonBackground": "#ffff00",
+                    "buttonText": "#000000",
+                    "buttonactiveBackground": "#ffffff",
+                    "buttonactiveText": "#000000",
+                    "buttonBorder": "#ffff00",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "footer": {
+                    "background": "#000000",
+                    "alternativeBackground": "#111111",
+                    "text": "#ffffff",
+                    "textActive": "#ffff00",
+                    "border": "#ffffff",
+                    "backgroundActive": "#333333",
+                    "title": "#ffff00",
+                    "subtitle": "#ffffff",
+                    "buttonBackground": "#ffff00",
+                    "buttonText": "#000000",
+                    "buttonactiveBackground": "#ffffff",
+                    "buttonactiveText": "#000000",
+                    "buttonBorder": "#ffff00",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "aboutUs": {
+                    "background": "#000000",
+                    "alternativeBackground": "#111111",
+                    "text": "#ffffff",
+                    "textActive": "#cccccc",
+                    "border": "#ffffff",
+                    "backgroundActive": "#444444",
+                    "title": "#ffffff",
+                    "subtitle": "#ffffff",
+                    "buttonBackground": "#ffff00",
+                    "buttonText": "#000000",
+                    "buttonactiveBackground": "#ffff99",
+                    "buttonactiveText": "#000000",
+                    "buttonBorder": "#ffff00",
+                    "buttonAlternativeBackground": null,
+                    "buttonAlternativeText": null,
+                    "buttonAlternativeactiveBackground": null,
+                    "buttonAlternativeactiveText": null,
+                    "buttonAlternativeBorder": null
+                },
+                "team": {
+                    "background": "#000000",
+                    "text": "#ffffff",
+                    "border": "#ffffff",
+                    "hoverBackground": "#333333",
+                    "hoverText": "#ffffff",
+                    "activeBackground": "#444444",
+                    "activeText": "#ffffff",
+                    "title": "#ffffff",
+                    "subtitle": "#ffffff",
+                    "textNormal": "#cccccc",
+                    "alternativeBackground": "#111111",
+                    "sectionBackground": "#222222"
+                }
+            }
         }
-      ]
+    ],
+    "layouts": [
+        {
+            "id": "default",
+            "name": "Layout Padrão",
+            "spacing": {
+                "xSmall": "0.25rem",
+                "small": "0.5rem",
+                "medium": "1rem",
+                "large": "1.5rem",
+                "xLarge": "2rem"
+            },
+            "font": {
+                "family": "'Roboto', sans-serif",
+                "size": {
+                    "xSmall": "0.625rem",
+                    "small": "0.75rem",
+                    "medium": "0.875rem",
+                    "large": "1rem",
+                    "xLarge": "1.25rem",
+                    "xxLarge": "1.5rem"
+                },
+                "weight": {
+                    "light": "300",
+                    "regular": "400",
+                    "bold": "700"
+                }
+            },
+            "borderRadius": {
+                "xSmall": "0.125rem",
+                "small": "0.25rem",
+                "medium": "0.375rem",
+                "large": "0.5rem",
+                "xLarge": "0.625rem"
+            },
+            "boxShadow": {
+                "default": "0 1px 3px rgba(0, 0, 0, 0.2)",
+                "hover": "0 2px 6px rgba(0, 0, 0, 0.3)",
+                "active": "0 1px 5px rgba(0, 0, 0, 0.4)",
+                "inset": "inset 0 1px 3px rgba(0, 0, 0, 0.2)",
+                "card": "0 4px 8px rgba(0, 0, 0, 0.1)",
+                "menu": "0 2px 4px rgba(0, 0, 0, 0.2)",
+                "modal": "0 10px 20px rgba(0, 0, 0, 0.3)",
+                "button": "0 1px 3px rgba(0, 0, 0, 0.2)",
+                "tooltip": "0 4px 6px rgba(0, 0, 0, 0.15)"
+            },
+            "margin": {
+                "small": "0.5rem",
+                "medium": "1rem",
+                "large": "1.5rem",
+                "xLarge": "2rem"
+            },
+            "padding": {
+                "small": "0.5rem",
+                "medium": "1rem",
+                "large": "1.5rem",
+                "xLarge": "2rem"
+            },
+            "animation": {
+                "duration": {
+                    "short": "0.2s",
+                    "medium": "0.5s",
+                    "long": "1s"
+                },
+                "easing": {
+                    "easeIn": "cubic-bezier(0.4, 0, 0.2, 1)",
+                    "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+                    "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)"
+                }
+            },
+            "iconSize": {
+                "small": "1rem",
+                "medium": "1.5rem",
+                "large": "2rem",
+                "xLarge": "2.5rem"
+            },
+            "opacity": {
+                "low": "0.3",
+                "medium": "0.6",
+                "high": "1"
+            }
+        }
+    ]
 }

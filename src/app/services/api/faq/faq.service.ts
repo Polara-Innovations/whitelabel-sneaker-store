@@ -9,7 +9,7 @@ import { environment } from '../../../../environments/environment';
   providedIn: 'root'
 })
 export class FaqService {
-  private apiUrl = `${environment.apiUrl}faq`;
+  private apiUrl = `${environment.apiUrl}/faq`;
 
   constructor(private http: HttpClient) {}
 

@@ -1,15 +1,14 @@
 .top-navbar {
-  background-color: var(--header-bg);
+  background-color: var(--menu-background);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 6000;
   position: relative;
-  border-bottom: 1px solid var(--header-border);
+  border-bottom: 1px solid var(--menu-border);
 }
 
 .tabs-container {
   margin: 0 auto;
-  padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
-  color: var(--header-text);
+  color: var(--menu-text);
 }
 
 @media (max-width: 768px) {
@@ -18,7 +17,7 @@
     left: 0;
     width: 100%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: slideDown 0.3s ease;
+    animation: slideDown var(--animation-duration-short) var(--animation-easing-easeInOut);
   }
 }
 

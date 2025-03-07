@@ -16,7 +16,6 @@ import { CommonModule } from '@angular/common';
 import { NavItemComponent } from './layout/header/nav-item/nav-item.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { FaqComponent } from './components/faq/faq.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { TabsMenuComponent } from './layout/header/tabs-menu/tabs-menu.component';
 import { HamburgerMenuComponent } from './layout/header/hamburger-menu/hamburger-menu.component';
 import { ProductCardComponent } from './components/shared/product-card/product-card.component';
@@ -39,7 +38,6 @@ import { ProductSortComponent } from './components/products/product-sort/product
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { faqItemComponent } from './components/faq/faq-item/faq-item.component';
 import { NavItemDropdownComponent } from './layout/header/nav-item-dropdown/nav-item-dropdown.component';
-import { NavDropdownComponent } from './layout/header/nav-dropdown/nav-dropdown.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { TeamSectionComponent } from './components/about-us/team-section/team-section.component';
 import { MissionVisionValuesComponent } from './components/about-us/mission-vision-values/mission-vision-values.component';
@@ -65,7 +63,6 @@ import { ContentSectionsComponent } from './components/about-us/content-sections
     ContactInfoComponent,
     ProductDetailsComponent,
     NavItemComponent,
-    ProfileComponent,
     FaqComponent,
     TabsMenuComponent,
     HamburgerMenuComponent,
@@ -84,7 +81,6 @@ import { ContentSectionsComponent } from './components/about-us/content-sections
     SafePipe,
     faqItemComponent,
     NavItemDropdownComponent,
-    NavDropdownComponent,
     TeamSectionComponent  
   ],
   imports: [

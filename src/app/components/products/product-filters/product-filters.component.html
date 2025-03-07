@@ -1,6 +1,6 @@
 <div class="filters-container">
   <!-- Filtro de preço -->
-  <div class="filter-group">
+  <div class="filter-group container-medium-vertical">
     <div class="filter-header">
       <h4>Faixa de Preço</h4>
     </div>
@@ -16,7 +16,8 @@
               [(ngModel)]="minPrice" 
               min="0"
               [max]="maxPrice"
-              (change)="onPriceRangeChange()" />
+              (change)="onPriceRangeChange()"
+              aria-label="Preço mínimo" />
           </div>
         </div>
         <div class="price-input-group">
@@ -29,7 +30,8 @@
               [(ngModel)]="maxPrice" 
               [min]="minPrice"
               [max]="maxPossiblePrice"
-              (change)="onPriceRangeChange()" />
+              (change)="onPriceRangeChange()"
+              aria-label="Preço máximo" />
           </div>
         </div>
       </div>
@@ -37,13 +39,16 @@
   </div>
 
   <!-- Grupos de filtros dinâmicos -->
-  <div *ngFor="let group of filterGroups" class="filter-group">
-    <div class="filter-header" (click)="toggleGroup(group)">
+  <div *ngFor="let group of filterGroups" class="filter-group container-medium-vertical">
+    <div class="filter-header" (click)="toggleGroup(group)" 
+         [attr.aria-expanded]="group.expanded" 
+         role="button" 
+         tabindex="0">
       <h4>{{ group.name }}</h4>
-      <i class="fas" [ngClass]="group.expanded ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+      <i class="fas" [ngClass]="group.expanded ? 'fa-chevron-up' : 'fa-chevron-down'" aria-hidden="true"></i>
     </div>
-    <div class="filter-options" [class.expanded]="group.expanded">
-      <div *ngFor="let option of group.options" class="filter-option">
+    <div class="filter-options" [ngClass]="{'expanded': group.expanded}" [attr.aria-hidden]="!group.expanded">
+      <div *ngFor="let option of group.options" class="filter-option container-small">
         <input type="checkbox" [id]="option.id" [checked]="option.selected"
           (change)="onFilterChange(group.id, option.id, $event)" />
         <label [for]="option.id">

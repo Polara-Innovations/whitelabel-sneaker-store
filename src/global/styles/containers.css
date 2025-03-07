@@ -1,0 +1,55 @@
+.container-small {
+    padding: var(--padding-small);
+}
+
+.container-small-vertical {
+    padding-top: var(--padding-small);
+    padding-bottom: var(--padding-small);
+}
+
+.container-small-horizontal {
+    padding-left: var(--padding-small);
+    padding-right: var(--padding-small);
+}
+
+.container-medium {
+    padding: var(--padding-medium);
+}
+
+.container-medium-vertical {
+    padding-top: var(--padding-medium);
+    padding-bottom: var(--padding-medium);
+}
+
+.container-medium-horizontal {
+    padding-left: var(--padding-medium);
+    padding-right: var(--padding-medium);
+}
+
+.container-large {
+    padding: var(--padding-large);
+}
+
+.container-large-vertical {
+    padding-top: var(--padding-large);
+    padding-bottom: var(--padding-large);
+}
+
+.container-large-horizontal {
+    padding-left: var(--padding-large);
+    padding-right: var(--padding-large);
+}
+
+.container-xLarge {
+    padding: var(--padding-xLarge);
+}
+
+.container-xLarge-vertical {
+    padding-top: var(--padding-xLarge);
+    padding-bottom: var(--padding-xLarge);
+}
+
+.container-xLarge-horizontal {
+    padding-left: var(--padding-xLarge);
+    padding-right: var(--padding-xLarge);
+}

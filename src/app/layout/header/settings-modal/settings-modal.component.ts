@@ -1,6 +1,8 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
 import { ThemeService } from '../../../services/theme/theme.service';
-import { Subscription } from 'rxjs';
+import { ThemeConfig } from '../../../models/theme-config-model';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-settings',
@@ -12,63 +14,84 @@ export class SettingsModalComponent implements OnInit, OnDestroy {
   @Input() isSettingsOpen: boolean = false;
   @Output() closeSettings = new EventEmitter<void>();
 
-  isDarkMode: boolean = false;
-  isHighContrast: boolean = false;
-  availableBrands: { id: string, name: string }[] = [];
-  selectedBrandId: string = '';
+  selectedThemeType: string = 'light'; // Valor padrão
+  availableThemes: { type: string }[] = [];
   
-  private themeSubscription: Subscription | null = null;
+  private destroy$ = new Subject<void>();
 
   constructor(private themeService: ThemeService) {}
 
   ngOnInit() {
-    this.isDarkMode = this.themeService.getIsDarkMode();
-    this.isHighContrast = this.themeService.getIsHighContrast();
-    this.availableBrands = this.themeService.getAvailableBrands();
-    this.selectedBrandId = this.themeService.getCurrentBrandId();
-    
-    // Inscrever-se para mudanças de tema
-    this.themeSubscription = this.themeService.currentThemeMode.subscribe(mode => {
-      this.isDarkMode = mode === 'dark';
-      this.isHighContrast = mode === 'high-contrast';
-    });
+    // Monitorar o tipo de tema atual
+    this.themeService.currentThemeType
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(themeType => {
+        this.selectedThemeType = themeType;
+      });
+
+    // Carregar temas disponíveis
+    this.loadAvailableThemes();
   }
-  
+
   ngOnDestroy() {
-    if (this.themeSubscription) {
-      this.themeSubscription.unsubscribe();
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  /**
+   * Define o tipo de tema quando um toggle é acionado
+   * @param themeType O tipo de tema a ser aplicado
+   */
+  setThemeType(themeType: string) {
+    // Se o toggle for desativado, volta para o tema claro
+    if (this.selectedThemeType === themeType) {
+      this.selectedThemeType = 'light';
+      this.themeService.changeTheme('light');
+    } else {
+      this.selectedThemeType = themeType;
+      this.themeService.changeTheme(themeType);
     }
   }
 
-  toggleDarkMode(checked: boolean) {
-    if (checked) {
-      this.isDarkMode = true;
-      this.isHighContrast = false;
-      this.themeService.toggleTheme('dark');
-    } else {
-      this.isDarkMode = false;
-      this.themeService.toggleTheme('light');
-    }
-  }
-
-  toggleHighContrast(checked: boolean) {
-    if (checked) {
-      this.isHighContrast = true;
-      this.isDarkMode = false;
-      this.themeService.toggleTheme('high-contrast');
-    } else {
-      this.isHighContrast = false;
-      this.themeService.toggleTheme('light');
-    }
-  }
-  
-  changeBrand(event: Event) {
+  /**
+   * Manipula a mudança de tema no dropdown
+   */
+  onThemeTypeChange(event: Event) {
     const select = event.target as HTMLSelectElement;
-    this.selectedBrandId = select.value;
-    this.themeService.changeBrand(this.selectedBrandId);
+    const themeType = select.value;
+    
+    this.selectedThemeType = themeType;
+    this.themeService.changeTheme(themeType);
   }
 
   close() {
     this.closeSettings.emit();
+  }
+
+  private loadAvailableThemes() {
+    this.themeService.getAvailableThemes()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(
+        themes => {
+          // Agrupa temas por tipo para mostrar opções únicas
+          const themeTypes = new Set<string>();
+          
+          this.availableThemes = themes
+            .filter(theme => {
+              // Só adiciona se este tipo de tema ainda não foi incluído
+              if (!themeTypes.has(theme.type)) {
+                themeTypes.add(theme.type);
+                return true;
+              }
+              return false;
+            })
+            .map(theme => ({
+              type: theme.type
+            }));
+        },
+        error => {
+          console.error('Erro ao carregar temas disponíveis:', error);
+        }
+      );
   }
 }

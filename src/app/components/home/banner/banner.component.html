@@ -1,16 +1,24 @@
 <div class="banner">
-  <div class="banner-images">
-    <ng-container *ngFor="let banner of banners; let i = index">
-      <div *ngIf="currentIndex === i" class="banner-item" (click)="navigate(banner.route)">
-        <img [src]="banner.imageUrl" alt="Banner" />
+    <div class="banner-carousel position-relative rounded overflow-hidden">
+      <div class="banner-images">
+        <ng-container *ngFor="let banner of banners; let i = index">
+          <div *ngIf="currentIndex === i" 
+               class="banner-item" 
+               (click)="navigate(banner.route)">
+            <img [src]="banner.imageUrl" 
+                 alt="Banner" 
+                 class="img-fluid w-100 h-100 object-fit-cover" />
+          </div>
+        </ng-container>
       </div>
-    </ng-container>
+      
+      <div class="bullets position-absolute bottom-0 start-50 translate-middle-x mb-3">
+        <button *ngFor="let banner of banners; let i = index"
+                class="bullet mx-1"
+                [class.active]="currentIndex === i"
+                (click)="selectSlide(i)"
+                [attr.aria-label]="'Selecionar slide ' + (i + 1)">
+        </button>
+      </div>
+    </div>
   </div>
-  <div class="bullets">
-    <button *ngFor="let banner of banners; let i = index"
-            class="bullet"
-            [class.active]="currentIndex === i"
-            (click)="selectSlide(i)">
-    </button>
-  </div>
-</div>

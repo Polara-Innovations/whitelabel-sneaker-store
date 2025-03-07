@@ -1,4 +1,4 @@
-<div class="form-container">
+<div class="form-container container-large">
   <h2 class="form-title">{{ texts.title }}</h2>
   
   <div *ngIf="submitSuccess" class="form-alert success">
@@ -10,7 +10,7 @@
   </div>
   
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
-    <div class="form-group">
+    <div class="form-group container-small">
       <label for="name">{{ texts.name }}</label>
       <input 
         type="text" 
@@ -18,6 +18,7 @@
         formControlName="name" 
         [class.invalid]="isInvalid('name')"
         placeholder="{{ texts.namePlaceholder }}"
+        aria-required="true"
       >
       <div *ngIf="hasError('name', 'required')" class="error-message">
         {{ texts.nameRequired }}
@@ -27,7 +28,7 @@
       </div>
     </div>
     
-    <div class="form-group">
+    <div class="form-group container-small">
       <label for="email">{{ texts.email }}</label>
       <input 
         type="email" 
@@ -35,6 +36,7 @@
         formControlName="email" 
         [class.invalid]="isInvalid('email')"
         placeholder="{{ texts.emailPlaceholder }}"
+        aria-required="true"
       >
       <div *ngIf="hasError('email', 'required')" class="error-message">
         {{ texts.emailRequired }}
@@ -44,7 +46,7 @@
       </div>
     </div>
     
-    <div class="form-group">
+    <div class="form-group container-small">
       <label for="subject">{{ texts.subject }}</label>
       <input 
         type="text" 
@@ -52,13 +54,14 @@
         formControlName="subject" 
         [class.invalid]="isInvalid('subject')"
         placeholder="{{ texts.subjectPlaceholder }}"
+        aria-required="true"
       >
       <div *ngIf="hasError('subject', 'required')" class="error-message">
         {{ texts.subjectRequired }}
       </div>
     </div>
     
-    <div class="form-group">
+    <div class="form-group container-small">
       <label for="message">{{ texts.message }}</label>
       <textarea 
         id="message" 
@@ -66,6 +69,7 @@
         [class.invalid]="isInvalid('message')"
         rows="5" 
         placeholder="{{ texts.messagePlaceholder }}"
+        aria-required="true"
       ></textarea>
       <div *ngIf="hasError('message', 'required')" class="error-message">
         {{ texts.messageRequired }}
@@ -75,14 +79,15 @@
       </div>
     </div>
     
-    <div class="form-actions">
+    <div class="form-actions container-medium-vertical">
       <button 
         type="submit" 
         class="submit-button" 
         [disabled]="isSubmitting"
+        aria-label="Enviar formulário"
       >
         <span *ngIf="!isSubmitting">{{ texts.button }}</span>
-        <span *ngIf="isSubmitting" class="spinner"></span>
+        <span *ngIf="isSubmitting" class="spinner" aria-hidden="true"></span>
       </button>
     </div>
   </form>

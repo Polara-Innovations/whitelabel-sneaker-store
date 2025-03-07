@@ -1,146 +1,155 @@
 .filters-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .filter-group {
-    border-bottom: 1px solid var(--card-border);
-    padding-bottom: 1.5rem;
-  }
-  
-  .filter-group:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  
-  .filter-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-    cursor: pointer;
-  }
-  
-  .filter-header h4 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-text);
-    margin: 0;
-  }
-  
-  .filter-options {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+}
+
+.filter-group {
+  border-bottom: 1px solid var(--products-border);
+}
+
+.filter-group:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-small);
+  cursor: pointer;
+  transition: color var(--animation-duration-short) var(--animation-easing-easeInOut);
+}
+
+.filter-header:hover {
+  color: var(--products-textActive);
+}
+
+.filter-header h4 {
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--products-title);
+  margin: 0;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--animation-duration-medium) var(--animation-easing-easeInOut);
+}
+
+.filter-options.expanded {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small);
+}
+
+.filter-option input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--products-buttonBackground);
+}
+
+.filter-option label {
+  display: flex;
+  align-items: center;
+  color: var(--products-text);
+  font-size: var(--font-size-small);
+  cursor: pointer;
+  user-select: none;
+}
+
+.option-count {
+  margin-left: var(--spacing-xsmall);
+  color: var(--products-subtitle);
+  font-size: var(--font-size-xsmall);
+}
+
+/* Estilos para o filtro de faixa de preço */
+.price-range-filter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+  padding: 0 5px;
+}
+
+.price-inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-medium);
+}
+
+.price-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+  flex: 1;
+}
+
+.price-input-group label {
+  font-size: var(--font-size-small);
+  color: var(--products-text);
+}
+
+.price-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.price-currency {
+  position: absolute;
+  left: var(--spacing-small);
+  color: var(--products-text);
+  font-size: var(--font-size-small);
+}
+
+.price-input-group input {
+  width: 100%;
+  padding: var(--padding-small);
+  padding-left: 2rem; /* Espaço para o símbolo R$ */
+  border: 1px solid var(--products-border);
+  border-radius: var(--border-radius-small);
+  background-color: var(--products-alternativeBackground);
+  color: var(--products-text);
+  font-size: var(--font-size-small);
+  transition: border-color var(--animation-duration-short) var(--animation-easing-easeInOut),
+              box-shadow var(--animation-duration-short) var(--animation-easing-easeInOut);
+}
+
+.price-input-group input:focus {
+  outline: none;
+  border-color: var(--products-buttonBackground);
+  box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
+}
+
+@media (max-width: 768px) {
   .filter-options.expanded {
-    max-height: 300px;
-    overflow-y: auto;
-  }
-  
-  .filter-option {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .filter-option input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-    accent-color: var(--color-primary);
-  }
-  
-  .filter-option label {
-    display: flex;
-    align-items: center;
-    color: var(--color-text);
-    font-size: 0.9rem;
-    cursor: pointer;
-    user-select: none;
-  }
-  
-  .option-count {
-    margin-left: 0.25rem;
-    color: var(--color-text);
-    opacity: 0.7;
-    font-size: 0.8rem;
-  }
-  
-  /* Estilos para o filtro de faixa de preço */
-  .price-range-filter {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 0 5px;
+    max-height: 200px;
   }
   
   .price-inputs {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-  
-  .price-input-group {
-    display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    flex: 1;
+    gap: var(--spacing-small);
+  }
+}
+
+@media (max-width: 576px) {
+  .filter-header h4 {
+    font-size: var(--font-size-small);
   }
   
-  .price-input-group label {
-    font-size: 0.9rem;
-    color: var(--color-text);
+  .filter-option label {
+    font-size: var(--font-size-xsmall);
   }
-  
-  .price-input-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  
-  .price-currency {
-    position: absolute;
-    left: 10px;
-    color: var(--input-text);
-    font-size: 0.9rem;
-  }
-  
-  .price-input-group input {
-    width: 100%;
-    padding: 0.75rem;
-    padding-left: 2rem; /* Espaço para o símbolo R$ */
-    border: 1px solid var(--input-border);
-    border-radius: var(--border-radius-sm);
-    background-color: var(--input-bg);
-    color: var(--input-text);
-    font-size: 0.9rem;
-  }
-  
-  .price-input-group input:focus {
-    outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 2px rgba(75, 136, 201, 0.2);
-  }
-  
-  /* Cor de preenchimento entre os dois controles deslizantes */
-  .price-slider::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    left: 25%;
-    right: 25%;
-    background-color: var(--color-primary);
-    border-radius: 2px;
-  }
-  
-  @media (max-width: 768px) {
-    .filter-options.expanded {
-      max-height: 200px;
-    }
-  }
+}

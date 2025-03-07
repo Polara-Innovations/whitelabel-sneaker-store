@@ -1,7 +1,6 @@
-<div class="main-container">
-  <div class="products-container">
+  <div class="products-container container-large">
     <!-- Cabeçalho da página de produtos -->
-    <div class="products-header">
+    <div class="products-header container-medium-vertical">
       <div class="header-left">
         <h1 class="products-title">Nossos Produtos</h1>
         <p class="products-count">{{ totalItems }} produtos encontrados</p>
@@ -22,18 +21,19 @@
           
           <button 
             class="filter-toggle-btn" 
-            [class.active]="showFilters"
+            [ngClass]="{'active': showFilters}"
             (click)="toggleFilters()" 
-            aria-label="Toggle Filters">
+            aria-label="Mostrar filtros"
+            [attr.aria-expanded]="showFilters">
             <i class="fas fa-filter"></i>
           </button>
         </div>
       </div>
     </div>
 
-    <div class="products-content">
+    <div class="products-content container-medium-vertical">
       <!-- Área de filtros lateral -->
-      <div class="filters-sidebar" [class.active]="showFilters">
+      <div class="filters-sidebar container-medium" [ngClass]="{'active': showFilters}" [attr.aria-hidden]="!showFilters">
         <div class="filters-header">
           <h3>Filtros</h3>
           <button class="clear-filters-btn" (click)="clearFilters()">Limpar Filtros</button>
@@ -50,13 +50,13 @@
       
       <!-- Grade de produtos -->
       <div class="products-grid" #productsGridRef>
-        <div *ngIf="loading" class="products-loading">
-          <div class="spinner"></div>
+        <div *ngIf="loading" class="products-loading container-large-vertical">
+          <div class="spinner" aria-hidden="true"></div>
           <p>Carregando produtos...</p>
         </div>
         
-        <div *ngIf="!loading && paginatedProducts.length === 0" class="no-products">
-          <i class="fas fa-search"></i>
+        <div *ngIf="!loading && paginatedProducts.length === 0" class="no-products container-large-vertical">
+          <i class="fas fa-search" aria-hidden="true"></i>
           <p>Nenhum produto encontrado com os filtros selecionados.</p>
           <button class="clear-filters-btn" (click)="clearFilters()">Limpar Filtros</button>
         </div>
@@ -76,21 +76,24 @@
     </div>
     
     <!-- Paginação -->
-    <div class="pagination-container" *ngIf="totalPages > 1">
+    <div class="pagination-container container-medium-vertical" *ngIf="totalPages > 1">
       <div class="pagination">
         <button 
           class="pagination-btn" 
           [disabled]="filter.page === 1"
-          (click)="onPageChange(filter.page - 1)">
-          <i class="fas fa-chevron-left"></i>
+          (click)="onPageChange(filter.page - 1)"
+          aria-label="Página anterior">
+          <i class="fas fa-chevron-left" aria-hidden="true"></i>
         </button>
         
         <div class="pagination-pages">
           <button 
             *ngFor="let page of [].constructor(totalPages); let i = index" 
             class="pagination-page" 
-            [class.active]="filter.page === i + 1"
-            (click)="onPageChange(i + 1)">
+            [ngClass]="{'active': filter.page === i + 1}"
+            (click)="onPageChange(i + 1)"
+            [attr.aria-current]="filter.page === i + 1 ? 'page' : null"
+            [attr.aria-label]="'Pagina ' + (i + 1)">
             {{ i + 1 }}
           </button>
         </div>
@@ -98,10 +101,10 @@
         <button 
           class="pagination-btn" 
           [disabled]="filter.page === totalPages"
-          (click)="onPageChange(filter.page + 1)">
-          <i class="fas fa-chevron-right"></i>
+          (click)="onPageChange(filter.page + 1)"
+          aria-label="Próxima página">
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
         </button>
       </div>
     </div>
   </div>
-</div>

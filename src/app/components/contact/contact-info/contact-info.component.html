@@ -1,8 +1,8 @@
-<div class="info-container">
+<div class="info-container container-large">
   <h2 class="info-title">{{ texts.title }}</h2>
   
-  <div class="info-section">
-    <div class="info-item">
+  <div class="info-section container-medium-vertical">
+    <div class="info-item container-small">
       <div class="info-icon">
         <i class="fas fa-map-marker-alt"></i>
       </div>
@@ -12,7 +12,7 @@
       </div>
     </div>
     
-    <div class="info-item">
+    <div class="info-item container-small">
       <div class="info-icon">
         <i class="fas fa-phone"></i>
       </div>
@@ -22,7 +22,7 @@
       </div>
     </div>
     
-    <div class="info-item">
+    <div class="info-item container-small">
       <div class="info-icon">
         <i class="fas fa-envelope"></i>
       </div>
@@ -32,7 +32,7 @@
       </div>
     </div>
     
-    <div class="info-item">
+    <div class="info-item container-small">
       <div class="info-icon">
         <i class="fas fa-clock"></i>
       </div>
@@ -43,7 +43,7 @@
     </div>
   </div>
   
-  <div class="map-section" *ngIf="texts.showMap">
+  <div class="map-section container-medium-vertical" *ngIf="texts.showMap">
     <h3>{{ texts.mapTitle }}</h3>
     <div class="map-container">
       <iframe 
@@ -53,7 +53,8 @@
         style="border:0;" 
         allowfullscreen="" 
         loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Mapa de localização">
       </iframe>
     </div>
   </div>

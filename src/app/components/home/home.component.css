@@ -1,19 +1,6 @@
-.banner {
-    background-color: var(--color-bg);
-    border-radius: 8px;
-  }
-  
-  .featured-products .card {
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-  }
-  
-  .featured-products .card:hover {
-    transform: scale(1.05);
-  }
-  
-  .about-us {
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-  }
+.home{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--home-background);
+    color: var(--home-text);
+}

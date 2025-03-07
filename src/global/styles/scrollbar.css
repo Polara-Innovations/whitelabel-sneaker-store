@@ -1,0 +1,28 @@
+/* scrollbar-styles.css */
+
+:root {
+    --scrollbar-width: 8px; /* Largura da scrollbar */
+  }
+  
+  ::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+    height: var(--scrollbar-width);
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-alternativeBackground); /* Cor de fundo da scrollbar (pode ser ajustada) */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-background); /* Usando a cor do alternativeBackground */
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-activeBackground); /* Usando a cor do activeBackground no hover */
+  }
+  
+  * {
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: var(--scrollbar-background) var(--scrollbar-alternativeBackground); /* Firefox */
+  }

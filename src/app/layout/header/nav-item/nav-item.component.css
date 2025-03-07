@@ -1,108 +1,104 @@
+/* Estilos base para o item de navegação */
 .nav-item {
   position: relative;
-  transition: all 0.3s ease;
-  width: 100%;
+  display: inline-block;
 }
 
+/* Estilos para o link de navegação */
 .nav-link {
+  padding: var(--padding-small);
   display: flex;
   align-items: center;
-  color: var(--header-text);
+  color: var(--navItem-text);
   text-decoration: none;
-  padding: 10px 15px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  text-align: center;
+  border-radius: var(--border-radius-small);
+  transition: all var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 
 .nav-link:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  color: var(--header-active);
+  background-color: var(--navItem-backgroundActive);
+  color: var(--navItem-textActive);
 }
 
 .nav-item.active .nav-link {
-  color: var(--header-active);
-  font-weight: 500;
+  color: var(--navItem-textActive);
+  font-weight: var(--font-weight-medium);
 }
 
-.nav-item.active .nav-link:hover {
-  background-color: rgba(0, 0, 0, 0);
-  color: var(--header-active);
-}
-
+/* Indicador de item ativo */
 .title-line {
-  background-color: var(--header-active);
+  background-color: var(--navItem-textActive);
   position: absolute;
-  transition: all 0.3s ease;
+  transition: all var(--animation-duration-short) var(--animation-easing-easeInOut);
+  height: 2px;
+  bottom: 0;
+  left: 15px;
+  right: 15px;
 }
 
-/* Modificado para suportar alinhamentos no modo vertical */
+/* Estilos para o modo vertical */
 .nav-item.vertical {
   width: 100%;
-  display: flex;
 }
 
-/* Alinhamento dos links baseado na posição */
-.nav-item.align-start,
-.nav-item.vertical.align-start {
+.nav-item.vertical .nav-link {
+  width: 100%;
   justify-content: flex-start;
 }
 
-.nav-item.align-center,
-.nav-item.vertical.align-center {
-  justify-content: center;
-}
-
-.nav-item.align-end,
-.nav-item.vertical.align-end {
-  justify-content: flex-end;
-}
-
-/* Ajuste para os links dentro dos itens de navegação */
+/* Estilos para alinhamento */
 .nav-item.align-start .nav-link {
   justify-content: flex-start;
-  width: auto;
+  text-align: left;
 }
 
 .nav-item.align-center .nav-link {
   justify-content: center;
-  width: auto;
+  text-align: center;
 }
 
 .nav-item.align-end .nav-link {
   justify-content: flex-end;
-  width: auto;
+  text-align: right;
 }
 
-/* Ajustes específicos para modo vertical */
-.nav-item.vertical .nav-link {
-  width: auto;
+/* Estilos para os indicadores de item ativo */
+.nav-item.indicator-side .title-line {
+  width: 4px;
+  height: 70%;
+  top: 15%;
+  left: 0;
+  right: auto;
+  bottom: auto;
 }
 
+.nav-item.indicator-bottom .title-line {
+  height: 2px;
+  width: 80%;
+  left: 10%;
+  right: 10%;
+  bottom: 0;
+  top: auto;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
   .nav-item {
     width: 100%;
   }
   
   .nav-link {
-    display: flex;
-    align-items: center;
-    padding: 12px 15px;
-    width: auto;
-  }
-  
-  /* Forçar alinhamento à esquerda em telas pequenas */
-  .nav-item .nav-link {
+    width: 100%;
     justify-content: flex-start;
   }
   
-  /* Sempre usar indicador à esquerda no mobile */
-  .nav-item .title-line {
-    left: 0;
-    right: auto;
+  /* Usar indicador lateral em telas pequenas */
+  .title-line {
     width: 4px;
     height: 70%;
     top: 15%;
+    left: 0;
+    right: auto;
     bottom: auto;
   }
 }

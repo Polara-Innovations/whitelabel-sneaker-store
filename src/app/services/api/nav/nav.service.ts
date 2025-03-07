@@ -10,7 +10,7 @@ import { environment } from '../../../../environments/environment';
   providedIn: 'root'
 })
 export class NavService {
-  private apiUrl = `${environment.apiUrl}`;
+  private apiUrl = `${environment.apiUrl}/`;
   
   constructor(private http: HttpClient) {}
   

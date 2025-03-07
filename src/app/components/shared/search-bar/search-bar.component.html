@@ -1,29 +1,35 @@
-<div class="search-container">
-    <div class="search-wrapper" [class.active]="isFocused">
-      <input
-        type="text"
-        [formControl]="searchControl"
-        (focus)="onFocus()"
-        (blur)="onBlur()"
-        [placeholder]="isFocused ? '' : 'Pesquisar Produtos...'"
-        aria-label="Pesquisar Produtosng"
-        autocomplete="off"
-      />
-      <button
-        class="clear-button"
-        (click)="clearSearch()"
-        aria-label="Clear search"
-      >
-        <i class="fas fa-times"></i>
-      </button>
-      <i class="fas fa-search search-icon-inner"></i>
-    </div>
-    <div class="suggestions-container" *ngIf="showSuggestions && suggestions.length > 0">
-      <ul class="suggestions-list">
-        <li *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)">
-          <span class="suggestion-text">{{ suggestion.name }}</span>
-          <span class="suggestion-category">in {{ suggestion.category }}</span>
-        </li>
-      </ul>
-    </div>
+<div class="search-container container-medium-horizontal">
+  <div class="search-wrapper" [ngClass]="{'active': isFocused}">
+    <input
+      type="text"
+      [formControl]="searchControl"
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+      [placeholder]="isFocused ? '' : 'Pesquisar Produtos...'"
+      aria-label="Pesquisar Produtos"
+      autocomplete="off"
+    />
+    <button
+      class="clear-button"
+      (click)="clearSearch()"
+      aria-label="Limpar pesquisa"
+      *ngIf="searchControl.value"
+    >
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+    <i class="fas fa-search search-icon-inner" aria-hidden="true"></i>
   </div>
+  <div class="suggestions-container" *ngIf="showSuggestions && suggestions.length > 0">
+    <ul class="suggestions-list">
+      <li *ngFor="let suggestion of suggestions; let i = index" 
+          (click)="selectSuggestion(suggestion)"
+          role="option">
+        <span class="suggestion-text">{{ suggestion.name }}</span>
+        <span class="suggestion-category">em {{ suggestion.category }}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="no-results" *ngIf="showSuggestions && suggestions.length === 0 && searchControl.value">
+    <span>Nenhum resultado encontrado</span>
+  </div>
+</div>

@@ -1,28 +1,72 @@
+/* ----- Estilos do Toggle Switch ----- */
 .toggle-switch {
   position: relative;
-  width: 40px;
+  width: 45px;
   height: 20px;
-  background-color: #ccc;
-  border-radius: 10px;
+  background-color: var(--toggle-buttonAlternativeBackground);
+  border-radius: var(--border-radius-xLarge);
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color var(--animation-duration-short) var(--animation-easing-easeInOut);
+  box-shadow: var(--box-shadow-inset);
+  margin-bottom: 0;
 }
 
 .toggle-switch.active {
-  background-color: var(--color-primary);
+  background-color: var(--toggle-backgroundActive);
 }
 
 .toggle-slider {
   position: absolute;
-  top: 2px;
-  left: 2px;
+  top: 12%;
+  left: 10%;
   width: 16px;
   height: 16px;
-  background-color: white;
+  background-color: var(--toggle-buttonBackground);
   border-radius: 50%;
-  transition: transform 0.3s;
+  transition: transform var(--animation-duration-short) var(--animation-easing-easeInOut);
+  box-shadow: var(--box-shadow-default);
 }
 
 .toggle-switch.active .toggle-slider {
   transform: translateX(20px);
+}
+
+/* ----- Estados do Componente ----- */
+.toggle-switch:hover {
+  opacity: var(--opacity-high);
+}
+
+.toggle-switch:focus {
+  outline: 2px solid var(--toggle-border);
+  outline-offset: 2px;
+}
+
+/* ----- Acessibilidade ----- */
+.toggle-switch[aria-checked="true"] {
+  background-color: var(--toggle-backgroundActive);
+}
+
+.toggle-switch[aria-checked="true"] .toggle-slider {
+  transform: translateX(20px);
+}
+
+/* ----- Responsividade ----- */
+@media (max-width: 576px) {
+  .toggle-switch {
+    width: 36px;
+    height: 18px;
+  }
+  
+  .toggle-slider {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .toggle-switch.active .toggle-slider {
+    transform: translateX(18px);
+  }
+  
+  .toggle-switch[aria-checked="true"] .toggle-slider {
+    transform: translateX(18px);
+  }
 }

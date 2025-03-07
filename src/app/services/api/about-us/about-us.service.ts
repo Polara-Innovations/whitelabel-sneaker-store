@@ -8,7 +8,7 @@ import { AboutUsData } from '../../../models/about-us.model';
   providedIn: 'root'
 })
 export class AboutUsService {
-  private apiUrl = `${environment.apiUrl}about-us`;
+  private apiUrl = `${environment.apiUrl}/about-us`;
 
   constructor(private http: HttpClient) { }
 

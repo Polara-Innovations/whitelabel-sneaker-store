@@ -1,12 +1,11 @@
-<!-- brand-card.component.html -->
- <a class="brand-link" (click)="onCardClick()">
-<div class="brand-card">
-  <div class="image-container">
-    <img [src]="brand.imageUrl" [alt]="brand.name" />
-    <div class="overlay">
-      <span class="brand-name">{{ brand.name }}</span>
-      <span class="action-text">{{ actionLabel }}</span>
+<a class="brand-link container-small" (click)="onCardClick()" [attr.aria-label]="'Ver produtos da marca ' + brand.name">
+  <div class="brand-card">
+    <div class="image-container">
+      <img [src]="brand.imageUrl" [alt]="brand.name" />
+      <div class="overlay" aria-hidden="true">
+        <span class="brand-name">{{ brand.name }}</span>
+        <span class="action-text">{{ actionLabel }}</span>
+      </div>
     </div>
   </div>
-</div>
 </a>

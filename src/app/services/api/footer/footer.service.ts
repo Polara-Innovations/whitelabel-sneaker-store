@@ -9,7 +9,7 @@ import { environment } from '../../../../environments/environment';
   providedIn: 'root'
 })
 export class FooterService {
-  private apiUrl = `${environment.apiUrl}footer`;
+  private apiUrl = `${environment.apiUrl}/footer`;
   private footerConfigSubject = new BehaviorSubject<FooterConfig | null>(null);
   public footerConfig$ = this.footerConfigSubject.asObservable();
 

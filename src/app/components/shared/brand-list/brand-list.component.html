@@ -1,6 +1,10 @@
-<!-- brand-list.component.html -->
-<div class="brand-list-container container-padding">
-  <div class="brand-list-track">
-    <app-brand-card *ngFor="let brand of brands" [brand]="brand" [cardWidth]="cardWidth"></app-brand-card>
+<div [ngClass]="['brand-list-container', 'container-large']">
+  <div class="brand-list-track container-medium-vertical">
+    <app-brand-card 
+      *ngFor="let brand of brands" 
+      [brand]="brand" 
+      [cardWidth]="cardWidth"
+      class="brand-card-item">
+    </app-brand-card>
   </div>
 </div>

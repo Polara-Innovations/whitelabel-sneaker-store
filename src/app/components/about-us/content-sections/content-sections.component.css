@@ -1,81 +1,119 @@
 .content-sections-container {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xlarge);
+}
+
+.content-section {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-large);
+  padding-bottom: var(--spacing-xlarge);
+  border-bottom: 1px solid var(--aboutUs-border);
+}
+
+.content-section:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.section-content {
+  flex: 1;
+}
+
+.section-title {
+  font-size: var(--font-size-xlarge);
+  color: var(--aboutUs-title);
+  margin-bottom: var(--spacing-medium);
+  font-weight: var(--font-weight-bold);
+}
+
+.section-description {
+  font-size: var(--font-size-medium);
+  color: var(--aboutUs-text);
+  line-height: 1.7;
+}
+
+.section-image-container {
+  flex: 1;
+  max-width: 500px;
+  overflow: hidden;
+  border-radius: var(--border-radius-medium);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform var(--animation-duration-medium) var(--animation-easing-easeInOut);
+}
+
+.section-image-container:hover .section-image {
+  transform: scale(1.03);
+}
+
+.order-first {
+  order: 1;
+}
+
+.order-last {
+  order: 2;
+}
+
+/* Adiciona tratamento especial para seções alternadas */
+.content-section.even .section-content {
+  background-color: var(--aboutUs-background);
+}
+
+.content-section.odd .section-content {
+  background-color: var(--aboutUs-alternativeBackground);
+}
+
+@media (max-width: 992px) {
+  .section-image-container {
+    max-width: 400px;
   }
-  
+}
+
+@media (max-width: 768px) {
   .content-section {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid var(--aboutUs-contentDivider);
-  }
-  
-  .content-section:last-child {
-    padding-bottom: 0;
-    border-bottom: none;
-  }
-  
-  .section-content {
-    flex: 1;
-  }
-  
-  .section-title {
-    font-size: 1.6rem;
-    color: var(--aboutUs-contentTitleText);
-    margin-bottom: 15px;
-    font-weight: 600;
-  }
-  
-  .section-description {
-    font-size: 1rem;
-    color: var(--aboutUs-contentBodyText);
-    line-height: 1.7;
+    flex-direction: column;
+    gap: var(--spacing-medium);
   }
   
   .section-image-container {
-    flex: 1;
-    max-width: 500px;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
   }
   
-  .section-image {
+  .order-first, .order-last {
+    order: unset;
+  }
+  
+  .section-content {
     width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.5s ease;
   }
   
-  .section-image-container:hover .section-image {
-    transform: scale(1.03);
+  .section-title {
+    font-size: var(--font-size-large);
+  }
+}
+
+@media (max-width: 576px) {
+  .content-sections-container {
+    gap: var(--spacing-large);
   }
   
-  .order-first {
-    order: 1;
+  .content-section {
+    padding-bottom: var(--spacing-large);
   }
   
-  .order-last {
-    order: 2;
+  .section-title {
+    margin-bottom: var(--spacing-small);
   }
   
-  @media (max-width: 768px) {
-    .content-section {
-      flex-direction: column;
-      gap: 20px;
-    }
-    
-    .section-image-container {
-      max-width: 100%;
-    }
-    
-    .order-first, .order-last {
-      order: unset;
-    }
-    
-    .section-content {
-      width: 100%;
-    }
+  .section-description {
+    font-size: var(--font-size-small);
+    line-height: 1.6;
   }
+}
