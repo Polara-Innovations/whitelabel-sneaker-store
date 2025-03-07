@@ -1,60 +1,36 @@
-<div [ngClass]="['carousel-container', 'container-large']">
+<div class="carousel-container container-large">
   <div class="carousel-wrapper">
     <!-- Mensagem quando não há produtos -->
     <div *ngIf="!products || products.length === 0" class="carousel-empty container-medium">
       <p>Nenhum produto disponível no momento.</p>
     </div>
-    
+
     <!-- Track do carrossel com produtos -->
-    <div 
-      *ngIf="products && products.length > 0"
-      class="carousel-track" 
-      #carouselTrack
-      [style.transform]="'translateX(' + translateX + 'px)'"
-      role="region"
+    <div *ngIf="displayedProducts && displayedProducts.length > 0" class="carousel-track" #carouselTrack role="region"
       aria-label="Carrossel de produtos">
-      
-      <div 
-        *ngFor="let product of products; let i = index" 
-        class="carousel-item-wrapper"
+
+      <div *ngFor="let product of displayedProducts; let i = index" class="carousel-item-wrapper"
         [attr.aria-hidden]="i !== currentIndex">
-        <app-product-card
-          [product]="product"
-          [showTags]="false"
-          [showAction]="false">
+        <app-product-card [product]="product" [showTags]="false" [showAction]="false">
         </app-product-card>
       </div>
     </div>
-    
-    <!-- Bullets para mobile -->
-    <div *ngIf="showBullets && isMobile && products && products.length > 0" class="carousel-bullets container-small-vertical">
-      <button 
-        *ngFor="let product of products; let i = index" 
-        class="carousel-bullet" 
-        [ngClass]="{'active': i === currentIndex}"
-        (click)="goToSlide(i)"
-        [attr.aria-label]="'Ir para slide ' + (i + 1)"
-        [attr.aria-current]="i === currentIndex ? 'true' : 'false'">
+
+    <!-- Bullets para navegação (simplificado para 5 bullets em sequência) -->
+    <div *ngIf="showBullets && products && products.length > 0" class="carousel-bullets container-small-vertical">
+      <button *ngFor="let index of getVisibleBullets()" class="carousel-bullet"
+        [ngClass]="{'active': getRealIndex() === index}" (click)="goToSlide(index)"
+        [attr.aria-label]="'Ir para slide ' + (index + 1)">
       </button>
     </div>
-    
+
     <!-- Botões de navegação -->
-    <div class="carousel-nav" *ngIf="navigationEnabled && products && products.length > 1">
-      <button 
-        class="carousel-nav-btn prev" 
-        [ngClass]="{'disabled': isFirstSlide() && !isLooping}"
-        (click)="goToPrev()"
-        aria-label="Produto anterior"
-        [attr.aria-disabled]="isFirstSlide() && !isLooping">
+    <div class="carousel-nav" *ngIf="showNavigation && products && products.length > 1">
+      <button class="carousel-nav-btn prev" (click)="goToPrev()" aria-label="Produto anterior">
         <i class="fas fa-chevron-left" aria-hidden="true"></i>
       </button>
-      
-      <button 
-        class="carousel-nav-btn next" 
-        [ngClass]="{'disabled': isLastSlide() && !isLooping}"
-        (click)="goToNext()"
-        aria-label="Próximo produto"
-        [attr.aria-disabled]="isLastSlide() && !isLooping">
+
+      <button class="carousel-nav-btn next" (click)="goToNext()" aria-label="Próximo produto">
         <i class="fas fa-chevron-right" aria-hidden="true"></i>
       </button>
     </div>

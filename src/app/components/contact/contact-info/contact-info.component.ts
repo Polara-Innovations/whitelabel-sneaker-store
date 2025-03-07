@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { SettingsService } from '../../../services/settings/settings.service';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-contact-info',
@@ -7,12 +6,6 @@ import { SettingsService } from '../../../services/settings/settings.service';
   styleUrls: ['./contact-info.component.scss'],
   standalone: false
 })
-export class ContactInfoComponent implements OnInit {
-  texts: any;
-
-  constructor(private settingsService: SettingsService) {}
-
-  ngOnInit(): void {
-    this.texts = this.settingsService.getTexts().contact.info;
-  }
+export class ContactInfoComponent {
+  @Input() texts: any;
 }

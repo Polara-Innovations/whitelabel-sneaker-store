@@ -13,7 +13,7 @@
   left: var(--spacing-small);
   top: 50%;
   transform: translateY(-50%);
-  color: var(--products-text);
+  color: var(--products-text-color);
   opacity: 0.5;
 }
 
@@ -22,8 +22,8 @@
   padding: var(--padding-small) var(--spacing-large);
   border: 1px solid var(--products-border);
   border-radius: var(--border-radius-small);
-  background-color: var(--products-alternativeBackground);
-  color: var(--products-text);
+  background-color: var(--products-background-alternativeColor);
+  color: var(--products-text-color);
   font-size: var(--font-size-medium);
   transition: border-color var(--animation-duration-short) var(--animation-easing-easeInOut), 
               box-shadow var(--animation-duration-short) var(--animation-easing-easeInOut);
@@ -31,7 +31,7 @@
 
 .search-input:focus {
   outline: none;
-  border-color: var(--products-buttonBackground);
+  border-color: var(--products-button-backgroundColor);
   box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
 }
 
@@ -42,7 +42,7 @@
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: var(--products-text);
+  color: var(--products-text-color);
   opacity: 0.5;
   cursor: pointer;
   padding: 0;
@@ -54,22 +54,31 @@
   opacity: 0.8;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+  .search-container {
+    width: 100%;
+    display: block;
+  }
+  
   .search-input {
     font-size: var(--font-size-small);
+    height: 40px; /* Altura fixa para alinhar com o botão de filtro */
   }
 }
 
 @media (max-width: 576px) {
-  .search-container {
-    width: 100%;
-  }
-  
   .search-input {
     padding: var(--padding-xsmall) var(--spacing-medium);
+    padding-left: 30px; /* Espaço para o ícone */
   }
   
-  .search-icon, .search-clear-btn {
+  .search-icon {
+    left: 8px;
     font-size: var(--font-size-small);
+  }
+  
+  .search-clear-btn {
+    font-size: var(--font-size-small);
+    right: 8px;
   }
 }

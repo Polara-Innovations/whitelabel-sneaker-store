@@ -17,7 +17,7 @@
   <div class="title-line" *ngIf="isActive"></div>
   
   <!-- Dropdown Menu para Desktop -->
-  <div class="dropdown-menu" [ngClass]="['container-medium', isOpen ? 'show' : '']" *ngIf="layoutMode === 'row'">
+  <div class="dropdown-menu" [ngClass]="[isOpen ? 'show' : '']" *ngIf="layoutMode === 'row'">
     <div class="dropdown-inner">
       <!-- Lista de categorias à esquerda -->
       <div class="main-items-list container-small">

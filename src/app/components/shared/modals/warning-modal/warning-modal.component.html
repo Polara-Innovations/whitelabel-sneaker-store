@@ -1,0 +1,25 @@
+<div class="modal fade" id="warningModal" tabindex="-1" aria-labelledby="warningModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content warning-modal">
+        <div class="modal-header warning-header">
+          <h5 class="modal-title" id="warningModalLabel">
+            <i class="bi bi-exclamation-circle-fill me-2"></i>
+            {{ modalService.warningTitle }}
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body container-medium">
+          <div class="warning-content">
+            <p class="warning-message">{{ modalService.warningMessage }}</p>
+            <ul class="warning-list" *ngIf="modalService.warningItems && modalService.warningItems.length > 0">
+              <li *ngFor="let item of modalService.warningItems">{{ item }}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="modalService.cancelWarningAction()">Cancelar</button>
+          <button type="button" class="btn btn-primary" (click)="modalService.proceedWarningAction()">Prosseguir</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -3,8 +3,8 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--padding-medium) var(--spacing-xLarge);
-  background-color: var(--navbar-background);
-  color: var(--navbar-text);
+  background-color: var(--navbar-background-color);
+  color: var(--navbar-text-color);
   position: sticky; 
   top: 0;
   width: 100%;
@@ -25,7 +25,7 @@
 .brand-name {
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-bold);
-  color: var(--navbar-title);
+  color: var(--navbar-text-titleColor);
 }
 
 .logo {
@@ -68,25 +68,25 @@
   align-items: center;
   justify-content: center;
   transition: background-color var(--animation-duration-short) var(--animation-easing-easeInOut);
-  color: var(--navbar-text);
+  color: var(--navbar-text-color);
 }
 
 .btn-icon:hover {
-  background-color: var(--navbar-backgroundActive);
-  color: var(--navbar-textActive);
+  background-color: var(--navbar-background-activeColor);
+  color: var(--navbar-text-activeColor);
 }
 
 .btn-icon.active {
-  background-color: var(--navbar-backgroundActive);
-  color: var(--navbar-textActive);
+  background-color: var(--navbar-background-activeColor);
+  color: var(--navbar-text-activeColor);
 }
 
 .cart-count {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: var(--navbar-buttonBackground);
-  color: var(--navbar-buttonText);
+  background-color: var(--navbar-button-backgroundColor);
+  color: var(--navbar-button-textColor);
   border-radius: 50%;
   width: 18px;
   height: 18px;
@@ -105,7 +105,7 @@
   align-items: center;
   justify-content: center;
   z-index: 2001;
-  color: var(--navbar-text);
+  color: var(--navbar-text-color);
 }
 
 .menu-backdrop {
@@ -124,8 +124,8 @@
   position: absolute;
   top: 62.5px;
   right: 20px;
-  background-color: var(--navbar-alternativeBackground);
-  color: var(--navbar-text);
+  background-color: var(--navbar-background-alternativeColor);
+  color: var(--navbar-text-color);
   border-radius: var(--border-radius-medium);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 3000;
@@ -143,7 +143,7 @@
   padding: 0 0 var(--spacing-medium) 0;
   border-bottom: 1px solid var(--navbar-border);
   font-size: var(--font-size-medium);
-  color: var(--navbar-title);
+  color: var(--navbar-text-titleColor);
 }
 
 .profile-list {
@@ -160,22 +160,22 @@
   display: flex;
   align-items: center;
   padding: var(--padding-small) var(--spacing-medium);
-  color: var(--navbar-text);
+  color: var(--navbar-text-color);
   text-decoration: none;
   border-radius: var(--border-radius-small);
   transition: background-color var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 
 .profile-link:hover {
-  background-color: var(--navbar-backgroundActive);
-  color: var(--navbar-textActive);
+  background-color: var(--navbar-background-activeColor);
+  color: var(--navbar-text-activeColor);
 }
 
 .profile-link i {
   margin-right: var(--spacing-medium);
   width: 20px;
   text-align: center;
-  color: var(--navbar-buttonBackground);
+  color: var(--navbar-button-backgroundColor);
 }
 
 @keyframes fadeIn {

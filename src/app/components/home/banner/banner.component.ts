@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Banner } from '../../../models/banner.model';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: false,
@@ -11,6 +12,8 @@ export class BannerComponent implements OnInit {
   @Input() banners: Banner[] = [];
   currentIndex = 0;
   interval: any;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.startAutoSlide();
@@ -35,5 +38,6 @@ export class BannerComponent implements OnInit {
   }
 
   navigate(route: string) {
+    this.router.navigate([route]);
   }
 }

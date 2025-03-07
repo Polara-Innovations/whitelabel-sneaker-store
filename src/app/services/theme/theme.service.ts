@@ -13,10 +13,9 @@ import { catchError, shareReplay } from 'rxjs/operators';
 export class ThemeService {
   private themeSubject = new BehaviorSubject<ThemeConfig | null>(null);
   private layoutSubject = new BehaviorSubject<LayoutConfig | null>(null);
-  private themeTypeSubject = new BehaviorSubject<string>('light'); // Padrão para 'light'
+  private themeTypeSubject = new BehaviorSubject<string>('light');
   private apiUrl = `${environment.apiUrl}`;
   
-  // Cache para temas disponíveis
   private availableThemesCache$: Observable<ThemeConfig[]> | null = null;
 
   currentTheme = this.themeSubject.asObservable();
@@ -34,7 +33,6 @@ export class ThemeService {
    * @returns Observable com array de temas
    */
   getAvailableThemes(): Observable<ThemeConfig[]> {
-    // Utiliza cache para evitar múltiplas requisições desnecessárias
     if (!this.availableThemesCache$) {
       this.availableThemesCache$ = this.http.get<ThemeConfig[]>(`${this.apiUrl}/themes`)
         .pipe(
@@ -56,8 +54,8 @@ export class ThemeService {
   private loadTheme(): void {
     this.getAvailableThemes().subscribe(
       themes => {
-        const storedThemeType = this.themeTypeSubject.value; // Obtendo o tema armazenado
-        const theme = themes.find(t => t.type === storedThemeType) || themes[0]; // Seleciona o tema correspondente ou o primeiro
+        const storedThemeType = this.themeTypeSubject.value; 
+        const theme = themes.find(t => t.type === storedThemeType) || themes[0]; 
         this.applyTheme(theme);
       },
       error => {
@@ -80,53 +78,80 @@ export class ThemeService {
 
   private applyTheme(theme: ThemeConfig): void {
     this.themeSubject.next(theme);
-    this.themeTypeSubject.next(theme.type); // Atualiza o tipo de tema atual
-    this.setCssVariables(theme.global, 'global-color');
+    this.themeTypeSubject.next(theme.type); 
+    
+    // Aplicar cores globais
+    this.setCssVariablesFlat(theme.global, 'global-color');
 
+    // Aplicar cores para cada componente
     Object.keys(theme.components).forEach(componentName => {
       const componentColors = theme.components[componentName];
-      this.setCssVariables(componentColors, componentName);
+      this.setCssVariablesNested(componentColors, componentName);
     });
   }
 
-  private applyLayout(layout: LayoutConfig): void {
-    this.layoutSubject.next(layout);
-    this.setCssVariables(layout.spacing, 'spacing');
-    this.setCssVariables(layout.font.size, 'font-size');
-    this.setCssVariables(layout.font.weight, 'font-weight');
-    this.setCssVariables(layout.borderRadius, 'border-radius');
-    this.setCssVariables(layout.boxShadow, 'box-shadow');
-    this.setCssVariables(layout.margin, 'margin');
-    this.setCssVariables(layout.padding, 'padding');
-    this.setCssVariables(layout.animation.duration, 'animation-duration');
-    this.setCssVariables(layout.animation.easing, 'animation-easing');
-    this.setCssVariables(layout.iconSize, 'icon-size');
-    this.setCssVariables(layout.opacity, 'opacity');
+  /**
+   * Define variáveis CSS para objetos aninhados, com suporte à hierarquia
+   */
+  private setCssVariablesNested(variables: any, prefix: string, path: string = ''): void {
+    const root = document.documentElement;
+
+    if (variables && typeof variables === 'object') {
+      for (const key in variables) {
+        if (variables.hasOwnProperty(key)) {
+          const value = variables[key];
+          const newPath = path ? `${path}-${key}` : key;
+          
+          if (value !== null && typeof value === 'object') {
+            this.setCssVariablesNested(value, prefix, newPath);
+          } else if (value !== null) {
+            root.style.setProperty(`--${prefix}-${newPath}`, value);
+          }
+        }
+      }
+    }
   }
 
-  private setCssVariables(variables: Record<string, any>, prefix: string): void {
+  /**
+   * Define variáveis CSS para objetos planos (sem aninhamento)
+   */
+  private setCssVariablesFlat(variables: Record<string, any>, prefix: string): void {
     const root = document.documentElement;
 
     if (variables) {
       for (const key in variables) {
         if (variables.hasOwnProperty(key)) {
           const value = variables[key];
-          root.style.setProperty(`--${prefix}-${key}`, value);
+          if (value !== null) {
+            root.style.setProperty(`--${prefix}-${key}`, value);
+          }
         }
       }
     }
   }
 
+  private applyLayout(layout: LayoutConfig): void {
+    this.layoutSubject.next(layout);
+    this.setCssVariablesFlat(layout.spacing, 'spacing');
+    this.setCssVariablesFlat(layout.font.size, 'font-size');
+    this.setCssVariablesFlat(layout.font.weight, 'font-weight');
+    this.setCssVariablesFlat(layout.borderRadius, 'border-radius');
+    this.setCssVariablesFlat(layout.boxShadow, 'box-shadow');
+    this.setCssVariablesFlat(layout.margin, 'margin');
+    this.setCssVariablesFlat(layout.padding, 'padding');
+    this.setCssVariablesFlat(layout.animation.duration, 'animation-duration');
+    this.setCssVariablesFlat(layout.animation.easing, 'animation-easing');
+    this.setCssVariablesFlat(layout.iconSize, 'icon-size');
+    this.setCssVariablesFlat(layout.opacity, 'opacity');
+  }
+
   public changeTheme(type: string): void {
-    // Determina se o argumento é um ID ou um tipo de tema
     this.getAvailableThemes().subscribe(themes => {
       let theme: ThemeConfig | undefined;
       
-      // Verifica se o argumento é um tipo de tema (light, dark, high-contrast)
       if (['light', 'dark', 'high-contrast'].includes(type)) {
         theme = themes.find(t => t.type === type);
       } else {
-        // Caso contrário, assume que é um ID
         theme = themes.find(t => t.type === type);
       }
       
@@ -150,7 +175,6 @@ export class ThemeService {
     );
   }
   
-  // Método para limpar o cache de temas (útil para testes ou atualizações forçadas)
   public clearThemeCache(): void {
     this.availableThemesCache$ = null;
   }

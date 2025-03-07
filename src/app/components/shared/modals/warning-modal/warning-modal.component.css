@@ -1,0 +1,95 @@
+.warning-modal {
+    background-color: var(--modal-background-color);
+    color: var(--modal-text-color);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--box-shadow-modal);
+    }
+    
+    .warning-modal .warning-header {
+    border-bottom: 1px solid var(--global--warning);
+    background-color: var(--global--warning);
+    padding: var(--padding-medium);
+    }
+    
+    .warning-modal .modal-title {
+    color: #212529;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-large);
+    display: flex;
+    align-items: center;
+    }
+    
+    .warning-content {
+    padding: var(--padding-medium) 0;
+    }
+    
+    .warning-message {
+    font-size: var(--font-size-medium);
+    line-height: 1.5;
+    margin-bottom: var(--margin-medium);
+    }
+
+    .warning-list {
+        background-color: rgba(255, 193, 7, 0.1);
+        border-radius: var(--border-radius-small);
+        padding: var(--padding-medium);
+        margin-top: var(--margin-medium);
+        list-style-type: none;
+      }
+      
+      .warning-list li {
+        position: relative;
+        padding-left: var(--padding-large);
+        margin-bottom: var(--margin-small);
+      }
+      
+      .warning-list li:before {
+        content: "⚠️";
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      
+      .warning-modal .modal-footer {
+        border-top: 1px solid var(--modal-border);
+        padding: var(--padding-medium);
+        display: flex;
+        justify-content: flex-end;
+        gap: var(--spacing-medium);
+      }
+      
+      .warning-modal .btn-primary {
+        background-color: var(--global--warning);
+        color: #212529;
+        border: 1px solid var(--global--warning);
+        font-weight: var(--font-weight-bold);
+      }
+      
+      .warning-modal .btn-primary:hover,
+      .warning-modal .btn-primary:focus {
+        background-color: #e0a800;
+        border-color: #e0a800;
+      }
+      
+      .warning-modal .btn-secondary {
+        background-color: var(--modal-button-alternativeBackgroundColor);
+        color: var(--modal-button-alternativeTextColor);
+        border: 1px solid var(--modal-buttonAlternativeBorder);
+      }
+      
+      .warning-modal .btn-secondary:hover,
+      .warning-modal .btn-secondary:focus {
+        background-color: var(--modal-buttonAlternativeactiveBackground);
+        color: var(--modal-buttonAlternativeactiveText);
+      }
+      
+      @media (max-width: 576px) {
+        .warning-modal .modal-footer {
+          flex-direction: column-reverse;
+        }
+        
+        .warning-modal .btn {
+          width: 100%;
+          margin-bottom: var(--margin-small);
+        }
+      }

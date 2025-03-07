@@ -7,8 +7,8 @@
 
 .settings-menu {
   width: 300px;
-  background-color: var(--modal-background);
-  color: var(--modal-text);
+  background-color: var(--modal-background-color);
+  color: var(--modal-text-color);
   border-radius: var(--border-radius-medium);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   animation: fadeIn var(--animation-duration-short) var(--animation-easing-easeInOut);
@@ -25,14 +25,14 @@
 .settings-title {
   font-size: var(--font-size-medium);
   margin: 0;
-  color: var(--modal-title);
+  color: var(--modal-text-titleColor);
   font-weight: var(--font-weight-medium);
 }
 
 .close-button {
   background: none;
   border: none;
-  color: var(--modal-text);
+  color: var(--modal-text-color);
   cursor: pointer;
   font-size: var(--font-size-medium);
   width: 30px;
@@ -45,8 +45,8 @@
 }
 
 .close-button:hover {
-  background-color: var(--modal-backgroundActive);
-  color: var(--modal-textActive);
+  background-color: var(--modal-background-activeColor);
+  color: var(--modal-text-activeColor);
 }
 
 .btn-icon {
@@ -76,7 +76,7 @@ hr {
 .settings-subtitle {
   margin: 0 0 var(--spacing-small) 0;
   font-size: var(--font-size-small);
-  color: var(--modal-subtitle);
+  color: var(--modal-text-subtitleColor);
   font-weight: var(--font-weight-medium);
 }
 
@@ -91,7 +91,7 @@ hr {
   align-items: center;
   cursor: pointer;
   gap: var(--spacing-small);
-  color: var(--modal-text);
+  color: var(--modal-text-color);
 }
 
 .brand-selector select {
@@ -99,15 +99,15 @@ hr {
   padding: var(--padding-small) var(--spacing-medium);
   border-radius: var(--border-radius-small);
   border: 1px solid var(--modal-border);
-  background-color: var(--modal-alternativeBackground);
-  color: var(--modal-text);
+  background-color: var(--modal-background-alternativeColor);
+  color: var(--modal-text-color);
   font-size: var(--font-size-small);
   cursor: pointer;
   transition: border-color var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 
 .brand-selector select:focus {
-  border-color: var(--modal-buttonBackground);
+  border-color: var(--modal-button-backgroundColor);
   outline: none;
 }
 

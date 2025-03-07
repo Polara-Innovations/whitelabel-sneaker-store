@@ -22,8 +22,8 @@
 
 .cart-modal-menu {
   height: 100%;
-  background-color: var(--modal-background);
-  color: var(--modal-text);
+  background-color: var(--modal-background-color);
+  color: var(--modal-text-color);
   display: flex;
   flex-direction: column;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
@@ -41,7 +41,7 @@
 .cart-modal-title {
   font-size: var(--font-size-large);
   margin: 0;
-  color: var(--modal-title);
+  color: var(--modal-text-titleColor);
 }
 
 .cart-modal-close {
@@ -54,14 +54,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--modal-text);
+  color: var(--modal-text-color);
   border-radius: var(--border-radius-small);
   transition: background-color var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 
 .cart-modal-close:hover {
-  background-color: var(--modal-backgroundActive);
-  color: var(--modal-textActive);
+  background-color: var(--modal-background-activeColor);
+  color: var(--modal-text-activeColor);
 }
 
 .btn-icon {
@@ -127,13 +127,13 @@ hr {
 }
 
 .cart-modal-item-name a {
-  color: var(--modal-text);
+  color: var(--modal-text-color);
   text-decoration: none;
   transition: color var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 
 .cart-modal-item-name a:hover {
-  color: var(--modal-textActive);
+  color: var(--modal-text-activeColor);
 }
 
 .cart-modal-item-quantity {
@@ -147,8 +147,8 @@ hr {
   height: 24px;
   border-radius: 50%;
   border: 1px solid var(--modal-border);
-  background-color: var(--modal-alternativeBackground);
-  color: var(--modal-text);
+  background-color: var(--modal-background-alternativeColor);
+  color: var(--modal-text-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -157,8 +157,8 @@ hr {
 }
 
 .quantity-btn:hover:not(:disabled) {
-  background-color: var(--modal-buttonBackground);
-  color: var(--modal-buttonText);
+  background-color: var(--modal-button-backgroundColor);
+  color: var(--modal-button-textColor);
 }
 
 .quantity-btn:disabled {
@@ -169,18 +169,18 @@ hr {
 .quantity-value {
   width: 20px;
   text-align: center;
-  color: var(--modal-text);
+  color: var(--modal-text-color);
 }
 
 .cart-modal-item-price {
   font-weight: var(--font-weight-medium);
-  color: var(--modal-textActive);
+  color: var(--modal-text-activeColor);
 }
 
 .cart-modal-item-remove {
   background: none;
   border: none;
-  color: var(--modal-buttonAlternativeBackground);
+  color: var(--modal-button-alternativeBackgroundColor);
   cursor: pointer;
   width: 30px;
   height: 30px;
@@ -204,11 +204,11 @@ hr {
   justify-content: space-between;
   font-weight: var(--font-weight-medium);
   margin-bottom: var(--spacing-medium);
-  color: var(--modal-text);
+  color: var(--modal-text-color);
 }
 
 .cart-modal-subtotal .price-amount {
-  color: var(--modal-textActive);
+  color: var(--modal-text-activeColor);
 }
 
 .cart-modal-footer-buttons {
@@ -228,25 +228,25 @@ hr {
 }
 
 .view-cart-button {
-  background-color: var(--modal-alternativeBackground);
-  color: var(--modal-text);
+  background-color: var(--modal-background-alternativeColor);
+  color: var(--modal-text-color);
   border: 1px solid var(--modal-border);
 }
 
 .view-cart-button:hover {
-  background-color: var(--modal-backgroundActive);
-  color: var(--modal-textActive);
+  background-color: var(--modal-background-activeColor);
+  color: var(--modal-text-activeColor);
 }
 
 .checkout-button {
-  background-color: var(--modal-buttonBackground);
-  color: var(--modal-buttonText);
-  border: 1px solid var(--modal-buttonBorder);
+  background-color: var(--modal-button-backgroundColor);
+  color: var(--modal-button-textColor);
+  border: 1px solid var(--modal-button-borderColor);
 }
 
 .checkout-button:hover {
-  background-color: var(--modal-buttonactiveBackground);
-  color: var(--modal-buttonactiveText);
+  background-color: var(--modal-button-activeBackgroundColor);
+  color: var(--modal-button-activeTextColor);
 }
 
 .empty-cart {
@@ -258,7 +258,7 @@ hr {
   padding-top: var(--spacing-xlarge);
   padding-bottom: var(--spacing-xlarge);
   text-align: center;
-  color: var(--modal-text);
+  color: var(--modal-text-color);
 }
 
 .empty-cart-icon {
@@ -270,17 +270,17 @@ hr {
 .continue-shopping {
   margin-top: var(--spacing-medium);
   padding: var(--padding-small) var(--spacing-medium);
-  background-color: var(--modal-buttonBackground);
-  color: var(--modal-buttonText);
-  border: 1px solid var(--modal-buttonBorder);
+  background-color: var(--modal-button-backgroundColor);
+  color: var(--modal-button-textColor);
+  border: 1px solid var(--modal-button-borderColor);
   border-radius: var(--border-radius-small);
   cursor: pointer;
   transition: background-color var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 
 .continue-shopping:hover {
-  background-color: var(--modal-buttonactiveBackground);
-  color: var(--modal-buttonactiveText);
+  background-color: var(--modal-button-activeBackgroundColor);
+  color: var(--modal-button-activeTextColor);
 }
 
 .clear-cart-container {
@@ -292,15 +292,16 @@ hr {
 
 .clear-cart-button {
   background-color: transparent;
-  color: var(--modal-buttonAlternativeBackground);
+  color: var(--modal-button-alternativeBackgroundColor);
   border: 1px solid var(--modal-buttonAlternativeBorder);
   border-radius: var(--border-radius-small);
   padding: var(--padding-small) var(--spacing-medium);
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-bold);
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: var(--spacing-xsmall);
+  gap: var(--spacing-small);
   transition: all var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 

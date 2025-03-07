@@ -5,7 +5,7 @@
 }
 
 .form-container {
-  background-color: var(--contact-background);
+  background-color: var(--contact-background-color);
   border: 1px solid var(--contact-border);
   border-radius: var(--border-radius-medium);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -15,7 +15,7 @@
 }
 
 .form-title {
-  color: var(--contact-title);
+  color: var(--contact-text-titleColor);
   font-size: var(--font-size-xlarge);
   margin-bottom: var(--spacing-large);
   text-align: center;
@@ -36,7 +36,7 @@
 }
 
 label {
-  color: var(--contact-subtitle);
+  color: var(--contact-text-subtitleColor);
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-small);
 }
@@ -46,8 +46,8 @@ textarea {
   padding: var(--padding-small);
   border: 1px solid var(--contact-border);
   border-radius: var(--border-radius-small);
-  background-color: var(--contact-alternativeBackground);
-  color: var(--contact-text);
+  background-color: var(--contact-background-alternativeColor);
+  color: var(--contact-text-color);
   transition: border-color var(--animation-duration-short) var(--animation-easing-easeInOut), 
               box-shadow var(--animation-duration-short) var(--animation-easing-easeInOut);
   font-size: var(--font-size-small);
@@ -62,17 +62,17 @@ textarea {
 input:focus, 
 textarea:focus {
   outline: none;
-  border-color: var(--contact-buttonBackground);
+  border-color: var(--contact-button-backgroundColor);
   box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
 }
 
 input.invalid, 
 textarea.invalid {
-  border-color: var(--contact-buttonAlternativeBackground);
+  border-color: var(--contact-button-alternativeBackgroundColor);
 }
 
 .error-message {
-  color: var(--contact-buttonAlternativeBackground);
+  color: var(--contact-button-alternativeBackgroundColor);
   font-size: var(--font-size-xsmall);
   margin-top: 2px;
 }
@@ -93,8 +93,8 @@ textarea.invalid {
 
 .form-alert.error {
   background-color: rgba(220, 53, 69, 0.1);
-  border: 1px solid var(--contact-buttonAlternativeBackground);
-  color: var(--contact-buttonAlternativeBackground);
+  border: 1px solid var(--contact-button-alternativeBackgroundColor);
+  color: var(--contact-button-alternativeBackgroundColor);
 }
 
 .form-actions {
@@ -104,9 +104,9 @@ textarea.invalid {
 }
 
 .submit-button {
-  background-color: var(--contact-buttonBackground);
-  color: var(--contact-buttonText);
-  border: 1px solid var(--contact-buttonBorder);
+  background-color: var(--contact-button-backgroundColor);
+  color: var(--contact-button-textColor);
+  border: 1px solid var(--contact-button-borderColor);
   padding: var(--padding-small) var(--spacing-large);
   border-radius: var(--border-radius-small);
   font-weight: var(--font-weight-medium);
@@ -121,13 +121,13 @@ textarea.invalid {
 }
 
 .submit-button:hover:not(:disabled) {
-  background-color: var(--contact-buttonactiveBackground);
-  color: var(--contact-buttonactiveText);
+  background-color: var(--contact-button-activeBackgroundColor);
+  color: var(--contact-button-activeTextColor);
 }
 
 .submit-button:disabled {
-  background-color: var(--contact-alternativeBackground);
-  color: var(--contact-text);
+  background-color: var(--contact-background-alternativeColor);
+  color: var(--contact-text-color);
   opacity: 0.6;
   cursor: not-allowed;
 }
@@ -137,7 +137,7 @@ textarea.invalid {
   height: 20px;
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  border-top-color: var(--contact-buttonText);
+  border-top-color: var(--contact-button-textColor);
   animation: spin 1s ease-in-out infinite;
 }
 

@@ -10,11 +10,11 @@
   }
   
   ::-webkit-scrollbar-track {
-    background: var(--scrollbar-alternativeBackground); /* Cor de fundo da scrollbar (pode ser ajustada) */
+    background: var(--scrollbar-background-alternativeColor); /* Cor de fundo da scrollbar (pode ser ajustada) */
   }
   
   ::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-background); /* Usando a cor do alternativeBackground */
+    background: var(--scrollbar-background-color); /* Usando a cor do alternativeBackground */
     border-radius: 4px;
   }
   
@@ -24,5 +24,5 @@
   
   * {
     scrollbar-width: thin; /* Firefox */
-    scrollbar-color: var(--scrollbar-background) var(--scrollbar-alternativeBackground); /* Firefox */
+    scrollbar-color: var(--scrollbar-background-color) var(--scrollbar-background-alternativeColor); /* Firefox */
   }

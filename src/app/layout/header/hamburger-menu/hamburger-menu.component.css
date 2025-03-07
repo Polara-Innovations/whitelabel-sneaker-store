@@ -4,8 +4,8 @@
   right: 0; 
   width: 280px;
   height: 100vh;
-  background-color: var(--menu-background);
-  color: var(--menu-text);
+  background-color: var(--menu-background-color);
+  color: var(--menu-text-color);
   transition: transform var(--animation-duration-medium) var(--animation-easing-easeInOut);
   transform: translateX(100%);
   z-index: 3000;
@@ -42,14 +42,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--menu-text);
+  color: var(--menu-text-color);
   border-radius: var(--border-radius-small);
   transition: background-color var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 
 .close-button:hover {
-  background-color: var(--menu-backgroundActive);
-  color: var(--menu-textActive);
+  background-color: var(--menu-background-activeColor);
+  color: var(--menu-text-activeColor);
 }
 
 .btn-icon {

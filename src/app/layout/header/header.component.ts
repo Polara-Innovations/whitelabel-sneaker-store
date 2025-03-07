@@ -1,10 +1,11 @@
 import { Component, OnInit, OnDestroy, HostListener, ElementRef, Renderer2, ViewChild } from '@angular/core';
-import { SettingsService } from '../../services/settings/settings.service';
 import { ThemeService } from '../../services/theme/theme.service';
 import { CartService } from '../../services/cart/cart.service';
 import { NavService } from '../../services/api/nav/nav.service';
 import { Subscription } from 'rxjs';
 import { NavCategory } from '../../models/nav-category.model';
+import { MenuService } from '../../services/api/menu/menu.service';
+import { MenuConfig } from '../../models/menu-config.model';
 
 @Component({
   selector: 'app-header',
@@ -37,16 +38,22 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private themeSubscription?: Subscription;
 
   constructor(
-    private settingsService: SettingsService,
+    private menuService: MenuService,
     private themeService: ThemeService,
     private cartService: CartService,
     private navService: NavService,
     private renderer: Renderer2
   ) {
-    const menuConfig = this.settingsService.getMenuConfig().header;
-    this.isHamburgerMenu = menuConfig.type === 'hamburger';
-    this.tabs = menuConfig.items;
-    this.logoUrl = this.settingsService.getLogoUrl();
+    const menuConfig = this.menuService.loadMenuConfig().subscribe(config => {
+      this.setupMenu(config);
+    }
+    );
+    this.logoUrl = 'https://triibo.com.br/wp-content/uploads/2023/02/Imagem-Nike-Logo-PNG-1024x1024-1.png'
+  }
+
+  private setupMenu(config: MenuConfig): void {
+    this.isHamburgerMenu = config.type === 'hamburger';
+    this.tabs = config.tabs;
   }
 
   ngOnInit() {

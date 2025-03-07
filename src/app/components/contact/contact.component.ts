@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SettingsService } from '../../services/settings/settings.service';
-import { ThemeService } from '../../services/theme/theme.service';
+import { TextService } from '../../services/api/text/text.service';
 
 @Component({
   selector: 'app-contact',
@@ -11,12 +10,11 @@ import { ThemeService } from '../../services/theme/theme.service';
 export class ContactComponent implements OnInit {
   texts: any;
 
-  constructor(
-    private settingsService: SettingsService,
-    private themeService: ThemeService
-  ) {}
+  constructor(private textService: TextService) {}
 
   ngOnInit(): void {
-    this.texts = this.settingsService.getTexts().contact;
+    this.textService.loadTextConfig().subscribe(config => {
+      this.texts = config.contact;
+    });
   }
 }

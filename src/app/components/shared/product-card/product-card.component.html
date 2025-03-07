@@ -1,12 +1,16 @@
-<div class="product-card-container" (click)="onCardClick()">
+<div class="product-card-container" [class.out-of-stock]="product && !product.inStock" (click)="onCardClick()">
   <div class="image-container">
     <img [src]="getFirstImageUrl()" [alt]="product?.title ?? ''" />
+    <div class="out-of-stock-label" *ngIf="product && !product.inStock">
+      Fora de estoque
+    </div>
   </div>
 
   <div class="product-card container-small">
     <div class="product-title-container">
       <div class="tags" *ngIf="showTags">
         <span class="tag" *ngFor="let tag of product?.tags">{{ tag }}</span>
+        <span class="tag out-of-stock-tag" *ngIf="product && !product.inStock">Indisponível</span>
       </div>
       <h3 class="product-title" [attr.title]="product?.title">{{ product?.title }}</h3>
       <div class="tooltip" role="tooltip">{{ product?.title }}</div>
@@ -15,11 +19,13 @@
     
     <div class="price-container">
       <span class="product-price">R$ {{ product?.price | number:'1.2-2' }}</span>
-      <span *ngIf="product?.oldPrice" class="product-price-old">R$ {{ product?.oldPrice | number:'1.2-2' }}</span>
+      <span *ngIf="product?.oldPrice && product?.inStock" class="product-price-old">R$ {{ product?.oldPrice | number:'1.2-2' }}</span>
     </div>
 
-    <button *ngIf="showAction" class="action-button" (click)="onCardClick(); $event.stopPropagation()">
-      {{ actionLabel }}
+    <button *ngIf="showAction" class="action-button" 
+            [disabled]="product && !product.inStock"
+            (click)="onCardClick(); $event.stopPropagation()">
+      {{ product && !product.inStock ? 'Indisponível' : actionLabel }}
     </button>
   </div>
 </div>

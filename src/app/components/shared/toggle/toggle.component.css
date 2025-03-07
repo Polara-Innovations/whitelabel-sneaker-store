@@ -3,7 +3,7 @@
   position: relative;
   width: 45px;
   height: 20px;
-  background-color: var(--toggle-buttonAlternativeBackground);
+  background-color: var(--toggle-button-alternativeBackgroundColor);
   border-radius: var(--border-radius-xLarge);
   cursor: pointer;
   transition: background-color var(--animation-duration-short) var(--animation-easing-easeInOut);
@@ -12,7 +12,7 @@
 }
 
 .toggle-switch.active {
-  background-color: var(--toggle-backgroundActive);
+  background-color: var(--toggle-background-activeColor);
 }
 
 .toggle-slider {
@@ -21,7 +21,7 @@
   left: 10%;
   width: 16px;
   height: 16px;
-  background-color: var(--toggle-buttonBackground);
+  background-color: var(--toggle-button-backgroundColor);
   border-radius: 50%;
   transition: transform var(--animation-duration-short) var(--animation-easing-easeInOut);
   box-shadow: var(--box-shadow-default);
@@ -43,7 +43,7 @@
 
 /* ----- Acessibilidade ----- */
 .toggle-switch[aria-checked="true"] {
-  background-color: var(--toggle-backgroundActive);
+  background-color: var(--toggle-background-activeColor);
 }
 
 .toggle-switch[aria-checked="true"] .toggle-slider {

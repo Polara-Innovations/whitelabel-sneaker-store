@@ -6,7 +6,7 @@
 }
 
 .team-member-card {
-  background-color: var(--aboutUs-background);
+  background-color: var(--aboutUs-background-color);
   border-radius: var(--border-radius-small);
   overflow: hidden;
   border: 1px solid var(--aboutUs-border);
@@ -47,19 +47,19 @@
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-bold);
   margin: 0 0 var(--spacing-small) 0;
-  color: var(--aboutUs-title);
+  color: var(--aboutUs-text-titleColor);
 }
 
 .member-position {
   font-size: var(--font-size-medium);
-  color: var(--aboutUs-subtitle);
+  color: var(--aboutUs-text-subtitleColor);
   margin: 0 0 var(--spacing-small) 0;
   font-weight: var(--font-weight-regular);
 }
 
 .member-description {
   font-size: var(--font-size-small);
-  color: var(--aboutUs-text);
+  color: var(--aboutUs-text-color);
   line-height: 1.6;
   margin-bottom: var(--spacing-medium);
   flex-grow: 1;
@@ -78,14 +78,14 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background-color: var(--aboutUs-buttonBackground);
-  color: var(--aboutUs-buttonText);
+  background-color: var(--aboutUs-button-backgroundColor);
+  color: var(--aboutUs-button-textColor);
   transition: all var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 
 .social-icon:hover {
-  background-color: var(--aboutUs-buttonactiveBackground);
-  color: var(--aboutUs-buttonactiveText);
+  background-color: var(--aboutUs-button-activeBackgroundColor);
+  color: var(--aboutUs-button-activeTextColor);
   transform: translateY(-2px);
 }
 

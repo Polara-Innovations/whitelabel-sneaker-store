@@ -5,7 +5,7 @@
 }
 
 .info-container {
-  background-color: var(--contact-background);
+  background-color: var(--contact-background-color);
   border: 1px solid var(--contact-border);
   border-radius: var(--border-radius-medium);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -16,7 +16,7 @@
 }
 
 .info-title {
-  color: var(--contact-title);
+  color: var(--contact-text-titleColor);
   font-size: var(--font-size-xlarge);
   margin-bottom: var(--spacing-large);
   text-align: center;
@@ -42,8 +42,8 @@
 }
 
 .info-icon {
-  background-color: var(--contact-buttonBackground);
-  color: var(--contact-buttonText);
+  background-color: var(--contact-button-backgroundColor);
+  color: var(--contact-button-textColor);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -55,7 +55,7 @@
 }
 
 .info-item:hover .info-icon {
-  background-color: var(--contact-buttonactiveBackground);
+  background-color: var(--contact-button-activeBackgroundColor);
 }
 
 .info-content {
@@ -63,14 +63,14 @@
 }
 
 .info-content h3 {
-  color: var(--contact-subtitle);
+  color: var(--contact-text-subtitleColor);
   font-size: var(--font-size-medium);
   margin: 0 0 var(--spacing-xsmall) 0;
   font-weight: var(--font-weight-medium);
 }
 
 .info-content p {
-  color: var(--contact-text);
+  color: var(--contact-text-color);
   margin: 0;
   line-height: 1.5;
   font-size: var(--font-size-small);
@@ -81,7 +81,7 @@
 }
 
 .social-section h3 {
-  color: var(--contact-subtitle);
+  color: var(--contact-text-subtitleColor);
   font-size: var(--font-size-medium);
   margin-bottom: var(--spacing-small);
   text-align: center;
@@ -95,8 +95,8 @@
 }
 
 .social-icons a {
-  background-color: var(--contact-buttonBackground);
-  color: var(--contact-buttonText);
+  background-color: var(--contact-button-backgroundColor);
+  color: var(--contact-button-textColor);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -109,7 +109,7 @@
 
 .social-icons a:hover {
   transform: translateY(-3px);
-  background-color: var(--contact-buttonactiveBackground);
+  background-color: var(--contact-button-activeBackgroundColor);
 }
 
 .map-section {
@@ -120,7 +120,7 @@
 }
 
 .map-section h3 {
-  color: var(--contact-subtitle);
+  color: var(--contact-text-subtitleColor);
   font-size: var(--font-size-medium);
   margin-bottom: var(--spacing-small);
   text-align: center;

@@ -1,39 +1,45 @@
 .brand-list-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
 }
 
 .brand-list-track {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-medium);
   width: 100%;
-  max-width: 1200px;
+  display: flex;
   justify-content: center;
-  position: relative;
+}
+
+.brand-grid {
+  display: grid;
+  /* Os valores abaixo serão definidos dinamicamente pelo TypeScript */
+  /* grid-template-columns: definido pelo TypeScript */
+  /* gap: definido pelo TypeScript */
+  /* max-width: definido pelo TypeScript */
+  justify-content: center;
+  width: 100%; /* Ocupar toda a largura disponível */
+  
+  /* Centraliza os itens da última linha quando incompleta */
+  grid-auto-flow: row dense; /* Organiza os itens de forma densa */
+  justify-items: center; /* Centraliza horizontalmente cada item dentro de sua célula */
+}
+
+/* Este wrapper é necessário para garantir que os itens 
+   da última linha (quando incompleta) fiquem centralizados */
+.brand-grid::after {
+  content: "";
+  grid-column: 1 / -1; /* Ocupa toda a linha */
+  height: 0; /* Não ocupa espaço vertical */
 }
 
 .brand-card-item {
-  transition: transform var(--animation-duration-short) var(--animation-easing-easeInOut);
+  width: 100%;
+  height: 100%;
 }
 
-@media (max-width: 992px) {
-  .brand-list-track {
-    gap: var(--spacing-small);
-  }
-}
-
-@media (max-width: 768px) {
-  .brand-list-track {
-    width: 100%;
-    gap: var(--spacing-xsmall);
-  }
-}
-
-@media (max-width: 576px) {
-  .brand-list-track {
-    justify-content: space-between;
-  }
+.placeholder-item {
+  visibility: hidden;
+  width: 100%;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  grid-row: auto;
 }

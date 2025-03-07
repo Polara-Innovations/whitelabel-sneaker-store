@@ -1,0 +1,22 @@
+<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content info-modal">
+        <div class="modal-header info-header">
+          <h5 class="modal-title" id="infoModalLabel">
+            <i class="bi bi-info-circle-fill me-2"></i>
+            {{ modalService.infoTitle }}
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body container-medium">
+          <div class="info-content">
+            <p class="info-message">{{ modalService.infoMessage }}</p>
+            <div class="info-details" *ngIf="modalService.infoDetails" [innerHTML]="modalService.infoDetails"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendi</button>
+        </div>
+      </div>
+    </div>
+  </div>

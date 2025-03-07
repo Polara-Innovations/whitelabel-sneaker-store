@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Product } from "../../models/product.model";
 import { CartService } from "../../services/cart/cart.service";
 import { ProductsService } from "../../services/api/products/products.service";
+import { ModalService } from "../../services/modal/modal.service";
 
 interface ZoomPosition {
   x: number;
@@ -57,9 +58,9 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private productService: ProductsService,
-    private cartService: CartService
+    private cartService: CartService,
+    private modalService: ModalService
   ) {}
 
   @HostListener('window:resize')
@@ -69,8 +70,8 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     const productId = +this.route.snapshot.paramMap.get('id')!;
-    this.fetchProduct(productId);
-    this.fetchRelatedProducts();
+    this.LoadProduct(productId);
+    this.loadRelatedProducts();
   }
 
   ngAfterViewInit(): void {
@@ -79,7 +80,7 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
     }, 100);
   }
 
-  fetchProduct(id: number): void {
+  LoadProduct(id: number): void {
     // Simulando dados de produto
     this.productService.getProductById(id).subscribe((product: Product) => {
       this.product = product;
@@ -90,44 +91,21 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
     });
   }
 
-  fetchRelatedProducts(): void {
-    // Estrutura simplificada para exemplo
-    this.relatedProducts = [
-      {
-        id: 2,
-        title: 'Nike Air Force 1',
-        description: 'O clássico tênis de basquete que revolucionou o jogo agora é um ícone da moda.',
-        oldPrice: 899.90,
-        price: 799.90,
-        imagesByColor: {
-          '#ff0000': ['https://picsum.photos/800/600?random=11']
-        },
-        tags: ['Tênis', 'Nike', 'Casual'],
-        inStock: true,
-        stockQuantity: 5,
-        colors: ['#ff0000'],
-        sizes: ['39', '40', '41'],
-        categories: ['Basquete', 'Moda'],
-        createdAt: new Date('2023-01-01')
-      },
-      {
-        id: 3,
-        title: 'Nike Air Jordan 1',
-        description: 'O lendário tênis que definiu uma era continua a inspirar novas gerações.',
-        oldPrice: 1599.90,
-        price: 1299.90,
-        imagesByColor: {
-          '#0000ff': ['https://picsum.photos/800/600?random=13']
-        },
-        tags: ['Tênis', 'Nike', 'Basketball'],
-        inStock: true,
-        stockQuantity: 8,
-        colors: ['#0000ff'],
-        sizes: ['40', '42', '43'],
-        categories: ['Basquete', 'Esporte'],
-        createdAt: new Date('2023-02-01')
+  loadRelatedProducts(): void {
+    this.productService.getProducts().subscribe({
+      next: (response) => {
+        this.relatedProducts = this.findRelatedProducts(response.products);
       }
-    ];
+    });
+  }
+
+  findRelatedProducts(products: Product[]): Product[] {
+    if (!this.product) return [];
+    return products.filter(p => 
+      p.id !== this.product.id && 
+      (p.categories.some(category => this.product.categories.includes(category)) || 
+       p.tags.some(tag => this.product.tags.includes(tag)))
+    );
   }
 
   selectColor(color: string): void {
@@ -197,7 +175,20 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
     });
 
     // Feedback para o usuário
-    alert('Produto adicionado ao carrinho!');
+    this.modalService.openInfoModal(
+      'Produto adicionado ao carrinho',
+      `O produto ${this.product.title} foi adicionado ao carrinho, confira os detalhes abaixo:`,
+      `<div>
+      <ul>
+        <li>Produto: <strong>${this.product.title}</strong></li>
+        <li>Cor: <strong>${this.getColorName(this.selectedColor)}</strong></li>
+        <li>Tamanho: <strong>${this.selectedSize}</strong></li>
+        <li>Quantidade: <strong>${this.selectedQuantity}</strong></li>
+        <li>Preço: <strong>R$${this.product.price.toFixed(2)}</strong></li>
+      </ul>
+      </div>`,
+      5000
+    );
   }
 
   toggleWishlist(): void {

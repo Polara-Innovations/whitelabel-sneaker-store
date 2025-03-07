@@ -1,81 +1,81 @@
 <div class="form-container container-large">
-  <h2 class="form-title">{{ texts.title }}</h2>
+  <h2 class="form-title">{{ texts?.title }}</h2>
   
   <div *ngIf="submitSuccess" class="form-alert success">
-    {{ texts.successMessage }}
+    {{ texts?.successMessage }}
   </div>
   
   <div *ngIf="submitError" class="form-alert error">
-    {{ texts.errorMessage }}
+    {{ texts?.errorMessage }}
   </div>
   
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
     <div class="form-group container-small">
-      <label for="name">{{ texts.name }}</label>
+      <label for="name">{{ texts?.name }}</label>
       <input 
         type="text" 
         id="name" 
         formControlName="name" 
         [class.invalid]="isInvalid('name')"
-        placeholder="{{ texts.namePlaceholder }}"
+        placeholder="{{ texts?.namePlaceholder }}"
         aria-required="true"
       >
       <div *ngIf="hasError('name', 'required')" class="error-message">
-        {{ texts.nameRequired }}
+        {{ texts?.nameRequired }}
       </div>
       <div *ngIf="hasError('name', 'minlength')" class="error-message">
-        {{ texts.nameMinLength }}
+        {{ texts?.nameMinLength }}
       </div>
     </div>
     
     <div class="form-group container-small">
-      <label for="email">{{ texts.email }}</label>
+      <label for="email">{{ texts?.email }}</label>
       <input 
         type="email" 
         id="email" 
         formControlName="email" 
         [class.invalid]="isInvalid('email')"
-        placeholder="{{ texts.emailPlaceholder }}"
+        placeholder="{{ texts?.emailPlaceholder }}"
         aria-required="true"
       >
       <div *ngIf="hasError('email', 'required')" class="error-message">
-        {{ texts.emailRequired }}
+        {{ texts?.emailRequired }}
       </div>
       <div *ngIf="hasError('email', 'email')" class="error-message">
-        {{ texts.emailInvalid }}
+        {{ texts?.emailInvalid }}
       </div>
     </div>
     
     <div class="form-group container-small">
-      <label for="subject">{{ texts.subject }}</label>
+      <label for="subject">{{ texts?.subject }}</label>
       <input 
         type="text" 
         id="subject" 
         formControlName="subject" 
         [class.invalid]="isInvalid('subject')"
-        placeholder="{{ texts.subjectPlaceholder }}"
+        placeholder="{{ texts?.subjectPlaceholder }}"
         aria-required="true"
       >
       <div *ngIf="hasError('subject', 'required')" class="error-message">
-        {{ texts.subjectRequired }}
+        {{ texts?.subjectRequired }}
       </div>
     </div>
     
     <div class="form-group container-small">
-      <label for="message">{{ texts.message }}</label>
+      <label for="message">{{ texts?.message }}</label>
       <textarea 
         id="message" 
         formControlName="message" 
         [class.invalid]="isInvalid('message')"
         rows="5" 
-        placeholder="{{ texts.messagePlaceholder }}"
+        placeholder="{{ texts?.messagePlaceholder }}"
         aria-required="true"
       ></textarea>
       <div *ngIf="hasError('message', 'required')" class="error-message">
-        {{ texts.messageRequired }}
+        {{ texts?.messageRequired }}
       </div>
       <div *ngIf="hasError('message', 'minlength')" class="error-message">
-        {{ texts.messageMinLength }}
+        {{ texts?.messageMinLength }}
       </div>
     </div>
     
@@ -86,7 +86,7 @@
         [disabled]="isSubmitting"
         aria-label="Enviar formulário"
       >
-        <span *ngIf="!isSubmitting">{{ texts.button }}</span>
+        <span *ngIf="!isSubmitting">{{ texts?.button }}</span>
         <span *ngIf="isSubmitting" class="spinner" aria-hidden="true"></span>
       </button>
     </div>

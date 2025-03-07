@@ -1,39 +1,39 @@
 .about-us-container {
   width: 100%;
-  background-color: var(--aboutUs-background);
+  background-color: var(--aboutUs-background-color);
   padding: var(--padding-xLarge);
 }
 
 .page-title {
   font-size: var(--font-size-xLarge);
-  color: var(--aboutUs-title);
+  color: var(--aboutUs-text-titleColor);
   margin-bottom: var(--spacing-medium);
   font-weight: var(--font-weight-bold);
 }
 
 .page-subtitle {
   font-size: var(--font-size-large);
-  color: var(--aboutUs-subtitle);
+  color: var(--aboutUs-text-subtitleColor);
   max-width: 800px;
   margin: 0 auto;
 }
 
 .about-section {
   border: 1px solid var(--aboutUs-border);
-  background-color: var(--aboutUs-alternativeBackground) !important;
+  background-color: var(--aboutUs-background-alternativeColor) !important;
   border-radius: var(--border-radius-medium);
   box-shadow: var(--box-shadow-default);
 }
 
 .section-title {
   font-size: var(--font-size-large);
-  color: var(--aboutUs-title);
+  color: var(--aboutUs-text-titleColor);
   margin-bottom: var(--spacing-small);
 }
 
 .section-subtitle {
   font-size: var(--font-size-medium);
-  color: var(--aboutUs-subtitle);
+  color: var(--aboutUs-text-subtitleColor);
   max-width: 700px;
   margin: 0 auto;
 }

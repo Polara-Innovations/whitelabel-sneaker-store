@@ -1,0 +1,1729 @@
+{
+    "themes": [
+        {
+            "id": 1,
+            "type": "light",
+            "global": {
+                "primary": "#007bff",
+                "secondary": "#6c757d",
+                "tertiary": "#28a745",
+                "quaternary": "#ffc107",
+                "quinary": "#dc3545",
+                "success": "#28a745",
+                "warning": "#ffc107",
+                "error": "#dc3545",
+                "info": "#17a2b8"
+            },
+            "components": {
+                "form": {
+                    "background": {
+                        "color": "#ffffff",
+                        "alternativeColor": "#f8f9fa",
+                        "activeColor": "#e9ecef"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#212529",
+                        "activeColor": "#000000",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#6c757d",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#5a6268",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": {
+                        "inputBackgroundColor": "#ffffff",
+                        "inputTextColor": "#212529",
+                        "inputBorderColor": "#ced4da",
+                        "inputActiveBorderColor": "#86b7fe",
+                        "inputPlaceholderColor": "#6c757d",
+                        "inputFocusBackgroundColor": "#ffffff",
+                        "inputFocusTextColor": "#212529",
+                        "inputFocusBorderColor": "#86b7fe",
+                        "inputErrorBackgroundColor": "#ffffff",
+                        "inputErrorTextColor": "#dc3545",
+                        "inputErrorBorderColor": "#dc3545",
+                        "inputSuccessBackgroundColor": "#ffffff",
+                        "inputSuccessTextColor": "#28a745",
+                        "inputSuccessBorderColor": "#28a745",
+                        "inputDisabledBackgroundColor": "#e9ecef",
+                        "inputDisabledTextColor": "#6c757d",
+                        "inputDisabledBorderColor": "#ced4da"
+                    }
+                },
+                "scrollbar": {
+                    "background": {
+                        "color": "#f8f9fa",
+                        "alternativeColor": "#e9ecef",
+                        "activeColor": "#dee2e6"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#212529",
+                        "activeColor": "#000000",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#6c757d",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#5a6268",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": null
+                },
+                "home": {
+                    "background": {
+                        "color": "#ffffff",
+                        "alternativeColor": "#f8f9fa",
+                        "activeColor": "#e9ecef"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#212529",
+                        "activeColor": "#000000",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#6c757d",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#5a6268",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": null
+                },
+                "toggle": {
+                    "background": {
+                        "color": "#f8f9fa",
+                        "alternativeColor": "#e9ecef",
+                        "activeColor": "#0d6efd"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#212529",
+                        "activeColor": "#000000",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffffff",
+                        "textColor": "#212529",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#0d6efd",
+                        "borderColor": "#dee2e6",
+                        "alternativeBackgroundColor": "#adb5bd",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#6c757d",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#adb5bd"
+                    },
+                    "input": null
+                },
+                "banner": {
+                    "background": {
+                        "color": "#f8f9fa",
+                        "alternativeColor": "#e9ecef",
+                        "activeColor": "#ced4da"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#212529",
+                        "activeColor": "#000000",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#6c757d",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#5a6268",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": null
+                },
+                "productDetails": {
+                    "background": {
+                        "color": "#ffffff",
+                        "alternativeColor": "#f8f9fa",
+                        "activeColor": "#e9ecef"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#212529",
+                        "activeColor": "#000000",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#6c757d",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#5a6268",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": null
+                },
+                "tooltip": {
+                    "background": {
+                        "color": "#ffffff",
+                        "alternativeColor": "#f8f9fa",
+                        "activeColor": "#e9ecef"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#495057",
+                        "activeColor": "#212529",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "card": {
+                    "background": {
+                        "color": "#ffffff",
+                        "alternativeColor": "#f8f9fa",
+                        "activeColor": "#343a40"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#495057",
+                        "activeColor": "#0d6efd",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#28a745",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#218838",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#28a745"
+                    },
+                    "input": null
+                },
+                "carousel": {
+                    "background": {
+                        "color": "#ffffff",
+                        "alternativeColor": "#f8f9fa",
+                        "activeColor": "#e9ecef"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#495057",
+                        "activeColor": "#212529",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "searchBar": {
+                    "background": {
+                        "color": "#ffffff",
+                        "alternativeColor": "#f8f9fa",
+                        "activeColor": "#f1f3f5"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#495057",
+                        "activeColor": "#212529",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "products": {
+                    "background": {
+                        "color": "#ffffff",
+                        "alternativeColor": "#f8f9fa",
+                        "activeColor": "#e9ecef"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#495057",
+                        "activeColor": "#212529",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#6c757d",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#5a6268",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": null
+                },
+                "faq": {
+                    "background": {
+                        "color": "#ffffff",
+                        "alternativeColor": "#f8f9fa",
+                        "activeColor": "#e9ecef"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#495057",
+                        "activeColor": "#212529",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#6c757d",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#5a6268",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": null
+                },
+                "contact": {
+                    "background": {
+                        "color": "#ffffff",
+                        "alternativeColor": "#f8f9fa",
+                        "activeColor": "#e9ecef"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#495057",
+                        "activeColor": "#212529",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#6c757d",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#5a6268",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": null
+                },
+                "navItem": {
+                    "background": {
+                        "color": "#ffffff",
+                        "alternativeColor": "#f8f9fa",
+                        "activeColor": "#e9ecef"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#495057",
+                        "activeColor": "#0d6efd",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#f8f9fa",
+                        "alternativeTextColor": "#495057",
+                        "alternativeactiveBackgroundColor": "#e9ecef",
+                        "alternativeactiveTextColor": "#212529",
+                        "alternativeBorderColor": "#dee2e6"
+                    },
+                    "input": null
+                },
+                "menu": {
+                    "background": {
+                        "color": "#ffffff",
+                        "alternativeColor": "#f8f9fa",
+                        "activeColor": "#e9ecef"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#495057",
+                        "activeColor": "#212529",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "modal": {
+                    "background": {
+                        "color": "#ffffff",
+                        "alternativeColor": "#f8f9fa",
+                        "activeColor": "#e9ecef"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#495057",
+                        "activeColor": "#212529",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#dc3545",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#c82333",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#dc3545"
+                    },
+                    "input": null
+                },
+                "navbar": {
+                    "background": {
+                        "color": "#ffffff",
+                        "alternativeColor": "#f8f9fa",
+                        "activeColor": "#e9ecef"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#495057",
+                        "activeColor": "#212529",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "footer": {
+                    "background": {
+                        "color": "#f8f9fa",
+                        "alternativeColor": "#ffffff",
+                        "activeColor": "#e9ecef"
+                    },
+                    "border": "#dee2e6",
+                    "text": {
+                        "color": "#495057",
+                        "activeColor": "#212529",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "aboutUs": {
+                    "background": {
+                        "color": "#ffffff",
+                        "alternativeColor": "#f8f9fa",
+                        "activeColor": "#f1f1f1"
+                    },
+                    "border": "#ced4da",
+                    "text": {
+                        "color": "#212529",
+                        "activeColor": "#000000",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "team": {
+                    "background": {
+                        "color": "#ffffff",
+                        "alternativeColor": "#f8f9fa",
+                        "activeColor": "#e2e6ea"
+                    },
+                    "border": "#ced4da",
+                    "text": {
+                        "color": "#212529",
+                        "activeColor": "#212529",
+                        "titleColor": "#212529",
+                        "subtitleColor": "#6c757d"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                }
+            }
+        },
+        {
+            "id": 2,
+            "type": "dark",
+            "global": {
+                "primary": "#343a40",
+                "secondary": "#6c757d",
+                "tertiary": "#28a745",
+                "quaternary": "#ffc107",
+                "quinary": "#dc3545",
+                "success": "#28a745",
+                "warning": "#ffc107",
+                "error": "#dc3545",
+                "info": "#17a2b8"
+            },
+            "components": {
+                "form": {
+                    "background": {
+                        "color": "#212529",
+                        "alternativeColor": "#343a40",
+                        "activeColor": "#1a1d20"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#f8f9fa",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#f8f9fa",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#6c757d",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#5a6268",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": {
+                        "inputBackgroundColor": "#343a40",
+                        "inputTextColor": "#f8f9fa",
+                        "inputBorderColor": "#495057",
+                        "inputActiveBorderColor": "#86b7fe",
+                        "inputPlaceholderColor": "#adb5bd",
+                        "inputFocusBackgroundColor": "#343a40",
+                        "inputFocusTextColor": "#ffffff",
+                        "inputFocusBorderColor": "#86b7fe",
+                        "inputErrorBackgroundColor": "#343a40",
+                        "inputErrorTextColor": "#dc3545",
+                        "inputErrorBorderColor": "#dc3545",
+                        "inputSuccessBackgroundColor": "#343a40",
+                        "inputSuccessTextColor": "#28a745",
+                        "inputSuccessBorderColor": "#28a745",
+                        "inputDisabledBackgroundColor": "#212529",
+                        "inputDisabledTextColor": "#6c757d",
+                        "inputDisabledBorderColor": "#495057"
+                    }
+                },
+                "scrollbar": {
+                    "background": {
+                        "color": "#212529",
+                        "alternativeColor": "#343a40",
+                        "activeColor": "#1a1d20"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#f8f9fa",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#f8f9fa",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "home": {
+                    "background": {
+                        "color": "#212529",
+                        "alternativeColor": "#343a40",
+                        "activeColor": "#1a1d20"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#f8f9fa",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#f8f9fa",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#6c757d",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#5a6268",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": null
+                },
+                "toggle": {
+                    "background": {
+                        "color": "#212529",
+                        "alternativeColor": "#343a40",
+                        "activeColor": "#0d6efd"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#f8f9fa",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#f8f9fa",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffffff",
+                        "textColor": "#212529",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#0d6efd",
+                        "borderColor": "#495057",
+                        "alternativeBackgroundColor": "#6c757d",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#5a6268",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": null
+                },
+                "banner": {
+                    "background": {
+                        "color": "#212529",
+                        "alternativeColor": "#343a40",
+                        "activeColor": "#6c757d"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#f8f9fa",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#f8f9fa",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#6c757d",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#5a6268",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": null
+                },
+                "productDetails": {
+                    "background": {
+                        "color": "#212529",
+                        "alternativeColor": "#343a40",
+                        "activeColor": "#1a1d20"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#f8f9fa",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#f8f9fa",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#6c757d",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#5a6268",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": null
+                },
+                "tooltip": {
+                    "background": {
+                        "color": "#343a40",
+                        "alternativeColor": "#495057",
+                        "activeColor": "#212529"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#e9ecef",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "card": {
+                    "background": {
+                        "color": "#343a40",
+                        "alternativeColor": "#212529",
+                        "activeColor": "#495057"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#e9ecef",
+                        "activeColor": "#0d6efd",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#28a745",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#218838",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#28a745"
+                    },
+                    "input": null
+                },
+                "carousel": {
+                    "background": {
+                        "color": "#343a40",
+                        "alternativeColor": "#495057",
+                        "activeColor": "#212529"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#e9ecef",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "searchBar": {
+                    "background": {
+                        "color": "#343a40",
+                        "alternativeColor": "#495057",
+                        "activeColor": "#212529"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#e9ecef",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "products": {
+                    "background": {
+                        "color": "#343a40",
+                        "alternativeColor": "#495057",
+                        "activeColor": "#212529"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#e9ecef",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#6c757d",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#5a6268",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": null
+                },
+                "faq": {
+                    "background": {
+                        "color": "#343a40",
+                        "alternativeColor": "#495057",
+                        "activeColor": "#212529"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#e9ecef",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#6c757d",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#5a6268",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": null
+                },
+                "contact": {
+                    "background": {
+                        "color": "#343a40",
+                        "alternativeColor": "#212529",
+                        "activeColor": "#495057"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#e9ecef",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#6c757d",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#5a6268",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": null
+                },
+                "navItem": {
+                    "background": {
+                        "color": "#343a40",
+                        "alternativeColor": "#495057",
+                        "activeColor": "#212529"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#e9ecef",
+                        "activeColor": "#6ea8fe",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#495057",
+                        "alternativeTextColor": "#e9ecef",
+                        "alternativeactiveBackgroundColor": "#343a40",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": null
+                },
+                "menu": {
+                    "background": {
+                        "color": "#212529",
+                        "alternativeColor": "#343a40",
+                        "activeColor": "#495057"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#e9ecef",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "modal": {
+                    "background": {
+                        "color": "#343a40",
+                        "alternativeColor": "#495057",
+                        "activeColor": "#212529"
+                    },
+                    "border": "#6c757d",
+                    "text": {
+                        "color": "#e9ecef",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#dc3545",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#c82333",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#dc3545"
+                    },
+                    "input": null
+                },
+                "navbar": {
+                    "background": {
+                        "color": "#212529",
+                        "alternativeColor": "#343a40",
+                        "activeColor": "#495057"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#e9ecef",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "footer": {
+                    "background": {
+                        "color": "#212529",
+                        "alternativeColor": "#343a40",
+                        "activeColor": "#495057"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#e9ecef",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#adb5bd"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "aboutUs": {
+                    "background": {
+                        "color": "#343a40",
+                        "alternativeColor": "#495057",
+                        "activeColor": "#212529"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#cccccc",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#f8f9fa"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "team": {
+                    "background": {
+                        "color": "#343a40",
+                        "alternativeColor": "#495057",
+                        "activeColor": "#212529"
+                    },
+                    "border": "#495057",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#f8f9fa"
+                    },
+                    "button": {
+                        "backgroundColor": "#0d6efd",
+                        "textColor": "#ffffff",
+                        "activeBackgroundColor": "#0b5ed7",
+                        "activeTextColor": "#ffffff",
+                        "borderColor": "#0d6efd",
+                        "alternativeBackgroundColor": "#6c757d",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#5a6268",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#6c757d"
+                    },
+                    "input": null
+                }
+            }
+        },
+        {
+            "id": 3,
+            "type": "high-contrast",
+            "global": {
+                "primary": "#000000",
+                "secondary": "#ffffff",
+                "tertiary": "#ffcc00",
+                "quaternary": "#ff3300",
+                "quinary": "#33ccff",
+                "success": "#00ff00",
+                "warning": "#ffcc00",
+                "error": "#ff3300",
+                "info": "#33ccff"
+            },
+            "components": {
+                "form": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#333333"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffff00",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": "#ffffff",
+                        "alternativeTextColor": "#000000",
+                        "alternativeactiveBackgroundColor": "#cccccc",
+                        "alternativeactiveTextColor": "#000000",
+                        "alternativeBorderColor": "#ffffff"
+                    },
+                    "input": {
+                        "inputBackgroundColor": "#000000",
+                        "inputTextColor": "#ffffff",
+                        "inputBorderColor": "#ffffff",
+                        "inputActiveBorderColor": "#ffff00",
+                        "inputPlaceholderColor": "#aaaaaa",
+                        "inputFocusBackgroundColor": "#000000",
+                        "inputFocusTextColor": "#ffffff",
+                        "inputFocusBorderColor": "#ffff00",
+                        "inputErrorBackgroundColor": "#000000",
+                        "inputErrorTextColor": "#ff3300",
+                        "inputErrorBorderColor": "#ff3300",
+                        "inputSuccessBackgroundColor": "#000000",
+                        "inputSuccessTextColor": "#00ff00",
+                        "inputSuccessBorderColor": "#00ff00",
+                        "inputDisabledBackgroundColor": "#333333",
+                        "inputDisabledTextColor": "#aaaaaa",
+                        "inputDisabledBorderColor": "#555555"
+                    }
+                },
+                "scrollbar": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#333333"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffff00",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "home": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#333333"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffff00",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": "#ffffff",
+                        "alternativeTextColor": "#000000",
+                        "alternativeactiveBackgroundColor": "#cccccc",
+                        "alternativeactiveTextColor": "#000000",
+                        "alternativeBorderColor": "#ffffff"
+                    },
+                    "input": null
+                },
+                "toggle": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#ffff00"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffff00",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffffff",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffffff",
+                        "alternativeBackgroundColor": "#777777",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#999999",
+                        "alternativeactiveTextColor": "#000000",
+                        "alternativeBorderColor": "#777777"
+                    },
+                    "input": null
+                },
+                "banner": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#ffff00"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffff99",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": "#ffffff",
+                        "alternativeTextColor": "#000000",
+                        "alternativeactiveBackgroundColor": "#cccccc",
+                        "alternativeactiveTextColor": "#000000",
+                        "alternativeBorderColor": "#ffffff"
+                    },
+                    "input": null
+                },
+                "productDetails": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#333333"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffff99",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": "#ffffff",
+                        "alternativeTextColor": "#000000",
+                        "alternativeactiveBackgroundColor": "#cccccc",
+                        "alternativeactiveTextColor": "#000000",
+                        "alternativeBorderColor": "#ffffff"
+                    },
+                    "input": null
+                },
+                "tooltip": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#333333"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffff00",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "card": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#333333"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffff00",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": "#00ff00",
+                        "alternativeTextColor": "#000000",
+                        "alternativeactiveBackgroundColor": "#00cc00",
+                        "alternativeactiveTextColor": "#000000",
+                        "alternativeBorderColor": "#00ff00"
+                    },
+                    "input": null
+                },
+                "carousel": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#333333"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffff00",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "searchBar": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#333333"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffff00",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "products": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#333333"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffff00",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": "#cccccc",
+                        "alternativeTextColor": "#000000",
+                        "alternativeactiveBackgroundColor": "#999999",
+                        "alternativeactiveTextColor": "#000000",
+                        "alternativeBorderColor": "#cccccc"
+                    },
+                    "input": null
+                },
+                "faq": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#333333"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffff00",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": "#cccccc",
+                        "alternativeTextColor": "#000000",
+                        "alternativeactiveBackgroundColor": "#999999",
+                        "alternativeactiveTextColor": "#000000",
+                        "alternativeBorderColor": "#cccccc"
+                    },
+                    "input": null
+                },
+                "contact": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#333333"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffff00",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": "#cccccc",
+                        "alternativeTextColor": "#000000",
+                        "alternativeactiveBackgroundColor": "#999999",
+                        "alternativeactiveTextColor": "#000000",
+                        "alternativeBorderColor": "#cccccc"
+                    },
+                    "input": null
+                },
+                "navItem": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#333333"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffff00",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": "#333333",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#444444",
+                        "alternativeactiveTextColor": "#ffff00",
+                        "alternativeBorderColor": "#ffffff"
+                    },
+                    "input": null
+                },
+                "menu": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#333333"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffff00",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "modal": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#333333"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffff00",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": "#ff0000",
+                        "alternativeTextColor": "#ffffff",
+                        "alternativeactiveBackgroundColor": "#cc0000",
+                        "alternativeactiveTextColor": "#ffffff",
+                        "alternativeBorderColor": "#ff0000"
+                    },
+                    "input": null
+                },
+                "navbar": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#333333"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffff00",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "footer": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#333333"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffff00",
+                        "titleColor": "#ffff00",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "aboutUs": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#444444"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#cccccc",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffff99",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": null,
+                        "alternativeTextColor": null,
+                        "alternativeactiveBackgroundColor": null,
+                        "alternativeactiveTextColor": null,
+                        "alternativeBorderColor": null
+                    },
+                    "input": null
+                },
+                "team": {
+                    "background": {
+                        "color": "#000000",
+                        "alternativeColor": "#111111",
+                        "activeColor": "#444444"
+                    },
+                    "border": "#ffffff",
+                    "text": {
+                        "color": "#ffffff",
+                        "activeColor": "#ffffff",
+                        "titleColor": "#ffffff",
+                        "subtitleColor": "#ffffff"
+                    },
+                    "button": {
+                        "backgroundColor": "#ffff00",
+                        "textColor": "#000000",
+                        "activeBackgroundColor": "#ffffff",
+                        "activeTextColor": "#000000",
+                        "borderColor": "#ffff00",
+                        "alternativeBackgroundColor": "#ffffff",
+                        "alternativeTextColor": "#000000",
+                        "alternativeactiveBackgroundColor": "#cccccc",
+                        "alternativeactiveTextColor": "#000000",
+                        "alternativeBorderColor": "#ffffff"
+                    },
+                    "input": null
+                }
+            }
+        }
+    ]
+}

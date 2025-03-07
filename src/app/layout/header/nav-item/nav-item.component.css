@@ -9,25 +9,25 @@
   padding: var(--padding-small);
   display: flex;
   align-items: center;
-  color: var(--navItem-text);
+  color: var(--navItem-text-color);
   text-decoration: none;
   border-radius: var(--border-radius-small);
   transition: all var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 
 .nav-link:hover {
-  background-color: var(--navItem-backgroundActive);
-  color: var(--navItem-textActive);
+  background-color: var(--navItem-background-activeColor);
+  color: var(--navItem-text-activeColor);
 }
 
 .nav-item.active .nav-link {
-  color: var(--navItem-textActive);
+  color: var(--navItem-text-activeColor);
   font-weight: var(--font-weight-medium);
 }
 
 /* Indicador de item ativo */
 .title-line {
-  background-color: var(--navItem-textActive);
+  background-color: var(--navItem-text-activeColor);
   position: absolute;
   transition: all var(--animation-duration-short) var(--animation-easing-easeInOut);
   height: 2px;

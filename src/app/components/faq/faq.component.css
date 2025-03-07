@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 100%;
   margin: 0 auto;
-  background-color: var(--faq-background);
+  background-color: var(--faq-background-color);
 }
 
 .faq-header {
@@ -21,7 +21,7 @@
 .faq-title {
   font-size: var(--font-size-xxlarge);
   font-weight: var(--font-weight-bold);
-  color: var(--faq-title);
+  color: var(--faq-text-titleColor);
   margin: 0;
 }
 
@@ -42,7 +42,7 @@
   left: var(--spacing-small);
   top: 50%;
   transform: translateY(-50%);
-  color: var(--faq-text);
+  color: var(--faq-text-color);
   opacity: 0.5;
 }
 
@@ -51,8 +51,8 @@
   padding: var(--padding-small) var(--spacing-large);
   border: 1px solid var(--faq-border);
   border-radius: var(--border-radius-small);
-  background-color: var(--faq-alternativeBackground);
-  color: var(--faq-text);
+  background-color: var(--faq-background-alternativeColor);
+  color: var(--faq-text-color);
   font-size: var(--font-size-medium);
   transition: border-color var(--animation-duration-short) var(--animation-easing-easeInOut),
               box-shadow var(--animation-duration-short) var(--animation-easing-easeInOut);
@@ -60,7 +60,7 @@
 
 .search-input:focus {
   outline: none;
-  border-color: var(--faq-buttonBackground);
+  border-color: var(--faq-button-backgroundColor);
   box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
 }
 
@@ -71,7 +71,7 @@
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: var(--faq-text);
+  color: var(--faq-text-color);
   opacity: 0.5;
   cursor: pointer;
   padding: 0;
@@ -85,9 +85,9 @@
 
 .search-btn {
   padding: var(--padding-small) var(--spacing-medium);
-  background-color: var(--faq-buttonBackground);
-  color: var(--faq-buttonText);
-  border: 1px solid var(--faq-buttonBorder);
+  background-color: var(--faq-button-backgroundColor);
+  color: var(--faq-button-textColor);
+  border: 1px solid var(--faq-button-borderColor);
   border-radius: var(--border-radius-small);
   cursor: pointer;
   transition: background-color var(--animation-duration-short) var(--animation-easing-easeInOut),
@@ -96,8 +96,8 @@
 }
 
 .search-btn:hover {
-  background-color: var(--faq-buttonactiveBackground);
-  color: var(--faq-buttonactiveText);
+  background-color: var(--faq-button-activeBackgroundColor);
+  color: var(--faq-button-activeTextColor);
 }
 
 .faq-controls {
@@ -109,8 +109,8 @@
 
 .faq-control-btn {
   padding: var(--padding-small) var(--spacing-medium);
-  background-color: var(--faq-buttonAlternativeBackground);
-  color: var(--faq-buttonAlternativeText);
+  background-color: var(--faq-button-alternativeBackgroundColor);
+  color: var(--faq-button-alternativeTextColor);
   border: 1px solid var(--faq-buttonAlternativeBorder);
   border-radius: var(--border-radius-small);
   cursor: pointer;
@@ -144,7 +144,7 @@
   height: 40px;
   border: 4px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  border-top-color: var(--faq-buttonBackground);
+  border-top-color: var(--faq-button-backgroundColor);
   animation: spin 1s ease-in-out infinite;
   margin-bottom: var(--spacing-medium);
 }
@@ -155,21 +155,21 @@
 
 .faq-error i, .faq-empty i {
   font-size: var(--font-size-xxxlarge);
-  color: var(--faq-title);
+  color: var(--faq-text-titleColor);
   opacity: 0.3;
   margin-bottom: var(--spacing-medium);
 }
 
 .faq-error p, .faq-empty p {
   margin-bottom: var(--spacing-medium);
-  color: var(--faq-subtitle);
+  color: var(--faq-text-subtitleColor);
 }
 
 .retry-btn, .clear-search-btn {
   padding: var(--padding-small) var(--spacing-medium);
-  background-color: var(--faq-buttonBackground);
-  color: var(--faq-buttonText);
-  border: 1px solid var(--faq-buttonBorder);
+  background-color: var(--faq-button-backgroundColor);
+  color: var(--faq-button-textColor);
+  border: 1px solid var(--faq-button-borderColor);
   border-radius: var(--border-radius-small);
   cursor: pointer;
   transition: background-color var(--animation-duration-short) var(--animation-easing-easeInOut),
@@ -178,8 +178,8 @@
 }
 
 .retry-btn:hover, .clear-search-btn:hover {
-  background-color: var(--faq-buttonactiveBackground);
-  color: var(--faq-buttonactiveText);
+  background-color: var(--faq-button-activeBackgroundColor);
+  color: var(--faq-button-activeTextColor);
 }
 
 .faq-sections {
@@ -197,7 +197,7 @@
 .section-title {
   font-size: var(--font-size-xlarge);
   font-weight: var(--font-weight-medium);
-  color: var(--faq-title);
+  color: var(--faq-text-titleColor);
   margin: 0 0 var(--spacing-small) 0;
   padding-bottom: var(--spacing-small);
   border-bottom: 1px solid var(--faq-border);

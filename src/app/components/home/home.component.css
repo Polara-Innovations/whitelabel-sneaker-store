@@ -1,6 +1,6 @@
 .home{
     display: flex;
     flex-direction: column;
-    background-color: var(--home-background);
-    color: var(--home-text);
+    background-color: var(--home-background-color);
+    color: var(--home-text-color);
 }

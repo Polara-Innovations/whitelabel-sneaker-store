@@ -19,8 +19,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--faq-alternativeBackground);
-  color: var(--faq-text);
+  background-color: var(--faq-background-alternativeColor);
+  color: var(--faq-text-color);
   cursor: pointer;
   font-weight: var(--font-weight-medium);
   transition: background-color var(--animation-duration-short) var(--animation-easing-easeInOut),
@@ -29,13 +29,13 @@
 }
 
 .faq-question:hover {
-  background-color: var(--faq-backgroundActive);
-  color: var(--faq-textActive);
+  background-color: var(--faq-background-activeColor);
+  color: var(--faq-text-activeColor);
 }
 
 .faq-item.expanded .faq-question {
-  background-color: var(--faq-backgroundActive);
-  color: var(--faq-textActive);
+  background-color: var(--faq-background-activeColor);
+  color: var(--faq-text-activeColor);
   font-weight: var(--font-weight-bold);
 }
 
@@ -50,20 +50,20 @@
   justify-content: center;
   width: 24px;
   height: 24px;
-  color: var(--faq-text);
+  color: var(--faq-text-color);
   transition: transform var(--animation-duration-short) var(--animation-easing-easeInOut),
     color var(--animation-duration-short) var(--animation-easing-easeInOut);
   margin-left: var(--spacing-small);
 }
 
 .faq-item.expanded .toggle-icon {
-  color: var(--faq-textActive);
+  color: var(--faq-text-activeColor);
   transform: rotate(180deg);
 }
 
 .faq-answer {
-  background-color: var(--faq-background);
-  color: var(--faq-text);
+  background-color: var(--faq-background-color);
+  color: var(--faq-text-color);
   padding: 0;
   max-height: 0;
   overflow: hidden;
@@ -79,7 +79,7 @@
 .answer-content {
   line-height: 1.6;
   font-size: var(--font-size-small);
-  color: var(--faq-subtitle);
+  color: var(--faq-text-subtitleColor);
 }
 
 @media (max-width: 992px) {

@@ -12,18 +12,7 @@ import { Category } from '../../../models/category.model';
 export class CategoryCardComponent {
   @Input() category!: Category;
   
-  // Permitir ajuste de largura externamente
-  @HostBinding('style.width') width = '250px';
-  @HostBinding('style.display') display = 'block';
-  
   constructor(private router: Router) {}
-
-  @Input()
-  set ngStyle(styles: {[key: string]: any}) {
-    if (styles && styles['width.px']) {
-      this.width = `${styles['width.px']}px`;
-    }
-  }
 
   onCardClick(): void {
     this.router.navigate(['/products'], { queryParams: { category: this.category.name } });

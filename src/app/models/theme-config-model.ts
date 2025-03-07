@@ -11,24 +11,57 @@ export interface ColorPalette {
 }
 
 export interface ComponentColors {
-  background: string;
-  alternativeBackground: string;
-  text: string;
-  textActive: string;
+  background: BackgroundColors;
   border: string;
-  backgroundActive: string;
-  title: string;
-  subtitle: string;
-  buttonBackground: string;
-  buttonText: string;
-  buttonactiveBackground: string;
-  buttonactiveText: string;
-  buttonBorder: string;
-  buttonAlternativeBackground: string;
-  buttonAlternativeText: string;
-  buttonAlternativeactiveBackground: string;
-  buttonAlternativeactiveText: string;
-  buttonAlternativeBorder: string;
+  text: TextColors;
+  button: ButtonColors;
+  input: InputColors;
+}
+
+export interface BackgroundColors {
+  color: string;
+  alternativeColor: string;
+  activeColor: string;
+}
+
+export interface TextColors {
+  color: string;
+  activeColor: string;
+  titleColor: string;
+  subtitleColor: string;
+}
+
+export interface ButtonColors {
+  backgroundColor: string;
+  textColor: string;
+  activeBackgroundColor: string;
+  activeTextColor: string;
+  borderColor: string;
+  alternativeBackgroundColor: string;
+  alternativeTextColor: string;
+  alternativeactiveBackgroundColor: string;
+  alternativeactiveTextColor: string;
+  alternativeBorderColor: string;
+}
+
+export interface InputColors {
+  inputBackgroundColor: string;
+  inputTextColor: string;
+  inputBorderColor: string;
+  inputActiveBorderColor: string;
+  inputPlaceholderColor: string;
+  inputFocusBackgroundColor: string;
+  inputFocusTextColor: string;
+  inputFocusBorderColor: string;
+  inputErrorBackgroundColor: string;
+  inputErrorTextColor: string;
+  inputErrorBorderColor: string;
+  inputSuccessBackgroundColor: string;
+  inputSuccessTextColor: string;
+  inputSuccessBorderColor: string;
+  inputDisabledBackgroundColor: string;
+  inputDisabledTextColor: string;
+  inputDisabledBorderColor: string;
 }
 
 export interface ThemeConfig {

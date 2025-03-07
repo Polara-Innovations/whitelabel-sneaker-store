@@ -1,11 +1,11 @@
 /* ----- Estilos do Banner ----- */
 .banner {
-  background-color: var(--banner-background);
+  background-color: var(--banner-background-color);
   margin-bottom: var(--margin-xLarge);
 }
 
 .banner-carousel {
-  background-color: var(--banner-alternativeBackground);
+  background-color: var(--banner-background-alternativeColor);
   box-shadow: var(--box-shadow-card);
   height: 500px;
   position: relative;
@@ -41,7 +41,7 @@
 }
 
 .bullet {
-  background-color: var(--banner-buttonAlternativeBackground);
+  background-color: var(--banner-button-alternativeBackgroundColor);
   opacity: var(--opacity-medium);
   border: none;
   border-radius: 50%;
@@ -55,7 +55,7 @@
 }
 
 .bullet.active {
-  background-color: var(--banner-backgroundActive);
+  background-color: var(--banner-background-activeColor);
   opacity: var(--opacity-high);
 }
 

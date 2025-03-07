@@ -1,0 +1,76 @@
+.terms-modal {
+    background-color: var(--modal-background-color);
+    color: var(--modal-text-color);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--box-shadow-modal);
+  }
+  
+  .terms-modal .modal-header {
+    border-bottom: 1px solid var(--modal-border);
+    background-color: var(--modal-background-alternativeColor);
+    padding: var(--padding-medium);
+  }
+  
+  .terms-modal .modal-title {
+    color: var(--modal-text-titleColor);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-large);
+  }
+  
+  .terms-modal .modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  
+  .terms-section {
+    margin-bottom: var(--margin-large);
+  }
+  
+  .terms-section h6 {
+    color: var(--modal-text-subtitleColor);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--margin-small);
+  }
+  
+  .terms-section p {
+    margin-bottom: var(--margin-medium);
+    line-height: 1.6;
+  }
+  
+  .terms-section ul {
+    margin-bottom: var(--margin-medium);
+    padding-left: var(--padding-large);
+  }
+  
+  .terms-section li {
+    margin-bottom: var(--margin-small);
+  }
+  
+  .terms-modal .modal-footer {
+    border-top: 1px solid var(--modal-border);
+    padding: var(--padding-medium);
+  }
+  
+  .terms-modal .btn-primary {
+    background-color: var(--modal-button-backgroundColor);
+    color: var(--modal-button-textColor);
+    border: 1px solid var(--modal-button-borderColor);
+  }
+  
+  .terms-modal .btn-primary:hover,
+  .terms-modal .btn-primary:focus {
+    background-color: var(--modal-button-activeBackgroundColor);
+    color: var(--modal-button-activeTextColor);
+  }
+  
+  .terms-modal .btn-secondary {
+    background-color: var(--modal-button-alternativeBackgroundColor);
+    color: var(--modal-button-alternativeTextColor);
+    border: 1px solid var(--modal-buttonAlternativeBorder);
+  }
+  
+  .terms-modal .btn-secondary:hover,
+  .terms-modal .btn-secondary:focus {
+    background-color: var(--modal-buttonAlternativeactiveBackground);
+    color: var(--modal-buttonAlternativeactiveText);
+  }

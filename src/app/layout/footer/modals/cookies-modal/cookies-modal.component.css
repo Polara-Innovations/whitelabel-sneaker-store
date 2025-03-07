@@ -1,0 +1,162 @@
+.cookies-modal {
+    background-color: var(--modal-background-color);
+    color: var(--modal-text-color);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--box-shadow-modal);
+  }
+  
+  .cookies-modal .modal-header {
+    border-bottom: 1px solid var(--modal-border);
+    background-color: var(--modal-background-alternativeColor);
+    padding: var(--padding-medium);
+  }
+  
+  .cookies-modal .modal-title {
+    color: var(--modal-text-titleColor);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-large);
+  }
+  
+  .cookies-content {
+    padding: var(--padding-medium) 0;
+  }
+  
+  .cookies-intro {
+    font-weight: var(--font-weight-regular);
+    margin-bottom: var(--margin-medium);
+  }
+  
+  .cookies-section {
+    margin-bottom: var(--margin-medium);
+  }
+  
+  .cookies-section h6 {
+    color: var(--modal-text-subtitleColor);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--margin-small);
+  }
+  
+  .cookies-list {
+    padding-left: var(--padding-large);
+    margin-bottom: var(--margin-medium);
+  }
+  
+  .cookies-list li {
+    margin-bottom: var(--margin-small);
+  }
+  
+  .cookies-options {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--modal-border);
+    padding: var(--padding-medium);
+  }
+  
+  .cookies-preferences {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-medium);
+    margin-bottom: var(--margin-medium);
+  }
+  
+  .cookies-preferences .form-check {
+    min-width: 120px;
+  }
+  
+  .form-check-input:checked {
+    background-color: var(--modal-button-backgroundColor);
+    border-color: var(--modal-button-borderColor);
+  }
+  
+  .form-check-input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .form-check-label {
+    cursor: pointer;
+  }
+  
+  .cookies-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-small);
+    justify-content: flex-end;
+  }
+  
+  @media (max-width: 576px) {
+    .cookies-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .cookies-actions .btn {
+      width: 100%;
+      margin-bottom: var(--margin-small);
+    }
+  }
+  
+  .cookies-modal .btn-primary {
+    background-color: var(--modal-button-backgroundColor);
+    color: var(--modal-button-textColor);
+    border: 1px solid var(--modal-button-borderColor);
+    transition: background-color var(--animation-duration-short) var(--animation-easing-easeInOut);
+  }
+  
+  .cookies-modal .btn-primary:hover,
+  .cookies-modal .btn-primary:focus {
+    background-color: var(--modal-button-activeBackgroundColor);
+    color: var(--modal-button-activeTextColor);
+  }
+  
+  .cookies-modal .btn-secondary {
+    background-color: var(--modal-button-alternativeBackgroundColor);
+    color: var(--modal-button-alternativeTextColor);
+    border: 1px solid var(--modal-buttonAlternativeBorder);
+    transition: background-color var(--animation-duration-short) var(--animation-easing-easeInOut);
+  }
+  
+  .cookies-modal .btn-secondary:hover,
+  .cookies-modal .btn-secondary:focus {
+    background-color: var(--modal-buttonAlternativeactiveBackground);
+    color: var(--modal-buttonAlternativeactiveText);
+  }
+  
+  .cookies-modal .btn-accept-all {
+    font-weight: var(--font-weight-bold);
+  }
+
+  .cookies-modal .btn-primary {
+    background-color: var(--modal-button-backgroundColor);
+    color: var(--modal-button-textColor);
+    border: 1px solid var(--modal-button-borderColor);
+  }
+  
+  .cookies-modal .btn-primary:hover,
+  .cookies-modal .btn-primary:focus {
+    background-color: var(--modal-button-activeBackgroundColor);
+    color: var(--modal-button-activeTextColor);
+  }
+  
+  .cookies-modal .btn-secondary {
+    background-color: var(--modal-button-alternativeBackgroundColor);
+    color: var(--modal-button-alternativeTextColor);
+    border: 1px solid var(--modal-buttonAlternativeBorder);
+  }
+  
+  .cookies-modal .btn-secondary:hover,
+  .cookies-modal .btn-secondary:focus {
+    background-color: var(--modal-buttonAlternativeactiveBackground);
+    color: var(--modal-buttonAlternativeactiveText);
+  }
+  
+  /* Estilo para o modal quando está em tela cheia em dispositivos móveis */
+  @media (max-width: 767px) {
+    .modal-dialog-scrollable {
+      max-height: 100%;
+    }
+    
+    .cookies-modal .modal-body {
+      max-height: 50vh;
+    }
+  }

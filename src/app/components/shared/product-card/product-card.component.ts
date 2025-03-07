@@ -28,6 +28,10 @@ export class ProductCardComponent {
   }
 
   onCardClick(): void {
+    if (this.product && !this.product.inStock) {
+      return;
+    }
+    
     this.router.navigate(['/product-details', this.product?.id]);
   }
 

@@ -23,13 +23,13 @@
 }
 
 .filter-header:hover {
-  color: var(--products-textActive);
+  color: var(--products-text-activeColor);
 }
 
 .filter-header h4 {
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-medium);
-  color: var(--products-title);
+  color: var(--products-text-titleColor);
   margin: 0;
 }
 
@@ -57,13 +57,13 @@
   width: 16px;
   height: 16px;
   cursor: pointer;
-  accent-color: var(--products-buttonBackground);
+  accent-color: var(--products-button-backgroundColor);
 }
 
 .filter-option label {
   display: flex;
   align-items: center;
-  color: var(--products-text);
+  color: var(--products-text-color);
   font-size: var(--font-size-small);
   cursor: pointer;
   user-select: none;
@@ -71,7 +71,7 @@
 
 .option-count {
   margin-left: var(--spacing-xsmall);
-  color: var(--products-subtitle);
+  color: var(--products-text-subtitleColor);
   font-size: var(--font-size-xsmall);
 }
 
@@ -98,7 +98,7 @@
 
 .price-input-group label {
   font-size: var(--font-size-small);
-  color: var(--products-text);
+  color: var(--products-text-color);
 }
 
 .price-input-wrapper {
@@ -110,7 +110,7 @@
 .price-currency {
   position: absolute;
   left: var(--spacing-small);
-  color: var(--products-text);
+  color: var(--products-text-color);
   font-size: var(--font-size-small);
 }
 
@@ -120,8 +120,8 @@
   padding-left: 2rem; /* Espaço para o símbolo R$ */
   border: 1px solid var(--products-border);
   border-radius: var(--border-radius-small);
-  background-color: var(--products-alternativeBackground);
-  color: var(--products-text);
+  background-color: var(--products-background-alternativeColor);
+  color: var(--products-text-color);
   font-size: var(--font-size-small);
   transition: border-color var(--animation-duration-short) var(--animation-easing-easeInOut),
               box-shadow var(--animation-duration-short) var(--animation-easing-easeInOut);
@@ -129,7 +129,7 @@
 
 .price-input-group input:focus {
   outline: none;
-  border-color: var(--products-buttonBackground);
+  border-color: var(--products-button-backgroundColor);
   box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
 }
 

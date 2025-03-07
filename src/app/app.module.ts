@@ -42,6 +42,14 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { TeamSectionComponent } from './components/about-us/team-section/team-section.component';
 import { MissionVisionValuesComponent } from './components/about-us/mission-vision-values/mission-vision-values.component';
 import { ContentSectionsComponent } from './components/about-us/content-sections/content-sections.component';
+import { ModalsContainerComponent } from './components/shared/modals-container/modals-container.component';
+import { InfoModalComponent } from './components/shared/modals/info-modal/info-modal.component';
+import { ErrorModalComponent } from './components/shared/modals/error-modal/error-modal.component';
+import { TermsModalComponent } from './layout/footer/modals/terms-modal/terms-modal.component';
+import { CookiesModalComponent } from './layout/footer/modals/cookies-modal/cookies-modal.component';
+import { PrivacyModalComponent } from './layout/footer/modals/privacy-modal/privacy-modal.component';
+import { WarningModalComponent } from './components/shared/modals/warning-modal/warning-modal.component';
+import { ConfirmationModalComponent } from './components/shared/modals/confirmation-modal/confirmation-modal.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +89,15 @@ import { ContentSectionsComponent } from './components/about-us/content-sections
     SafePipe,
     faqItemComponent,
     NavItemDropdownComponent,
-    TeamSectionComponent  
+    TeamSectionComponent,
+    ModalsContainerComponent,
+    InfoModalComponent,
+    ErrorModalComponent,
+    TermsModalComponent,
+    CookiesModalComponent,
+    PrivacyModalComponent,
+    WarningModalComponent,
+    ConfirmationModalComponent
   ],
   imports: [
     BrowserModule,

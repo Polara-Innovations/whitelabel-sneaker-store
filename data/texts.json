@@ -1,0 +1,447 @@
+{
+    "texts": {
+        "home": {
+            "banner": {
+              "title": "Bem-vindo à Sneaker Store",
+              "subtitle": "Os melhores tênis para você, com estilo e conforto garantidos.",
+              "button": "Confira nossos produtos"
+            },
+            "featuredProducts": {
+              "title": "Produtos em Destaque"
+            },
+            "aboutUs": {
+              "title": "Sobre Nós",
+              "description": "Somos apaixonados por tênis e moda. Nossa missão é oferecer os melhores produtos para nossos clientes."
+            }
+          },
+          "products": {
+            "title": "Nossos Produtos"
+          },
+          "about-us": {
+            "pageTitle": "Sobre Nós",
+            "pageSubtitle": "Conheça mais sobre a Sneaker Store e nossa equipe",
+            "teamSection": {
+                "title": "Nossa Equipe",
+                "subtitle": "Conheça as pessoas por trás da Sneaker Store",
+                "members": [
+                    {
+                        "id": "1",
+                        "name": "João Silva",
+                        "position": "CEO & Fundador",
+                        "photoUrl": "https://picsum.photos/800/600?random=1",
+                        "description": "João fundou a Sneaker Store em 2015 com a visão de criar uma experiência única para os amantes de tênis. Com mais de 15 anos de experiência no mercado de calçados, ele lidera a empresa com paixão e inovação.",
+                        "socialLinks": {
+                            "linkedin": "https://linkedin.com/in/joaosilva",
+                            "twitter": "https://twitter.com/joaosilva",
+                            "instagram": "https://instagram.com/joaosilva"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "name": "Maria Oliveira",
+                        "position": "Diretora de Marketing",
+                        "photoUrl": "https://picsum.photos/800/600?random=2",
+                        "description": "Maria traz mais de 10 anos de experiência em marketing digital. Ela é responsável por todas as estratégias de marca e campanhas que tornaram a Sneaker Store reconhecida nacionalmente.",
+                        "socialLinks": {
+                            "linkedin": "https://linkedin.com/in/mariaoliveira",
+                            "instagram": "https://instagram.com/mariaoliveira"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "name": "Carlos Santos",
+                        "position": "Diretor de Produto",
+                        "photoUrl": "https://picsum.photos/800/600?random=3",
+                        "description": "Carlos é apaixonado por tênis desde a infância. Ele lidera nossa equipe de produto, garantindo que tenhamos sempre as melhores e mais exclusivas opções para nossos clientes.",
+                        "socialLinks": {
+                            "linkedin": "https://linkedin.com/in/carlossantos",
+                            "twitter": "https://twitter.com/carlossantos"
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "name": "Ana Pereira",
+                        "position": "Gerente de Atendimento",
+                        "photoUrl": "https://picsum.photos/800/600?random=4",
+                        "description": "Ana acredita que um excelente atendimento ao cliente é a chave para o sucesso. Ela lidera nossa equipe de suporte, garantindo que cada cliente tenha uma experiência incrível.",
+                        "socialLinks": {
+                            "linkedin": "https://linkedin.com/in/anapereira"
+                        }
+                    }
+                ]
+            },
+            "missionVisionValuesSection": {
+                "title": "Missão, Visão e Valores",
+                "subtitle": "O que nos guia e inspira todos os dias",
+                "data": {
+                    "mission": "Nossa missão é conectar pessoas com sua paixão por tênis, oferecendo produtos de qualidade, atendimento excepcional e uma experiência de compra única.",
+                    "vision": "Ser reconhecida como a melhor e mais inovadora loja de tênis do Brasil, criando tendências e inspirando pessoas a expressarem sua personalidade através do estilo.",
+                    "values": [
+                        {
+                            "id": "v1",
+                            "title": "Qualidade",
+                            "description": "Compromisso com a excelência em tudo o que fazemos, desde a seleção de produtos até o atendimento ao cliente.",
+                            "icon": "fas fa-award"
+                        },
+                        {
+                            "id": "v2",
+                            "title": "Autenticidade",
+                            "description": "Valorizamos a originalidade e incentivamos cada um a expressar seu estilo único.",
+                            "icon": "fas fa-fingerprint"
+                        },
+                        {
+                            "id": "v3",
+                            "title": "Inovação",
+                            "description": "Buscamos constantemente novas ideias e soluções para melhorar a experiência de nossos clientes.",
+                            "icon": "fas fa-lightbulb"
+                        },
+                        {
+                            "id": "v4",
+                            "title": "Paixão",
+                            "description": "Somos apaixonados por tênis e essa paixão se reflete em tudo o que fazemos.",
+                            "icon": "fas fa-heart"
+                        },
+                        {
+                            "id": "v5",
+                            "title": "Comunidade",
+                            "description": "Acreditamos no poder de construir uma comunidade forte de amantes de tênis e cultura urbana.",
+                            "icon": "fas fa-users"
+                        }
+                    ]
+                }
+            },
+            "contentSections": {
+                "title": "Nossa História",
+                "subtitle": "Como construímos a Sneaker Store ao longo dos anos",
+                "sections": [
+                    {
+                        "id": "cs1",
+                        "title": "Como Tudo Começou",
+                        "description": "A Sneaker Store nasceu em 2015, em uma pequena loja no centro de São Paulo. O que começou como um sonho de João Silva, um colecionador apaixonado por tênis, rapidamente se transformou em um hub para entusiastas de sneakers. Nos primeiros meses, a loja funcionava apenas com João e dois amigos, mas a paixão e dedicação logo atraíram uma clientela fiel.",
+                        "imageUrl": "https://picsum.photos/800/600?random=5",
+                        "alignment": "right"
+                    },
+                    {
+                        "id": "cs2",
+                        "title": "Crescimento e Expansão",
+                        "description": "Em 2018, após três anos de sucesso crescente, abrimos nossa segunda loja e lançamos nossa plataforma de e-commerce. Este foi um passo crucial que nos permitiu atender clientes em todo o Brasil. Nossa equipe cresceu para mais de 30 colaboradores apaixonados, e começamos a realizar eventos e colaborações exclusivas com marcas e artistas locais.",
+                        "imageUrl": "https://picsum.photos/800/600?random=6",
+                        "alignment": "left"
+                    },
+                    {
+                        "id": "cs3",
+                        "title": "Onde Estamos Hoje",
+                        "description": "Atualmente, a Sneaker Store é reconhecida como uma das principais referências em tênis e cultura urbana no Brasil. Contamos com cinco lojas físicas, uma plataforma digital robusta e uma comunidade de mais de 500 mil seguidores nas redes sociais. Nosso compromisso com a qualidade, autenticidade e atendimento excepcional permanece o mesmo desde o primeiro dia.",
+                        "imageUrl": "https://picsum.photos/800/600?random=7",
+                        "alignment": "right"
+                    }
+                ]
+            }
+        },
+          "footer": {
+            "id": "default",
+            "companyName": "Sneaker Store",
+            "showCopyright": true,
+            "sections": [
+                {
+                    "id": "about",
+                    "title": "Sobre Nós",
+                    "type": "links",
+                    "enabled": true,
+                    "order": 1,
+                    "content": {
+                        "links": [
+                            {
+                                "id": "about1",
+                                "label": "Nossa História",
+                                "url": "/about-us"
+                            },
+                            {
+                                "id": "about2",
+                                "label": "Equipe",
+                                "url": "/about-us"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "contact",
+                    "title": "Contato",
+                    "type": "contact",
+                    "enabled": true,
+                    "order": 2,
+                    "content": {
+                        "address": "Rua Exemplo, 123 - São Paulo, SP",
+                        "phone": "(11) 9999-9999",
+                        "email": "contato@sneakerstore.com",
+                        "showIcons": true,
+                        "contactFormLink": "/contact"
+                    }
+                },
+                {
+                    "id": "social",
+                    "title": "Redes Sociais",
+                    "type": "social",
+                    "enabled": true,
+                    "order": 3,
+                    "content": {
+                        "showLabels": false,
+                        "links": [
+                            {
+                                "id": "social1",
+                                "label": "Instagram",
+                                "url": "https://instagram.com",
+                                "external": true,
+                                "platform": "instagram",
+                                "icon": "fab fa-instagram"
+                            },
+                            {
+                                "id": "social2",
+                                "label": "Facebook",
+                                "url": "https://facebook.com",
+                                "external": true,
+                                "platform": "facebook",
+                                "icon": "fab fa-facebook-f"
+                            },
+                            {
+                                "id": "social3",
+                                "label": "Twitter",
+                                "url": "https://twitter.com",
+                                "external": true,
+                                "platform": "twitter",
+                                "icon": "fab fa-twitter"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "newsletter",
+                    "title": "Newsletter",
+                    "type": "newsletter",
+                    "enabled": true,
+                    "order": 4,
+                    "content": {
+                        "placeholder": "Seu e-mail",
+                        "buttonText": "Assinar",
+                        "description": "Receba novidades e promoções exclusivas",
+                        "termsText": "Ao assinar, você concorda com nossa Política de Privacidade"
+                    }
+                },
+                {
+                    "id": "payment",
+                    "title": "Formas de Pagamento",
+                    "type": "payment",
+                    "enabled": true,
+                    "order": 5,
+                    "content": {
+                        "showLabels": false,
+                        "methods": [
+                            {
+                                "id": "pay1",
+                                "name": "Visa",
+                                "icon": "fab fa-cc-visa",
+                                "type": "card"
+                            },
+                            {
+                                "id": "pay2",
+                                "name": "Mastercard",
+                                "icon": "fab fa-cc-mastercard",
+                                "type": "card"
+                            },
+                            {
+                                "id": "pay3",
+                                "name": "PayPal",
+                                "icon": "fab fa-paypal",
+                                "type": "other"
+                            },
+                            {
+                                "id": "pay4",
+                                "name": "Pix",
+                                "icon": "fas fa-qrcode",
+                                "type": "pix"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "bottomLinks": [
+                {
+                    "id": "terms",
+                    "label": "Termos de Uso",
+                    "url": "/terms"
+                },
+                {
+                    "id": "privacy",
+                    "label": "Política de Privacidade",
+                    "url": "/privacy"
+                },
+                {
+                    "id": "cookies",
+                    "label": "Cookies",
+                    "url": "/cookies"
+                }
+            ]
+        },
+          "header": {
+            "brand": "Sneaker Store",
+            "lightMode": "Modo Claro",
+            "darkMode": "Modo Escuro",
+            "logoUrl": "assets/images/logo.png"
+          },
+          "contact": {
+            "title": "Entre em Contato",
+            "description": "Estamos aqui para ajudar. Preencha o formulário abaixo ou use nossas informações de contato.",
+            "form": {
+              "title": "Envie uma Mensagem",
+              "name": "Nome",
+              "namePlaceholder": "Digite seu nome completo",
+              "nameRequired": "Nome é obrigatório",
+              "nameMinLength": "Nome deve ter pelo menos 3 caracteres",
+              "email": "E-mail",
+              "emailPlaceholder": "Digite seu e-mail",
+              "emailRequired": "E-mail é obrigatório",
+              "emailInvalid": "Por favor, forneça um e-mail válido",
+              "subject": "Assunto",
+              "subjectPlaceholder": "Digite o assunto da mensagem",
+              "subjectRequired": "Assunto é obrigatório",
+              "message": "Mensagem",
+              "messagePlaceholder": "Digite sua mensagem",
+              "messageRequired": "Mensagem é obrigatória",
+              "messageMinLength": "Mensagem deve ter pelo menos 10 caracteres",
+              "button": "Enviar Mensagem",
+              "successMessage": "Mensagem enviada com sucesso! Entraremos em contato em breve.",
+              "errorMessage": "Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente."
+            },
+            "info": {
+              "title": "Informações de Contato",
+              "addressTitle": "Endereço",
+              "address": "Av. Paulista, 1000 - Bela Vista, São Paulo - SP, 01310-100",
+              "phoneTitle": "Telefone",
+              "phone": "(11) 5555-5555",
+              "emailTitle": "E-mail",
+              "email": "contato@sneakerstore.com",
+              "hoursTitle": "Horário de Funcionamento",
+              "hours": "Segunda a Sexta: 9h às 18h | Sábado: 9h às 13h",
+              "socialTitle": "Redes Sociais",
+              "socialLinks": {
+                "facebook": "https://facebook.com/sneakerstore",
+                "instagram": "https://instagram.com/sneakerstore",
+                "twitter": "https://twitter.com/sneakerstore",
+                "linkedin": "https://linkedin.com/company/sneakerstore"
+              },
+              "showMap": true,
+              "mapTitle": "Nossa Localização",
+              "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0976025749!2d-46.65390548521709!3d-23.563272367554347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1635784168548!5m2!1spt-BR!2sbr"
+            }
+          },
+          "productDetails": {
+            "relatedProductsTitle": "Produtos Relacionados",
+            "addToCart": "Adicionar ao Carrinho",
+            "buyNow": "Comprar Agora"
+          },
+          "faq": {
+            "title": "Perguntas Frequentes",
+            "sections": [
+                {
+                    "id": "pedidos",
+                    "title": "Pedidos e Compras",
+                    "items": [
+                        {
+                            "id": "pedido-1",
+                            "question": "Como faço para rastrear meu pedido?",
+                            "answer": "Você pode rastrear seu pedido através da página 'Meus Pedidos' na sua conta. Alternativamente, você pode usar o código de rastreamento enviado no e-mail de confirmação do pedido. Se você tiver alguma dúvida adicional, entre em contato com nosso suporte ao cliente."
+                        },
+                        {
+                            "id": "pedido-2",
+                            "question": "Quanto tempo leva para processar meu pedido?",
+                            "answer": "Normalmente, processamos os pedidos em até 24 horas nos dias úteis. Após o processamento, o tempo de entrega depende do método de envio escolhido durante a finalização da compra. Entregas padrão geralmente levam de 3 a 7 dias úteis, enquanto entregas expressas podem chegar em 1-2 dias úteis."
+                        },
+                        {
+                            "id": "pedido-3",
+                            "question": "Posso alterar ou cancelar meu pedido após a compra?",
+                            "answer": "Você pode alterar ou cancelar seu pedido dentro de 1 hora após a finalização da compra. Para isso, acesse 'Meus Pedidos' na sua conta e selecione a opção desejada. Após este período, entre em contato com nosso suporte ao cliente para verificar se ainda é possível fazer alterações."
+                        },
+                        {
+                            "id": "pedido-4",
+                            "question": "Quais formas de pagamento são aceitas?",
+                            "answer": "Aceitamos diversas formas de pagamento, incluindo:<br><ul><li>Cartões de crédito (Visa, MasterCard, American Express)</li><li>Cartões de débito</li><li>PayPal</li><li>Pix</li><li>Boleto bancário (com prazo de compensação de até 3 dias úteis)</li></ul>"
+                        }
+                    ]
+                },
+                {
+                    "id": "produtos",
+                    "title": "Produtos e Tamanhos",
+                    "items": [
+                        {
+                            "id": "produto-1",
+                            "question": "Como escolher o tamanho correto de tênis?",
+                            "answer": "Para escolher o tamanho correto, recomendamos medir seu pé no final do dia (quando ele está um pouco maior) e consultar nossa <a href='/size-guide'>tabela de tamanhos</a>. Cada modelo pode ter pequenas variações, por isso também disponibilizamos informações específicas na página de cada produto."
+                        },
+                        {
+                            "id": "produto-2",
+                            "question": "Os tênis são originais?",
+                            "answer": "Sim, todos os produtos vendidos em nossa loja são 100% originais e autênticos. Trabalhamos diretamente com fabricantes e distribuidores oficiais para garantir a autenticidade de todos os itens."
+                        },
+                        {
+                            "id": "produto-3",
+                            "question": "Como cuidar dos meus tênis?",
+                            "answer": "Recomendamos seguir as instruções específicas do fabricante para cada modelo. Em geral:<br><ul><li>Evite lavar na máquina</li><li>Use produtos de limpeza apropriados para o material do tênis</li><li>Deixe secar naturalmente, longe de fontes diretas de calor</li><li>Guarde em local seco e arejado</li></ul>"
+                        },
+                        {
+                            "id": "produto-4",
+                            "question": "Vocês vendem meias também?",
+                            "answer": "Sim! Temos uma seleção de meias esportivas e casuais que combinam perfeitamente com nossos tênis. Você pode encontrá-las na seção <a href='/accessories'>Acessórios</a> do nosso site."
+                        }
+                    ]
+                },
+                {
+                    "id": "entregas",
+                    "title": "Entregas e Devoluções",
+                    "items": [
+                        {
+                            "id": "entrega-1",
+                            "question": "Qual o prazo de entrega?",
+                            "answer": "O prazo de entrega varia de acordo com sua localização e o método de envio escolhido. Entregas padrão geralmente levam de 3 a 7 dias úteis, enquanto entregas expressas podem chegar em 1-2 dias úteis. Durante o checkout, você poderá ver o prazo estimado para seu CEP."
+                        },
+                        {
+                            "id": "entrega-2",
+                            "question": "Vocês entregam em todo o Brasil?",
+                            "answer": "Sim, realizamos entregas para todos os estados e principais cidades do Brasil. Para algumas localidades remotas, pode haver um prazo adicional de entrega."
+                        },
+                        {
+                            "id": "devolucao-1",
+                            "question": "Como funciona a política de devolução?",
+                            "answer": "Você tem até 30 dias após o recebimento para solicitar a devolução de um produto. Os itens devem estar em perfeito estado, sem sinais de uso, com todas as etiquetas originais e na embalagem original. Para iniciar uma devolução, acesse 'Meus Pedidos' na sua conta."
+                        },
+                        {
+                            "id": "devolucao-2",
+                            "question": "Quem paga pelo frete da devolução?",
+                            "answer": "Se a devolução for por motivo de arrependimento ou troca de tamanho, o cliente é responsável pelo custo do frete de retorno. Em casos de produtos com defeito ou enviados incorretamente, nós cobrimos os custos de envio."
+                        }
+                    ]
+                },
+                {
+                    "id": "conta",
+                    "title": "Conta e Privacidade",
+                    "items": [
+                        {
+                            "id": "conta-1",
+                            "question": "Como criar uma conta?",
+                            "answer": "Para criar uma conta, clique em 'Entrar' no canto superior direito do site e selecione 'Criar conta'. Preencha os dados solicitados e siga as instruções. Você também pode criar uma conta durante o processo de checkout."
+                        },
+                        {
+                            "id": "conta-2",
+                            "question": "Esqueci minha senha, o que fazer?",
+                            "answer": "Se você esqueceu sua senha, clique em 'Entrar', depois em 'Esqueci minha senha'. Informe o e-mail cadastrado e você receberá instruções para criar uma nova senha."
+                        },
+                        {
+                            "id": "privacidade-1",
+                            "question": "Como vocês protegem meus dados pessoais?",
+                            "answer": "Levamos a proteção de dados muito a sério. Utilizamos criptografia SSL para todas as transações e seguimos rigorosamente as diretrizes da LGPD (Lei Geral de Proteção de Dados). Para mais informações, consulte nossa <a href='/privacy-policy'>Política de Privacidade</a>."
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

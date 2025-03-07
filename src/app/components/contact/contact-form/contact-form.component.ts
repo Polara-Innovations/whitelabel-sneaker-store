@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SettingsService } from '../../../services/settings/settings.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -9,19 +8,18 @@ import { SettingsService } from '../../../services/settings/settings.service';
   standalone: false
 })
 export class ContactFormComponent implements OnInit {
+  @Input() texts: any;
+  
   contactForm!: FormGroup;
-  texts: any;
   isSubmitting = false;
   submitSuccess = false;
   submitError = false;
 
   constructor(
     private fb: FormBuilder,
-    private settingsService: SettingsService
   ) {}
 
   ngOnInit(): void {
-    this.texts = this.settingsService.getTexts().contact.form;
     this.initForm();
   }
 

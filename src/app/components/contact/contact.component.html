@@ -1,16 +1,16 @@
-<div [ngClass]="['container-xLarge']">
+<div [ngClass]="['container-xLarge']" class="contact-section">
   <div class="contact-header container-medium-vertical">
-    <h1 class="contact-title">{{ texts.title }}</h1>
-    <p class="contact-description">{{ texts.description }}</p>
+    <h1 class="contact-title">{{ texts?.title }}</h1>
+    <p class="contact-description">{{ texts?.description }}</p>
   </div>
   
   <div class="contact-content">
     <div class="contact-form-container">
-      <app-contact-form></app-contact-form>
+      <app-contact-form [texts]="texts?.form"></app-contact-form>
     </div>
     
     <div class="contact-info-container">
-      <app-contact-info></app-contact-info>
+      <app-contact-info [texts]="texts?.info"></app-contact-info>
     </div>
   </div>
 </div>

@@ -1,10 +1,16 @@
-<div [ngClass]="['brand-list-container', 'container-large']">
-  <div class="brand-list-track container-medium-vertical">
-    <app-brand-card 
-      *ngFor="let brand of brands" 
-      [brand]="brand" 
-      [cardWidth]="cardWidth"
-      class="brand-card-item">
-    </app-brand-card>
+<div class="brand-list-container container-large">
+  <div class="brand-list-track">
+    <div class="brand-grid">
+      <app-brand-card
+        *ngFor="let brand of brands; let i = index"
+        [brand]="brand"
+        class="brand-card-item">
+      </app-brand-card>
+      
+      <!-- Elementos fantasmas para ajudar na centralização -->
+      <ng-container *ngIf="shouldAddPlaceholders()">
+        <div *ngFor="let placeholder of getPlaceholders()" class="placeholder-item"></div>
+      </ng-container>
+    </div>
   </div>
 </div>

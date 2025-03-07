@@ -1,17 +1,21 @@
+.contact-section{
+  background-color: var(--contact-background-color);
+}
+
 .contact-header {
   text-align: center;
   margin-bottom: var(--spacing-xlarge);
 }
 
 .contact-title {
-  color: var(--contact-title);
+  color: var(--contact-text-titleColor);
   font-size: var(--font-size-xxlarge);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--spacing-medium);
 }
 
 .contact-description {
-  color: var(--contact-text);
+  color: var(--contact-text-color);
   font-size: var(--font-size-large);
   max-width: 800px;
   margin: 0 auto;
@@ -29,7 +33,7 @@
   flex: 1; /* Ambos têm o mesmo peso de flex para garantir larguras iguais */
   min-height: 600px; /* Define uma altura mínima para ambos os containers */
   display: flex; /* Permite que os filhos se estendam para preencher o container */
-  background-color: var(--contact-background);
+  background-color: var(--contact-background-color);
   border-radius: var(--border-radius-medium);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: box-shadow var(--animation-duration-short) var(--animation-easing-easeInOut);
@@ -54,7 +58,7 @@
 }
 
 .contact-info-container {
-  background-color: var(--contact-alternativeBackground);
+  background-color: var(--contact-background-alternativeColor);
   border: 1px solid var(--contact-border);
 }
 

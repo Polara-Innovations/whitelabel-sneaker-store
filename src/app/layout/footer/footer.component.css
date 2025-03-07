@@ -1,6 +1,6 @@
 footer {
-  background-color: var(--footer-background);
-  color: var(--footer-text);
+  background-color: var(--footer-background-color);
+  color: var(--footer-text-color);
   border-top: 1px solid var(--footer-border);
   padding: var(--padding-xLarge);
 }
@@ -11,13 +11,13 @@ footer {
 }
 
 h4 {
-  color: var(--footer-title);
+  color: var(--footer-text-titleColor);
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-bold);
 }
 
 .footer-link {
-  color: var(--footer-text);
+  color: var(--footer-text-color);
   text-decoration: none;
   transition: color var(--animation-duration-short) var(--animation-easing-easeInOut);
   padding: var(--padding-small);
@@ -26,8 +26,8 @@ h4 {
 }
 
 .footer-link:hover {
-  color: var(--footer-textActive);
-  background-color: var(--footer-backgroundActive);
+  color: var(--footer-text-activeColor);
+  background-color: var(--footer-background-activeColor);
   text-decoration: none;
 }
 
@@ -41,60 +41,60 @@ h4 {
   justify-content: center;
   width: var(--icon-size-medium);
   height: var(--icon-size-medium);
-  background-color: var(--footer-alternativeBackground);
+  background-color: var(--footer-background-alternativeColor);
   border-radius: 50%;
-  color: var(--footer-text);
+  color: var(--footer-text-color);
   transition: all var(--animation-duration-short) var(--animation-easing-easeInOut);
   text-decoration: none;
 }
 
 .social-icon:hover {
-  background-color: var(--footer-backgroundActive);
-  color: var(--footer-textActive);
+  background-color: var(--footer-background-activeColor);
+  color: var(--footer-text-activeColor);
 }
 
 .contact-info p {
-  color: var(--footer-text);
+  color: var(--footer-text-color);
 }
 
 .contact-link {
-  color: var(--footer-buttonText);
-  background-color: var(--footer-buttonBackground);
-  border: 1px solid var(--footer-buttonBorder);
+  color: var(--footer-button-textColor);
+  background-color: var(--footer-button-backgroundColor);
+  border: 1px solid var(--footer-button-borderColor);
   transition: all var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 
 .contact-link:hover {
-  color: var(--footer-buttonactiveText);
-  background-color: var(--footer-buttonactiveBackground);
+  color: var(--footer-button-activeTextColor);
+  background-color: var(--footer-button-activeBackgroundColor);
 }
 
 .newsletter-desc {
-  color: var(--footer-subtitle);
+  color: var(--footer-text-subtitleColor);
   font-size: var(--font-size-medium);
 }
 
 .form-control {
-  background-color: var(--footer-alternativeBackground);
-  color: var(--footer-text);
+  background-color: var(--footer-background-alternativeColor);
+  color: var(--footer-text-color);
   border: 1px solid var(--footer-border);
 }
 
 .form-control::placeholder {
-  color: var(--footer-text);
+  color: var(--footer-text-color);
   opacity: 0.7;
 }
 
 .newsletter-btn {
-  background-color: var(--footer-buttonBackground);
-  color: var(--footer-buttonText);
-  border: 1px solid var(--footer-buttonBorder);
+  background-color: var(--footer-button-backgroundColor);
+  color: var(--footer-button-textColor);
+  border: 1px solid var(--footer-button-borderColor);
   transition: all var(--animation-duration-short) var(--animation-easing-easeInOut);
 }
 
 .newsletter-btn:hover {
-  background-color: var(--footer-buttonactiveBackground);
-  color: var(--footer-buttonactiveText);
+  background-color: var(--footer-button-activeBackgroundColor);
+  color: var(--footer-button-activeTextColor);
 }
 
 .newsletter-btn:disabled {
@@ -104,7 +104,7 @@ h4 {
 
 .terms-text {
   font-size: var(--font-size-small);
-  color: var(--footer-text);
+  color: var(--footer-text-color);
   opacity: 0.8;
 }
 
@@ -119,7 +119,7 @@ h4 {
 .copyright {
   border-top: 1px solid var(--footer-border);
   font-size: var(--font-size-medium);
-  color: var(--footer-text);
+  color: var(--footer-text-color);
   opacity: 0.9;
 }
 

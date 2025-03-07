@@ -1,5 +1,5 @@
 <div class="info-container container-large">
-  <h2 class="info-title">{{ texts.title }}</h2>
+  <h2 class="info-title">{{ texts?.title }}</h2>
   
   <div class="info-section container-medium-vertical">
     <div class="info-item container-small">
@@ -7,8 +7,8 @@
         <i class="fas fa-map-marker-alt"></i>
       </div>
       <div class="info-content">
-        <h3>{{ texts.addressTitle }}</h3>
-        <p>{{ texts.address }}</p>
+        <h3>{{ texts?.addressTitle }}</h3>
+        <p>{{ texts?.address }}</p>
       </div>
     </div>
     
@@ -17,8 +17,8 @@
         <i class="fas fa-phone"></i>
       </div>
       <div class="info-content">
-        <h3>{{ texts.phoneTitle }}</h3>
-        <p>{{ texts.phone }}</p>
+        <h3>{{ texts?.phoneTitle }}</h3>
+        <p>{{ texts?.phone }}</p>
       </div>
     </div>
     
@@ -27,8 +27,8 @@
         <i class="fas fa-envelope"></i>
       </div>
       <div class="info-content">
-        <h3>{{ texts.emailTitle }}</h3>
-        <p>{{ texts.email }}</p>
+        <h3>{{ texts?.emailTitle }}</h3>
+        <p>{{ texts?.email }}</p>
       </div>
     </div>
     
@@ -37,17 +37,17 @@
         <i class="fas fa-clock"></i>
       </div>
       <div class="info-content">
-        <h3>{{ texts.hoursTitle }}</h3>
-        <p>{{ texts.hours }}</p>
+        <h3>{{ texts?.hoursTitle }}</h3>
+        <p>{{ texts?.hours }}</p>
       </div>
     </div>
   </div>
   
-  <div class="map-section container-medium-vertical" *ngIf="texts.showMap">
-    <h3>{{ texts.mapTitle }}</h3>
+  <div class="map-section container-medium-vertical" *ngIf="texts?.showMap">
+    <h3>{{ texts?.mapTitle }}</h3>
     <div class="map-container">
       <iframe 
-        [src]="texts.mapUrl | safe" 
+        [src]="texts?.mapUrl | safe" 
         width="100%" 
         height="250" 
         style="border:0;" 

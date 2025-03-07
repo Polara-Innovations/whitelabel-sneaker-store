@@ -1,0 +1,84 @@
+{
+    "layouts": [
+        {
+            "id": "default",
+            "name": "Layout Padrão",
+            "spacing": {
+                "xSmall": "0.25rem",
+                "small": "0.5rem",
+                "medium": "1rem",
+                "large": "1.5rem",
+                "xLarge": "2rem"
+            },
+            "font": {
+                "family": "'Roboto', sans-serif",
+                "size": {
+                    "xSmall": "0.625rem",
+                    "small": "0.75rem",
+                    "medium": "0.875rem",
+                    "large": "1rem",
+                    "xLarge": "1.25rem",
+                    "xxLarge": "1.5rem"
+                },
+                "weight": {
+                    "light": "300",
+                    "regular": "400",
+                    "bold": "700"
+                }
+            },
+            "borderRadius": {
+                "xSmall": "0.125rem",
+                "small": "0.25rem",
+                "medium": "0.375rem",
+                "large": "0.5rem",
+                "xLarge": "0.625rem"
+            },
+            "boxShadow": {
+                "default": "0 1px 3px rgba(0, 0, 0, 0.2)",
+                "hover": "0 2px 6px rgba(0, 0, 0, 0.3)",
+                "active": "0 1px 5px rgba(0, 0, 0, 0.4)",
+                "inset": "inset 0 1px 3px rgba(0, 0, 0, 0.2)",
+                "card": "0 4px 8px rgba(0, 0, 0, 0.1)",
+                "menu": "0 2px 4px rgba(0, 0, 0, 0.2)",
+                "modal": "0 10px 20px rgba(0, 0, 0, 0.3)",
+                "button": "0 1px 3px rgba(0, 0, 0, 0.2)",
+                "tooltip": "0 4px 6px rgba(0, 0, 0, 0.15)"
+            },
+            "margin": {
+                "small": "0.5rem",
+                "medium": "1rem",
+                "large": "1.5rem",
+                "xLarge": "2rem"
+            },
+            "padding": {
+                "small": "0.5rem",
+                "medium": "1rem",
+                "large": "1.5rem",
+                "xLarge": "2rem"
+            },
+            "animation": {
+                "duration": {
+                    "short": "0.2s",
+                    "medium": "0.5s",
+                    "long": "1s"
+                },
+                "easing": {
+                    "easeIn": "cubic-bezier(0.4, 0, 0.2, 1)",
+                    "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+                    "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)"
+                }
+            },
+            "iconSize": {
+                "small": "1rem",
+                "medium": "1.5rem",
+                "large": "2rem",
+                "xLarge": "2.5rem"
+            },
+            "opacity": {
+                "low": "0.3",
+                "medium": "0.6",
+                "high": "1"
+            }
+        }
+    ]
+}
