@@ -1,0 +1,55 @@
+<div class="checkout-summary-container">
+  <div class="checkout-card">
+    <div class="checkout-card-body">
+      <h2 class="checkout-card-title">Resumo do Pedido</h2>
+      
+      <!-- Itens do Pedido -->
+      <div class="checkout-summary-products">
+        <h3 class="checkout-card-subtitle">Itens ({{ checkoutService.cartItems.length }})</h3>
+        
+        <div class="checkout-summary-product" *ngFor="let item of checkoutService.cartItems">
+          <div class="checkout-summary-product-image">
+            <img [src]="item.imageUrl" [alt]="item.name" class="img-fluid">
+            <div class="checkout-summary-product-quantity">{{ item.quantity }}</div>
+          </div>
+          <div class="checkout-summary-product-details">
+            <div class="checkout-summary-product-name">{{ item.name }}</div>
+            <div class="checkout-summary-product-price">
+              {{ checkoutService.formatCurrency(item.price * item.quantity) }}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Resumo de Valores -->
+      <div class="checkout-summary-totals">
+        <div class="checkout-summary-row">
+          <span class="checkout-summary-row-label">Subtotal:</span>
+          <span class="checkout-summary-row-value">{{ checkoutService.formatCurrency(checkoutService.subtotal) }}</span>
+        </div>
+        
+        <div class="checkout-summary-row" *ngIf="checkoutService.discount > 0">
+          <span class="checkout-summary-row-label">Descontos:</span>
+          <span class="checkout-summary-row-value checkout-text-success">-{{ checkoutService.formatCurrency(checkoutService.discount) }}</span>
+        </div>
+        
+        <div class="checkout-summary-row" *ngIf="checkoutService.selectedShipping">
+          <span class="checkout-summary-row-label">Frete:</span>
+          <span class="checkout-summary-row-value">
+            {{ checkoutService.selectedShipping.price > 0 ? 
+              checkoutService.formatCurrency(checkoutService.selectedShipping.price) : 'Grátis' }}
+          </span>
+        </div>
+        
+        <div class="checkout-summary-total-row">
+          <span class="checkout-summary-total-label">Total:</span>
+          <span class="checkout-summary-total-value">{{ checkoutService.formatCurrency(checkoutService.getTotal()) }}</span>
+        </div>
+        
+        <div class="checkout-summary-installments" *ngIf="checkoutService.getTotal() > 0">
+          em até 12x de {{ checkoutService.formatCurrency(checkoutService.getTotal() / 12) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

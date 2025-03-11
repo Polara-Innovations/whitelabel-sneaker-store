@@ -1,0 +1,93 @@
+/* Estilos específicos do componente de confirmação de pedido */
+.checkout-confirmation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--padding-large) 0;
+  }
+  
+  .checkout-confirmation-icon {
+    font-size: var(--icon-size-xLarge);
+    color: var(--checkout-input-inputSuccessTextColor);
+    margin-bottom: var(--margin-medium);
+  }
+  
+  .checkout-confirmation-title {
+    font-size: var(--font-size-xLarge);
+    font-weight: var(--font-weight-bold);
+    color: var(--checkout-text-titleColor);
+    margin-bottom: var(--margin-medium);
+  }
+  
+  .checkout-confirmation-message {
+    font-size: var(--font-size-medium);
+    color: var(--checkout-text-color);
+    margin-bottom: var(--margin-large);
+    max-width: 600px;
+  }
+  
+  .checkout-confirmation-details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-large);
+    margin-bottom: var(--margin-large);
+    width: 100%;
+  }
+  
+  .checkout-confirmation-detail {
+    text-align: center;
+    min-width: 150px;
+  }
+  
+  .checkout-confirmation-detail-label {
+    font-size: var(--font-size-small);
+    color: var(--checkout-text-subtitleColor);
+    margin-bottom: var(--margin-xSmall);
+  }
+  
+  .checkout-confirmation-detail-value {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    color: var(--checkout-text-titleColor);
+  }
+  
+  .checkout-confirmation-email {
+    background-color: var(--checkout-background-alternativeColor);
+    border-radius: var(--border-radius-small);
+    padding: var(--padding-medium);
+    margin-bottom: var(--margin-large);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .checkout-confirmation-email-icon {
+    margin-right: var(--margin-small);
+    color: var(--checkout-button-backgroundColor);
+  }
+  
+  .checkout-confirmation-actions {
+    display: flex;
+    gap: var(--spacing-medium);
+    margin-top: var(--margin-medium);
+  }
+  
+  @media (max-width: 576px) {
+    .checkout-confirmation-details {
+      flex-direction: column;
+      gap: var(--spacing-medium);
+    }
+    
+    .checkout-confirmation-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .checkout-confirmation-actions .checkout-btn {
+      width: 100%;
+    }
+  }

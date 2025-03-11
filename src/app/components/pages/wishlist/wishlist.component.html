@@ -1,0 +1,171 @@
+<div class="wishlist-page container-xLarge">
+
+  <app-main-section-title [title]="'Lista de Desejos'"></app-main-section-title>
+
+  <div class="row" *ngIf="wishlistItems.length > 0">
+    <div class="col-lg-8">
+      <!-- Lista de Itens da Lista de Desejos -->
+      <div class="wishlist-items">
+        <div class="wishlist-item" *ngFor="let item of wishlistItems">
+          <div class="wishlist-item__image">
+            <a [routerLink]="['/produto', item.productId]">
+              <img [src]="item.imageUrl" [alt]="item.name" class="wishlist-item__thumbnail">
+            </a>
+            <span class="wishlist-item__stock" *ngIf="item.stockQuantity && item.stockQuantity <= 5"
+              [ngClass]="{'wishlist-item__stock--low': item.stockQuantity <= 3}">
+              {{item.stockQuantity > 0 ? 'Apenas ' + item.stockQuantity + ' em estoque' : 'Fora de estoque'}}
+            </span>
+          </div>
+          <div class="wishlist-item__details">
+            <div class="wishlist-item__info">
+              <h3 class="wishlist-item__name">
+                <a [routerLink]="['/produto', item.productId]">{{item.name}}</a>
+              </h3>
+              <p class="wishlist-item__attributes" *ngIf="item.color || item.size">
+                <span *ngIf="item.color">Cor: {{item.color}}</span>
+                <span *ngIf="item.color && item.size">, </span>
+                <span *ngIf="item.size">Tamanho: {{item.size}}</span>
+              </p>
+              <div class="wishlist-item__availability" *ngIf="!item.available">
+                <i class="fas fa-exclamation-circle"></i>
+                <span>Produto indisponível</span>
+              </div>
+              <div class="wishlist-item__date" *ngIf="item.dateAdded">
+                <small>Adicionado em: {{item.dateAdded | date:'dd/MM/yyyy'}}</small>
+              </div>
+            </div>
+            <div class="wishlist-item__prices">
+              <div class="wishlist-item__price">
+                <span class="wishlist-item__unit-price">{{formatCurrency(item.price)}}</span>
+              </div>
+            </div>
+            <div class="wishlist-item__actions">
+              <button class="wishlist-item__action-btn" (click)="addToCart(item)" [disabled]="!item.available">
+                <i class="fas fa-shopping-cart"></i> Adicionar ao carrinho
+              </button>
+              <button class="wishlist-item__action-btn wishlist-item__action-btn--move"
+                (click)="moveToCartAndRemove(item)" [disabled]="!item.available">
+                <i class="fas fa-exchange-alt"></i> Mover para o carrinho
+              </button>
+              <button class="wishlist-item__action-btn wishlist-item__action-btn--remove"
+                (click)="removeFromWishlist(item, $event)">
+                <i class="fas fa-trash-alt"></i> Remover
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produtos Recomendados -->
+      <div class="recommended-products-section mt-5" *ngIf="!isMobile">
+        <div class="row">
+          <div class="col-12">
+            <app-title text="Você também pode gostar" size="large" fontWeight="bold" position="center"></app-title>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12">
+            <app-product-carrousel [products]="recommendedProducts" [showActionButton]="true"
+              actionButtonLabel="Adicionar ao Carrinho" (productAction)="onProductCardAction($event)">
+            </app-product-carrousel>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <!-- Resumo da Lista de Desejos -->
+      <div class="wishlist-summary">
+        <h2 class="wishlist-summary__title">Detalhes da Lista</h2>
+
+        <div class="wishlist-summary__items">
+          <div class="wishlist-summary__item">
+            <span>Total de itens</span>
+            <span>{{wishlistItems.length}}</span>
+          </div>
+          <div class="wishlist-summary__item">
+            <span>Itens disponíveis</span>
+            <span>{{getAvailableItemsCount()}}</span>
+          </div>
+          <div class="wishlist-summary__item">
+            <span>Valor total estimado</span>
+            <span>{{ formatCurrency(getTotalPrice()) }}</span>
+          </div>
+        </div>
+
+        <!-- Opções de Notificação -->
+        <div class="notification-options">
+          <h3 class="notification-options__title">Notificações</h3>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="priceChangeNotification"
+              [(ngModel)]="priceChangeNotifications">
+            <label class="form-check-label" for="priceChangeNotification">
+              Notificar-me sobre mudanças de preço
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="availabilityNotification"
+              [(ngModel)]="availabilityNotifications">
+            <label class="form-check-label" for="availabilityNotification">
+              Notificar-me quando voltar ao estoque
+            </label>
+          </div>
+        </div>
+
+        <!-- Opções de Compartilhamento -->
+        <div class="share-options">
+          <h3 class="share-options__title">Compartilhar Lista</h3>
+          <div class="share-options__buttons">
+            <button class="share-options__btn" (click)="shareByEmail()">
+              <i class="fas fa-envelope"></i> E-mail
+            </button>
+            <button class="share-options__btn" (click)="shareOnSocialMedia()">
+              <i class="fab fa-twitter"></i> Twitter
+            </button>
+            <button class="share-options__btn" (click)="getShareableLink()">
+              <i class="fas fa-link"></i> Copiar Link
+            </button>
+          </div>
+        </div>
+
+        <div class="wishlist-summary__actions">
+          <button class="wishlist-summary__continue-btn" (click)="continueShopping()">
+            <i class="fas fa-shopping-bag"></i> Continuar Comprando
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lista de Desejos Vazia -->
+  <div class="row" *ngIf="wishlistItems.length === 0">
+    <div class="col-12">
+      <div class="empty-wishlist">
+        <div class="empty-wishlist__icon">
+          <i class="fas fa-heart-broken"></i>
+        </div>
+        <h2 class="empty-wishlist__title">Sua lista de desejos está vazia</h2>
+        <p class="empty-wishlist__message">Adicione produtos à sua lista de desejos para acompanhá-los.</p>
+        <button class="empty-wishlist__btn" (click)="continueShopping()">
+          <i class="fas fa-shopping-bag"></i> Ver Produtos
+        </button>
+      </div>
+    </div>
+  </div>
+
+    <!-- Produtos Recomendados -->
+    <div class="recommended-products-section mt-5" *ngIf="isMobile">
+      <div class="row">
+        <div class="col-12">
+          <app-title text="Você também pode gostar" size="large" fontWeight="bold" position="center"></app-title>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12">
+          <app-product-carrousel [products]="recommendedProducts" [showActionButton]="true"
+            actionButtonLabel="Adicionar ao Carrinho" (productAction)="onProductCardAction($event)">
+          </app-product-carrousel>
+        </div>
+      </div>
+    </div>
+</div>

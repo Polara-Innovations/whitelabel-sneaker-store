@@ -1,0 +1,16 @@
+<div class="modal fade toast-modal" id="notificationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-toast modal-sm">
+      <div class="modal-content" [ngClass]="getModalClass()">
+        <div class="modal-header" [ngClass]="getHeaderClass()">
+          <h5 class="modal-title">
+            <i [class]="getNotificationIcon() + ' me-2'"></i>
+            {{ modalService.notificationTitle }}
+          </h5>
+          <button type="button" class="btn-close btn-close-white" (click)="close()" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <p class="notification-message">{{ modalService.notificationMessage }}</p>
+        </div>
+      </div>
+    </div>
+  </div>

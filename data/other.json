@@ -758,5 +758,174 @@
                 }
             ]
         }
-    }
+    },
+    "orders": [
+        {
+            "id": 1,
+            "orderNumber": "ORD-2023-001",
+            "customerId": 123,
+            "status": "DELIVERED",
+            "items": [
+                {
+                    "id": 101,
+                    "productId": 201,
+                    "name": "Smartphone Galaxy S23",
+                    "imageUrl": "https://placehold.co/150?text=GalaxyS23",
+                    "price": 4999.90,
+                    "quantity": 1,
+                    "color": "Preto",
+                    "reviewed": true
+                },
+                {
+                    "id": 102,
+                    "productId": 202,
+                    "name": "Capa Protetora",
+                    "imageUrl": "https://placehold.co/150?text=Capa",
+                    "price": 99.90,
+                    "quantity": 1,
+                    "color": "Transparente",
+                    "reviewed": false
+                }
+            ],
+            "shipping": {
+                "address": {
+                    "street": "Rua das Flores",
+                    "number": "123",
+                    "complement": "Apto 101",
+                    "neighborhood": "Centro",
+                    "city": "São Paulo",
+                    "state": "SP",
+                    "zipCode": "01234-567",
+                    "country": "Brasil"
+                },
+                "method": "Entrega Expressa",
+                "trackingCode": "BR123456789",
+                "trackingUrl": "https://www.correios.com.br/rastreamento",
+                "estimatedDelivery": "2023-06-15T00:00:00.000Z",
+                "shippedDate": "2023-06-10T00:00:00.000Z",
+                "deliveredDate": "2023-06-14T00:00:00.000Z",
+                "cost": 25.90
+            },
+            "payment": {
+                "method": "Cartão de Crédito",
+                "status": "approved",
+                "cardLastDigits": "1234",
+                "installments": 3,
+                "installmentValue": 1708.60,
+                "totalPaid": 5125.80
+            },
+            "subtotal": 5099.80,
+            "discount": 0,
+            "total": 5125.80,
+            "createdAt": "2023-06-08T00:00:00.000Z",
+            "updatedAt": "2023-06-14T00:00:00.000Z",
+            "statusHistory": [
+                {
+                    "status": "PROCESSING",
+                    "date": "2023-06-08T00:00:00.000Z",
+                    "comment": "Pedido recebido"
+                },
+                {
+                    "status": "CONFIRMED",
+                    "date": "2023-06-09T00:00:00.000Z",
+                    "comment": "Pagamento aprovado"
+                },
+                {
+                    "status": "SHIPPED",
+                    "date": "2023-06-10T00:00:00.000Z",
+                    "comment": "Pedido enviado via Entrega Expressa"
+                },
+                {
+                    "status": "DELIVERED",
+                    "date": "2023-06-14T00:00:00.000Z",
+                    "comment": "Entregue ao destinatário"
+                }
+            ],
+            "canCancel": false,
+            "canReturn": true
+        },
+        {
+            "id": 2,
+            "orderNumber": "ORD-2023-002",
+            "customerId": 123,
+            "status": "SHIPPED",
+            "items": [
+                {
+                    "id": 201,
+                    "productId": 301,
+                    "name": "Notebook Dell Inspiron",
+                    "imageUrl": "https://placehold.co/150?text=Notebook",
+                    "price": 3999.90,
+                    "quantity": 1,
+                    "reviewed": false
+                },
+                {
+                    "id": 202,
+                    "productId": 302,
+                    "name": "Mouse sem fio",
+                    "imageUrl": "https://placehold.co/150?text=Mouse",
+                    "price": 129.90,
+                    "quantity": 1,
+                    "color": "Preto",
+                    "reviewed": false
+                },
+                {
+                    "id": 203,
+                    "productId": 303,
+                    "name": "Teclado sem fio",
+                    "imageUrl": "https://placehold.co/150?text=Teclado",
+                    "price": 199.90,
+                    "quantity": 1,
+                    "color": "Preto",
+                    "reviewed": false
+                }
+            ],
+            "shipping": {
+                "address": {
+                    "street": "Avenida Paulista",
+                    "number": "1000",
+                    "neighborhood": "Bela Vista",
+                    "city": "São Paulo",
+                    "state": "SP",
+                    "zipCode": "01310-100",
+                    "country": "Brasil"
+                },
+                "method": "Entrega Padrão",
+                "trackingCode": "BR987654321",
+                "trackingUrl": "https://www.correios.com.br/rastreamento",
+                "estimatedDelivery": "2023-07-05T00:00:00.000Z",
+                "shippedDate": "2023-06-30T00:00:00.000Z",
+                "cost": 0
+            },
+            "payment": {
+                "method": "Boleto Bancário",
+                "status": "approved",
+                "totalPaid": 4329.70
+            },
+            "subtotal": 4329.70,
+            "discount": 0,
+            "total": 4329.70,
+            "createdAt": "2023-06-28T00:00:00.000Z",
+            "updatedAt": "2023-06-30T00:00:00.000Z",
+            "statusHistory": [
+                {
+                    "status": "PROCESSING",
+                    "date": "2023-06-28T00:00:00.000Z",
+                    "comment": "Pedido recebido"
+                },
+                {
+                    "status": "CONFIRMED",
+                    "date": "2023-06-29T00:00:00.000Z",
+                    "comment": "Pagamento aprovado"
+                },
+                {
+                    "status": "SHIPPED",
+                    "date": "2023-06-30T00:00:00.000Z",
+                    "comment": "Pedido enviado via Entrega Padrão"
+                }
+            ],
+            "canCancel": true,
+            "canReturn": false
+        }
+    ]
 }

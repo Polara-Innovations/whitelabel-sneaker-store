@@ -1,0 +1,88 @@
+/* Estilos específicos do componente de revisão */
+.checkout-review-section {
+    margin-bottom: var(--margin-medium);
+  }
+  
+  .checkout-review-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--margin-small);
+  }
+  
+  .checkout-review-section-title {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    color: var(--checkout-text-titleColor);
+  }
+  
+  .checkout-review-section-edit {
+    color: var(--checkout-button-backgroundColor);
+    text-decoration: none;
+    font-size: var(--font-size-small);
+    cursor: pointer;
+  }
+  
+  .checkout-review-section-edit:hover {
+    text-decoration: underline;
+  }
+  
+  .checkout-review-card {
+    background-color: var(--checkout-background-alternativeColor);
+    border-radius: var(--border-radius-small);
+    padding: var(--padding-medium);
+  }
+  
+  .checkout-review-item {
+    margin-bottom: var(--margin-small);
+  }
+  
+  .checkout-review-label {
+    font-weight: var(--font-weight-bold);
+    color: var(--checkout-text-subtitleColor);
+    margin-right: var(--margin-xSmall);
+  }
+  
+  .checkout-review-value {
+    color: var(--checkout-text-color);
+  }
+  
+  .checkout-terms-conditions {
+    margin: var(--margin-large) 0;
+  }
+  
+  .checkout-terms-label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+  }
+  
+  .checkout-terms-checkbox {
+    margin-top: 0.2em;
+    margin-right: var(--margin-small);
+  }
+  
+  .checkout-terms-text {
+    color: var(--checkout-text-color);
+    font-size: var(--font-size-small);
+  }
+  
+  .checkout-terms-link {
+    color: var(--checkout-button-backgroundColor);
+    text-decoration: none;
+  }
+  
+  .checkout-terms-link:hover {
+    text-decoration: underline;
+  }
+  
+  .checkout-place-order-btn {
+    width: 100%;
+    padding: var(--padding-medium);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  .checkout-place-order-spinner {
+    margin-right: var(--margin-small);
+  }

@@ -1,0 +1,13 @@
+/* Este componente utiliza principalmente os estilos compartilhados */
+.checkout-wizard-container {
+    margin-bottom: var(--margin-large);
+  }
+  
+  .checkout-progress-step {
+    cursor: pointer;
+  }
+  
+  .checkout-progress-step.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }

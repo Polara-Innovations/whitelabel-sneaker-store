@@ -1,0 +1,14 @@
+<div class="checkout-wizard-container">
+  <div class="checkout-progress">
+    <ul class="checkout-progress-steps">
+      <li *ngFor="let step of steps" 
+          class="checkout-progress-step"
+          [ngClass]="{'active': step.number === checkoutService.currentStep, 'completed': step.completed, 'disabled': step.number > checkoutService.currentStep}"
+          (click)="goToStep(step.number)">
+        <div class="checkout-progress-step-circle">{{ step.number }}</div>
+        <div class="checkout-progress-step-title">{{ step.name }}</div>
+        <div class="checkout-progress-step-line" *ngIf="step.number < steps.length"></div>
+      </li>
+    </ul>
+  </div>
+</div>

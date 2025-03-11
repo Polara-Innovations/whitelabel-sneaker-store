@@ -1,0 +1,70 @@
+<div class="checkout-card-body">
+  <h2 class="checkout-card-title">Identificação</h2>
+  
+  <form [formGroup]="identificationForm" class="mt-4">
+    <div class="checkout-form-group">
+      <label for="email" class="checkout-form-label">E-mail *</label>
+      <input type="email" class="checkout-form-control" id="email" formControlName="email" 
+             placeholder="seu@email.com">
+      <div *ngIf="identificationForm.get('email')?.touched && identificationForm.get('email')?.invalid" 
+           class="checkout-invalid-feedback">
+        E-mail inválido
+      </div>
+    </div>
+    
+    <div class="checkout-identification-options">
+      <div class="checkout-identification-option form-check">
+        <input type="checkbox" class="form-check-input" id="createAccount" formControlName="createAccount">
+        <label class="form-check-label" for="createAccount">Criar uma conta</label>
+      </div>
+      
+      <div *ngIf="identificationForm.get('createAccount')?.value" class="mt-3">
+        <div class="checkout-form-group">
+          <label for="password" class="checkout-form-label">Senha *</label>
+          <input type="password" class="checkout-form-control" id="password" formControlName="password">
+          <div *ngIf="identificationForm.get('password')?.touched && identificationForm.get('password')?.invalid" 
+               class="checkout-invalid-feedback">
+            Senha deve ter pelo menos 8 caracteres
+          </div>
+        </div>
+        
+        <div class="checkout-password-requirements">
+          <div class="checkout-password-requirement" 
+               [ngClass]="{'valid': passwordMeetsLength, 'invalid': !passwordMeetsLength && identificationForm.get('password')?.touched}">
+            <i class="fas" [ngClass]="passwordMeetsLength ? 'fa-check' : 'fa-times'"></i>
+            Pelo menos 8 caracteres
+          </div>
+          <div class="checkout-password-requirement"
+               [ngClass]="{'valid': passwordHasLetter, 'invalid': !passwordHasLetter && identificationForm.get('password')?.touched}">
+            <i class="fas" [ngClass]="passwordHasLetter ? 'fa-check' : 'fa-times'"></i>
+            Pelo menos uma letra
+          </div>
+          <div class="checkout-password-requirement"
+               [ngClass]="{'valid': passwordHasNumber, 'invalid': !passwordHasNumber && identificationForm.get('password')?.touched}">
+            <i class="fas" [ngClass]="passwordHasNumber ? 'fa-check' : 'fa-times'"></i>
+            Pelo menos um número
+          </div>
+        </div>
+        
+        <div class="checkout-form-group">
+          <label for="confirmPassword" class="checkout-form-label">Confirmar Senha *</label>
+          <input type="password" class="checkout-form-control" id="confirmPassword" formControlName="confirmPassword">
+          <div *ngIf="identificationForm.get('confirmPassword')?.touched && 
+                      identificationForm.get('password')?.value !== identificationForm.get('confirmPassword')?.value" 
+               class="checkout-invalid-feedback">
+            As senhas não conferem
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="checkout-guest-option">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="guestCheckout" [(ngModel)]="isGuestCheckout" 
+               [ngModelOptions]="{standalone: true}">
+        <label class="form-check-label" for="guestCheckout">Continuar como convidado</label>
+      </div>
+      <small class="checkout-text-muted">Você poderá criar uma conta após finalizar sua compra.</small>
+    </div>
+  </form>
+</div>

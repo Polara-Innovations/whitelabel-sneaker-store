@@ -1,0 +1,173 @@
+/* Estilos específicos do componente de pagamento */
+.checkout-payment-methods {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+gap: var(--spacing-medium);
+margin-bottom: var(--margin-medium);
+}
+
+.checkout-payment-method {
+text-align: center;
+padding: var(--padding-medium);
+border: 1px solid var(--checkout-border);
+border-radius: var(--border-radius-small);
+cursor: pointer;
+transition: all var(--animation-duration-short) var(--animation-easing-easeInOut);
+}
+
+.checkout-payment-method:hover {
+transform: translateY(-3px);
+box-shadow: var(--box-shadow-hover);
+}
+
+.checkout-payment-method.selected {
+border-color: var(--checkout-button-backgroundColor);
+background-color: rgba(13, 110, 253, 0.05);
+}
+
+.checkout-payment-method-icon {
+font-size: var(--icon-size-large);
+margin-bottom: var(--margin-small);
+color: var(--checkout-text-color);
+}
+
+.checkout-payment-method-name {
+font-size: var(--font-size-small);
+color: var(--checkout-text-color);
+}
+
+.checkout-credit-card-preview {
+background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+color: white;
+padding: var(--padding-medium);
+border-radius: var(--border-radius-small);
+margin-bottom: var(--margin-medium);
+}
+
+.checkout-card-brand {
+font-size: var(--font-size-medium);
+font-weight: var(--font-weight-bold);
+margin-bottom: var(--margin-small);
+}
+
+.checkout-card-number {
+font-size: var(--font-size-medium);
+letter-spacing: 2px;
+margin-bottom: var(--margin-small);
+}
+
+.checkout-card-name {
+font-size: var(--font-size-small);
+margin-bottom: var(--margin-xSmall);
+}
+
+.checkout-card-expiry {
+font-size: var(--font-size-small);
+}
+
+.checkout-card-logo {
+font-size: var(--icon-size-large);
+}
+
+.checkout-installment-table {
+width: 100%;
+margin-top: var(--margin-medium);
+}
+
+.checkout-installment-row {
+cursor: pointer;
+transition: background-color var(--animation-duration-short) var(--animation-easing-easeInOut);
+}
+
+.checkout-installment-row:hover {
+background-color: var(--checkout-background-alternativeColor);
+}
+
+.checkout-installment-row.selected {
+background-color: rgba(13, 110, 253, 0.1);
+}
+
+.checkout-payment-info-box {
+    background-color: var(--checkout-background-alternativeColor);
+    border-radius: var(--border-radius-small);
+    padding: var(--padding-medium);
+    margin-top: var(--margin-medium);
+    margin-bottom: var(--margin-medium);
+  }
+  
+  .checkout-payment-info-icon {
+    margin-right: var(--margin-small);
+    color: var(--checkout-button-backgroundColor);
+  }
+  
+  .checkout-payment-info-title {
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--margin-xSmall);
+    color: var(--checkout-text-titleColor);
+  }
+  
+  .checkout-payment-info-text {
+    color: var(--checkout-text-color);
+    font-size: var(--font-size-small);
+  }
+  
+  .checkout-pix-qrcode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--margin-medium) 0;
+  }
+  
+  .checkout-pix-qrcode-image {
+    width: 200px;
+    height: 200px;
+    margin-bottom: var(--margin-small);
+  }
+  
+  .checkout-pix-code {
+    font-family: monospace;
+    padding: var(--padding-small);
+    background-color: var(--checkout-background-alternativeColor);
+    border: 1px solid var(--checkout-border);
+    border-radius: var(--border-radius-small);
+    word-break: break-all;
+    margin-bottom: var(--margin-small);
+    width: 100%;
+    text-align: center;
+  }
+  
+  .checkout-pix-copy-btn {
+    margin-top: var(--margin-small);
+  }
+  
+  .checkout-boleto-info {
+    margin-top: var(--margin-medium);
+  }
+  
+  .checkout-boleto-barcode {
+    font-family: monospace;
+    padding: var(--padding-small);
+    background-color: var(--checkout-background-alternativeColor);
+    border: 1px solid var(--checkout-border);
+    border-radius: var(--border-radius-small);
+    word-break: break-all;
+    margin: var(--margin-small) 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .checkout-payment-methods {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .checkout-payment-methods {
+      grid-template-columns: 1fr;
+    }
+    
+    .checkout-credit-card-preview {
+      flex-direction: column;
+    }
+  }

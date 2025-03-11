@@ -1,0 +1,230 @@
+<div class="cart-page container-xLarge">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="cart-page__title">Meu Carrinho</h1>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="cartItems.length > 0">
+    <div class="col-lg-8">
+      <!-- Lista de Itens do Carrinho -->
+      <div class="cart-items">
+        <div class="cart-item" *ngFor="let item of cartItems">
+          <div class="cart-item__image">
+            <a [routerLink]="['/produto', item.productId]">
+              <img [src]="item.imageUrl" [alt]="item.name" class="cart-item__thumbnail">
+            </a>
+            <span class="cart-item__stock" *ngIf="item.stockQuantity <= 5"
+              [ngClass]="{'cart-item__stock--low': item.stockQuantity <= 3}">
+              {{item.stockQuantity > 0 ? 'Apenas ' + item.stockQuantity + ' em estoque' : 'Fora de estoque'}}
+            </span>
+          </div>
+          <div class="cart-item__details">
+            <div class="cart-item__info">
+              <h3 class="cart-item__name">
+                <a [routerLink]="['/produto', item.productId]">{{item.name}}</a>
+              </h3>
+              <p class="cart-item__attributes" *ngIf="item.color || item.size">
+                <span *ngIf="item.color">Cor: {{item.color}}</span>
+                <span *ngIf="item.color && item.size">, </span>
+                <span *ngIf="item.size">Tamanho: {{item.size}}</span>
+              </p>
+              <div class="cart-item__delivery">
+                <i class="fas fa-truck"></i>
+                <span>Entrega estimada: {{getEstimatedDelivery()}}</span>
+              </div>
+            </div>
+            <div class="cart-item__quantity">
+              <div class="quantity-control">
+                <button class="quantity-btn" (click)="updateQuantity(item.id, -1)" [disabled]="item.quantity <= 1">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <span class="quantity-value">{{item.quantity}}</span>
+                <button class="quantity-btn" (click)="updateQuantity(item.id, 1)"
+                  [disabled]="item.quantity >= item.stockQuantity">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="cart-item__prices">
+              <div class="cart-item__price">
+                <span class="cart-item__unit-price">{{formatCurrency(item.price)}}</span>
+              </div>
+              <div class="cart-item__subtotal">
+                <span>Subtotal: {{formatCurrency(item.price * item.quantity)}}</span>
+              </div>
+            </div>
+            <div class="cart-item__actions">
+              <button class="cart-item__action-btn" (click)="saveForLater(item)">
+                <i class="fas fa-bookmark"></i> Salvar para depois
+              </button>
+              <button class="cart-item__action-btn" (click)="addToWishlist(item)">
+                <i class="fas fa-heart"></i> Mover para lista de desejos
+              </button>
+              <button class="cart-item__action-btn cart-item__action-btn--remove" (click)="removeItem(item.id, $event)">
+                <i class="fas fa-trash-alt"></i> Remover
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produtos Recomendados -->
+      <div class="recommended-products-section mt-5">
+        <div class="row">
+          <div class="col-12">
+            <app-title text="Você também pode gostar" size="large" fontWeight="bold" position="center"></app-title>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12">
+            <app-product-carrousel 
+              [products]="recommendedProducts"
+              [showActionButton]="true"
+              actionButtonLabel="Adicionar ao Carrinho"
+              (productAction)="onProductCardAction($event)">
+            </app-product-carrousel>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <!-- Resumo do Carrinho -->
+      <div class="cart-summary">
+        <h2 class="cart-summary__title">Resumo do Pedido</h2>
+
+        <div class="cart-summary__items">
+          <div class="cart-summary__item">
+            <span>Subtotal ({{getTotalItems()}} {{getTotalItems() === 1 ? 'item' : 'itens'}})</span>
+            <span>{{formatCurrency(subtotal)}}</span>
+          </div>
+          <div class="cart-summary__item" *ngIf="discount > 0">
+            <span>Descontos</span>
+            <span>-{{formatCurrency(discount)}}</span>
+          </div>
+        </div>
+
+        <!-- Cálculo de Frete -->
+        <div class="shipping-calculator">
+          <h3 class="shipping-calculator__title">Calcular Frete</h3>
+          <div class="shipping-calculator__form">
+            <input type="text" class="shipping-calculator__input" placeholder="Digite seu CEP" [(ngModel)]="zipCode"
+              (input)="onZipCodeChange()">
+            <button class="shipping-calculator__btn" (click)="calculateShipping()">
+              <i class="fas fa-calculator"></i>
+            </button>
+          </div>
+
+          <div class="shipping-options" *ngIf="shippingOptions.length > 0">
+            <div class="shipping-option" *ngFor="let option of shippingOptions">
+              <label class="shipping-option__label">
+                <input type="radio" name="shipping" [value]="option.id" [checked]="selectedShipping === option.id"
+                  (change)="selectShipping(option)">
+                <div class="shipping-option__info">
+                  <div class="shipping-option__name">
+                    {{option.name}} - {{option.price > 0 ? formatCurrency(option.price) : 'Grátis'}}
+                  </div>
+                  <div class="shipping-option__delivery">
+                    Entrega em {{option.deliveryTime}}
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cupom de Desconto -->
+        <div class="discount-coupon">
+          <h3 class="discount-coupon__title">Cupom de Desconto</h3>
+          <div class="discount-coupon__form">
+            <input type="text" class="discount-coupon__input" placeholder="Digite seu cupom" [(ngModel)]="couponCode">
+            <button class="discount-coupon__btn" (click)="applyCoupon()">Aplicar</button>
+          </div>
+          <div class="discount-coupon__applied" *ngIf="appliedCoupon">
+            <div class="discount-coupon__applied-info">
+              <span>Cupom aplicado: {{appliedCoupon.code}}</span>
+              <span>-{{formatCurrency(appliedCoupon.discount)}}</span>
+            </div>
+            <button class="discount-coupon__remove-btn" (click)="removeCoupon()">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="cart-summary__total">
+          <div class="cart-summary__total-item">
+            <span>Total</span>
+            <span>{{formatCurrency(getTotal())}}</span>
+          </div>
+          <div class="cart-summary__installments" *ngIf="getTotal() > 0">
+            <span>ou em até 12x de {{formatCurrency(getTotal() / 12)}} sem juros</span>
+          </div>
+        </div>
+
+        <div class="cart-summary__actions">
+          <button class="cart-summary__checkout-btn" (click)="checkout()" [disabled]="cartItems.length === 0">
+            Finalizar Compra
+          </button>
+          <button class="cart-summary__continue-btn" (click)="continueShopping()">
+            Continuar Comprando
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carrinho Vazio -->
+  <div class="row" *ngIf="cartItems.length === 0">
+    <div class="col-12">
+      <div class="empty-cart">
+        <div class="empty-cart__icon">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <h2 class="empty-cart__title">Seu carrinho está vazio</h2>
+        <p class="empty-cart__message">Adicione produtos ao seu carrinho para continuar comprando.</p>
+        <button class="empty-cart__btn" (click)="continueShopping()">
+          Ver Produtos
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Itens Salvos para Depois -->
+  <div class="row mt-5" *ngIf="savedItems.length > 0">
+    <div class="col-12">
+      <h2 class="saved-items__title">Itens Salvos para Depois</h2>
+    </div>
+    <div class="col-md-3 col-6" *ngFor="let item of savedItems; let i = index">
+      <div class="saved-item">
+        <div class="saved-item__image">
+          <a [routerLink]="['/produto', item.productId]">
+            <img [src]="item.imageUrl" [alt]="item.name" class="img-fluid">
+          </a>
+        </div>
+        <div class="saved-item__info">
+          <h3 class="saved-item__name">
+            <a [routerLink]="['/produto', item.productId]">{{item.name}}</a>
+          </h3>
+          <div class="saved-item__price">{{formatCurrency(item.price)}}</div>
+          <div class="saved-item__attributes" *ngIf="item.color || item.size">
+            <span *ngIf="item.color">Cor: {{item.color}}</span>
+            <span *ngIf="item.color && item.size">, </span>
+            <span *ngIf="item.size">Tamanho: {{item.size}}</span>
+          </div>
+          <div class="saved-item__stock" *ngIf="item.stockQuantity <= 5">
+            {{item.stockQuantity > 0 ? 'Apenas ' + item.stockQuantity + ' em estoque' : 'Fora de estoque'}}
+          </div>
+          <div class="saved-item__actions">
+            <button class="saved-item__action-btn" (click)="moveToCart(item)" [disabled]="item.stockQuantity === 0">
+              Adicionar ao Carrinho
+            </button>
+            <button class="saved-item__action-btn saved-item__action-btn--remove" (click)="removeSavedItem(i)">
+              <i class="fas fa-trash-alt"></i> Remover
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

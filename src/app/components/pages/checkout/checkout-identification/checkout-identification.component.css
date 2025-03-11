@@ -1,0 +1,41 @@
+/* Estilos específicos do componente de identificação */
+.checkout-identification-options {
+    margin-top: var(--margin-medium);
+    padding: var(--padding-small);
+    background-color: var(--checkout-background-alternativeColor);
+    border-radius: var(--border-radius-small);
+  }
+  
+  .checkout-identification-option {
+    margin-bottom: var(--margin-small);
+  }
+  
+  .checkout-password-requirements {
+    font-size: var(--font-size-small);
+    color: var(--checkout-text-subtitleColor);
+    margin-top: var(--margin-xSmall);
+  }
+  
+  .checkout-password-requirement {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--margin-xSmall);
+  }
+  
+  .checkout-password-requirement i {
+    margin-right: var(--margin-xSmall);
+  }
+  
+  .checkout-password-requirement.valid {
+    color: var(--checkout-input-inputSuccessTextColor);
+  }
+  
+  .checkout-password-requirement.invalid {
+    color: var(--checkout-input-inputErrorTextColor);
+  }
+  
+  .checkout-guest-option {
+    margin-top: var(--margin-medium);
+    padding-top: var(--padding-small);
+    border-top: 1px solid var(--checkout-border);
+  }

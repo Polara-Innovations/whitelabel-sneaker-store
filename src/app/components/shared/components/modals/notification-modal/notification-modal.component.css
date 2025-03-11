@@ -1,0 +1,99 @@
+.modal-dialog-toast {
+    position: fixed;
+    top: 1%;
+    right: 1%;
+    margin: 0;
+    width: 320px;
+    max-width: 90%;
+  }
+  
+  .toast-modal {
+    background: transparent;
+    pointer-events: none;
+    z-index: 7000;
+  }
+  
+  .toast-modal .modal-backdrop {
+    display: none !important;
+  }
+  
+  .toast-modal.fade .modal-dialog {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+  }
+  
+  .toast-modal.show .modal-dialog {
+    transform: none;
+  }
+  
+  .toast-modal .modal-content {
+    pointer-events: auto;
+  }
+  
+  .notification-modal {
+    background-color: var(--modal-background-color);
+    color: var(--modal-text-color);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--box-shadow-modal);
+    overflow: hidden;
+    border-left: 4px solid;
+  }
+  
+  .notification-modal-success {
+    border-left-color: var(--global-color-success);
+  }
+  
+  .notification-modal-error {
+    border-left-color: var(--global-color-error);
+  }
+  
+  .notification-modal-info {
+    border-left-color: var(--global-color-info);
+  }
+  
+  .notification-header {
+    background-color: transparent;
+    padding: var(--padding-small) var(--padding-medium);
+    border-bottom: 1px solid var(--modal-border);
+  }
+  
+  .notification-header .modal-title {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-medium);
+    display: flex;
+    align-items: center;
+  }
+  
+  .notification-header-success .modal-title {
+    color: var(--global--success);
+  }
+  
+  .notification-header-error .modal-title {
+    color: var(--global--error);
+  }
+  
+  .notification-header-info .modal-title {
+    color: var(--global--info);
+  }
+  
+  .notification-message {
+    font-size: var(--font-size-small);
+    line-height: 1.5;
+    margin: 0;
+    padding: var(--padding-small) 0;
+  }
+  
+  .modal-body {
+    padding: var(--padding-medium);
+  }
+  
+  .btn-close {
+    font-size: var(--font-size-small);
+    color: var(--modal-text-color);
+    opacity: 0.7;
+    transition: opacity var(--animation-duration-short) var(--animation-easing-easeInOut);
+  }
+  
+  .btn-close:hover {
+    opacity: 1;
+  }

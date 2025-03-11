@@ -1,0 +1,289 @@
+<div class="order-details-page container-xLarge">
+   <div class="row">
+      <div class="col-12">
+         <div class="order-details-header">
+            <button class="btn-back" (click)="goBack()">
+            <i class="fas fa-arrow-left"></i> Voltar para pedidos
+            </button>
+         </div>
+      </div>
+   </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="order-details-header">
+          <h1 class="order-details-title">Detalhes do Pedido</h1>
+        </div>
+      </div>
+    </div>
+  
+    <div *ngIf="loading" class="text-center py-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Carregando...</span>
+      </div>
+      <p class="mt-2">Carregando detalhes do pedido...</p>
+    </div>
+  
+    <div *ngIf="!loading && order" class="order-details-content">
+      <!-- Cabeçalho com informações gerais do pedido -->
+      <div class="order-summary-card">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="order-summary-info">
+              <h2 class="order-number">Pedido #{{ order.orderNumber }}</h2>
+              <div class="order-date">
+                <i class="fas fa-calendar-alt"></i> Realizado em {{ formatDate(order.createdAt) }}
+              </div>
+              <div class="order-status-badge" [ngClass]="getStatusClass(order.status)">
+                {{ getStatusLabel(order.status) }}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="order-summary-actions">
+              <button 
+                *ngIf="order.canCancel" 
+                class="btn btn-outline-danger me-2" 
+                (click)="openCancelModal()">
+                <i class="fas fa-times-circle"></i> Cancelar Pedido
+              </button>
+              <button 
+                *ngIf="order.canReturn" 
+                class="btn btn-outline-warning me-2" 
+                (click)="openReturnModal()">
+                <i class="fas fa-undo"></i> Solicitar Devolução
+              </button>
+              <button 
+                class="btn btn-primary" 
+                (click)="reorderAll()">
+                <i class="fas fa-shopping-cart"></i> Comprar Novamente
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Timeline de status do pedido -->
+      <div class="order-timeline-section">
+        <h3 class="section-title">Acompanhamento do Pedido</h3>
+        
+        <div class="order-timeline">
+          <div class="timeline-step" [ngClass]="{'completed': isStepCompleted(1), 'current': isCurrentStep(1)}">
+            <div class="timeline-icon">
+              <i class="fas fa-clipboard-check"></i>
+            </div>
+            <div class="timeline-content">
+              <h4 class="timeline-title">Processando</h4>
+              <p class="timeline-date" *ngIf="order.statusHistory[0]">
+                {{ formatDate(order.statusHistory[0].date) }}
+              </p>
+            </div>
+          </div>
+          
+          <div class="timeline-step" [ngClass]="{'completed': isStepCompleted(2), 'current': isCurrentStep(2)}">
+            <div class="timeline-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="timeline-content">
+              <h4 class="timeline-title">Confirmado</h4>
+              <p class="timeline-date" *ngIf="order.statusHistory[1]">
+                {{ formatDate(order.statusHistory[1].date) }}
+              </p>
+            </div>
+          </div>
+          
+          <div class="timeline-step" [ngClass]="{'completed': isStepCompleted(3), 'current': isCurrentStep(3)}">
+            <div class="timeline-icon">
+              <i class="fas fa-shipping-fast"></i>
+            </div>
+            <div class="timeline-content">
+              <h4 class="timeline-title">Enviado</h4>
+              <p class="timeline-date" *ngIf="order.statusHistory[2]">
+                {{ formatDate(order.statusHistory[2].date) }}
+              </p>
+              <p *ngIf="order.shipping.trackingCode" class="timeline-tracking">
+                Código de rastreio: 
+                <a href="javascript:void(0)" (click)="openTrackingInfo()">
+                  {{ order.shipping.trackingCode }}
+                </a>
+              </p>
+            </div>
+          </div>
+          
+          <div class="timeline-step" [ngClass]="{'completed': isStepCompleted(4), 'current': isCurrentStep(4)}">
+            <div class="timeline-icon">
+              <i class="fas fa-box-open"></i>
+            </div>
+            <div class="timeline-content">
+              <h4 class="timeline-title">Entregue</h4>
+              <p class="timeline-date" *ngIf="order.shipping.deliveredDate">
+                {{ formatDate(order.shipping.deliveredDate) }}
+              </p>
+              <p *ngIf="!order.shipping.deliveredDate && order.shipping.estimatedDelivery" class="timeline-estimate">
+                Previsão: {{ formatDate(order.shipping.estimatedDelivery) }}
+              </p>
+            </div>
+          </div>
+          
+          <div class="timeline-connector" *ngIf="order.status !== 'canceled' && order.status !== 'returned'"></div>
+          
+          <div class="timeline-step timeline-step-canceled" *ngIf="order.status === 'canceled' || order.status === 'returned'">
+            <div class="timeline-icon">
+              <i [class]="order.status === 'canceled' ? 'fas fa-ban' : 'fas fa-undo-alt'"></i>
+            </div>
+            <div class="timeline-content">
+              <h4 class="timeline-title">{{ order.status === 'canceled' ? 'Cancelado' : 'Devolvido' }}</h4>
+              <p class="timeline-date" *ngIf="order.statusHistory[order.statusHistory.length - 1]">
+                {{ formatDate(order.statusHistory[order.statusHistory.length - 1].date) }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Lista de itens do pedido -->
+      <div class="order-items-section">
+        <h3 class="section-title">Itens do Pedido</h3>
+        
+        <div class="order-items-list">
+          <div class="order-item" *ngFor="let item of order.items">
+            <div class="order-item__image-container">
+              <img [src]="item.imageUrl" [alt]="item.name" class="order-item__image">
+            </div>
+            
+            <div class="order-item__details">
+              <h4 class="order-item__name">{{ item.name }}</h4>
+              <div class="order-item__attributes" *ngIf="item.color || item.size">
+                <span *ngIf="item.color">Cor: {{ item.color }}</span>
+                <span *ngIf="item.color && item.size"> | </span>
+                <span *ngIf="item.size">Tamanho: {{ item.size }}</span>
+              </div>
+              <div class="order-item__price">
+                <span class="order-item__unit-price">{{ formatCurrency(item.price) }}</span>
+                <span class="order-item__quantity">x {{ item.quantity }}</span>
+              </div>
+            </div>
+            
+            <div class="order-item__subtotal">
+              <div class="order-item__subtotal-label">Subtotal:</div>
+              <div class="order-item__subtotal-value">{{ formatCurrency(item.price * item.quantity) }}</div>
+            </div>
+            
+            <div class="order-item__actions">
+              <button 
+                class="btn btn-sm btn-outline-primary me-2" 
+                (click)="addItemToCart(item)">
+                <i class="fas fa-cart-plus"></i> Comprar novamente
+              </button>
+              <button 
+                class="btn btn-sm btn-outline-secondary" 
+                [disabled]="item.reviewed || order.status !== 'delivered'"
+                (click)="openReviewModal(item)">
+                <i class="fas fa-star"></i> {{ item.reviewed ? 'Avaliado' : 'Avaliar' }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Informações de envio e entrega -->
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <div class="order-info-card">
+            <h3 class="info-card-title">
+              <i class="fas fa-map-marker-alt me-2"></i> Endereço de Entrega
+            </h3>
+            <div class="info-card-content">
+              <p class="address-line">{{ order.shipping.address.street }}, {{ order.shipping.address.number }}</p>
+              <p class="address-line" *ngIf="order.shipping.address.complement">
+                {{ order.shipping.address.complement }}
+              </p>
+              <p class="address-line">
+                {{ order.shipping.address.neighborhood }} - {{ order.shipping.address.city }}/{{ order.shipping.address.state }}
+              </p>
+              <p class="address-line">
+                CEP: {{ order.shipping.address.zipCode }}
+              </p>
+              <div class="shipping-method mt-3">
+                <strong>Método de entrega:</strong> {{ order.shipping.method }}
+              </div>
+              <div class="shipping-cost">
+                <strong>Frete:</strong> {{ formatCurrency(order.shipping.cost) }}
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="order-info-card">
+            <h3 class="info-card-title">
+              <i class="fas fa-credit-card me-2"></i> Pagamento
+            </h3>
+            <div class="info-card-content">
+              <div class="payment-method">
+                <strong>Método de pagamento:</strong> {{ order.payment.method }}
+              </div>
+              <div class="payment-status">
+                <strong>Status:</strong> 
+                <span [ngClass]="{
+                  'text-success': order.payment.status === 'approved',
+                  'text-warning': order.payment.status === 'pending',
+                  'text-danger': order.payment.status === 'rejected',
+                  'text-info': order.payment.status === 'refunded'
+                }">
+                  {{ order.payment.status === 'approved' ? 'Aprovado' : 
+                     order.payment.status === 'pending' ? 'Pendente' : 
+                     order.payment.status === 'rejected' ? 'Rejeitado' : 
+                     order.payment.status === 'refunded' ? 'Reembolsado' : '' }}
+                </span>
+              </div>
+              <div *ngIf="order.payment.cardLastDigits" class="payment-card">
+                <strong>Cartão:</strong> **** **** **** {{ order.payment.cardLastDigits }}
+              </div>
+              <div *ngIf="order.payment.installments && order.payment.installments > 1" class="payment-installments">
+                <strong>Parcelamento:</strong> {{ order.payment.installments }}x de {{ formatCurrency(order.payment.installmentValue || 0) }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Resumo de valores -->
+      <div class="order-total-summary">
+        <div class="order-total-row">
+          <span>Subtotal:</span>
+          <span>{{ formatCurrency(order.subtotal) }}</span>
+        </div>
+        <div class="order-total-row" *ngIf="order.discount > 0">
+          <span>Descontos:</span>
+          <span>-{{ formatCurrency(order.discount) }}</span>
+        </div>
+        <div class="order-total-row">
+          <span>Frete:</span>
+          <span>{{ formatCurrency(order.shipping.cost) }}</span>
+        </div>
+        <div class="order-total-row order-total-row--final">
+          <span>Total:</span>
+          <span>{{ formatCurrency(order.total) }}</span>
+        </div>
+      </div>
+  
+      <!-- Histórico de status detalhado -->
+      <div class="order-history-section">
+        <h3 class="section-title">Histórico do Pedido</h3>
+        
+        <div class="order-history-list">
+          <div class="order-history-item" *ngFor="let history of order.statusHistory">
+            <div class="order-history-date">
+              {{ formatDate(history.date) }}
+            </div>
+            <div class="order-history-status" [ngClass]="getStatusClass(history.status)">
+              {{ getStatusLabel(history.status) }}
+            </div>
+            <div class="order-history-comment" *ngIf="history.comment">
+              {{ history.comment }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

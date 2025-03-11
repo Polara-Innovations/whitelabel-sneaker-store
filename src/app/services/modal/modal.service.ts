@@ -31,6 +31,11 @@ export class ModalService {
   infoMessage: string = '';
   infoDetails: string = '';
 
+  // Para modal de notificação
+  notificationTitle: string = '';
+  notificationMessage: string = '';
+  notificationType: 'success' | 'error' | 'info' = 'info';
+
   // Temporizadores para fechar modais automaticamente
   private modalTimers: Map<string, any> = new Map();
 
@@ -39,7 +44,7 @@ export class ModalService {
   /**
    * Obtém uma instância do modal do Bootstrap
    */
-  private getBootstrapModal(modalId: string): any {
+  private getBootstrapModal(modalId: string, backdrop: boolean): any {
     const modalElement = document.getElementById(modalId);
     if (!modalElement) {
       console.warn(`Elemento com ID ${modalId} não encontrado`);
@@ -49,9 +54,11 @@ export class ModalService {
     // Usar o bootstrap importado diretamente
     let modal = bootstrap.Modal.getInstance(modalElement);
 
+    let backdropValue: boolean | "static" | undefined = backdrop ? 'static' : false;
+
     if (!modal) {
       modal = new bootstrap.Modal(modalElement, {
-        backdrop: 'static',
+        backdrop: backdropValue,
         keyboard: false
       });
     }
@@ -70,7 +77,7 @@ export class ModalService {
       // Configurar novo temporizador
       const timerId = setTimeout(() => {
         this.dismissAll();
-        this.modalTimers.delete(modalId); 
+        this.modalTimers.delete(modalId);
       }, durationTime);
 
       // Armazenar o ID do temporizador
@@ -164,7 +171,7 @@ export class ModalService {
 
   // Modal de Privacidade
   openPrivacyModal(): void {
-    const modal = this.getBootstrapModal('privacyModal');
+    const modal = this.getBootstrapModal('privacyModal', true);
     if (modal) {
       modal.show();
     }
@@ -172,7 +179,7 @@ export class ModalService {
 
   // Modal de Termos e Condições
   openTermsModal(): void {
-    const modal = this.getBootstrapModal('termsModal');
+    const modal = this.getBootstrapModal('termsModal', true);
     if (modal) {
       modal.show();
     }
@@ -180,7 +187,7 @@ export class ModalService {
 
   // Modal de Cookies
   openCookiesModal(): void {
-    const modal = this.getBootstrapModal('cookiesModal');
+    const modal = this.getBootstrapModal('cookiesModal', true);
     if (modal) {
       modal.show();
     }
@@ -193,7 +200,7 @@ export class ModalService {
     this.confirmButtonLabel = confirmLabel || 'Confirmar';
     this.cancelButtonLabel = cancelLabel || 'Cancelar';
 
-    const modal = this.getBootstrapModal('confirmationModal');
+    const modal = this.getBootstrapModal('confirmationModal', true);
     if (modal) {
       // Configurar evento para limpar o Subject quando o modal for fechado
       const modalElement = document.getElementById('confirmationModal');
@@ -229,7 +236,7 @@ export class ModalService {
     this.errorDetails = details || '';
     this.showRetryButton = showRetry;
 
-    const modal = this.getBootstrapModal('errorModal');
+    const modal = this.getBootstrapModal('errorModal', true);
     if (modal) {
       modal.show();
 
@@ -252,7 +259,7 @@ export class ModalService {
     this.warningMessage = message;
     this.warningItems = items || [];
 
-    const modal = this.getBootstrapModal('warningModal');
+    const modal = this.getBootstrapModal('warningModal', true);
     if (modal) {
       // Configurar evento para limpar o Subject quando o modal for fechado
       const modalElement = document.getElementById('warningModal');
@@ -294,7 +301,7 @@ export class ModalService {
     this.infoMessage = message;
     this.infoDetails = details || '';
 
-    const modal = this.getBootstrapModal('infoModal');
+    const modal = this.getBootstrapModal('infoModal', true);
     if (modal) {
       modal.show();
 
@@ -302,6 +309,21 @@ export class ModalService {
       if (durationTime && durationTime > 0) {
         this.setAutoCloseTimer('infoModal', durationTime);
       }
+    }
+  }
+
+  // Modal de Notificação
+  openNotificationModal(type: 'success' | 'error' | 'info', title: string, message: string, durationTime: number = 5000) {
+    this.notificationType = type;
+    this.notificationTitle = title;
+    this.notificationMessage = message;
+
+    const modal = this.getBootstrapModal('notificationModal', false);
+    if (modal) {
+      modal.show();
+
+      // Configurar fechamento automático
+      this.setAutoCloseTimer('notificationModal', durationTime);
     }
   }
 }

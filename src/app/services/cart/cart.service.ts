@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { LocalStorageService } from '../local-storage/local-storage.service';
 
 export interface CartItem {
   id: number;
@@ -10,13 +11,14 @@ export interface CartItem {
   quantity: number;
   color: string;
   size: string;
+  stockQuantity: number;
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  private readonly CART_STORAGE_KEY = 'shopping_cart';
+  private readonly CART_STORAGE_KEY = 'user_cart_items';
   private items: CartItem[] = [];
   private cartSubject = new BehaviorSubject<CartItem[]>([]);
   private cartCountSubject = new BehaviorSubject<number>(0);
@@ -27,13 +29,13 @@ export class CartService {
   public cartCount$: Observable<number> = this.cartCountSubject.asObservable();
   public cartTotal$: Observable<number> = this.cartTotalSubject.asObservable();
 
-  constructor() {
+  constructor(private localStorageService: LocalStorageService) {
     this.loadCart();
   }
 
   // Carregar o carrinho do sessionStorage
   private loadCart(): void {
-    const storedCart = sessionStorage.getItem(this.CART_STORAGE_KEY);
+    const storedCart = this.localStorageService.getItem(this.CART_STORAGE_KEY);
     if (storedCart) {
       this.items = JSON.parse(storedCart);
       this.updateCart();
@@ -42,7 +44,7 @@ export class CartService {
 
   // Salvar o carrinho no sessionStorage
   private saveCart(): void {
-    sessionStorage.setItem(this.CART_STORAGE_KEY, JSON.stringify(this.items));
+    this.localStorageService.setItem(this.CART_STORAGE_KEY, JSON.stringify(this.items));
     this.updateCart();
   }
 

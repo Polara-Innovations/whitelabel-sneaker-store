@@ -1,0 +1,413 @@
+/* Estilos Gerais do Checkout */
+.checkout-page {
+    background-color: var(--checkout-background-color);
+    min-height: 100vh;
+    }
+    
+    .checkout-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    }
+    
+    /* Estilos do Card */
+    .checkout-card {
+    background-color: var(--checkout-background-color);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--box-shadow-card);
+    border: 1px solid var(--checkout-border);
+    margin-bottom: var(--margin-medium);
+    overflow: hidden;
+    }
+    
+    .checkout-card-title {
+    color: var(--checkout-text-titleColor);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--margin-medium);
+    padding-bottom: var(--padding-small);
+    border-bottom: 1px solid var(--checkout-border);
+    }
+    
+    .checkout-card-subtitle {
+    color: var(--checkout-text-subtitleColor);
+    font-weight: var(--font-weight-regular);
+    margin-bottom: var(--margin-small);
+    }
+    
+    .checkout-card-body {
+    padding: var(--padding-medium);
+    }
+    
+    /* Estilos dos Formulários */
+    .checkout-form-group {
+    margin-bottom: var(--margin-medium);
+    }
+    
+    .checkout-form-label {
+    display: block;
+    margin-bottom: var(--margin-xSmall);
+    color: var(--checkout-text-color);
+    font-weight: var(--font-weight-regular);
+    }
+    
+    .checkout-form-control {
+    width: 100%;
+    padding: var(--padding-small);
+    border: 1px solid var(--checkout-input-inputBorderColor);
+    border-radius: var(--border-radius-small);
+    background-color: var(--checkout-input-inputBackgroundColor);
+    color: var(--checkout-input-inputTextColor);
+    transition: border-color var(--animation-duration-short) var(--animation-easing-easeInOut);
+    }
+    
+    .checkout-form-control:focus {
+    border-color: var(--checkout-input-inputFocusBorderColor);
+    background-color: var(--checkout-input-inputFocusBackgroundColor);
+    color: var(--checkout-input-inputFocusTextColor);
+    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+    
+    .checkout-form-control::placeholder {
+    color: var(--checkout-input-inputPlaceholderColor);
+    }
+    
+    .checkout-form-control.is-invalid {
+    border-color: var(--checkout-input-inputErrorBorderColor);
+    background-color: var(--checkout-input-inputErrorBackgroundColor);
+    }
+    
+    .checkout-form-control.is-valid {
+    border-color: var(--checkout-input-inputSuccessBorderColor);
+    background-color: var(--checkout-input-inputSuccessBackgroundColor);
+    }
+    
+    .checkout-form-control:disabled {
+    background-color: var(--checkout-input-inputDisabledBackgroundColor);
+    color: var(--checkout-input-inputDisabledTextColor);
+    border-color: var(--checkout-input-inputDisabledBorderColor);
+    }
+    
+    .checkout-feedback {
+    display: block;
+    width: 100%;
+    margin-top: var(--margin-xSmall);
+    font-size: var(--font-size-small);
+    }
+    
+    .checkout-invalid-feedback {
+    color: var(--checkout-input-inputErrorTextColor);
+    }
+    
+    .checkout-valid-feedback {
+    color: var(--checkout-input-inputSuccessTextColor);
+    }
+    
+    /* Estilos dos Botões */
+    .checkout-btn {
+    display: inline-block;
+    font-weight: var(--font-weight-regular);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    padding: var(--padding-small) var(--padding-medium);
+    font-size: var(--font-size-medium);
+    line-height: 1.5;
+    border-radius: var(--border-radius-small);
+    transition: all var(--animation-duration-short) var(--animation-easing-easeInOut);
+    cursor: pointer;
+    }
+    
+    .checkout-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+    
+    .checkout-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    }
+    
+    .checkout-btn-primary {
+    background-color: var(--checkout-button-backgroundColor);
+    border: 1px solid var(--checkout-button-borderColor);
+    color: var(--checkout-button-textColor);
+    }
+    
+    .checkout-btn-primary:hover:not(:disabled) {
+    background-color: var(--checkout-button-activeBackgroundColor);
+    border-color: var(--checkout-button-activeBackgroundColor);
+    color: var(--checkout-button-activeTextColor);
+    }
+    
+    .checkout-btn-secondary {
+    background-color: var(--checkout-button-alternativeBackgroundColor);
+    border: 1px solid var(--checkout-button-alternativeBorderColor);
+    color: var(--checkout-button-alternativeTextColor);
+    }
+    
+    .checkout-btn-secondary:hover:not(:disabled) {
+    background-color: var(--checkout-button-alternativeactiveBackgroundColor);
+    border-color: var(--checkout-button-alternativeactiveBackgroundColor);
+    color: var(--checkout-button-alternativeactiveTextColor);
+    }
+    
+    .checkout-btn-outline-primary {
+    background-color: transparent;
+    border: 1px solid var(--checkout-button-borderColor);
+    color: var(--checkout-button-backgroundColor);
+    }
+    
+    .checkout-btn-outline-primary:hover:not(:disabled) {
+    background-color: var(--checkout-button-backgroundColor);
+    color: var(--checkout-button-textColor);
+    }
+    
+    .checkout-btn-success {
+    background-color: var(--checkout-input-inputSuccessTextColor);
+    border: 1px solid var(--checkout-input-inputSuccessBorderColor);
+    color: #ffffff;
+    }
+    
+    .checkout-btn-success:hover:not(:disabled) {
+    background-color: #157347;
+    border-color: #146c43;
+    }
+    
+    /* Estilos das opções selecionáveis */
+    .checkout-selectable-item {
+    border: 1px solid var(--checkout-border);
+    border-radius: var(--border-radius-small);
+    padding: var(--padding-small);
+    margin-bottom: var(--margin-small);
+    cursor: pointer;
+    transition: all var(--animation-duration-short) var(--animation-easing-easeInOut);
+    }
+    
+    .checkout-selectable-item:hover {
+    border-color: var(--checkout-button-backgroundColor);
+    transform: translateY(-2px);
+    }
+    
+    .checkout-selectable-item.selected {
+    border-color: var(--checkout-button-backgroundColor);
+    background-color: rgba(13, 110, 253, 0.05);
+    }
+    
+    /* Estilos do Progresso */
+    .checkout-progress {
+    margin-bottom: var(--margin-large);
+    }
+    
+    .checkout-progress-steps {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    }
+    
+    .checkout-progress-steps::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--checkout-border);
+    z-index: 1;
+    }
+    
+    .checkout-progress-step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    }
+    
+    .checkout-progress-step-circle {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: var(--checkout-background-color);
+    border: 2px solid var(--checkout-border);
+    color: var(--checkout-text-subtitleColor);
+    margin: 0 auto var(--margin-xSmall);
+    font-weight: var(--font-weight-bold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--animation-duration-short) var(--animation-easing-easeInOut);
+    }
+
+    .checkout-progress-step.active .checkout-progress-step-circle {
+        background-color: var(--checkout-button-backgroundColor);
+        border-color: var(--checkout-button-backgroundColor);
+        color: var(--checkout-button-textColor);
+      }
+      
+      .checkout-progress-step.completed .checkout-progress-step-circle {
+        background-color: var(--checkout-button-backgroundColor);
+        border-color: var(--checkout-button-backgroundColor);
+        color: var(--checkout-button-textColor);
+      }
+      
+      .checkout-progress-step-title {
+        font-size: var(--font-size-small);
+        color: var(--checkout-text-subtitleColor);
+        margin-top: var(--margin-xSmall);
+      }
+      
+      .checkout-progress-step.active .checkout-progress-step-title {
+        color: var(--checkout-text-titleColor);
+        font-weight: var(--font-weight-bold);
+      }
+      
+      .checkout-progress-step.completed .checkout-progress-step-title {
+        color: var(--checkout-text-color);
+      }
+      
+      .checkout-progress-step-line {
+        position: absolute;
+        top: 14px;
+        left: 50%;
+        width: 100%;
+        height: 2px;
+        background-color: var(--checkout-border);
+      }
+      
+      .checkout-progress-step.completed .checkout-progress-step-line {
+        background-color: var(--checkout-button-backgroundColor);
+      }
+      
+      /* Estilos do Resumo */
+      .checkout-summary {
+        position: sticky;
+        top: 20px;
+      }
+      
+      .checkout-summary-title {
+        font-size: var(--font-size-large);
+        font-weight: var(--font-weight-bold);
+        color: var(--checkout-text-titleColor);
+        margin-bottom: var(--margin-medium);
+        padding-bottom: var(--padding-small);
+        border-bottom: 1px solid var(--checkout-border);
+      }
+      
+      .checkout-summary-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: var(--margin-small);
+        color: var(--checkout-text-color);
+      }
+      
+      .checkout-summary-total {
+        font-weight: var(--font-weight-bold);
+        font-size: var(--font-size-medium);
+        color: var(--checkout-text-titleColor);
+        margin-top: var(--margin-small);
+        padding-top: var(--padding-small);
+        border-top: 1px solid var(--checkout-border);
+      }
+      
+      /* Estilos dos itens de produto */
+      .checkout-product-item {
+        display: flex;
+        margin-bottom: var(--margin-small);
+        padding-bottom: var(--padding-small);
+        border-bottom: 1px solid var(--checkout-border);
+      }
+      
+      .checkout-product-image {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: var(--border-radius-small);
+        margin-right: var(--margin-small);
+      }
+      
+      .checkout-product-details {
+        flex: 1;
+      }
+      
+      .checkout-product-name {
+        font-weight: var(--font-weight-bold);
+        color: var(--checkout-text-color);
+        margin-bottom: var(--margin-xSmall);
+      }
+      
+      .checkout-product-attributes {
+        font-size: var(--font-size-small);
+        color: var(--checkout-text-subtitleColor);
+        margin-bottom: var(--margin-xSmall);
+      }
+      
+      .checkout-product-price {
+        font-weight: var(--font-weight-bold);
+        color: var(--checkout-text-titleColor);
+      }
+      
+      .checkout-product-quantity {
+        font-size: var(--font-size-small);
+        color: var(--checkout-text-subtitleColor);
+      }
+      
+      /* Utilitários */
+      .checkout-text-muted {
+        color: var(--checkout-text-subtitleColor);
+      }
+      
+      .checkout-text-success {
+        color: var(--checkout-input-inputSuccessTextColor);
+      }
+      
+      .checkout-text-danger {
+        color: var(--checkout-input-inputErrorTextColor);
+      }
+      
+      /* Responsividade */
+      @media (max-width: 768px) {
+        .checkout-progress-step-title {
+          font-size: var(--font-size-xSmall);
+        }
+        
+        .checkout-summary {
+          position: static;
+          margin-top: var(--margin-medium);
+        }
+      }
+      
+      @media (max-width: 576px) {
+        .checkout-progress-steps {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        
+        .checkout-progress-steps::before {
+          display: none;
+        }
+        
+        .checkout-progress-step {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          margin-bottom: var(--margin-small);
+        }
+        
+        .checkout-progress-step-circle {
+          margin: 0 var(--margin-small) 0 0;
+        }
+        
+        .checkout-progress-step-title {
+          margin-top: 0;
+        }
+        
+        .checkout-progress-step-line {
+          display: none;
+        }
+      }
+
+      

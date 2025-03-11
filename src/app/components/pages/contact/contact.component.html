@@ -1,0 +1,13 @@
+<div [ngClass]="['container-xLarge']" class="contact-section">
+  <app-main-section-title [title]="texts?.title || 'Entre em Contato'" [subtitle]="texts?.subtitle || 'Estamos aqui para ajudar. Preencha o formulário abaixo ou use nossas informações de contato.  '"></app-main-section-title>
+  
+  <div class="contact-content">
+    <div class="contact-form-container">
+      <app-contact-form [texts]="texts?.form"></app-contact-form>
+    </div>
+    
+    <div class="contact-info-container">
+      <app-contact-info [texts]="texts?.info"></app-contact-info>
+    </div>
+  </div>
+</div>

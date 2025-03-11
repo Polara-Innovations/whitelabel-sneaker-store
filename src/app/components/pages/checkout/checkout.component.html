@@ -1,0 +1,49 @@
+<div class="checkout-page container-xLarge">
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+      <!-- Indicador de Progresso -->
+      <app-checkout-wizard></app-checkout-wizard>
+
+      <div class="row">
+        <!-- Conteúdo do Checkout -->
+        <div class="col-lg-8">
+          <div class="checkout-card">
+            <!-- Etapa 1: Identificação -->
+            <app-checkout-identification *ngIf="checkoutService.currentStep === 1"></app-checkout-identification>
+            
+            <!-- Etapa 2: Endereço de Entrega -->
+            <app-checkout-shipping *ngIf="checkoutService.currentStep === 2"></app-checkout-shipping>
+            
+            <!-- Etapa 3: Pagamento -->
+            <app-checkout-payment *ngIf="checkoutService.currentStep === 3"></app-checkout-payment>
+            
+            <!-- Etapa 4: Revisão -->
+            <app-checkout-review *ngIf="checkoutService.currentStep === 4"></app-checkout-review>
+          </div>
+
+          <!-- Botões de Navegação -->
+          <div class="checkout-navigation-buttons mt-4">
+            <button class="checkout-btn checkout-btn-outline-primary" 
+                    *ngIf="checkoutService.currentStep > 1" 
+                    (click)="prevStep()">
+              <i class="fas fa-arrow-left me-2"></i> Voltar
+            </button>
+            
+            <div *ngIf="checkoutService.currentStep === 1"></div> <!-- Espaçador -->
+            
+            <button class="checkout-btn checkout-btn-primary" 
+                    *ngIf="checkoutService.currentStep < 4" 
+                    (click)="nextStep()">
+              Continuar <i class="fas fa-arrow-right ms-2"></i>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Resumo do Pedido -->
+        <div class="col-lg-4">
+          <app-checkout-summary></app-checkout-summary>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

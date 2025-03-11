@@ -1,0 +1,17 @@
+/* Estilos específicos do componente de checkout principal */
+.checkout-navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--margin-medium);
+  }
+  
+  @media (max-width: 576px) {
+    .checkout-navigation-buttons {
+      flex-direction: column-reverse;
+      gap: var(--spacing-small);
+    }
+    
+    .checkout-navigation-buttons .checkout-btn {
+      width: 100%;
+    }
+  }

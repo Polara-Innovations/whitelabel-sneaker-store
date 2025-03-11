@@ -1,0 +1,210 @@
+<div class="checkout-card-body">
+  <h2 class="checkout-card-title">Revisão do Pedido</h2>
+  
+  <!-- Resumo das Informações -->
+  <div class="checkout-review-sections">
+    <!-- Dados do Cliente -->
+    <div class="checkout-review-section">
+      <div class="checkout-review-section-header">
+        <h3 class="checkout-review-section-title">Dados do Cliente</h3>
+        <a class="checkout-review-section-edit" (click)="checkoutService.setCurrentStep(1)">
+          Editar
+        </a>
+      </div>
+      <div class="checkout-review-card">
+        <div class="checkout-review-item">
+          <span class="checkout-review-label">E-mail:</span>
+          <span class="checkout-review-value">{{ checkoutService.identificationData?.email }}</span>
+        </div>
+        <div class="checkout-review-item" *ngIf="checkoutService.identificationData?.isGuestCheckout">
+          <span class="checkout-text-muted">Compra como convidado</span>
+        </div>
+        <div class="checkout-review-item" *ngIf="checkoutService.identificationData?.createAccount">
+          <span class="checkout-text-muted">Conta será criada após a finalização do pedido</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Endereço de Entrega -->
+    <div class="checkout-review-section">
+      <div class="checkout-review-section-header">
+        <h3 class="checkout-review-section-title">Endereço de Entrega</h3>
+        <a class="checkout-review-section-edit" (click)="checkoutService.setCurrentStep(2)">
+          Editar
+        </a>
+      </div>
+      <div class="checkout-review-card">
+        <ng-container *ngIf="checkoutService.selectedAddress">
+          <div class="checkout-review-item">
+            <span class="checkout-review-value fw-bold">{{ checkoutService.selectedAddress.name }}</span>
+          </div>
+          <div class="checkout-review-item">
+            <span class="checkout-review-value">
+              {{ checkoutService.selectedAddress.street }}, {{ checkoutService.selectedAddress.number }}
+              <span *ngIf="checkoutService.selectedAddress.complement">
+                , {{ checkoutService.selectedAddress.complement }}
+              </span>
+            </span>
+          </div>
+          <div class="checkout-review-item">
+            <span class="checkout-review-value">{{ checkoutService.selectedAddress.neighborhood }}</span>
+          </div>
+          <div class="checkout-review-item">
+            <span class="checkout-review-value">
+              {{ checkoutService.selectedAddress.city }} - {{ checkoutService.selectedAddress.state }}
+            </span>
+          </div>
+          <div class="checkout-review-item">
+            <span class="checkout-review-label">CEP:</span>
+            <span class="checkout-review-value">{{ checkoutService.selectedAddress.zipCode }}</span>
+          </div>
+        </ng-container>
+        
+        <ng-container *ngIf="!checkoutService.selectedAddress && checkoutService.shippingData?.addressForm">
+          <div class="checkout-review-item">
+            <span class="checkout-review-value fw-bold">{{ checkoutService.shippingData.addressForm.name }}</span>
+          </div>
+          <div class="checkout-review-item">
+            <span class="checkout-review-value">
+              {{ checkoutService.shippingData.addressForm.street }}, {{ checkoutService.shippingData.addressForm.number }}
+              <span *ngIf="checkoutService.shippingData.addressForm.complement">
+                , {{ checkoutService.shippingData.addressForm.complement }}
+              </span>
+            </span>
+          </div>
+          <div class="checkout-review-item">
+            <span class="checkout-review-value">{{ checkoutService.shippingData.addressForm.neighborhood }}</span>
+          </div>
+          <div class="checkout-review-item">
+            <span class="checkout-review-value">
+              {{ checkoutService.shippingData.addressForm.city }} - {{ checkoutService.shippingData.addressForm.state }}
+            </span>
+          </div>
+          <div class="checkout-review-item">
+            <span class="checkout-review-label">CEP:</span>
+            <span class="checkout-review-value">{{ checkoutService.shippingData.addressForm.zipCode }}</span>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    
+    <!-- Opção de Entrega -->
+    <div class="checkout-review-section">
+      <div class="checkout-review-section-header">
+        <h3 class="checkout-review-section-title">Forma de Entrega</h3>
+        <a class="checkout-review-section-edit" (click)="checkoutService.setCurrentStep(2)">
+          Editar
+        </a>
+      </div>
+      <div class="checkout-review-card">
+        <div class="checkout-review-item">
+          <span class="checkout-review-value fw-bold">{{ checkoutService.selectedShipping?.name }}</span>
+        </div>
+        <div class="checkout-review-item">
+          <span class="checkout-review-value">{{ checkoutService.selectedShipping?.deliveryTime }}</span>
+        </div>
+        <div class="checkout-review-item">
+          <span class="checkout-review-label">Previsão de entrega:</span>
+          <span class="checkout-review-value">
+            {{ checkoutService.formatDate(checkoutService.selectedShipping?.deliveryDate) }}
+          </span>
+        </div>
+        <ng-container *ngIf="checkoutService.shippingData?.scheduledDelivery">
+          <div class="checkout-review-item mt-2">
+            <span class="checkout-review-value fw-bold">Entrega agendada:</span>
+          </div>
+          <div class="checkout-review-item">
+            <span class="checkout-review-label">Data:</span>
+            <span class="checkout-review-value">
+              {{ checkoutService.formatDate(checkoutService.shippingData?.selectedDeliveryDate) }}
+            </span>
+          </div>
+          <div class="checkout-review-item">
+            <span class="checkout-review-label">Horário:</span>
+            <span class="checkout-review-value">{{ checkoutService.shippingData?.selectedDeliveryTimeSlot }}</span>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    
+    <!-- Forma de Pagamento -->
+    <div class="checkout-review-section">
+      <div class="checkout-review-section-header">
+        <h3 class="checkout-review-section-title">Forma de Pagamento</h3>
+        <a class="checkout-review-section-edit" (click)="checkoutService.setCurrentStep(3)">
+          Editar
+        </a>
+      </div>
+      <div class="checkout-review-card">
+        <div class="checkout-review-item">
+          <span class="checkout-review-value fw-bold">{{ checkoutService.selectedPaymentMethod?.name }}</span>
+        </div>
+        
+        <ng-container *ngIf="checkoutService.selectedPaymentMethod?.type === 'credit' || 
+                             checkoutService.selectedPaymentMethod?.type === 'debit'">
+          <div class="checkout-review-item" *ngIf="checkoutService.paymentData?.selectedCreditCard">
+            <span class="checkout-review-label">Cartão:</span>
+            <span class="checkout-review-value">
+              **** **** **** {{ checkoutService.paymentData.selectedCreditCard.lastDigits }}
+              ({{ checkoutService.paymentData.selectedCreditCard.brand }})
+            </span>
+          </div>
+          <div class="checkout-review-item" *ngIf="!checkoutService.paymentData?.selectedCreditCard && checkoutService.paymentData?.paymentForm">
+            <span class="checkout-review-label">Cartão:</span>
+            <span class="checkout-review-value">{{ checkoutService.paymentData.paymentForm.cardNumber }}</span>
+          </div>
+          <div class="checkout-review-item" *ngIf="checkoutService.selectedInstallment">
+            <span class="checkout-review-label">Parcelamento:</span>
+            <span class="checkout-review-value">
+              {{ checkoutService.selectedInstallment.number }}x de 
+              {{ checkoutService.formatCurrency(checkoutService.selectedInstallment.value) }}
+              {{ checkoutService.selectedInstallment.interestRate > 0 ? 
+                 '(com juros de ' + checkoutService.selectedInstallment.interestRate + '% a.m.)' : 
+                 '(sem juros)' }}
+            </span>
+          </div>
+        </ng-container>
+        
+        <ng-container *ngIf="checkoutService.selectedPaymentMethod?.type === 'boleto' || 
+                             checkoutService.selectedPaymentMethod?.type === 'pix'">
+          <div class="checkout-review-item" *ngIf="checkoutService.paymentData?.paymentForm?.cpfCnpj">
+            <span class="checkout-review-label">CPF/CNPJ:</span>
+            <span class="checkout-review-value">{{ checkoutService.paymentData.paymentForm.cpfCnpj }}</span>
+          </div>
+          <div class="checkout-review-item">
+            <span class="checkout-review-label">Valor:</span>
+            <span class="checkout-review-value">{{ checkoutService.formatCurrency(checkoutService.getTotal()) }}</span>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    
+    <!-- Termos e Condições -->
+    <div class="checkout-terms-conditions">
+      <div class="form-check">
+        <input class="form-check-input checkout-terms-checkbox" type="checkbox" id="termsAccepted" [(ngModel)]="termsAccepted">
+        <label class="form-check-label checkout-terms-label" for="termsAccepted">
+          <span class="checkout-terms-text">
+            Li e aceito os <a href="javascript:void(0)" class="checkout-terms-link" (click)="openTermsModal()">Termos e Condições</a> 
+            e a <a href="javascript:void(0)" class="checkout-terms-link" (click)="openPrivacyModal()">Política de Privacidade</a>
+          </span>
+        </label>
+      </div>
+    </div>
+    
+    <!-- Botão de Finalizar Compra -->
+    <div class="d-grid gap-2">
+      <button class="checkout-btn checkout-btn-success checkout-place-order-btn" 
+              [disabled]="!termsAccepted || isSubmitting" 
+              (click)="placeOrder()">
+        <span *ngIf="!isSubmitting">
+          <i class="fas fa-check me-2"></i> Finalizar Compra
+        </span>
+        <span *ngIf="isSubmitting">
+          <span class="spinner-border spinner-border-sm checkout-place-order-spinner" role="status" aria-hidden="true"></span>
+          Processando...
+        </span>
+      </button>
+    </div>
+  </div>
+</div>

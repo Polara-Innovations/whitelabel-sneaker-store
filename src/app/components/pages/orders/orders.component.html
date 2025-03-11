@@ -1,0 +1,133 @@
+<div class="orders-page container-xLarge">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="orders-page__title">Meus Pedidos</h1>
+      </div>
+    </div>
+  
+    <div class="orders-filter-bar">
+      <div class="row align-items-end">
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-search"></i></span>
+            <input 
+              type="text" 
+              class="form-control" 
+              placeholder="Buscar pedidos..." 
+              [value]="searchTerm"
+              (input)="search($event)">
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="filters-dropdown">
+            <label for="status-filter" class="me-2">Status:</label>
+            <select 
+              id="status-filter" 
+              class="form-select" 
+              [(ngModel)]="statusFilter"
+              (change)="applyFilters()">
+              <option value="all">Todos</option>
+              <option [value]="'processing'">Em processamento</option>
+              <option [value]="'confirmed'">Confirmado</option>
+              <option [value]="'shipped'">Enviado</option>
+              <option [value]="'delivered'">Entregue</option>
+              <option [value]="'canceled'">Cancelado</option>
+              <option [value]="'returned'">Devolvido</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="sort-dropdown text-md-end">
+            <label for="sort-order" class="me-2">Ordenar por:</label>
+            <select 
+              id="sort-order" 
+              class="form-select" 
+              [(ngModel)]="sortOrder"
+              (change)="applyFilters()">
+              <option value="newest">Mais recentes primeiro</option>
+              <option value="oldest">Mais antigos primeiro</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="orders-list mt-4">
+      <div *ngIf="loading" class="text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Carregando...</span>
+        </div>
+        <p class="mt-2">Carregando seus pedidos...</p>
+      </div>
+      
+      <div *ngIf="!loading && filteredOrders.length === 0" class="orders-empty text-center py-5">
+        <i class="fas fa-shopping-bag orders-empty__icon"></i>
+        <h3 class="orders-empty__title mt-3">Nenhum pedido encontrado</h3>
+        <p class="orders-empty__message">
+          {{ statusFilter !== 'all' ? 'Não há pedidos com o status selecionado.' : 'Você ainda não realizou nenhum pedido.' }}
+        </p>
+        <button class="btn btn-primary mt-3" routerLink="/products">
+          Começar a comprar
+        </button>
+      </div>
+      
+      <div *ngIf="!loading && filteredOrders.length > 0" class="orders-cards">
+        <div class="order-card" *ngFor="let order of filteredOrders" (click)="viewOrderDetails(order.id)">
+          <div class="order-card__header">
+            <div class="order-card__info">
+              <div class="order-card__number">
+                Pedido #{{ order.orderNumber }}
+              </div>
+              <div class="order-card__date">
+                {{ formatDate(order.createdAt) }}
+              </div>
+            </div>
+            <div class="order-card__status-container">
+              <span class="order-card__status" [ngClass]="getStatusClass(order.status)">
+                {{ getStatusLabel(order.status) }}
+              </span>
+            </div>
+          </div>
+          
+          <div class="order-card__body">
+            <div class="order-card__items">
+              <div class="order-card__item-preview" *ngFor="let item of order.items.slice(0, 3)">
+                <img [src]="item.imageUrl" [alt]="item.name" class="order-card__item-image">
+              </div>
+              <div class="order-card__more-items" *ngIf="order.items.length > 3">
+                +{{ order.items.length - 3 }} mais
+              </div>
+            </div>
+            
+            <div class="order-card__details">
+              <div class="order-card__detail">
+                <span class="order-card__detail-label">Total:</span>
+                <span class="order-card__detail-value">{{ formatCurrency(order.total) }}</span>
+              </div>
+              
+              <div class="order-card__detail" *ngIf="order.shipping.trackingCode">
+                <span class="order-card__detail-label">Rastreio:</span>
+                <span class="order-card__detail-value">{{ order.shipping.trackingCode }}</span>
+              </div>
+              
+              <div class="order-card__detail" *ngIf="order.shipping.estimatedDelivery">
+                <span class="order-card__detail-label">Entrega estimada:</span>
+                <span class="order-card__detail-value">{{ formatDate(order.shipping.estimatedDelivery) }}</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="order-card__footer">
+            <button class="order-card__action-btn" (click)="reorder($event, order.id)">
+              <i class="fas fa-redo-alt"></i> Repetir pedido
+            </button>
+            <button class="order-card__view-btn">
+              Ver detalhes <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

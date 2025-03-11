@@ -1,0 +1,227 @@
+<div class="checkout-card-body">
+  <h2 class="checkout-card-title">Endereço de Entrega</h2>
+  
+  <!-- Endereços Salvos -->
+  <div *ngIf="checkoutService.savedAddresses.length > 0 && !newAddress" class="checkout-address-list">
+    <h3 class="checkout-card-subtitle">Endereços Salvos</h3>
+    
+    <div class="row">
+      <div *ngFor="let address of checkoutService.savedAddresses" class="col-md-6 mb-3">
+        <div class="checkout-address-card checkout-selectable-item" 
+             [ngClass]="{'selected': checkoutService.selectedAddress?.id === address.id}"
+             (click)="selectAddress(address)">
+          <h4 class="checkout-address-title">{{ address.name }}</h4>
+          <p class="checkout-address-text">
+            {{ address.street }}, {{ address.number }}<br>
+            <span *ngIf="address.complement">{{ address.complement }}<br></span>
+            {{ address.neighborhood }}<br>
+            {{ address.city }} - {{ address.state }}<br>
+            CEP: {{ address.zipCode }}
+          </p>
+          <div class="checkout-address-badge" *ngIf="address.isDefault">Endereço padrão</div>
+        </div>
+      </div>
+    </div>
+    
+    <button class="checkout-btn checkout-btn-outline-primary mt-3" (click)="addNewAddress()">
+      <i class="fas fa-plus-circle me-2"></i> Adicionar novo endereço
+    </button>
+  </div>
+  
+  <!-- Formulário de Novo Endereço -->
+  <div *ngIf="newAddress" class="checkout-new-address">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3 class="checkout-card-subtitle">Novo Endereço</h3>
+      <button *ngIf="checkoutService.savedAddresses.length > 0" 
+              class="checkout-btn checkout-btn-outline-primary btn-sm" 
+              (click)="newAddress = false">
+        Usar endereço salvo
+      </button>
+    </div>
+    
+    <form [formGroup]="addressForm">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="addressName" class="checkout-form-label">Nome do endereço *</label>
+          <input type="text" class="checkout-form-control" id="addressName" formControlName="name" 
+                 placeholder="Ex: Casa, Trabalho">
+          <div *ngIf="addressForm.get('name')?.touched && addressForm.get('name')?.invalid" 
+               class="checkout-invalid-feedback">
+            Nome do endereço é obrigatório
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-3">
+          <label for="zipCode" class="checkout-form-label">CEP *</label>
+          <div class="input-group">
+            <input type="text" class="checkout-form-control" id="zipCode" formControlName="zipCode" 
+                   placeholder="00000-000">
+            <button class="checkout-btn checkout-btn-primary" type="button" (click)="searchAddressByCep()"
+                    [disabled]="isLoading">
+              <i class="fas" [ngClass]="isLoading ? 'fa-spinner fa-spin' : 'fa-search'"></i>
+            </button>
+          </div>
+          <div *ngIf="addressForm.get('zipCode')?.touched && addressForm.get('zipCode')?.invalid" 
+               class="checkout-invalid-feedback">
+            CEP inválido
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-8 mb-3">
+          <label for="street" class="checkout-form-label">Rua/Avenida *</label>
+          <input type="text" class="checkout-form-control" id="street" formControlName="street">
+          <div *ngIf="addressForm.get('street')?.touched && addressForm.get('street')?.invalid" 
+               class="checkout-invalid-feedback">
+            Rua é obrigatória
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-3">
+          <label for="number" class="checkout-form-label">Número *</label>
+          <input type="text" class="checkout-form-control" id="number" formControlName="number">
+          <div *ngIf="addressForm.get('number')?.touched && addressForm.get('number')?.invalid" 
+               class="checkout-invalid-feedback">
+            Número é obrigatório
+          </div>
+        </div>
+      </div>
+      
+      <div class="mb-3">
+        <label for="complement" class="checkout-form-label">Complemento</label>
+        <input type="text" class="checkout-form-control" id="complement" formControlName="complement" 
+               placeholder="Apto, Sala, Bloco, etc.">
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="neighborhood" class="checkout-form-label">Bairro *</label>
+          <input type="text" class="checkout-form-control" id="neighborhood" formControlName="neighborhood">
+          <div *ngIf="addressForm.get('neighborhood')?.touched && addressForm.get('neighborhood')?.invalid" 
+               class="checkout-invalid-feedback">
+            Bairro é obrigatório
+          </div>
+        </div>
+        
+        <div class="col-md-5 mb-3">
+          <label for="city" class="checkout-form-label">Cidade *</label>
+          <input type="text" class="checkout-form-control" id="city" formControlName="city">
+          <div *ngIf="addressForm.get('city')?.touched && addressForm.get('city')?.invalid" 
+               class="checkout-invalid-feedback">
+            Cidade é obrigatória
+          </div>
+        </div>
+        
+        <div class="col-md-3 mb-3">
+          <label for="state" class="checkout-form-label">Estado *</label>
+          <input type="text" class="checkout-form-control" id="state" formControlName="state">
+          <div *ngIf="addressForm.get('state')?.touched && addressForm.get('state')?.invalid" 
+               class="checkout-invalid-feedback">
+            Estado é obrigatório
+          </div>
+        </div>
+      </div>
+      
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="saveAddress" formControlName="saveAddress">
+        <label class="form-check-label" for="saveAddress">Salvar este endereço para futuras compras</label>
+      </div>
+    </form>
+  </div>
+  
+  <!-- Opções de Frete -->
+  <div class="checkout-shipping-options">
+    <h3 class="checkout-card-subtitle">Opções de Entrega</h3>
+    
+    <div *ngIf="isLoading" class="text-center my-4">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Carregando...</span>
+      </div>
+      <p class="mt-2">Calculando opções de frete...</p>
+    </div>
+    
+    <div *ngIf="!isLoading && checkoutService.shippingOptions.length === 0" class="alert alert-info">
+      <i class="fas fa-info-circle me-2"></i> Selecione ou cadastre um endereço para calcular o frete.
+    </div>
+    
+    <div *ngIf="!isLoading && checkoutService.shippingOptions.length > 0" class="mt-3">
+      <div *ngFor="let option of checkoutService.shippingOptions" 
+           class="checkout-shipping-option checkout-selectable-item mb-2"
+           [ngClass]="{'selected': checkoutService.selectedShipping?.id === option.id}"
+           (click)="selectShipping(option)">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" 
+                 [id]="'shipping-' + option.id"
+                 [checked]="checkoutService.selectedShipping?.id === option.id"
+                 name="shippingOption">
+          <label class="form-check-label w-100" [for]="'shipping-' + option.id">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <strong>{{ option.name }}</strong>
+                <div>{{ option.deliveryTime }}</div>
+                <div class="checkout-text-muted small">
+                  Receba até {{ checkoutService.formatDate(option.deliveryDate) }}
+                </div>
+              </div>
+              <div class="checkout-shipping-option-price">
+                {{ option.price > 0 ? checkoutService.formatCurrency(option.price) : 'Grátis' }}
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Agendamento de Entrega -->
+  <div *ngIf="checkoutService.selectedShipping && 
+             (checkoutService.selectedShipping.id === 'express' || checkoutService.selectedShipping.id === 'sameday')" 
+       class="checkout-scheduled-delivery mt-4">
+    <div class="form-check mb-3">
+      <input class="form-check-input" type="checkbox" id="scheduleDelivery" 
+             [(ngModel)]="scheduledDelivery" (change)="toggleScheduledDelivery()">
+      <label class="form-check-label" for="scheduleDelivery">
+        Agendar entrega
+      </label>
+    </div>
+    
+    <div *ngIf="scheduledDelivery" class="mt-3">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="checkout-form-label">Data de entrega</label>
+          <div class="checkout-date-selector">
+            <div *ngFor="let date of availableDeliveryDates" 
+                 class="checkout-date-option"
+                 [ngClass]="{'selected': selectedDeliveryDate && 
+                             selectedDeliveryDate.getTime() === date.getTime()}"
+                 (click)="selectDeliveryDate(date)">
+              {{ checkoutService.formatDate(date) }}
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-3">
+          <label class="checkout-form-label">Horário de entrega</label>
+          <div class="checkout-time-selector">
+            <div *ngFor="let slot of availableDeliveryTimeSlots" 
+                 class="checkout-time-option"
+                 [ngClass]="{'selected': selectedDeliveryTimeSlot === slot}"
+                 (click)="selectDeliveryTimeSlot(slot)">
+              {{ slot }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+    <button type="button" class="checkout-btn checkout-btn-secondary me-md-2" (click)="checkoutService.prevStep()">
+      <i class="fas fa-arrow-left me-2"></i> Voltar
+    </button>
+    <button type="button" class="checkout-btn checkout-btn-primary" (click)="saveAndContinue()">
+      Continuar <i class="fas fa-arrow-right ms-2"></i>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,206 @@
+<div class="checkout-card-body">
+  <h2 class="checkout-card-title">Forma de Pagamento</h2>
+  
+  <!-- Métodos de Pagamento -->
+  <div class="checkout-payment-methods">
+    <h3 class="checkout-card-subtitle">Escolha como pagar</h3>
+    
+    <div class="row">
+      <div *ngFor="let method of checkoutService.paymentMethods" class="col-md-4 col-6 mb-3">
+        <div class="checkout-payment-method checkout-selectable-item"
+             [ngClass]="{'selected': checkoutService.selectedPaymentMethod?.id === method.id}"
+             (click)="selectPaymentMethod(method)">
+          <div class="checkout-payment-method-icon">
+            <i class="fas {{ method.icon }}"></i>
+          </div>
+          <div class="checkout-payment-method-name">{{ method.name }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Formulário de Pagamento -->
+  <div *ngIf="checkoutService.selectedPaymentMethod" class="checkout-payment-form mt-4">
+    <!-- Cartão de Crédito/Débito -->
+    <div *ngIf="checkoutService.selectedPaymentMethod.type === 'credit' || 
+               checkoutService.selectedPaymentMethod.type === 'debit'">
+      <!-- Cartões Salvos -->
+      <div *ngIf="checkoutService.savedCreditCards.length > 0 && selectedCreditCard" class="checkout-saved-cards mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3 class="checkout-card-subtitle">Cartão selecionado</h3>
+          <button class="checkout-btn checkout-btn-outline-primary btn-sm" (click)="addNewCreditCard()">
+            Usar outro cartão
+          </button>
+        </div>
+        
+        <div class="checkout-credit-card-preview">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <div class="checkout-card-brand">{{ selectedCreditCard.brand }}</div>
+              <div class="checkout-card-number">**** **** **** {{ selectedCreditCard.lastDigits }}</div>
+              <div class="checkout-card-name">{{ selectedCreditCard.holderName }}</div>
+              <div class="checkout-card-expiry">
+                {{ selectedCreditCard.expiryMonth }}/{{ selectedCreditCard.expiryYear }}
+              </div>
+            </div>
+            <div class="checkout-card-logo">
+              <i class="fab" 
+                 [ngClass]="selectedCreditCard.brand === 'Visa' ? 'fa-cc-visa' : 
+                            selectedCreditCard.brand === 'Mastercard' ? 'fa-cc-mastercard' : 
+                            'fa-credit-card'"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Novo Cartão -->
+      <div *ngIf="!selectedCreditCard">
+        <h3 class="checkout-card-subtitle mb-3">Dados do cartão</h3>
+        
+        <form [formGroup]="paymentForm">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="cardNumber" class="checkout-form-label">Número do cartão *</label>
+              <input type="text" class="checkout-form-control" id="cardNumber" formControlName="cardNumber" 
+                     placeholder="0000 0000 0000 0000">
+              <div *ngIf="paymentForm.get('cardNumber')?.touched && paymentForm.get('cardNumber')?.invalid" 
+                   class="checkout-invalid-feedback">
+                Número do cartão é obrigatório
+              </div>
+            </div>
+            
+            <div class="col-md-6 mb-3">
+              <label for="cardName" class="checkout-form-label">Nome no cartão *</label>
+              <input type="text" class="checkout-form-control" id="cardName" formControlName="cardName" 
+                     placeholder="Nome como aparece no cartão">
+              <div *ngIf="paymentForm.get('cardName')?.touched && paymentForm.get('cardName')?.invalid" 
+                   class="checkout-invalid-feedback">
+                Nome no cartão é obrigatório
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="cardExpiry" class="checkout-form-label">Data de validade *</label>
+              <input type="text" class="checkout-form-control" id="cardExpiry" formControlName="cardExpiry" 
+                     placeholder="MM/AA">
+              <div *ngIf="paymentForm.get('cardExpiry')?.touched && paymentForm.get('cardExpiry')?.invalid" 
+                   class="checkout-invalid-feedback">
+                Data de validade é obrigatória
+              </div>
+            </div>
+            
+            <div class="col-md-6 mb-3">
+              <label for="cardCvv" class="checkout-form-label">Código de segurança (CVV) *</label>
+              <input type="text" class="checkout-form-control" id="cardCvv" formControlName="cardCvv" 
+                     placeholder="123">
+              <div *ngIf="paymentForm.get('cardCvv')?.touched && paymentForm.get('cardCvv')?.invalid" 
+                   class="checkout-invalid-feedback">
+                Código de segurança é obrigatório
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="saveCard" formControlName="saveCard">
+            <label class="form-check-label" for="saveCard">Salvar este cartão para futuras compras</label>
+          </div>
+        </form>
+      </div>
+      
+      <!-- Opções de Parcelamento -->
+      <div class="checkout-installment-table mt-4">
+        <h3 class="checkout-card-subtitle">Opções de Parcelamento</h3>
+        
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Parcelas</th>
+                <th>Valor da parcela</th>
+                <th>Juros</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let option of checkoutService.installmentOptions" 
+                  class="checkout-installment-row"
+                  [ngClass]="{'selected': checkoutService.selectedInstallment?.number === option.number}"
+                  (click)="selectInstallment(option)">
+                <td>{{ option.number }}x</td>
+                <td>{{ checkoutService.formatCurrency(option.value) }}</td>
+                <td>{{ option.interestRate > 0 ? option.interestRate + '% a.m.' : 'Sem juros' }}</td>
+                <td>{{ checkoutService.formatCurrency(option.total) }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Boleto Bancário -->
+    <div *ngIf="checkoutService.selectedPaymentMethod.type === 'boleto'" class="checkout-payment-boleto mt-4">
+      <h3 class="checkout-card-subtitle mb-3">Dados para o boleto</h3>
+      
+      <form [formGroup]="paymentForm">
+        <div class="mb-3">
+          <label for="cpfCnpj" class="checkout-form-label">CPF/CNPJ do pagador *</label>
+          <input type="text" class="checkout-form-control" id="cpfCnpj" formControlName="cpfCnpj" 
+                 placeholder="Digite apenas números">
+          <div *ngIf="paymentForm.get('cpfCnpj')?.touched && paymentForm.get('cpfCnpj')?.invalid" 
+               class="checkout-invalid-feedback">
+            CPF/CNPJ é obrigatório
+          </div>
+        </div>
+      </form>
+      
+      <div class="checkout-payment-info-box">
+        <i class="fas fa-info-circle checkout-payment-info-icon"></i> 
+        O boleto será gerado após a confirmação do pedido e terá vencimento em 3 dias úteis.
+        O pedido será confirmado após a compensação do pagamento.
+      </div>
+    </div>
+    
+    <!-- PIX -->
+    <div *ngIf="checkoutService.selectedPaymentMethod.type === 'pix'" class="checkout-payment-pix mt-4">
+      <h3 class="checkout-card-subtitle mb-3">Dados para o PIX</h3>
+      
+      <form [formGroup]="paymentForm">
+        <div class="mb-3">
+          <label for="cpfCnpj" class="checkout-form-label">CPF/CNPJ do pagador *</label>
+          <input type="text" class="checkout-form-control" id="cpfCnpj" formControlName="cpfCnpj" 
+                 placeholder="Digite apenas números">
+          <div *ngIf="paymentForm.get('cpfCnpj')?.touched && paymentForm.get('cpfCnpj')?.invalid" 
+               class="checkout-invalid-feedback">
+            CPF/CNPJ é obrigatório
+          </div>
+        </div>
+      </form>
+      
+      <div class="checkout-payment-info-box">
+        <i class="fas fa-info-circle checkout-payment-info-icon"></i> 
+        O QR Code do PIX será gerado após a confirmação do pedido e terá validade de 30 minutos.
+        O pedido será confirmado imediatamente após o pagamento.
+      </div>
+    </div>
+    
+    <!-- Carteiras Digitais -->
+    <div *ngIf="checkoutService.selectedPaymentMethod.type === 'wallet'" class="checkout-payment-wallet mt-4">
+      <div class="checkout-payment-info-box">
+        <i class="fas fa-info-circle checkout-payment-info-icon"></i> 
+        Você será redirecionado para a página de pagamento do 
+        {{ checkoutService.selectedPaymentMethod.name }} após confirmar o pedido.
+      </div>
+    </div>
+  </div>
+  
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+    <button type="button" class="checkout-btn checkout-btn-secondary me-md-2" (click)="checkoutService.prevStep()">
+      <i class="fas fa-arrow-left me-2"></i> Voltar
+    </button>
+    <button type="button" class="checkout-btn checkout-btn-primary" (click)="saveAndContinue()">
+      Continuar <i class="fas fa-arrow-right ms-2"></i>
+    </button>
+  </div>
+</div>

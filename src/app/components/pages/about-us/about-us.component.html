@@ -1,0 +1,28 @@
+<div class="about-us-container container-xLarge">
+
+  <app-main-section-title [title]="aboutUsData?.pageTitle || 'Sobre Nós'" [subtitle]="aboutUsData?.pageSubtitle || 'Conheça mais sobre a Empresa e nossa equipe'"></app-main-section-title>
+
+  <section class="about-section mb-4 p-4 rounded shadow-sm" style="background-color: var(--aboutUs-sectionBackground);">
+    <div class="section-header text-center mb-4">
+      <h2 class="section-title">{{ aboutUsData?.teamSection?.title }}</h2>
+      <p class="section-subtitle">{{ aboutUsData?.teamSection?.subtitle }}</p>
+    </div>
+    <app-team-section [members]="aboutUsData?.teamSection?.members || []"></app-team-section>
+  </section>
+
+  <section class="about-section mb-4 p-4 rounded shadow-sm" style="background-color: var(--aboutUs-mvvBackground);">
+    <div class="section-header text-center mb-4">
+      <h2 class="section-title">{{ aboutUsData?.missionVisionValuesSection?.title }}</h2>
+      <p class="section-subtitle">{{ aboutUsData?.missionVisionValuesSection?.subtitle }}</p>
+    </div>
+    <app-mission-vision-values [data]="aboutUsData?.missionVisionValuesSection?.data || null"></app-mission-vision-values>
+  </section>
+
+  <section class="about-section mb-4 p-4 rounded shadow-sm" style="background-color: var(--aboutUs-sectionBackground);">
+    <div class="section-header text-center mb-4">
+      <h2 class="section-title">{{ aboutUsData?.contentSections?.title }}</h2>
+      <p class="section-subtitle">{{ aboutUsData?.contentSections?.subtitle }}</p>
+    </div>
+    <app-content-sections [sections]="aboutUsData?.contentSections?.sections || []"></app-content-sections>
+  </section>
+</div>

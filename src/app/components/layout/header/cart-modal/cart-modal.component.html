@@ -1,0 +1,78 @@
+<div class="cart-modal-backdrop" *ngIf="isCartOpen" (click)="close()"></div>
+<div class="cart-modal-container" *ngIf="isCartOpen" [@modalAnimation]>
+  <div class="cart-modal-menu">
+    <div class="cart-modal-header container-medium">
+      <h3 class="cart-modal-title">Carrinho</h3>
+      <button class="cart-modal-close btn-icon" (click)="close()" aria-label="Fechar carrinho">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <hr />
+
+    <div class="cart-modal-content container-medium">
+      <div class="cart-modal-items" *ngIf="cartItems.length > 0; else emptyCart">
+        <div *ngFor="let item of cartItems" class="cart-modal-item">
+          <div class="cart-modal-item-image">
+            <a [routerLink]="['/produto', item.productId]" (click)="close()">
+              <img [src]="item.imageUrl" [alt]="item.name" class="cart-modal-item-thumbnail">
+            </a>
+          </div>
+
+          <div class="cart-modal-item-details">
+            <div class="cart-modal-item-name">
+              <a [routerLink]="['/produto', item.productId]" (click)="close()">{{ item.name }}</a>
+            </div>
+
+            <div class="cart-modal-item-quantity">
+              <button class="quantity-btn" (click)="updateQuantity(item.id, -1)"
+                [disabled]="item.quantity <= 1">-</button>
+              <span class="quantity-value">{{ item.quantity }}</span>
+              <button class="quantity-btn" (click)="updateQuantity(item.id, 1)">+</button>
+            </div>
+
+            <div class="cart-modal-item-price">
+              <span class="price-amount">{{ formatCurrency(item.price * item.quantity) }}</span>
+            </div>
+          </div>
+
+          <button class="cart-modal-item-remove btn-icon" (click)="removeItem(item.id, $event)" aria-label="Remover este item">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      </div>
+
+      <ng-template #emptyCart>
+        <div class="empty-cart container-large-vertical">
+          <div class="empty-cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <p>Seu carrinho está vazio</p>
+          <button class="continue-shopping btn btn-primary" routerLink="/products" (click)="close()">Continuar comprando</button>
+        </div>
+      </ng-template>
+    </div>
+
+    <div class="clear-cart-container" *ngIf="cartItems.length > 0">
+      <button class="clear-cart-button" (click)="clearCart()">
+        <i class="fas fa-trash"></i> Limpar carrinho
+      </button>
+    </div>
+
+    <div class="cart-modal-footer container-medium" *ngIf="cartItems.length > 0">
+      <div class="cart-modal-subtotal">
+        <span>Subtotal:</span>
+        <span class="price-amount">{{ formatCurrency(subtotal) }}</span>
+      </div>
+
+      <div class="cart-modal-footer-buttons">
+        <a routerLink="/cart" [ngClass]="['button', 'view-cart-button']" (click)="close()">
+          Ver carrinho
+        </a>
+        <a routerLink="/checkout" [ngClass]="['button', 'checkout-button']" (click)="close()">
+          Finalizar compra
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

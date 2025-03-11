@@ -1,0 +1,17 @@
+.main-section-title {
+    border-bottom: 1px solid var(--orders-border);
+    margin-bottom: var(--margin-large);
+    padding-bottom: var(--padding-small);
+}
+
+.orders-page__title {
+    font-size: var(--font-size-xLarge);
+    font-weight: var(--font-weight-bold);
+    color: var(--mainSection-text-titleColor);
+  }
+
+  .orders-page__subtitle {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+    color: var(--mainSection-text-subtitleColor);
+  }
